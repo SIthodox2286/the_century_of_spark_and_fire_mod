@@ -8,6 +8,13 @@
 原著正版全本传送门：
 https://www.youdubook.com/bookdetail/1536
 
+STEAM创意工坊版本：
+https://steamcommunity.com/sharedfiles/filedetails/?id=2843353919
+
+下载方法：
+左键点击本窗口右上角的绿色按钮，选择下载为ZIP
+![image](https://user-images.githubusercontent.com/44506927/182621019-eeb4ec70-b645-42e2-bf6a-d4d85f493082.png)
+
 - 本MOD需要一战REDUX中文版才能使用；
 
 - 东北革委会出现于“辛亥革命”，请选择大清开始游戏；
