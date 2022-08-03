@@ -3005,6 +3005,56 @@ focus_tree = {
 				ruling_party = neutrality
 				elections_allowed = no
 			} 
+			hidden_effect = {
+				set_party_name = {
+					ideology = neutrality
+					long_name = gonghedang_ruling_committee_long
+					name = gonghedang_ruling_committee
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = zhongguo_gongchandang_csb_long
+					name = zhongguo_gongchandang_csb
+				}
+				DongBei_li_dazhao = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = marxism
+							traits = { CE_KMT_gemingweiyuan }
+						}
+					}
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = gonghedang_army_committee_long
+					name = gonghedang_army_committee
+				}
+				Dongbei_Zhu_Hezhong = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = stratocracy
+							traits = { CE_KMT_zuopaixianfeng }
+						}
+					}
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = gonghedng_gongyepai_long
+					name = gonghedng_gongyepai
+				}
+				DongBei_wang_baozhen = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = conservatism
+							traits = { CE_KMT_jijushengwangdelaohaoren }
+						}
+					}
+				}
+			}
+				
 			DongBei_song_yuntong = {
 				add_country_leader_role = {
 					promote_leader = yes
@@ -3057,6 +3107,55 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = DongBei_idea_CSB_DongBei_new_democratic_era
 				add_idea = DongBei_idea_CSB_DongBei_new_democratic_era_1
+			}
+			hidden_effect = {
+				set_party_name = {
+					ideology = democratic
+					long_name = zhongguo_gongchandang_csb_long
+					name = zhongguo_gongchandang_csb
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = gonghedang_revolution_security_long
+					name = gonghedang_revolution_security
+				}
+				DongBei_xia_yang = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = vanguardism
+							traits = { the_short_knive }
+						}
+					}
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = MAN_democratic_party_long
+					name = MAN_democratic_party
+				}
+				Dongbei_Zhu_Hezhong = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = stratocracy
+							traits = { CE_KMT_zuopaixianfeng }
+						}
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = zhengzhixieshang_party_long
+					name = zhengzhixieshang_party
+				}
+				DongBei_wu_luzhen = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = authoritarian_democracy
+							traits = { CE_KMT_guomindangyuanlao }
+						}
+					}
+				}
 			}
 			add_popularity = {
 				ideology = communism
@@ -3119,7 +3218,50 @@ focus_tree = {
 		y = 11
 		
 		completion_reward = {
-			
+			hidden_effect = {
+				set_party_name = {
+					ideology = democratic
+					long_name = gonghedang_interntionale_long
+					name = gonghedang_interntionale
+				}
+				DongBei_wang_baozhen = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = socialism
+							traits = { CE_KMT_renaideshehuigemingjia }
+						}
+					}
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = gonghedang_revolution_security_long
+					name = gonghedang_revolution_security
+				}
+				DongBei_xia_yang = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = vanguardism
+							traits = { the_short_knive }
+						}
+					}
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = gonghedng_gongyepai_long
+					name = gonghedng_gongyepai
+				}
+				DongBei_song_yuntong = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = authoritarian_democracy
+							traits = { market_economy_supporter }
+						}
+					}
+				}
+			}
 			swap_ideas = {
 				remove_idea = DongBei_idea_CSB_DongBei_new_democratic_era
 				add_idea = DongBei_idea_CSB_DongBei_new_democratic_era_2
@@ -3132,7 +3274,7 @@ focus_tree = {
 				ruling_party = fascism
 				elections_allowed = no
 			} 
-			DongBei_wu_luzhen = {
+			Dongbei_Zhu_Hezhong = {
 				add_country_leader_role = {
 					promote_leader = yes
 					country_leader = {
@@ -4945,6 +5087,11 @@ focus_tree = {
 		completion_reward = {
 			hidden_effect = {
 				drop_cosmetic_tag = yes
+				set_party_name = {
+					ideology = democratic
+					long_name = minmeng_csb_long
+					name = minmeng_csb
+				}
 			}
 			effect_tooltip = {
 				set_cosmetic_tag = DongBei_CHI_united_communism
@@ -5718,6 +5865,11 @@ focus_tree = {
 				CHI = {
 					set_capital = { state = 614 }
 				}
+				set_party_name = {
+					ideology = democratic
+					long_name = minmeng_csb_long
+					name = minmeng_csb
+				}
 			}
 			608 = {
 				transfer_state_to = MAN
@@ -5851,6 +6003,13 @@ focus_tree = {
 			create_wargoal = {
 				type = annex_everything
 				target = CHI
+			}
+			hidden_effect = {
+				set_party_name = {
+					ideology = democratic
+					long_name = minmeng_csb_long
+					name = minmeng_csb
+				}
 			}
 		}
 	}
