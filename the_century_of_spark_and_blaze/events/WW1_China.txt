@@ -2800,6 +2800,9 @@ country_event = {
 										is_subject_of = QIN
 									}
 								}
+								NOT = {
+									has_global_flag = no_more_autorelease_flag
+								}
 							}
 							transfer_state = 329
 						}

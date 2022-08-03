@@ -18,6 +18,7 @@
  infil_can_sub_5.tt:0 "共和党支持度大于等于百分之五"
  infil_can_sub_10.tt:0 "共和党支持度大于等于百分之十"
  all_nation_peace_man:0 "除了助日为虐的中国军阀之外，日本及其盟友与中朝联军谈和"
+ annex_china_tooltip_2:0 "获得全中国的核心"
  full_infil.tt.1:0 "中国共和党支持度达到百分之百，极大减轻了足够革命的党员不足带来的问题\n"
  full_infil.tt.2:0 "中国共和党支持度不足百分之百，现在是：[?MAN.gonghedang_infilatrate_variable|%G0]，因此：\n"
  infil_larger_than_75.tt:0 "共和党支持度需要达到75，现在是：[?MAN.gonghedang_infilatrate_variable|%G0]\n"
