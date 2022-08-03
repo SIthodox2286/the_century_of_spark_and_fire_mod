@@ -1,0 +1,4532 @@
+MAN_dongbei_country_decisions = {
+	DongBei_declare_victory = {
+		icon = generic_nationalism
+		days_mission_timeout = 3
+		activation = {
+			has_country_flag = is_geweihui_flag
+			has_global_flag = dongbei_xinhai_revolution_flag
+			NOT = { has_war_with = FNG }
+			NOT = { has_war_with = JAP }			
+			NOT = { country_exists = FNG }
+		}
+		visible = {
+			has_country_flag = is_geweihui_flag
+			has_global_flag = dongbei_xinhai_revolution_flag
+			NOT = { has_war_with = FNG }
+			NOT = { has_war_with = JAP }			
+			NOT = { country_exists = FNG }
+		}
+		available = {
+			always = no
+		}
+		allowed = {
+			original_tag = MAN
+		}
+		#cost = 0
+		#days_remove = 3
+		fire_only_once = yes
+		is_good = yes
+		timeout_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = gonghedang_revolution_victory }
+				}
+				set_global_flag = gonghedang_revolution_victory
+			}
+			country_event = {
+				id = ww1_dongbei.10
+			}
+		}
+	}
+	
+	DongBei_mission_american_training = {
+		icon = generic_nationalism
+		days_mission_timeout = 140
+		activation = {
+			has_completed_focus = CSB_DongBei_american_labour_training
+		}
+		visible = {
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			has_completed_focus = CSB_DongBei_american_labour_training
+		}
+		available = {
+			always = no
+		}
+		allowed = {
+			original_tag = MAN
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		fire_only_once = yes
+		is_good = yes
+		timeout_effect = {
+			csb_increase_dept_idea_usa = yes
+			country_event = { id = ww1_dongbei.15 }
+		}
+	}
+	
+	DongBei_mission_war_with_jap = { # 第二次中日冲突
+		
+		icon = generic_nationalism
+		days_mission_timeout = 70
+		activation = {
+			has_completed_focus = CSB_DongBei_jap_kor_china_war
+		}
+		visible = {
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			has_completed_focus = CSB_DongBei_jap_kor_china_war
+		}
+		available = {
+			always = no
+		}
+		allowed = {
+			always = no
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		#war_with_target_on_timeout = yes
+		fire_only_once = yes
+		is_good = no
+		timeout_effect = {
+			declare_war_on = {
+				target = JAP
+				type = annex_everything
+			}
+			clr_country_flag = second_sino_jap_war_flag
+		}
+	}
+	
+	DongBei_mission_war_with_jap_1 = { # 日本驱逐战争
+		
+		icon = generic_nationalism
+		days_mission_timeout = 180
+		activation = {
+			has_country_flag = more_fighting_event_56
+		}
+		visible = {
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			has_country_flag = more_fighting_event_56
+		}
+		available = {
+			JAP = {
+				OR = {
+					casualties > 250000
+					surrender_progress > 0.15
+				}
+			}
+		}
+		allowed = {
+			always = no
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		#war_with_target_on_timeout = JAP
+		fire_only_once = yes
+		is_good = no
+		complete_effect = {
+			JAP = { country_event = { id = ww1_dongbei.561 } }
+		}
+		timeout_effect = {
+			country_event = { id = ww1_dongbei.55 }
+			hidden_effect = {
+				JAP = { country_event = { id = ww1_dongbei.55 } }
+				KOR = { country_event = { id = ww1_dongbei.55 } }
+			}
+			clr_country_flag = more_fighting_event_56
+		}
+	}
+	
+	DongBei_mission_war_with_jap_1_copy = { # 争取三十八度线
+		icon = generic_nationalism
+		days_mission_timeout = 180
+		activation = {
+			has_country_flag = more_fighting_event_56
+		}
+		visible = {
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			has_country_flag = more_fighting_event_56
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = man_s_condition
+				# 以下是[MAN.GetName]胜利条件，也是你必须要避免的：
+				original_tag = MAN
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_cassualties_over_250_k
+				# 日本牺牲超过二十五万人
+				casualties > 250000
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_surrender_limit_15_plus
+				# 日本投降倾向高于15
+				surrender_progress > 0.15
+			}
+			custom_trigger_tooltip = {
+				tooltip = keep_south_korea_jap_csb
+				# 避免以上情况，坚持到时间结束就能保住南朝鲜
+				always = no
+			}
+		}
+		allowed = {
+			always = no
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		#war_with_target_on_timeout = JAP
+		fire_only_once = yes
+		is_good = yes
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			#
+			#custom_effect_tooltip = no_surrender_limit_15_plus
+			
+			effect_tooltip = {
+				country_event = { id = ww1_dongbei.55 }
+				hidden_effect = {
+					JAP = { country_event = { id = ww1_dongbei.55 } }
+					KOR = { country_event = { id = ww1_dongbei.55 } }
+				}
+			}
+			clr_country_flag = more_fighting_event_56
+		}
+	}
+	
+	DongBei_mission_war_with_jap_2 = { # 对日决战
+		
+		icon = generic_nationalism
+		days_mission_timeout = 365
+		activation = {
+			has_country_flag = more_fighting_event_561
+		}
+		visible = {
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			has_country_flag = more_fighting_event_561
+		}
+		available = {
+			JAP = {
+				OR = {
+					casualties > 500000
+					surrender_progress > 0.3
+				}
+			}
+		}
+		allowed = {
+			always = no
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		#war_with_target_on_timeout = JAP
+		fire_only_once = yes
+		is_good = no
+		complete_effect = {
+			JAP = { country_event = { id = ww1_dongbei.57 } }
+			JAP = { country_event = { id = ww1_dongbei.58 } }
+		}
+		timeout_effect = {
+			country_event = { id = ww1_dongbei.57 }
+			hidden_effect = {
+				JAP = { country_event = { id = ww1_dongbei.57 } }
+				KOR = { country_event = { id = ww1_dongbei.57 } }
+			}
+			clr_country_flag = more_fighting_event_561
+		}
+	}
+	
+	DongBei_mission_war_with_jap_2_copy = { # 挽救帝国
+		icon = generic_nationalism
+		days_mission_timeout = 180
+		activation = {
+			has_country_flag = more_fighting_event_56
+		}
+		visible = {
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			has_country_flag = more_fighting_event_56
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = man_s_condition
+				# 以下是[MAN.GetName]胜利条件，也是你必须要避免的：
+				original_tag = MAN
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_cassualties_over_250_k
+				# 日本牺牲超过五十万人
+				casualties > 500000
+			}
+			custom_trigger_tooltip = {
+				tooltip = no_surrender_limit_30_plus
+				# 日本投降倾向高于30
+				surrender_progress > 0.3
+			}
+			custom_trigger_tooltip = {
+				tooltip = keep_south_korea_jap_csb
+				# 坚持到时间结束就能避免帝国崩溃
+				always = no
+			}
+		}
+		allowed = {
+			always = no
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		#war_with_target_on_timeout = JAP
+		fire_only_once = yes
+		is_good = yes
+		complete_effect = {
+			
+		}
+		timeout_effect = {
+			#
+			#custom_effect_tooltip = no_surrender_limit_15_plus
+			
+			effect_tooltip = {
+				country_event = { id = ww1_dongbei.57 }
+				hidden_effect = {
+					JAP = { country_event = { id = ww1_dongbei.57 } }
+					KOR = { country_event = { id = ww1_dongbei.57 } }
+				}
+			}
+			clr_country_flag = more_fighting_event_56
+		}
+	}
+	
+	DongBei_mission_revolution_no_revolutionists = { # 地方统治力严重不足
+		icon = generic_nationalism
+		days_mission_timeout = 30
+		activation = {
+			count_triggers = {
+				amount = 25
+				# xibei
+				622 = { is_controlled_by = ROOT }
+				283 = { is_controlled_by = ROOT }
+				755 = { is_controlled_by = ROOT }
+				616 = { is_controlled_by = ROOT }
+				604 = { is_controlled_by = ROOT }
+				619 = { is_controlled_by = ROOT }
+				# north china
+				611 = { is_controlled_by = ROOT }
+				609 = { is_controlled_by = ROOT }
+				608 = { is_controlled_by = ROOT }
+				
+				614 = { is_controlled_by = ROOT }
+				597 = { is_controlled_by = ROOT }
+				615 = { is_controlled_by = ROOT }
+				
+				607 = { is_controlled_by = ROOT }
+				620 = { is_controlled_by = ROOT }
+				
+				# south china
+				598 = { is_controlled_by = ROOT }
+				606 = { is_controlled_by = ROOT }
+				613 = { is_controlled_by = ROOT }
+				
+				602 = { is_controlled_by = ROOT }
+				596 = { is_controlled_by = ROOT }
+				600 = { is_controlled_by = ROOT }
+				
+				595 = { is_controlled_by = ROOT }
+				593 = { is_controlled_by = ROOT }
+				524 = { is_controlled_by = ROOT }
+				
+				594 = { is_controlled_by = ROOT }
+				591 = { is_controlled_by = ROOT }
+				599 = { is_controlled_by = ROOT }
+				592 = { is_controlled_by = ROOT }
+				# xinan
+				603 = { is_controlled_by = ROOT }
+				325 = { is_controlled_by = ROOT }
+				605 = { is_controlled_by = ROOT }
+			}
+		}
+		visible = {
+			has_completed_focus = CSB_DongBei_contact_guannei
+			#NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+			count_triggers = {
+				amount = 25
+				# xibei
+				622 = { is_controlled_by = ROOT }
+				283 = { is_controlled_by = ROOT }
+				755 = { is_controlled_by = ROOT }
+				616 = { is_controlled_by = ROOT }
+				604 = { is_controlled_by = ROOT }
+				619 = { is_controlled_by = ROOT }
+				# north china
+				611 = { is_controlled_by = ROOT }
+				609 = { is_controlled_by = ROOT }
+				608 = { is_controlled_by = ROOT }
+				
+				614 = { is_controlled_by = ROOT }
+				597 = { is_controlled_by = ROOT }
+				615 = { is_controlled_by = ROOT }
+				
+				607 = { is_controlled_by = ROOT }
+				620 = { is_controlled_by = ROOT }
+				
+				# south china
+				598 = { is_controlled_by = ROOT }
+				606 = { is_controlled_by = ROOT }
+				613 = { is_controlled_by = ROOT }
+				
+				602 = { is_controlled_by = ROOT }
+				596 = { is_controlled_by = ROOT }
+				600 = { is_controlled_by = ROOT }
+				
+				595 = { is_controlled_by = ROOT }
+				593 = { is_controlled_by = ROOT }
+				524 = { is_controlled_by = ROOT }
+				
+				594 = { is_controlled_by = ROOT }
+				591 = { is_controlled_by = ROOT }
+				599 = { is_controlled_by = ROOT }
+				592 = { is_controlled_by = ROOT }
+				# xinan
+				603 = { is_controlled_by = ROOT }
+				325 = { is_controlled_by = ROOT }
+				605 = { is_controlled_by = ROOT }
+			}
+		}
+		available = {
+			
+		}
+		allowed = {
+			original_tag = MAN
+		}
+		
+		#cost = 0
+		#days_remove = 3
+		#war_with_target_on_timeout = JAP
+		fire_only_once = yes
+		is_good = yes
+		complete_effect = {
+			add_stability = 0.01
+		}
+		timeout_effect = {
+			#
+			if = {
+				limit = {
+					has_completed_focus = CSB_DongBei_play_with_minguo
+					check_variable = {
+						var = gonghedang_infilatrate_variable
+						value = 1.00
+						compare = greater_than_or_equals
+					}
+				}
+				custom_effect_tooltip = full_infil.tt.1
+				add_ideas = DongBei_idea_rapid_unification_1
+			}
+			else = {
+				if = {
+					limit = {
+						has_completed_focus = CSB_DongBei_play_with_minguo
+						check_variable = {
+							var = gonghedang_infilatrate_variable
+							value = 0.50
+							compare = greater_than_or_equals
+						}
+						NOT = { 
+							check_variable = {
+								var = gonghedang_infilatrate_variable
+								value = 0.75
+								compare = greater_than_or_equals
+							}
+						}
+					}
+					add_ideas = DongBei_idea_rapid_unification_2
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = CSB_DongBei_play_with_minguo
+						check_variable = {
+							var = gonghedang_infilatrate_variable
+							value = 0.75
+							compare = greater_than_or_equals
+						}
+						NOT = { 
+							check_variable = {
+								var = gonghedang_infilatrate_variable
+								value = 1.0
+								compare = greater_than_or_equals
+							}
+						}
+					}
+					add_ideas = DongBei_idea_rapid_unification_3
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = CSB_DongBei_play_with_minguo
+						NOT = { 
+							check_variable = {
+								var = gonghedang_infilatrate_variable
+								value = 0.50
+								compare = greater_than_or_equals
+							}
+						}
+					}
+					add_ideas = DongBei_idea_rapid_unification_4
+				}
+				else = {
+					add_ideas = DongBei_idea_rapid_unification_5
+				}	
+			}
+		}
+	}
+	
+	DongBei_huayuan_dizhen_jiuzai = { # 抢救甘肃震灾
+		# 
+		icon = infiltrate_state
+		visible = {
+			original_tag = MAN
+			has_global_flag = ww1_dongbei_64_global_flag
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			283 = {
+				owner = {
+					has_war = no
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 283
+			}
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.25
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 180
+		#days_re_enable = 0
+
+		cost = 0
+	
+		complete_effect = {	
+			283 = {
+				if = {
+					limit = { MAN = { has_country_flag = dizhen_disaster_1 } }
+					custom_effect_tooltip = save_almost_every_one
+					# 我们的军队就在附近，在吴主席急电下立刻赶到现场，救援行动非常成功，我们几乎救下了所有人...
+					add_manpower = 73604
+				}
+				if = {
+					limit = { MAN = { has_country_flag = dizhen_disaster_2 } }
+					custom_effect_tooltip = save_most_possible
+					# 虽然有一堆不明就里还害怕共和党的地主和官僚阻挠，我们还是突破封锁线抵达了灾区，但是我们很清楚，地震消息传出来就用了好几天，那些废物的拖延过后，我们只能说尽力了......
+					hidden_effect = {
+						random_list = {
+							50 = {
+								set_country_flag = selection_1_dizhen
+								add_manpower = 170000
+							}
+							30 = {
+								set_country_flag = selection_2_dizhen
+								add_manpower = 190000
+							}
+							15 = {
+								set_country_flag = selection_3_dizhen
+								add_manpower = 210000
+							}
+							5 = {
+								set_country_flag = selection_4_dizhen
+								add_manpower = 230000
+							}
+						}
+					}
+					effect_tooltip = {
+						if = {
+							limit = {
+								has_country_flag = selection_1_dizhen
+							}
+							add_manpower = 170000
+							clr_country_flag = selection_1_dizhen
+						}
+						if = {
+							limit = {
+								has_country_flag = selection_2_dizhen
+							}
+							add_manpower = 190000
+							clr_country_flag = selection_2_dizhen
+						}
+						if = {
+							limit = {
+								has_country_flag = selection_3_dizhen
+							}
+							add_manpower = 210000
+							clr_country_flag = selection_3_dizhen
+						}
+						if = {
+							limit = {
+								has_country_flag = selection_4_dizhen
+							}
+							add_manpower = 230000
+							clr_country_flag = selection_4_dizhen
+						}
+					}	
+				}
+				if = {
+					limit = { MAN = { has_country_flag = dizhen_disaster_3 } }
+					#add_manpower = 70000
+					custom_effect_tooltip = save_most_possible
+					# 虽然有一堆不明就里还害怕共和党的地主和官僚阻挠，我们还是突破封锁线抵达了灾区，但是我们很清楚，地震消息传出来就用了好几天，那些废物的拖延过后，我们只能说尽力了......
+					hidden_effect = {
+						random_list = {
+							50 = {
+								set_country_flag = selection_1_dizhen
+								add_manpower = 170000
+							}
+							30 = {
+								set_country_flag = selection_2_dizhen
+								add_manpower = 190000
+							}
+							15 = {
+								set_country_flag = selection_3_dizhen
+								add_manpower = 210000
+							}
+							5 = {
+								set_country_flag = selection_4_dizhen
+								add_manpower = 230000
+							}
+						}
+					}
+					effect_tooltip = {
+						if = {
+							limit = {
+								has_country_flag = selection_1_dizhen
+							}
+							add_manpower = 170000
+							clr_country_flag = selection_1_dizhen
+						}
+						if = {
+							limit = {
+								has_country_flag = selection_2_dizhen
+							}
+							add_manpower = 190000
+							clr_country_flag = selection_2_dizhen
+						}
+						if = {
+							limit = {
+								has_country_flag = selection_3_dizhen
+							}
+							add_manpower = 210000
+							clr_country_flag = selection_3_dizhen
+						}
+						if = {
+							limit = {
+								has_country_flag = selection_4_dizhen
+							}
+							add_manpower = 230000
+							clr_country_flag = selection_4_dizhen
+						}
+					}	
+				}
+				
+			}
+		}
+
+		remove_effect = {
+			
+		}
+	}
+	
+	MAN_remove_bad_ganbu_1 = { # 肃反运动：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			OR = {
+				has_idea = DongBei_idea_rapid_unification_5
+				has_idea = DongBei_idea_rapid_unification_4
+				has_idea = DongBei_idea_rapid_unification_3
+				has_idea = DongBei_idea_rapid_unification_2
+				has_idea = DongBei_idea_rapid_unification_1
+			}
+		}
+		
+		available = {
+			has_government = communism
+			has_stability > 0.25
+		}
+		fire_only_once = no
+		cost = 25
+		days_remove = 35
+		days_re_enable = 7
+		
+		complete_effect = {
+			add_stability = 0.25
+			add_political_power = 50
+		}
+		remove_effect = {
+			if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_1 }
+				remove_ideas = DongBei_idea_rapid_unification_1
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_2 }
+				swap_ideas = {
+					remove_idea = DongBei_idea_rapid_unification_2
+					add_idea = DongBei_idea_rapid_unification_1
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_3 }
+				swap_ideas = {
+					remove_idea = DongBei_idea_rapid_unification_3
+					add_idea = DongBei_idea_rapid_unification_2
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_4 }
+				swap_ideas = {
+					remove_idea = DongBei_idea_rapid_unification_4
+					add_idea = DongBei_idea_rapid_unification_3
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_5 }
+				swap_ideas = {
+					remove_idea = DongBei_idea_rapid_unification_5
+					add_idea = DongBei_idea_rapid_unification_4
+				}
+			}
+			else = {
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.4
+			local_resources_factor = -0.2
+			stability_weekly = -0.05
+			resistance_activity = 0.3
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	MAN_remove_bad_ganbu_2 = { # 清理激进派：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			#NOT = { has_government = communism }
+			#NOT = { has_government = neutrality }
+			OR = {
+				has_idea = DongBei_idea_rapid_unification_5
+				has_idea = DongBei_idea_rapid_unification_4
+				has_idea = DongBei_idea_rapid_unification_3
+				has_idea = DongBei_idea_rapid_unification_2
+				has_idea = DongBei_idea_rapid_unification_1
+			}
+			NOT = { has_country_flag = MAN_remove_bad_ganbu_2_flag } 
+		}
+		
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+			has_stability > 0.25
+		}
+		fire_only_once = yes
+		cost = 150
+		days_remove = 140
+		#days_re_enable = 7
+		
+		complete_effect = {
+			add_political_power = 150
+		}
+		remove_effect = {
+			custom_effect_tooltip = sixianghunluan_tt
+			if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_1 }
+				remove_ideas = DongBei_idea_rapid_unification_1
+				add_timed_idea = {
+					idea = DongBei_idea_mind_shift_0
+					days = 3650
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_2 }
+				remove_ideas = DongBei_idea_rapid_unification_2
+				add_timed_idea = {
+					idea = DongBei_idea_mind_shift_1
+					days = 2555
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_3 }
+				remove_ideas = DongBei_idea_rapid_unification_3
+				add_timed_idea = {
+					idea = DongBei_idea_mind_shift_2
+					days = 1825
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_4 }
+				remove_ideas = DongBei_idea_rapid_unification_4
+				add_timed_idea = {
+					idea = DongBei_idea_mind_shift_3
+					days = 730
+				}
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_5 }
+				remove_ideas = DongBei_idea_rapid_unification_5
+				add_timed_idea = {
+					idea = DongBei_idea_mind_shift_4
+					days = 365
+				}
+			}
+			else = {
+			}
+			hidden_effect = {
+				set_country_flag = MAN_remove_bad_ganbu_2_flag
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.4
+			local_resources_factor = -0.2
+			stability_weekly = -0.03
+			resistance_activity = 0.3
+		}
+		
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+	}
+	
+	MAN_remove_bad_ganbu_3 = { # 鼓动民族狂热：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			#NOT = { has_government = communism }
+			#NOT = { has_government = neutrality }
+			OR = {
+				has_idea = DongBei_idea_rapid_unification_5
+				has_idea = DongBei_idea_rapid_unification_4
+				has_idea = DongBei_idea_rapid_unification_3
+				has_idea = DongBei_idea_rapid_unification_2
+				has_idea = DongBei_idea_rapid_unification_1
+			}
+			NOT = { has_country_flag = MAN_remove_bad_ganbu_2_flag } 
+		}
+		
+		available = {
+			has_government = fascism
+			has_stability > 0.25
+			has_war = yes
+		}
+		fire_only_once = yes
+		cost = 150
+		days_remove = 140
+		#days_re_enable = 7
+		
+		complete_effect = {
+			
+			add_political_power = 50
+		}
+		remove_effect = {
+			if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_1 }
+				remove_ideas = DongBei_idea_rapid_unification_1
+				
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_2 }
+				remove_ideas = DongBei_idea_rapid_unification_2
+				
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_3 }
+				remove_ideas = DongBei_idea_rapid_unification_3
+				
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_4 }
+				remove_ideas = DongBei_idea_rapid_unification_4
+				
+			}
+			else_if = {
+				limit = { has_idea = DongBei_idea_rapid_unification_5 }
+				remove_ideas = DongBei_idea_rapid_unification_5
+				
+			}
+			else = {
+			}
+			add_timed_idea = {
+				idea = DongBei_idea_cover_through_crazyness
+				days = 1825
+			}
+			hidden_effect = {
+				set_country_flag = MAN_remove_bad_ganbu_2_flag
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.4
+			local_resources_factor = -0.2
+			stability_weekly = -0.03
+			resistance_activity = 0.3
+		}
+		
+		ai_will_do = {
+			factor = 100
+			
+		}
+	}
+	
+	DongBei_mission_russian_debt_crisis = { # 俄债危机
+		# 我们最近的经济状况不容乐观，沙俄政府注意到了这一点......
+		icon = generic_nationalism
+		days_mission_timeout = 70
+		activation = {
+			
+			NOT = { has_idea = DongBei_idea_russian_debt_crisis }
+			OR = { 
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		allowed = {
+			always = no
+		}
+		available = {	
+			NOT = {
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		visible = {
+			country_exists = RUS
+			NOT = { RUS = { has_government = communism } }
+			NOT = { has_global_flag = russian_revolution }
+			
+			NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+		}
+		fire_only_once = no
+		is_good = no
+		cancel_if_not_visible = yes
+		complete_effect = {
+			add_political_power = 50
+			add_war_support = 0.1
+		}
+		timeout_effect = {
+			add_timed_idea = {
+				idea = DongBei_idea_russian_debt_crisis
+				days = 300
+			}
+		}
+	}
+	
+	DongBei_mission_american_debt_crisis = { # 美债危机
+		# 我们最近的经济状况不容乐观，美国人注意到了这一点......
+		icon = generic_nationalism
+		days_mission_timeout = 70
+		activation = {
+			NOT = { has_idea = DongBei_idea_american_debt_crisis }
+			OR = { 
+				has_idea = DongBei_idea_american_debt_4
+				has_idea = DongBei_idea_american_debt_5
+			}
+		}
+		allowed = {
+			always = no
+		}
+		available = {	
+			NOT = {
+				has_idea = DongBei_idea_american_debt_4
+				has_idea = DongBei_idea_american_debt_5
+			}
+		}
+		visible = {
+			country_exists = USA
+			NOT = { USA = { has_government = communism } }
+			
+			NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+		}
+		fire_only_once = no
+		is_good = no
+		cancel_if_not_visible = yes
+		complete_effect = {
+			add_political_power = 50
+			add_war_support = 0.1
+		}
+		timeout_effect = {
+			add_timed_idea = {
+				idea = DongBei_idea_american_debt_crisis
+				days = 300
+			}
+		}
+	}
+	
+	DongBei_mission_german_debt_crisis = { # 德债危机
+		# 我们最近的经济状况不容乐观，德国凯撒注意到了这一点......
+		icon = generic_nationalism
+		days_mission_timeout = 70
+		activation = {
+			NOT = { has_idea = DongBei_idea_german_debt_crisis }
+			OR = { 
+				has_idea = DongBei_idea_german_debt_4
+				has_idea = DongBei_idea_german_debt_5
+			}
+		}
+		allowed = {
+			always = no
+		}
+		available = {	
+			NOT = {
+				has_idea = DongBei_idea_german_debt_4
+				has_idea = DongBei_idea_german_debt_5
+			}
+		}
+		visible = {
+			country_exists = GER
+			NOT = { GER = { has_government = communism } }
+			
+			NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+		}
+		fire_only_once = no
+		is_good = no
+		cancel_if_not_visible = yes
+		complete_effect = {
+			add_political_power = 50
+			add_war_support = 0.1
+		}
+		timeout_effect = {
+			add_timed_idea = {
+				idea = DongBei_idea_german_debt_crisis
+				days = 300
+			}
+		}
+	}
+	
+}
+
+DongBei_external_affairs = {
+	MAN_QIN_border_conflict_zhangjiakou = { # 进军张家口
+		# 进军张家口：
+		icon = border_war
+		
+		
+		visible = {
+			has_completed_focus = CSB_DongBei_west_advance_to_qing
+			
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment_0 > 20
+			}
+			
+			QIN = {
+				owns_state = 611
+				has_full_control_of_state = 611
+			}
+			MAN = {
+				owns_state = 610
+				has_full_control_of_state = 610
+				is_subject = no
+				610 = { 
+					has_ROOT_at_least_1_div_in_current_state_scope = yes
+				}
+			}
+			NOT = {
+				has_war_with = QIN
+				is_in_faction_with = QIN
+				has_non_aggression_pact_with = QIN				
+			}
+			has_border_war = no
+			has_civil_war = no
+			
+			hidden_trigger = {
+				NOT = { has_country_flag = westwards_expedition_flag_1 }
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 611
+				state = 610
+			}
+		}
+		
+		days_remove = 30
+		#days_re_enable = 300
+		cost = 0
+		war_with_on_remove = QIN
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 50
+			modifier = {
+				OR = {
+					has_manpower < 10000
+					has_army_manpower = { size < 25000 }
+				}
+				factor = 0
+			}
+			modifier = {
+				QIN = { is_in_faction_with = JAP }
+				factor = 0
+			}
+			modifier = {
+				QIN = { is_in_faction_with = RUS }
+				factor = 0
+			}
+		}
+		
+		complete_effect = {
+			set_country_flag = westwards_expedition_flag
+			set_country_flag = westwards_expedition_flag_1
+		}
+		
+		remove_effect = {
+			QIN = {
+				country_event = { id = ww1_dongbei.281 days = 1 }
+				activate_targeted_decision = { target = MAN decision = MAN_border_conflict_warning_QIN_zhangjiakou } #
+			}
+			MAN = {
+				activate_targeted_decision = { target = QIN decision = MAN_escalate_incident_to_border_conflict_QIN_zhangjiakou } #
+			}
+		}
+	}
+	
+	MAN_border_conflict_warning_QIN_zhangjiakou = { # 张家口冲突
+	
+		icon = border_war
+		allowed = { always = no } #Activated from effect
+		available = {
+			hidden_trigger = { always = no }
+		}
+		war_with_target_on_timeout = yes
+		days_mission_timeout = 30
+		fire_only_once = yes
+		is_good = no
+		
+		timeout_effect = {
+			#custom_effect_tooltip = escalation_possible_tooltip_for_defender
+			custom_effect_tooltip = effects_if_border_conflict_is_lost
+			effect_tooltip = {
+				QIN = {
+					add_war_support = -0.04
+					add_stability = -0.02
+				}
+				MAN = {
+					add_stability = 0.05
+					611 = { transfer_state_to = MAN }
+				}
+			}
+			hidden_effect = {
+				remove_targeted_decision = { target = MAN decision = MAN_border_conflict_warning_QIN_zhangjiakou }
+			}
+		}
+	}
+
+	MAN_escalate_incident_to_border_conflict_QIN_zhangjiakou = { # 张家口冲突升级
+	
+		icon = border_war
+		allowed = { always = no } #Activated from effect
+		available = {
+			hidden_trigger = { always = no }
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 611
+				state = 610	
+			}
+		}
+		war_with_target_on_timeout = yes
+		days_mission_timeout = 30
+		fire_only_once = yes
+		is_good = no
+		
+		timeout_effect = {
+			hidden_effect = {	
+				
+				611 = { #set up defender unit(s)
+					CONTROLLER = {
+						division_template = {
+							name = "边防卫队" 	
+							division_names_group = FRA_INF_01
+							is_locked = yes
+							regiments = {
+								infantry = { x = 0 y = 0 }		
+								infantry = { x = 0 y = 1 }		
+								infantry = { x = 0 y = 2 }
+
+								infantry = { x = 1 y = 0 }		
+								infantry = { x = 1 y = 1 }
+								infantry = { x = 1 y = 2 }		
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = {x = 0 y = 1 }
+							}
+						}
+						611 = { #set up defenders
+							create_unit = {
+								division = "division_template = \"边防卫队\" start_experience_factor = 0.5" 
+								owner = PREV
+							}
+							
+						}
+					}
+				}
+				610 = { #set up defender unit(s)
+					CONTROLLER = {
+						division_template = {
+							name = "西进军团" 	
+							division_names_group = FRA_INF_01
+							is_locked = yes
+							regiments = {
+								cavalry = { x = 0 y = 0 }		
+								cavalry = { x = 0 y = 1 }		
+								cavalry = { x = 0 y = 2 }
+
+								cavalry = { x = 1 y = 0 }		
+								cavalry = { x = 1 y = 1 }
+								cavalry = { x = 1 y = 2 }		
+							}
+							support = {
+								engineer = { x = 0 y = 0 }
+								artillery = {x = 0 y = 1 }
+							}
+						}
+						610 = { #set up defenders
+							create_unit = {
+								division = "division_template = \"西进军团\" start_experience_factor = 0.5" 
+								owner = PREV
+							}
+							
+						}
+					}
+				}
+			}
+			start_border_war = {
+				change_state_after_war = yes
+				attacker = {
+					state = 610
+					num_provinces = 2
+					on_win = ww1_dongbei.24
+					on_lose = ww1_dongbei.26
+					on_cancel = ww1_dongbei.28
+				}
+				defender = {
+					state = 611
+					num_provinces = 2
+					on_win = ww1_dongbei.25
+					on_lose = ww1_dongbei.27
+					on_cancel = ww1_dongbei.28
+				}
+			}
+			hidden_effect = {
+				remove_targeted_decision = { target = QIN decision = MAN_border_conflict_warning_QIN_zhangjiakou }
+			}
+		}
+	}
+	
+	#
+	MAN_support_chikun_revolution = { # 支援赤军大起义：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			is_subject = no
+			has_government = communism
+		}
+		
+		available = {
+			has_government = communism
+			has_completed_focus = CSB_DongBei_asian_revolution
+			NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			is_in_faction = yes
+			any_country = {
+				OR = {
+					has_government = communism
+					#has_government = makesi
+					#has_government = zuopai
+					#has_government = youpai
+					#has_government = maopai
+				}
+				capital_scope = {
+					region = 154 # 日本本岛
+				}
+				has_war_with = JAP
+				#has_civil_war = yes
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		
+		complete_effect = {
+			random_country = {
+				limit = {
+					OR = {
+						has_government = communism
+						#has_government = makesi
+						#has_government = zuopai
+						#has_government = youpai
+						#has_government = maopai
+					}
+					capital_scope = {
+						region = 154 # 日本本岛
+					}
+					has_war_with = JAP
+					#has_civil_war = yes
+				}
+				ROOT = { add_to_faction = PREV }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	MAN_support_sov_revolution = { # 加入十月革命：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			is_subject = no
+			has_government = communism
+			
+		}
+		
+		available = {
+			has_government = communism
+			has_completed_focus = CSB_DongBei_asian_revolution
+			NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			SOV = {
+				has_war_with = RUS
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		
+		complete_effect = {
+			add_to_war = { 
+				targeted_alliance = SOV 
+				enemy = RUS
+				hostility_reason = MAN_support_sov_revolution
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#
+	MAN_weihaiwei_question = { # 威海卫问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { 746 = { is_owned_by = ROOT } }
+			746 = {
+				owner = {
+					is_china_or_warlord = no
+				}
+			}
+		}
+		
+		available = {
+			threat > 0.4
+			OR = {
+				ENG = { is_in_faction_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = kis_news.1.t
+					has_global_flag = kis_war
+				}
+				NOT = { 746 = { is_owned_by = ENG } }
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		war_with_on_remove = ENG
+		complete_effect = {
+			746 = {
+				add_core_of = ROOT
+				owner = {
+					country_event = { id = ww1_dongbei.42 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+			
+			}
+		}
+	}
+	
+	MAN_qingdao_question = { # 青岛问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { 745 = { is_owned_by = ROOT } }
+			745 = {
+				owner = {
+					is_china_or_warlord = no
+				}
+			}
+		}
+		
+		available = {
+			threat > 0.4
+			OR = {
+				GER = { is_in_faction_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = kis_news.1.t
+					has_global_flag = kis_war
+				}
+				NOT = { 745 = { is_owned_by = GER } }
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		war_with_on_remove = GER
+		complete_effect = {
+			745 = {
+				add_core_of = ROOT
+				owner = {
+					country_event = { id = ww1_dongbei.43 }
+				}
+			}
+			if={
+				limit = {
+					OR = {
+						has_idea = DongBei_idea_german_debt
+						has_idea = DongBei_idea_german_debt_1
+						has_idea = DongBei_idea_german_debt_2
+						has_idea = DongBei_idea_german_debt_3
+						has_idea = DongBei_idea_german_debt_4
+						has_idea = DongBei_idea_german_debt_5
+					}
+				}
+				effect_tooltip = {
+					csb_increase_dept_idea_ger = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+			
+			}
+		}
+	}
+	
+	MAN_xianggang_question = { # 香港问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { 326 = { is_owned_by = ROOT } }
+			326 = {
+				owner = {
+					is_china_or_warlord = no
+				}
+			}
+		}
+		
+		available = {
+			threat > 0.4
+			OR = {
+				ENG = { is_in_faction_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = kis_news.1.t
+					has_global_flag = kis_war
+				}
+				NOT = { 326 = { is_owned_by = ENG } }
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		war_with_on_remove = ENG
+		complete_effect = {
+			326 = {
+				add_core_of = ROOT
+				owner = {
+					country_event = { id = ww1_dongbei.44 }
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				date < 1930.1.1
+			}
+		}
+	}
+
+	MAN_guangzhouwan_question = { # 广州湾问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { 728 = { is_owned_by = ROOT } }
+			728 = {
+				owner = {
+					is_china_or_warlord = no
+				}
+			}
+		}
+		
+		available = {
+			threat > 0.4
+			OR = {
+				FRA = { is_in_faction_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = kis_news.1.t
+					has_global_flag = kis_war
+				}
+				NOT = { 728 = { is_owned_by = FRA } }
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		war_with_on_remove = FRA
+		complete_effect = {
+			728 = {
+				add_core_of = ROOT
+				owner = {
+					country_event = { id = ww1_dongbei.45 }
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+			
+			}
+		}
+	}
+	
+	MAN_macao_question = { # 澳门问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { 729 = { is_owned_by = ROOT } }
+			729 = {
+				owner = {
+					is_china_or_warlord = no
+				}
+			}
+		}
+		
+		available = {
+			threat > 0.4
+			OR = {
+				POR = { is_in_faction_with = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = kis_news.1.t
+					has_global_flag = kis_war
+				}
+				NOT = { 729 = { is_owned_by = POR } }
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		days_remove = 30
+		war_with_on_remove = POR
+		complete_effect = {
+			729 = {
+				add_core_of = ROOT
+				owner = {
+					country_event = { id = ww1_dongbei.46 }
+				}
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+			
+			}
+		}
+	}
+
+}
+
+MAN_dongbei_clean_international_debt = {
+	Dongbei_rus_clean_debt_1 = { # 接纳俄国流亡者：
+		# 
+
+		icon = GFX_decision_generic_political_discourse
+		
+		visible = {
+			NOT = { has_war_with = RUS }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_russian_debt_0
+				has_idea = DongBei_idea_russian_debt
+				has_idea = DongBei_idea_russian_debt_1
+				has_idea = DongBei_idea_russian_debt_2
+				has_idea = DongBei_idea_russian_debt_3
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		
+		available = {
+			NOT = { surrender_progress > 0.1 }
+			RUS = {  has_war = yes }
+			OR = {
+				RUS = { surrender_progress > 0.3 }
+				RUS = { casualties > 1500000 }
+				custom_trigger_tooltip = {		
+					tooltip =  RUSSIAN_REVOLUTION_PATH
+					RUS = { 
+						has_global_flag = great_war_ends 
+					}
+				}
+			}	
+		}
+	#	
+		fire_only_once = no
+		cost = 75
+		days_remove = 35
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_rus = yes
+			RUS = { country_event = { id = ww1_dongbei.20 } }
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_rus_clean_debt_2 = { # 调高对俄出口：
+		# 
+
+		icon = GFX_decision_gre_paying_ifc_debt
+		
+		visible = {
+			NOT = { has_war_with = RUS }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_russian_debt_0
+				has_idea = DongBei_idea_russian_debt
+				has_idea = DongBei_idea_russian_debt_1
+				has_idea = DongBei_idea_russian_debt_2
+				has_idea = DongBei_idea_russian_debt_3
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		
+		available = {
+			has_political_power > 14
+		}
+		
+		fire_only_once = no
+		cost = 15
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_rus = yes
+			RUS = { country_event = { id = ww1_dongbei.17 } }
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_rus_clean_debt_3 = { # 对俄输出装备：
+		# 我国最近有一批用不上的装备，给陷入战争而产能不足的俄国人或许正好。
+
+		icon = GFX_decision_generic_industry
+		
+		visible = {
+			NOT = { has_war_with = RUS }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_russian_debt_0
+				has_idea = DongBei_idea_russian_debt
+				has_idea = DongBei_idea_russian_debt_1
+				has_idea = DongBei_idea_russian_debt_2
+				has_idea = DongBei_idea_russian_debt_3
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+			NOT = { country_exists = SOV }
+		}
+		
+		available = {
+			has_equipment = {
+				infantry_equipment > 1999
+			}
+		}
+		
+		fire_only_once = no
+		cost = 0
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_rus = yes
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			RUS = { country_event = { id = ww1_dongbei.21 } }
+		}
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_rus_clean_debt_4 = { # 与苏联洽谈俄债问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { has_war_with = SOV }
+			country_exists = SOV
+			OR = {
+				has_idea = DongBei_idea_russian_debt_0
+				has_idea = DongBei_idea_russian_debt
+				has_idea = DongBei_idea_russian_debt_1
+				has_idea = DongBei_idea_russian_debt_2
+				has_idea = DongBei_idea_russian_debt_3
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		
+		available = {
+			country_exists = SOV
+		}
+		
+		fire_only_once = yes
+		cost = 100
+		days_remove = 5
+		#days_re_enable = 5
+		
+		remove_effect = {
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_0 }
+				remove_ideas = DongBei_idea_russian_debt_0
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt }
+				remove_ideas = DongBei_idea_russian_debt
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_1 }
+				remove_ideas = DongBei_idea_russian_debt_1
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_2 }
+				remove_ideas = DongBei_idea_russian_debt_2
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_3 }
+				remove_ideas = DongBei_idea_russian_debt_3
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_4 }
+				remove_ideas = DongBei_idea_russian_debt_4
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_5 }
+				remove_ideas = DongBei_idea_russian_debt_5
+			}
+			SOV = {
+				country_event = { id = ww1_dongbei.18 }
+			}
+			
+		}
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+			#SOV = { country_event = { id = ww1_dongbei.18 } }
+			408 = {
+				remove_core_of = RUS
+				remove_core_of = SOV
+				add_core_of = MAN
+			}
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	Dongbei_usa_clean_debt_1 = { # 接纳美国流亡者：
+		# 
+
+		icon = GFX_decision_generic_political_discourse
+		
+		visible = {
+			NOT = { has_war_with = USA }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_russian_debt_0
+				has_idea = DongBei_idea_russian_debt
+				has_idea = DongBei_idea_russian_debt_1
+				has_idea = DongBei_idea_russian_debt_2
+				has_idea = DongBei_idea_russian_debt_3
+				has_idea = DongBei_idea_russian_debt_4
+				has_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		
+		available = {
+			NOT = { surrender_progress > 0.1 }
+			USA = {  has_war = yes }
+			OR = {
+				USA = { surrender_progress > 0.3 }
+				USA = { casualties > 500000 }
+			}	
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_usa = yes
+			USA = { country_event = { id = ww1_dongbei.20 } }  
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_usa_clean_debt_2 = { # 投资合办企业：
+		# 
+
+		icon = GFX_decision_gre_investment_decisions
+		
+		visible = {
+			NOT = { has_war_with = USA }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_american_debt
+				has_idea = DongBei_idea_american_debt_1
+				has_idea = DongBei_idea_american_debt_2
+				has_idea = DongBei_idea_american_debt_3
+				has_idea = DongBei_idea_american_debt_4
+				has_idea = DongBei_idea_american_debt_5
+			}
+		}
+		
+		available = {
+			has_political_power > 99
+		}
+		
+		fire_only_once = no
+		cost = 100
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_usa = yes
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_usa_clean_debt_3 = { # 调高对美进口：
+		# 
+
+		icon = gre_paying_ifc_debt
+		
+		visible = {
+			NOT = { has_war_with = USA }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_american_debt
+				has_idea = DongBei_idea_american_debt_1
+				has_idea = DongBei_idea_american_debt_2
+				has_idea = DongBei_idea_american_debt_3
+				has_idea = DongBei_idea_american_debt_4
+				has_idea = DongBei_idea_american_debt_5
+			}
+		}
+		
+		available = {
+			has_political_power > 49
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_usa = yes
+			USA = { country_event = { id = ww1_dongbei.17 } }
+			
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_usa_clean_debt_4 = { # 与红色美国洽谈美债问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { has_war_with = USA }
+			USA = { has_government = communism }
+			OR = {
+				has_idea = DongBei_idea_american_debt
+				has_idea = DongBei_idea_american_debt_1
+				has_idea = DongBei_idea_american_debt_2
+				has_idea = DongBei_idea_american_debt_3
+				has_idea = DongBei_idea_american_debt_4
+				has_idea = DongBei_idea_american_debt_5
+			}
+		}
+		
+		available = {
+			USA = { has_government = communism }
+		}
+		
+		fire_only_once = yes
+		cost = 150
+		days_remove = 140
+		#days_re_enable = 5
+		
+		remove_effect = {
+			if = {
+				limit = { has_idea = DongBei_idea_american_debt }
+				remove_ideas = DongBei_idea_american_debt
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_american_debt_1 }
+				remove_ideas = DongBei_idea_american_debt_1
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_american_debt_2 }
+				remove_ideas = DongBei_idea_american_debt_2
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_american_debt_3 }
+				remove_ideas = DongBei_idea_american_debt_3
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_american_debt_4 }
+				remove_ideas = DongBei_idea_american_debt_4
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_american_debt_5 }
+				remove_ideas = DongBei_idea_american_debt_5
+			}
+			USA = {
+				country_event = { id = ww1_dongbei.16 }
+			}
+		}
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	Dongbei_ger_clean_debt_1 = { # 接纳德国流亡者：
+		# 
+
+		icon = GFX_decision_generic_political_discourse
+		
+		visible = {
+			NOT = { has_war_with = GER }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_german_debt
+				has_idea = DongBei_idea_german_debt_1
+				has_idea = DongBei_idea_german_debt_2
+				has_idea = DongBei_idea_german_debt_3
+				has_idea = DongBei_idea_german_debt_4
+				has_idea = DongBei_idea_german_debt_5
+			}
+		}
+		
+		available = {
+			NOT = { surrender_progress > 0.1 }
+			GER = {  has_war = yes }
+			OR = {
+				GER = { surrender_progress > 0.3 }
+				GER = { casualties > 500000 }
+			}	
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_ger = yes
+			GER = { country_event = { id = ww1_dongbei.20 } }
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_ger_clean_debt_2 = { # 协助转移产业：
+		# 
+
+		icon = hol_exchange_intelligence_data
+		
+		visible = {
+			NOT = { has_war_with = GER }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_german_debt
+				has_idea = DongBei_idea_german_debt_1
+				has_idea = DongBei_idea_german_debt_2
+				has_idea = DongBei_idea_german_debt_3
+				has_idea = DongBei_idea_german_debt_4
+				has_idea = DongBei_idea_german_debt_5
+			}
+		}
+		
+		available = {
+			NOT = {
+				has_war_with = FRA
+				has_war_with = ENG
+			}
+			OR = { 
+				GER = { has_war_with = FRA }
+				GER = { has_war_with = ENG }
+			}
+		}
+		
+		fire_only_once = no
+		cost = 50
+		days_remove = 35
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_ger = yes
+			GER = { country_event = { id = ww1_dongbei.19 } }
+			random_list = {
+				50 = {
+				}
+				50 = {
+					
+					random_owned_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+							OR = {
+								is_in_home_area = yes
+								NOT = {
+									owner = {
+										any_owned_state = {
+											free_building_slots = {
+												building = industrial_complex
+												size > 0
+												include_locked = yes
+											}
+											is_in_home_area = yes
+										}
+									}
+								}
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_ger_clean_debt_3 = { # 调高对德进口：
+		# 
+
+		icon = GFX_decision_gre_paying_ifc_debt
+		
+		visible = {
+			NOT = { has_war_with = GER }
+			has_completed_focus = CSB_DongBei_clear_international_debt
+			OR = {
+				has_idea = DongBei_idea_german_debt
+				has_idea = DongBei_idea_german_debt_1
+				has_idea = DongBei_idea_german_debt_2
+				has_idea = DongBei_idea_german_debt_3
+				has_idea = DongBei_idea_german_debt_4
+				has_idea = DongBei_idea_german_debt_5
+			}
+		}
+		
+		available = {
+			has_political_power > 14
+		}
+		
+		fire_only_once = no
+		cost = 15
+		days_remove = 70
+		days_re_enable = 5
+		
+		remove_effect = {
+			csb_decrease_dept_idea_ger = yes
+			
+			GER = { country_event = { id = ww1_dongbei.17 } }
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+			
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	Dongbei_ger_clean_debt_4 = { # 与红色德国洽谈德债问题：
+		# 
+
+		icon = GFX_decision_category_generic_communism
+		
+		visible = {
+			NOT = { has_war_with = GER }
+			GER = { has_government = communism }
+			OR = {
+				has_idea = DongBei_idea_german_debt
+				has_idea = DongBei_idea_german_debt_1
+				has_idea = DongBei_idea_german_debt_2
+				has_idea = DongBei_idea_german_debt_3
+				has_idea = DongBei_idea_german_debt_4
+				has_idea = DongBei_idea_german_debt_5
+			}
+		}
+		
+		available = {
+			USA = { has_government = communism }
+		}
+		
+		fire_only_once = yes
+		cost = 150
+		days_remove = 140
+		#days_re_enable = 5
+		
+		remove_effect = {
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt }
+				remove_ideas = DongBei_idea_german_debt
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt_1 }
+				remove_ideas = DongBei_idea_german_debt_1
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt_2 }
+				remove_ideas = DongBei_idea_german_debt_2
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt_3 }
+				remove_ideas = DongBei_idea_german_debt_3
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt_4 }
+				remove_ideas = DongBei_idea_german_debt_4
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt_5 }
+				remove_ideas = DongBei_idea_german_debt_5
+			}
+			GER = {
+				country_event = { id = ww1_dongbei.16 }
+			}
+		}
+		modifier = {
+			
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	
+	
+}
+
+MAN_minguo_affair_decisions = {
+	########################################
+	# fundemental actions
+	MAN_begin_support_point_news = { # 加印本周报纸
+		# 用报刊和文章争夺市民支持是政治斗争的基础手段之一。
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_play_with_minguo
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		
+		available = {	
+			#always = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			infil_can_add_1 = yes
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 5
+		days_re_enable = 2
+	
+		cost = 15
+	
+		complete_effect = {
+			gonghedang_support_add_1 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 40
+			}
+		}
+	}
+	MAN_begin_support_point_send_man = { # 支援农会行动
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_play_with_minguo
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		
+		available = {	
+			#always = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			infil_can_add_1 = yes
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.02
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 9
+		days_re_enable = 5
+	
+		cost = 0
+	
+		complete_effect = {
+			gonghedang_support_add_1 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 25
+			}
+		}
+	}
+	MAN_begin_support_point_hit_corruption = { # 揭露腐败政客
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_play_with_minguo
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			has_government = communism
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		
+		available = {	
+			#always = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			infil_can_add_1 = yes
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+		#	consumer_goods_factor = 0.01
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 9
+		days_re_enable = 5
+	
+		cost = 25
+	
+		complete_effect = {
+			gonghedang_support_add_1 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 50
+			}
+		}
+	}
+	MAN_begin_support_point_school = { # 拉拢学生群体
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_play_with_minguo
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			OR = { 
+				has_government = communism
+				has_government = democratic
+			}
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		
+		available = {	
+			#always = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			infil_can_add_1 = yes
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			#consumer_goods_factor = 0.01
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 5
+		days_re_enable = 2
+	
+		cost = 50
+	
+		complete_effect = {
+			gonghedang_support_add_1 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+	
+	########################################
+	# towards left tmh actions
+	MAN_begin_support_points_songjiaoren = { # 影响宋教仁
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_contact_left_tongmenghui
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			CHI = {
+				has_character = CHI_song_jiaoren
+			}
+			CHI = {
+				NOT = { has_completed_focus = CHI_replace_governors }
+			}
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_liaozhongkai
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+		#	has_completed_focus = CSB_DongBei_contact_left_tongmenghui
+			custom_trigger_tooltip = { # 宋教仁还活着
+				tooltip = alive_song_jiaoren_tt
+				CHI = {
+					has_character = CHI_song_jiaoren
+				}
+				CHI = {
+					NOT = { has_completed_focus = CHI_replace_governors }
+				}
+			}
+			infil_can_add_10 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		#cancel_if_not_visible = yes
+		modifier = {
+			#consumer_goods_factor = 0.01
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		days_remove = 30
+		#days_re_enable = 2
+	
+		cost = 75
+	
+		complete_effect = {
+			CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_10 = yes
+			
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 120
+			}
+		}
+	}
+	
+	MAN_begin_support_points_liaozhongkai = { # 影响廖仲恺
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_contact_left_tongmenghui
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			CHI = {
+				NOT = { 
+					has_country_flag = CHI_kuomintang_flag
+					has_country_leader = {
+						character = GDC_wang_jingwei
+						ruling_only = yes
+					}
+				}
+			}
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_songjiaoren
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			#has_completed_focus = CSB_DongBei_contact_left_tongmenghui
+			custom_trigger_tooltip = { # 国民党右翼未准备刺杀廖仲恺
+				tooltip = alive_song_jiaoren_tt
+				CHI = {
+					NOT = { 
+						has_country_flag = CHI_kuomintang_flag
+						has_country_leader = {
+							character = GDC_wang_jingwei
+							ruling_only = yes
+						}
+					}
+				}
+			}
+			infil_can_add_10 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			#consumer_goods_factor = 0.01
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = yes
+		days_remove = 30
+		#days_re_enable = 2
+	
+		cost = 75
+	
+		complete_effect = {
+			CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_10 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 120
+			}
+		}
+	}
+	
+	MAN_begin_support_points_lalong_basis = { # 与民党辩论
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_contact_left_tongmenghui
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_lalong_recruit
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_lalong_recruit
+			}
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			#consumer_goods_factor = 0.01
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 23
+		days_re_enable = 5
+	
+		cost = 25
+	
+		complete_effect = {
+		
+			gonghedang_support_add_5 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+	
+	MAN_begin_support_points_lalong_recruit = { # 转化同盟会成员
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_contact_left_tongmenghui
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_lalong_basis
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_lalong_basis
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.05
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 23
+		days_re_enable = 5
+	
+		cost = 25
+	
+		complete_effect = {
+		#	CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_5 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+	
+	########################################
+	# towards businessmen
+	MAN_begin_support_points_huabei_business = { # 组织北方实业家
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_educate_chinese_business
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			NOT = {
+				#has_decision = MAN_begin_support_points_huabei_business
+				has_decision = MAN_begin_support_points_huazhong_business
+				has_decision = MAN_begin_support_points_dongnan_business
+				has_decision = MAN_begin_support_points_xifang_business
+			}
+			
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			NOT = {
+				#has_decision = MAN_begin_support_points_huabei_business
+				has_decision = MAN_begin_support_points_huazhong_business
+				has_decision = MAN_begin_support_points_dongnan_business
+				has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 60
+		days_re_enable = 10
+	
+		cost = 0
+	
+		complete_effect = {
+		#	CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_5 = yes
+		}
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+			random_state = {
+				limit = {
+					OR = {
+						state = 611
+						state = 609
+						state = 608
+						state = 614
+						state = 597
+						state = 745
+						state = 746
+					}
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	MAN_begin_support_points_huazhong_business = { # 组织中原实业家
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_educate_chinese_business
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			NOT = {
+				has_decision = MAN_begin_support_points_huabei_business
+				#has_decision = MAN_begin_support_points_huazhong_business
+				has_decision = MAN_begin_support_points_dongnan_business
+				has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_huabei_business
+				#has_decision = MAN_begin_support_points_huazhong_business
+				has_decision = MAN_begin_support_points_dongnan_business
+				has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 60
+		days_re_enable = 10
+	
+		cost = 0
+	
+		complete_effect = {
+		#	CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_5 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+			random_state = {
+				limit = {
+					OR = {
+						state = 615
+						state = 607
+						state = 620
+						state = 598
+						state = 606
+					}
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	MAN_begin_support_points_dongnan_business = { # 组织东南实业家
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_educate_chinese_business
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			NOT = {
+				has_decision = MAN_begin_support_points_huabei_business
+				has_decision = MAN_begin_support_points_huazhong_business
+				#has_decision = MAN_begin_support_points_dongnan_business
+				has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			NOT = {
+				has_decision = MAN_begin_support_points_huabei_business
+				has_decision = MAN_begin_support_points_huazhong_business
+				#has_decision = MAN_begin_support_points_dongnan_business
+				has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.15
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 60
+		days_re_enable = 10
+	
+		cost = 0
+	
+		complete_effect = {
+		#	CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_5 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+			random_state = {
+				limit = {
+					OR = {
+						#state = 613
+						state = 602
+						state = 596
+						state = 595
+						state = 593
+						state = 594
+						state = 591
+						state = 599
+						state = 592
+					}
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+			random_state = {
+				limit = {
+					OR = {
+						#state = 613
+						state = 602
+						state = 596
+						state = 595
+						state = 593
+						state = 594
+						state = 591
+						state = 599
+						state = 592
+					}
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+		}
+	}
+	
+	MAN_begin_support_points_xifang_business = { # 组织华西实业家
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_educate_chinese_business
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_huabei_business
+				has_decision = MAN_begin_support_points_huazhong_business
+				has_decision = MAN_begin_support_points_dongnan_business
+				#has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			NOT = {
+				has_decision = MAN_begin_support_points_huabei_business
+				has_decision = MAN_begin_support_points_huazhong_business
+				has_decision = MAN_begin_support_points_dongnan_business
+				#has_decision = MAN_begin_support_points_xifang_business
+			}
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.15
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 60
+		days_re_enable = 10
+	
+		cost = 0
+	
+		complete_effect = {
+		#	CHI = { country_event = { id = ww1_dongbei.51 } }
+			gonghedang_support_add_5 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+			random_state = {
+				limit = {
+					OR = {
+						#state = 613
+						state = 622
+						state = 283
+						state = 616
+						state = 621
+						state = 604
+						state = 619
+						#
+						state = 603
+						state = 325
+						state = 605
+					}
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+			random_state = {
+				limit = {
+					OR = {
+						#state = 613
+						state = 622
+						state = 283
+						state = 616
+						state = 621
+						state = 604
+						state = 619
+						#
+						state = 603
+						state = 325
+						state = 605
+					}
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+		}
+	}
+	
+	########################################
+	# after neige membership
+	MAN_begin_support_points_land_reform = { # 派出土改委员
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_join_the_cabinet
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 37
+		days_re_enable = 5
+	
+		custom_cost_trigger = {
+			has_command_power > 14
+		}
+		custom_cost_text = decision_cost_CP_15
+	
+		complete_effect = {
+			gonghedang_support_add_5 = yes
+			random_state = {
+				limit = {
+					OR = {	
+						state = 611
+						state = 609
+						state = 608
+						state = 614
+						state = 597
+						#state = 745
+						#state = 746
+						state = 615
+						state = 607
+						state = 620
+						state = 598
+						state = 606
+					}	
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+
+		remove_effect = {	
+			hidden_effect = {
+				add_command_power = -15
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_command_power = 15
+			}
+		}
+	}
+	
+	MAN_begin_support_points_subpress_shishen = { # 逮捕反动士绅
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_join_the_cabinet
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_10 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.15
+			consumer_goods_factor = 0.05
+			war_support_factor = -0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 70
+		days_re_enable = 7
+	
+		custom_cost_trigger = {
+			has_command_power > 14
+		}
+		custom_cost_text = decision_cost_CP_15
+	
+		complete_effect = {
+			gonghedang_support_add_10 = yes
+		}
+
+		remove_effect = {	
+			hidden_effect = {
+				add_command_power = -15
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_command_power = 15
+			}
+		}
+	}
+	
+	MAN_begin_support_points_reform_police = { # 改组警察系统
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_join_the_cabinet
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+			consumer_goods_factor = 0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 37
+		days_re_enable = 5
+
+		cost = 0
+	
+		complete_effect = {
+			gonghedang_support_add_5 = yes
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 25
+			}
+		}
+	}
+	
+	MAN_begin_support_points_soldiers = { # 渗透军队基层
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_join_the_cabinet
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_can_add_5 = yes
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			infil_can_add_10 = yes
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.15
+			consumer_goods_factor = 0.05
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = no
+		days_remove = 5
+		days_re_enable = 2
+
+		custom_cost_trigger = {
+			command_power > 24
+		}
+
+		custom_cost_text = decision_cost_CP_25
+	
+		complete_effect = {
+			gonghedang_support_add_10 = yes
+		}
+
+		remove_effect = {	
+			hidden_effect = {
+				add_command_power = -25
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_command_power = 25
+			}
+		}
+	}
+	
+	########################################
+	# province cede
+	MAN_shanxi_change_color = { # 策动山西易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+			615 = { is_owned_by = CHI }
+			
+			NOT = {
+				#has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			615 = { is_owned_by = CHI }
+			615 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 615
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 2
+
+		cost = 50
+	
+		complete_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_shanxi_flag
+			}
+			615 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+			if = {
+				limit = {
+					621 = { is_owned_by = CHI }
+				}
+				621 = {
+					transfer_state_to = MAN
+					add_core_of = MAN
+				}
+			}
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_shandong_change_color_1 = { # 策动山东易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			NOT = { has_war_with = JAP }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				#has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			597 = { is_owned_by = CHI }
+			597 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 597
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_shandong_flag
+			}
+			597 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_shandong_change_color_2 = { # 接管山东防御
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			has_war_with = JAP
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				#has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			597 = { is_owned_by = CHI }
+			597 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 597
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 5
+		#days_re_enable = 0
+
+		cost = 0
+	
+		complete_effect = {
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				set_country_flag = ai_shandong_flag
+			}
+			
+			597 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_chengde_change_color = { # 策动承德易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			609 = { is_owned_by = CHI }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				#has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			609 = { is_owned_by = CHI }
+			609 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 609
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_chengde_flag
+			}
+			609 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+
+	MAN_henan_change_color = { # 策动河南易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			607 = { is_owned_by = CHI }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				#has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			607 = { is_owned_by = CHI }
+			607 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 607
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {	
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_henan_flag
+			}
+			607 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_anhui_change_color = { # 策动安徽易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			606 = { is_owned_by = CHI }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				#has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			606 = { is_owned_by = CHI }
+			606 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 606
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {	
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_anhui_flag
+			}
+			606 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_shaanxi_change_color = { # 策动陕西易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			622 = { is_owned_by = CHI }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				#has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			622 = { is_owned_by = CHI }
+			622 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 622
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {	
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_shaanxi_flag
+			}
+			622 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_ninxia_change_color = { # 策动宁夏易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			616 = { is_owned_by = CHI }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				#has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+			
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			616 = { is_owned_by = CHI }
+			616 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 616
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {	
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_shaanxi_flag
+			}
+			616 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_gansu_change_color = { # 策动甘肃易帜
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			283 = { is_owned_by = CHI }
+			NOT = { has_global_flag = ww1_dongbei_64_global_flag }
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				#has_decision = MAN_gansu_change_color
+				has_decision = MAN_gansu_change_color_1
+				has_decision = MAN_ninxia_change_color
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			infil_larger_than_50 = yes
+			283 = { is_owned_by = CHI }
+			283 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 283
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 70
+		#days_re_enable = 0
+
+		cost = 50
+	
+		complete_effect = {	
+			if = {
+				limit = {
+					is_ai = no
+				}
+				gonghedang_support_reduce_15 = yes
+			}
+			else = {
+				set_country_flag = ai_gansu_flag
+			}
+			283 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+			if = {
+				limit = {
+					755 = {
+						is_capital = no
+					}
+				}
+				755 = {
+					transfer_state_to = MAN
+					add_core_of = MAN
+				}	
+			}
+			if = {
+				limit = {
+					619 = {
+						is_capital = no
+					}
+				}
+				619 = {
+					transfer_state_to = MAN
+					add_core_of = MAN
+				}	
+			}
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+	
+	MAN_gansu_change_color_1 = { # 接受甘肃人的感激
+		# 
+		icon = infiltrate_state
+		visible = {
+			has_completed_focus = CSB_DongBei_shentou_huabei
+			NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+			283 = { is_owned_by = CHI }
+			has_global_flag = ww1_dongbei_64_global_flag
+			
+			NOT = {
+				has_decision = MAN_shanxi_change_color
+				has_decision = MAN_shandong_change_color_1
+				has_decision = MAN_shandong_change_color_2
+				has_decision = MAN_chengde_change_color
+				has_decision = MAN_henan_change_color
+				has_decision = MAN_anhui_change_color
+				has_decision = MAN_shaanxi_change_color
+				has_decision = MAN_ninxia_change_color
+				has_decision = MAN_gansu_change_color
+				#has_decision = MAN_gansu_change_color_1
+				has_decision = MAN_ninxia_change_color
+			}
+		}
+		cancel_if_not_visible = yes
+		available = {	
+			#infil_larger_than_50 = yes
+			283 = { is_owned_by = CHI }
+			283 = { is_capital = no }
+			NOT = { has_war_with = CHI }
+			country_exists = CHI
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 283
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 150
+		}
+		fire_only_once = yes
+		days_remove = 30
+		#days_re_enable = 0
+
+		cost = 0
+	
+		complete_effect = {	
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				set_country_flag = ai_gansu_flag
+			}
+			283 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+			755 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+			619 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}	
+		}
+
+		remove_effect = {
+			CHI = { country_event = { id = ww1_dongbei.63 } }
+		}
+	}
+}
+
+MAN_minguo_loyalty_decisions = {
+	CHI_begin_support_point_money = { # 用金钱收买忠诚
+		# 如果不能消灭东北人，这也是不能永久持续下去的。
+		icon = infiltrate_state
+		visible = {
+			country_exists = MAN
+			MAN = {
+				has_completed_focus = CSB_DongBei_play_with_minguo
+				NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+				NOT = { has_war_with = CHI }
+				has_variable = gonghedang_infilatrate_variable
+			}
+		}
+		cancel_if_not_visible = yes
+		cancel_trigger = { MAN = { infil_can_sub_5 = no } }
+		available = {	
+			#always = yes
+			NOT = { has_war_with = MAN }
+			country_exists = MAN
+			MAN = { infil_can_sub_5 = yes }
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 77
+		days_re_enable = 7
+	
+		cost = 50
+	
+		complete_effect = {
+			add_stability = -0.01
+			MAN = { gonghedang_support_reduce_5 = yes }
+			hidden_effect = {
+				MAN = { country_event = { id = ww1_dongbei.631 } }
+			}
+		}
+
+		remove_effect = {
+			
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+	CHI_begin_support_point_mil = { # 用武力保证忠诚
+		# 如果不能消灭东北人，这也是不能永久持续下去的。
+		icon = infiltrate_state
+		visible = {
+			country_exists = MAN
+			MAN = {
+				has_completed_focus = CSB_DongBei_play_with_minguo
+				NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+				NOT = { has_war_with = CHI }
+				has_variable = gonghedang_infilatrate_variable
+			}
+		}
+		cancel_if_not_visible = yes
+		cancel_trigger = { MAN = { infil_can_sub_5 = no } }
+		available = {	
+			#always = yes
+			NOT = { has_war_with = MAN }
+			country_exists = MAN
+			MAN = { infil_can_sub_5 = yes }
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			stability_factor = -0.1
+			war_support_factor = -0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 77
+		days_re_enable = 7
+	
+		cost = 25
+	
+		complete_effect = {
+			MAN = { gonghedang_support_reduce_5 = yes }
+			hidden_effect = {
+				MAN = { country_event = { id = ww1_dongbei.632 } }
+			}
+		}
+
+		remove_effect = {
+			
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+	CHI_begin_support_point_power = { # 用权力保证忠诚
+		# 如果不能消灭东北人，这也是不能永久持续下去的。
+		icon = infiltrate_state
+		visible = {
+			country_exists = MAN
+			MAN = {
+				has_completed_focus = CSB_DongBei_play_with_minguo
+				NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+				NOT = { has_war_with = CHI }
+				has_variable = gonghedang_infilatrate_variable
+			}
+		}
+		cancel_if_not_visible = yes
+		cancel_trigger = { MAN = { infil_can_sub_5 = no } }
+		available = {	
+			#always = yes
+			NOT = { has_war_with = MAN }
+			country_exists = MAN
+			MAN = { infil_can_sub_5 = yes }
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			political_power_factor = -0.1
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 98
+		days_re_enable = 7
+	
+		cost = 0
+	
+		complete_effect = {
+			MAN = { gonghedang_support_reduce_5 = yes }
+			hidden_effect = {
+				MAN = { country_event = { id = ww1_dongbei.633 } }
+			}
+		}
+
+		remove_effect = {
+			
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+	CHI_begin_support_point_propganda = { # 用宣传保证忠诚
+		# 如果不能消灭东北人，这也是不能永久持续下去的。
+		icon = infiltrate_state
+		visible = {
+			country_exists = MAN
+			MAN = {
+				has_completed_focus = CSB_DongBei_play_with_minguo
+				NOT = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+				NOT = { has_war_with = CHI }
+				has_variable = gonghedang_infilatrate_variable
+			}
+		}
+		cancel_if_not_visible = yes
+		cancel_trigger = { MAN = { infil_can_sub_5 = no } }
+		available = {	
+			#always = yes
+			NOT = { has_war_with = MAN }
+			country_exists = MAN
+			MAN = { infil_can_sub_5 = yes }
+		}
+
+		highlight_states = {
+			highlight_state_targets = {
+				
+			}
+		}
+		
+		modifier = {
+			
+		}
+		
+		#INFILTRATE_STATE_AI_WILL_DO 283
+		ai_will_do = {
+			base = 100
+		}
+		fire_only_once = no
+		days_remove = 63
+		days_re_enable = 7
+	
+		cost = 75
+	
+		complete_effect = {
+			MAN = { gonghedang_support_reduce_5 = yes }
+			hidden_effect = {
+				MAN = { country_event = { id = ww1_dongbei.634 } }
+			}
+		}
+
+		remove_effect = {
+			
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				add_political_power = 75
+			}
+		}
+	}
+}	
+
+
+

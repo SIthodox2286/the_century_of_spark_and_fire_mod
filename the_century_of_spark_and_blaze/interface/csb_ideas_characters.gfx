@@ -1,0 +1,65 @@
+spriteTypes = {
+
+	spriteType = {
+		name = GFX_portrait_Dongbei_Wuchuan
+		texturefile = "gfx/leaders/DongBei/Portrait_Dongbei_Wuchuan.dds"
+	}
+	
+	spriteType = {
+		name = GFX_portrait_Zhu_Hezhong
+		texturefile = "gfx/leaders/DongBei/Portrait_Zhu_Hezhong.png"
+	}
+	
+	spriteType = {
+		name = GFX_portrait_Zhang_Shaozeng
+		texturefile = "gfx/leaders/DongBei/Portrait_Zhang_shaozeng.dds"
+	}
+	
+	spriteType = {
+		name = GFX_portrait_Lan_Tianwei
+		texturefile = "gfx/leaders/DongBei/Portrait_Lan_Tianwei.png"
+	}
+	
+	spriteType = {
+		name = GFX_portrait_Dongbei_ye_sheng
+		texturefile = "gfx/leaders/DongBei/Portrait_DongBei_ye_sheng.png"
+	}
+	
+	spriteType = {
+		name = GFX_portrait_DongBei_wu_luzhen
+		texturefile = "gfx/leaders/DongBei/Portrait_DongBei_wu_luzhen.png"
+	}
+	
+	
+	
+	spriteType = { 
+		name = "GFX_idea_DongBei_Wuchuan" 
+		texturefile = "gfx/interface/ideas/DongBei/idea_DongBei_Wuchuan.png" 
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_DongBei_Zhu_Hezhong" 
+		texturefile = "gfx/interface/ideas/DongBei/idea_DongBei_Zhu_Hezhong.png" 
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_Dongbei_Zhang_Shaozeng" 
+		texturefile = "gfx/interface/ideas/DongBei/idea_DongBei_Zhang_Shaozeng.png" 
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_DongBei_Lan_Tianwei" 
+		texturefile = "gfx/interface/ideas/DongBei/idea_DongBei_Lan_Tianwei.png" 
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_Dongbei_ye_sheng" 
+		texturefile = "gfx/interface/ideas/DongBei/idea_DongBei_ye_sheng.png" 
+	}
+	
+	spriteType = { 
+		name = "GFX_idea_DongBei_wu_luzhen" 
+		texturefile = "gfx/interface/ideas/DongBei/idea_DongBei_wu_luzhen.png" 
+	}
+
+}

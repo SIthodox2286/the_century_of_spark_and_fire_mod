@@ -1,0 +1,136 @@
+#	Triggers to control if diplomatic actions are enabled:
+#		Format:
+#
+#		<diplomatic action tag>_enabled_trigger = {
+#			<trigger contents>
+#		}
+#
+#		ROOT is the country initiating the diplomatic action.
+#		FROM is the recipient or target of the diplomatic action.
+#
+#		Note:  For cleaner tooltips, it is recommended that you use
+#			if triggers within the enable triggers, and a single
+#			custom_trigger_tooltip trigger within each if trigger.
+#
+#		Example: (Germany is prevented from declaring war on the Soviet Union.)
+#
+#		DIPLOMACY_WAR_ENABLE_TRIGGER = {
+#			if = {
+#				limit = {
+#					tag = GER
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = PREVENT_GER_WAR_ON_SOV
+#					FROM = {
+#						NOT = {
+#							tag = SOV
+#						}
+#					}
+#				}
+#			}
+#		}
+
+# This specifically overrides the rule check as to whether or not you can guarantee other ideologies
+
+infil_can_add_1 = { # 支持度可以 + 1%
+	custom_trigger_tooltip = {
+		tooltip = infil_can_add_1.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.99
+			compare = less_than_or_equals
+		}
+	}
+}
+
+infil_can_add_5 = {
+	custom_trigger_tooltip = {
+		tooltip = infil_can_add_5.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.95
+			compare = less_than_or_equals
+		}
+	}
+}
+
+infil_can_add_10 = {
+	custom_trigger_tooltip = {
+		tooltip = infil_can_add_10.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.90
+			compare = less_than_or_equals
+		}
+	}
+}
+
+infil_can_sub_1 = { # 支持度可以 - 1%
+	custom_trigger_tooltip = {
+		tooltip = infil_can_sub_1.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.01
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+infil_can_sub_5 = {
+	custom_trigger_tooltip = {
+		tooltip = infil_can_sub_5.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.05
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+infil_can_sub_10 = {
+	custom_trigger_tooltip = {
+		tooltip = infil_can_sub_10.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.10
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+full_infil = {
+	custom_trigger_tooltip = {
+		tooltip = full_infil.tt.1
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 1.00
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+infil_larger_than_75 = {
+	custom_trigger_tooltip = {
+		tooltip = infil_larger_than_75.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.75
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+infil_larger_than_50 = {
+	custom_trigger_tooltip = {
+		tooltip = infil_larger_than_50.tt
+		check_variable = {
+			var = gonghedang_infilatrate_variable
+			value = 0.50
+			compare = greater_than_or_equals
+		}
+	}
+}
+
+
+
+

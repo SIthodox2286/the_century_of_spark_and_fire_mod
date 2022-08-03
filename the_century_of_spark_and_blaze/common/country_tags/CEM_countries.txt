@@ -1,0 +1,4 @@
+
+##################################### MOD: 东亚区/中原国家 East Asia/Zhongyuan Nations 
+SB1 = "countries/SiberiaNation.txt" # Siberia 西伯利亚
+#TR1 = "countries/Transoxiana.txt" # Transoxiana 河中

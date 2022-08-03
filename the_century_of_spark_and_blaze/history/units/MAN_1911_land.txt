@@ -1,0 +1,462 @@
+﻿division_template = {
+	name = "National Revolution Army"		# 国民革命军
+	division_names_group = MAN_INF_02
+	# 
+	regiments = {		
+		# 竖列 1
+		infantry = { x = 0 y = 0 }	# 
+		infantry = { x = 0 y = 1 }
+		artillery_brigade = { x = 0 y = 2 } 
+		# 竖列 2
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 1 y = 2 }
+		# 竖列 3
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		#
+	}
+	
+	support = {
+       	engineer = { x = 0 y = 0 }
+       	recon = { x = 0 y = 1 }
+		field_hospital = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Beiyang Zhengbian Juntuan"		# 整编新军
+	division_names_group = MAN_INF_01
+	# 
+	regiments = {		
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	
+	support = {
+       	recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Gemingdang" # 革命党民兵
+	division_names_group = MAN_GAR_01
+	# 
+	regiments = {		
+		# 竖列 1
+		infantry = { x = 0 y = 0 }	# 
+		
+		# 竖列 2
+		infantry = { x = 1 y = 0 }
+		
+		# 竖列 3
+		infantry = { x = 2 y = 0 }
+		
+		# 竖列 4
+		infantry = { x = 3 y = 0 }
+	}
+	
+	support = {
+       	
+	}
+}
+
+division_template = {
+	name = "Germanic Infantry" # 德械师	
+	division_names_group = MAN_INF_02
+	# 
+	regiments = {		
+		# 竖列 1
+		mountaineers = { x = 0 y = 0 }	# 
+		mountaineers = { x = 0 y = 1 }	# 
+		# 竖列 2
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		# 竖列 3
+		mountaineers = { x = 2 y = 0 }
+		mountaineers = { x = 2 y = 1 }
+	}
+	
+	support = {
+       	engineer = { x = 0 y = 0 }
+       	recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+		field_hospital = { x = 0 y = 3 }
+		anti_air = { x = 0 y = 4 }
+		anti_tank = { x = 0 y = 5 }
+	}
+}
+
+division_template = {
+	name = "Qi Bing Tuan" # 骑兵团
+	division_names_group = MAN_CAV_01
+	# 
+	regiments = {		
+		# 竖列 1
+		cavalry = { x = 0 y = 0 }	# 
+		cavalry = { x = 0 y = 1 }
+		# 竖列 2
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		
+	}
+	
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Piao Qi Bing Shi" # 骠骑兵师
+	division_names_group = MAN_MOT_01
+	# 
+	regiments = {		
+		# 竖列 1
+		motorized = { x = 0 y = 0 }	# 
+		motorized = { x = 0 y = 1 }
+
+		# 竖列 2
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+
+		# 竖列 3
+		armored_car = { x = 2 y = 0 }
+	}
+	
+	support = {
+		engineer = { x = 0 y = 0 }
+       	recon = { x = 0 y = 1 }
+		field_hospital = { x = 0 y = 2 }
+	}
+}
+
+### OOB ###
+units = {
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12482
+		division_template = "Piao Qi Bing Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 6811
+		division_template = "Piao Qi Bing Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12412
+		division_template = "Qi Bing Tuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 12485
+		division_template = "Qi Bing Tuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 10503
+		division_template = "Qi Bing Tuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 10503
+		division_template = "Qi Bing Tuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 11862
+		division_template = "Germanic Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 11862
+		division_template = "National Revolution Army"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 10433
+		division_template = "Germanic Infantry"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 4572
+		division_template = "National Revolution Army"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 4572
+		division_template = "National Revolution Army"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3913
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 3913
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.9
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 916
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 3913
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7894
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 10612
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 7832
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 10675
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+	division = { # 1
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 4572
+		division_template = "Beiyang Zhengbian Juntuan"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.8
+
+	}
+	
+}
+
+
+### Air Forces ###
+# NONE
+
+
+### Equipments ###
+instant_effect = {
+	# GIVEN WHEN FENG YUXIANG JOINS COMMIES
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_0
+		amount = 10000
+		producer = RUS
+	}
+	add_equipment_to_stockpile = {
+		type = support_equipment_1
+		amount = 5000
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_1
+		amount = 2500
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = fighter_equipment_0
+		amount = 300
+		producer = GER
+	}
+	
+	#
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "MAN"
+		}
+		requested_factories = 5
+		progress = 0.55
+		efficiency = 100
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = armored_car_equipment_1
+			creator = "MAN"
+		}
+		requested_factories = 3
+		progress = 0.55
+		efficiency = 80
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = motorized_equipment_1
+			creator = "MAN"
+		}
+		requested_factories = 1
+		progress = 0.9
+		efficiency = 80
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "MAN"
+		}
+		requested_factories = 1
+		progress = 0.9
+		efficiency = 80
+	}
+	
+	add_equipment_production = {
+		equipment = {
+			type = fighter_equipment_0
+			creator = "MAN"
+		}
+		requested_factories = 3
+		progress = 0.25
+		efficiency = 80
+	}
+	
+}

@@ -1,0 +1,45 @@
+﻿l_english:
+ #INS_subject:0 "$OVERLORDADJ$属东印度"
+ #INS_subject_DEF:0 "$OVERLORDADJ$属东印度"
+ #INS_subject_ADJ:0 "$OVERLORDADJ$属东印度"
+ DongBei_REP:0 "中国革命委员会"
+ DongBei_REP_DEF:0 "中国革命委员会"
+ DongBei_REP_ADJ:0 "共和党"
+ DongBei_CHI_united_communism:0 "中华人民共和国"
+ DongBei_CHI_united_communism_DEF:0 "中华人民共和国"
+ DongBei_CHI_united_communism_ADJ:0 "中国"
+ 
+ SB1_baohuanghui:0 "沙皇保护会"
+ SB1_yuandong_gonghedang:0 "远东布尔什维克"
+ SB1_shehui_gemingdang_1:0 "社会革命党（右翼）"
+ SB1_shehui_gemingdang_2:0 "社会革命党（左翼）"
+ 
+ MAN_communism_1:2 "东北革命委员会"
+ MAN_communism_1_DEF:1 "东北革命委员会"
+ 
+ MAN_communism_2:2 "中国革命委员会"
+ MAN_communism_2_DEF:1 "中国革命委员会"
+ 
+ FNG_neutrality_1:2 "东三省总督府"
+ FNG_neutrality_1_DEF:1 "东三省总督府"
+ 
+ SB1_fascism:0 "滨海军政府"
+ SB1_fascism_DEF:0 "滨海军政府"
+ SB1_fascism_ADJ:0 "滨海军政府"
+ SB1_democratic:0 "滨海临时政府"
+ SB1_democratic_DEF:0 "滨海临时政府"
+ SB1_democratic_ADJ:0 "滨海临时政府"
+ SB1_neutrality:1 "沙皇俄国远东省"
+ SB1_neutrality_DEF:1 "沙皇俄国远东省"
+ SB1_neutrality_ADJ:0 "沙皇俄国远东省"
+ SB1_communism:0 "远东临时政府"
+ SB1_communism_DEF:0 "远东临时政府"
+ SB1_communism_ADJ:0 "远东临时政府"
+ SB1:0 "滨海"
+ SB1_DEF:0 "滨海"
+ SB1_ADJ:0 "滨海"
+ 
+ KOR_zizhi_zhengfu:0 "韩地自治政府"
+ KOR_zizhi_zhengfu_DEF:0 "韩国"
+ KOR_zizhi_zhengfu_ADJ:0 "韩国"
+ 

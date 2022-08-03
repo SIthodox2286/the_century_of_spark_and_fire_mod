@@ -1,0 +1,305 @@
+characters={
+	# MOD
+	SB1_sergey_novafu={
+		name=SB1_sergey_novafu
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_SB1_sergey_novafu.dds"
+				#small="gfx/interface/ideas/DongBei/idea_DongBei_zhou_shumo.png"
+			}
+		}
+		country_leader={
+			ideology=market_socialism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander={
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			
+		}
+	}
+	SB1_provincial_council={
+		name=SB1_provincial_council
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_SB1_provincial_soviet_council.dds"
+				#small="gfx/interface/ideas/DongBei/idea_DongBei_zhou_shumo.png"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SB1_ivan_morsolinsky={
+		name=SB1_ivan_morsolinsky
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_SB1_ivan_morsolinsky.dds"
+				#small="gfx/interface/ideas/DongBei/idea_DongBei_zhou_shumo.png"
+			}
+		}
+		country_leader={
+			ideology=stratocracy
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+			expire="1965.1.1.1"
+			id=-1
+			
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			
+		}
+	}
+	SB1_representitive_norvasky={ # 
+		# 议会代表诺瓦斯基
+		name="SB1_representitive_norvasky"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_norvasky.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SB1_representitive_norvasky
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				social_reformer
+			}
+			#cost  = 75.000
+		}
+	}
+	SB1_representitive_rodesky={ # 
+		# 议会代表罗德斯基
+		name="SB1_representitive_rodesky"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_rodesky.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SB1_representitive_rodesky
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				syncretic_revanchist
+			}
+			#cost  = 75.000
+		}
+	}
+	SB1_representitive_bolotnikov={ # 
+		# 议会代表普洛特尼科夫
+		name="SB1_representitive_bolotnikov"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_bolotnikov.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SB1_representitive_bolotnikov
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				silent_workhorse
+			}
+			#cost  = 75.000
+		}
+	}
+	SB1_representitive_alexa={ # 
+		# 议会代表阿列克谢
+		name="SB1_representitive_alexa"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_alexa.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SB1_representitive_alexa
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				financial_expert
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	SB1_representitive_general_1={ # 
+		# 阿兰·彼得诺维奇
+		name="SB1_representitive_general_1"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_general_1.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SB1_representitive_general_1
+			allowed = {
+				original_tag  = SB1
+			
+			}
+			available = {
+			
+			}
+			traits = {
+				army_chief_drill_2 
+			}
+			ai_will_do = {
+				factor = 10.000
+			}
+		}
+	}
+	SB1_representitive_general_2={ # 
+		# 共和党空军顾问
+		name="SB1_representitive_general_2"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_general_2.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SB1_representitive_general_2
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				country_exists = MAN
+				NOT = { has_war_with = MAN }
+				MAN = {
+					is_subject = no
+				}
+				
+			}
+			traits = {
+				air_strategic_bombing_2
+			}
+			#cost  = 75.000
+		}
+	}
+	SB1_representitive_general_3={ # 
+		# 海军顾问团
+		name="SB1_representitive_general_3"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_general_3.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = SB1_representitive_general_3
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				navy_chief_old_guard
+			}
+			#cost  = 75.000
+		}
+	}
+	SB1_representitive_general_4={ # 
+		# 陆军顾问团
+		name="SB1_representitive_general_4"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_general_4.dds"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SB1_representitive_general_4
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				military_theorist
+			}
+			#cost  = 75.000
+		}
+	}
+	SB1_representitive_general_5={ # 
+		# 陆军军官团
+		name="SB1_representitive_general_5"
+		portraits={
+			civilian={
+				#large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/SB1/idea_SB1_representitive_general_5.dds"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = SB1_representitive_general_5
+			allowed = {
+				original_tag = SB1
+				
+			}
+			available = {
+				
+			}
+			traits = {
+				mass_assault_expert
+			}
+			#cost  = 75.000
+		}
+	}
+}

@@ -1,0 +1,107 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+CE_local_oppositions_blue = { # 地方实力派的反抗
+	enable = { always = yes }
+
+	icon = GFX_modifiers_conscription_exemptions_granted
+	
+	local_factories = -0.15
+	state_resources_factor = -0.25
+}
+
+CE_local_oppositions_black = { # 地方军阀的反抗
+	enable = { always = yes }
+
+	icon = GFX_modifiers_conscription_exemptions_granted
+	
+	local_factories = -0.15
+	local_supplies = -0.25
+}
+
+CE_local_oppositions_red = { # 赤色游击队活动
+	enable = { always = yes }
+
+	icon = GFX_youji
+	
+	local_factories = -0.15
+	recruitable_population_factor = -0.25
+	
+}
+
+CSB_korean_minzu_zizhi_qu = { # 朝鲜人民自治政府
+	enable = { always = yes }
+
+	icon = GFX_youji
+	
+	local_manpower = -0.5
+	local_resources = -0.5
+	local_building_slots_factor = 0.25
+}
+
+CE_minner_strike = { # 矿业停摆
+	enable = { always = yes }
+
+	icon = GFX_modifiers_striking_worker
+	
+	local_resources_factor = -0.5
+}
+
+CPC_propaganda_warfare = { # 反对征兵
+	enable = { always = yes }
+
+	icon = GFX_modifiers_striking_worker
+	
+	recruitable_population_factor = -0.5
+}
+
+CPC_communists_control = { # 遭到完全渗透
+	icon = GFX_modifiers_cpc_icon
+	
+	starting_compliance = 0.5
+	local_intel_to_enemies = 0.5
+	local_factories = -0.5
+	recruitable_population_factor = -0.8
+}
+KMT_tufei = { # 土匪猖獗
+	enable = { always = yes }
+	icon = GFX_tufei
+	
+	local_intel_to_enemies = 0.5
+	local_building_slots_factor = -0.3
+	recruitable_population_factor = -0.5
+	local_resources = -0.4
+	
+}
+
+KMT_minzhupai = { # 民主派倒蒋宣传
+	enable = { always = yes }
+	icon = GFX_daojiang
+	
+	resistance_growth = 0.6
+	mobilization_speed = -0.3
+	recruitable_population_factor = -0.1
+}

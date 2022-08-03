@@ -1,0 +1,267 @@
+DongBei_xinhai_decisions = {
+	DongBei_mission_japan_interference = {
+		#
+		icon = generic_nationalism
+		days_mission_timeout = 15
+		activation = {
+			has_global_flag = dongbei_xinhai_revolution_flag
+		}
+		allowed = {
+			always = no
+		}
+		available = {
+			NOT = { country_exists = FNG }
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		is_good = no
+		complete_effect = {
+			set_global_flag = gonghedang_revolution_victory
+			add_stability = 0.1
+			JAP = {
+				country_event = {
+					id = ww1_dongbei.701
+				}
+			}
+			country_event = {
+				id = ww1_dongbei.10
+			}
+		}
+		timeout_effect = {
+			set_country_flag = japan_attack_flag
+			
+			JAP = {
+				country_event = {
+					id = ww1_dongbei.3
+				}
+			}
+		}
+	}
+	
+	DongBei_mission_defend_revolution = {
+		# 第一次日中冲突
+		icon = generic_nationalism
+		days_mission_timeout = 70
+		activation = {
+			has_global_flag = jap_interfer_dongbei_revolution
+			original_tag = MAN
+			has_global_flag = xinhai_revolution
+			has_country_flag = japan_attack_flag
+			NOT = { has_country_flag = japan_china_conflict_1_flag }
+		}
+		allowed = {
+			always = no
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = jap_mission_about_the_revolution_csb_tt
+				NOT = { 
+					328 = {
+						is_controlled_by = JAP
+					}
+				}
+			}
+			OR = {
+				NOT = { has_war_with = FNG }
+				NOT = { has_war_with = JAP }
+				744 = { 
+					is_controlled_by = ROOT
+				}
+				800 = { 
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		visible = {
+			original_tag = MAN
+			has_war_with = JAP
+		}
+		fire_only_once = yes
+		is_good = no
+		cancel_if_not_visible = yes
+		complete_effect = {
+			clr_country_flag = japan_attack_flag
+			set_country_flag = japan_china_conflict_1_flag
+			JAP = {
+				hidden_effect = {
+					white_peace = ROOT
+				}
+				set_truce = {
+					target = ROOT
+					days = 730
+				}
+			}
+			hidden_effect = {
+				set_truce = {
+					target = JAP
+					days = 730
+				}
+			}
+			MAN = {
+				country_event = {
+					id = ww1_dongbei.6
+				}
+			}
+			
+		}
+		timeout_effect = {
+			clr_country_flag = japan_attack_flag
+			set_country_flag = japan_china_conflict_1_flag
+			JAP = {
+				white_peace = ROOT
+			}
+			MAN = {
+				country_event = {
+					id = ww1_dongbei.4
+				}
+			}
+			effect_tooltip = {
+				JAP = {
+					country_event = {
+						id = ww1_dongbei.5
+					}
+				}
+			}
+		}
+	}
+	
+	DongBei_mission_defend_revolution_jap = {
+		# 第一次日中冲突
+		icon = generic_nationalism
+		days_mission_timeout = 70
+		activation = {
+			has_global_flag = jap_interfer_dongbei_revolution
+			original_tag = JAP
+			has_global_flag = xinhai_revolution
+			#has_country_flag = japan_attack_flag
+			NOT = { has_country_flag = japan_china_conflict_1_flag }
+		}
+		allowed = {
+			always = no
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = csb_defend_dalian_and_korea_tooltip_tt
+				744 = { 
+					is_controlled_by = ROOT
+				}
+				800 = { 
+					is_controlled_by = ROOT
+				}
+			}
+			OR = {
+				NOT = { has_war_with = MAN }
+				328 = { 
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		visible = {
+			original_tag = JAP
+			has_war_with = MAN
+		}
+		fire_only_once = yes
+		is_good = no
+		cancel_if_not_visible = yes
+		complete_effect = {
+			#clr_country_flag = japan_attack_flag
+			set_country_flag = japan_china_conflict_1_flag
+			if = {
+				limit = {
+					country_exists = MAN
+				}
+				MAN = {
+					white_peace = ROOT
+				}
+				MAN = {
+					country_event = {
+						id = ww1_dongbei.8
+					}
+				}
+				JAP = {
+					country_event = {
+						id = ww1_dongbei.9
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { country_exists = MAN }
+				}
+				add_political_power = 150
+			}
+		}
+		timeout_effect = {
+			#clr_country_flag = japan_attack_flag
+			set_country_flag = japan_china_conflict_1_flag
+			JAP = {
+				country_event = {
+					id = ww1_dongbei.5
+				}
+			}
+			effect_tooltip = {
+				MAN = {
+					country_event = {
+						id = ww1_dongbei.4
+					}
+				}
+			}
+		}
+	}
+	
+	DongBei_mission_dongbei_war_cost_crisis = {
+		# 战债危机：
+		icon = generic_nationalism
+		days_mission_timeout = 299
+		activation = {
+			has_idea = DongBei_idea_jap_mobilization
+		}
+		allowed = {
+			always = no
+		}
+		available = {
+			has_war = no
+		}
+		visible = {
+			always = yes
+		}
+		fire_only_once = yes
+		is_good = no
+		cancel_if_not_visible = yes
+		complete_effect = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = DongBei_idea_jap_mobilization
+					add_idea = DongBei_idea_jap_war_crisis_1
+				}
+			}
+			hidden_effect = {
+				country_event = { id = ww1_dongbei.601 }
+				remove_ideas = DongBei_idea_jap_mobilization
+				add_timed_idea = {
+					idea = DongBei_idea_jap_war_crisis_1
+					days = 300
+				}
+			}
+		}
+		timeout_effect = {
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = DongBei_idea_jap_mobilization
+					add_idea = DongBei_idea_jap_war_crisis_2
+				}
+			}
+			hidden_effect = {
+				country_event = { id = ww1_dongbei.601 }
+				remove_ideas = DongBei_idea_jap_mobilization
+				add_timed_idea = {
+					idea = DongBei_idea_jap_war_crisis_2
+					days = 300
+				}
+			}
+		}
+	}
+	
+}

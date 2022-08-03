@@ -1,0 +1,475 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_focus_wendingguoti"
+		texturefile = "gfx/focus/focus_wendingguoti.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_jiechubaojin"
+		texturefile = "gfx/focus/focus_jiechubaojin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_mijia"
+		texturefile = "gfx/focus/focus_mijia.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_fuxingshe"
+		texturefile = "gfx/focus/focus_fuxingshe.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhongyangyinhang"
+		texturefile = "gfx/focus/focus_zhongyangyinhang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_suzhengjiaoqu"
+		texturefile = "gfx/focus/focus_suzhengjiaoqu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_saomang"
+		texturefile = "gfx/focus/focus_saomang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_minzhuyundong"
+		texturefile = "gfx/focus/focus_minzhuyundong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_chongshen"
+		texturefile = "gfx/focus/focus_chongshen.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dongtinghu"
+		texturefile = "gfx/focus/focus_dongtinghu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dangwei"
+		texturefile = "gfx/focus/focus_dangwei.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhanshiguozhai"
+		texturefile = "gfx/focus/focus_zhanshiguozhai.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_jieyan"
+		texturefile = "gfx/focus/focus_jieyan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_gangwu"
+		texturefile = "gfx/focus/focus_gangwu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_xunzheng"
+		texturefile = "gfx/focus/focus_xunzheng.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_changan"
+		texturefile = "gfx/interface/goals/KMT/focus_changan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_databu"
+		texturefile = "gfx/focus/focus_databu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sihui"
+		texturefile = "gfx/focus/focus_sihui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_shichangtiaokong"
+		texturefile = "gfx/focus/focus_shichangtiaokong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qingxizhongzuoyi"
+		texturefile = "gfx/focus/focus_qingxizhongzuoyi.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qingxiziben"
+		texturefile = "gfx/focus/focus_qingxiziben.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_daxiaotiaozhanzheng"
+		texturefile = "gfx/focus/focus_daxiaotiaozhanzheng.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhanshizhengfu"
+		texturefile = "gfx/focus/focus_zhanshizhengfu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhengliangling"
+		texturefile = "gfx/focus/focus_zhengliangling.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sulian"
+		texturefile = "gfx/focus/focus_sulian.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_tanpan"
+		texturefile = "gfx/focus/focus_tanpan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sanminyitong"
+		texturefile = "gfx/focus/focus_sanminyitong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sanminlu"
+		texturefile = "gfx/focus/focus_sanminlu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_quzhudalu"
+		texturefile = "gfx/focus/focus_quzhudalu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qiongzhou"
+		texturefile = "gfx/focus/focus_qiongzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qianxian"
+		texturefile = "gfx/focus/focus_qianxian.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_nanyangminzuu"
+		texturefile = "gfx/focus/focus_nanyangminzuu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_kangwo"
+		texturefile = "gfx/focus/focus_kangwo.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_kangwowenxue"
+		texturefile = "gfx/focus/focus_kangwowenxue.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_junweihui"
+		texturefile = "gfx/focus/focus_junweihui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_gongjun"
+		texturefile = "gfx/focus/focus_gongjun.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_gongchanlu"
+		texturefile = "gfx/focus/focus_gongchanlu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dadaodui"
+		texturefile = "gfx/focus/focus_dadaodui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_xiangyang"
+		texturefile = "gfx/focus/focus_xiangyang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_jixu"
+		texturefile = "gfx/focus/focus_jixu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dongbei"
+		texturefile = "gfx/focus/focus_dongbei.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_xijiang"
+		texturefile = "gfx/focus/focus_xijiang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhongyuan"
+		texturefile = "gfx/focus/focus_zhongyuan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dahe"
+		texturefile = "gfx/focus/focus_dahe.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_huadong"
+		texturefile = "gfx/focus/focus_huadong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_liangguang"
+		texturefile = "gfx/focus/liangguang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_lianghu"
+		texturefile = "gfx/focus/focus_lianghu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_menggu"
+		texturefile = "gfx/focus/focus_menggu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dongnan"
+		texturefile = "gfx/focus/focus_dongnan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_KMT_dangdaihui"
+		texturefile = "gfx/interface/goals/KMT/focus_KMT_dangdaihui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_KMT_dongfangzhanzheng"
+		texturefile = "gfx/interface/goals/KMT/focus_KMT_dongfangzhanzheng.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_xinzhongguolu"
+		texturefile = "gfx/focus/focus_xinzhongguolu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qiuyehaitang"
+		texturefile = "gfx/focus/focus_qiuyehaitang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sunke"
+		texturefile = "gfx/focus/focus_sunke.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_wangjingwei"
+		texturefile = "gfx/focus/focus_wangjingwei.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dongyuangaige"
+		texturefile = "gfx/focus/dongyuangaige.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ditan"
+		texturefile = "gfx/focus/ditan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zongjiekongzhan"
+		texturefile = "gfx/focus/zongjiekongzhan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_youshihuoli"
+		texturefile = "gfx/focus/youshihuoli.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_kongjunxunlian"
+		texturefile = "gfx/focus/kongjunxunlian.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_kongjunjuesheng"
+		texturefile = "gfx/focus/kongjuesheng.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_yingshi"
+		texturefile = "gfx/focus/zhanying.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_yunlan"
+		texturefile = "gfx/focus/yunlan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_wunianjihua"
+		texturefile = "gfx/focus/wunianjihua.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhupeide"
+		texturefile = "gfx/focus/zhupeide.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_lizongren"
+		texturefile = "gfx/focus/lizongren.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_fangyuzhanzheng"
+		texturefile = "gfx/focus/fangyuzhanzheng.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_jungong"
+		texturefile = "gfx/focus/jungong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_juezhan"
+		texturefile = "gfx/focus/juezhan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhongtong"
+		texturefile = "gfx/focus/zhongtong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhengbian"
+		texturefile = "gfx/focus/zhengbian.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zheng"
+		texturefile = "gfx/focus/zheng.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhanche"
+		texturefile = "gfx/focus/zhanche.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhachejihua"
+		texturefile = "gfx/focus/zhachejihua.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zaojian"
+		texturefile = "gfx/focus/zaojian.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_yiligongye"
+		texturefile = "gfx/focus/yiligongye.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_yanyun"
+		texturefile = "gfx/focus/yanyun.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_xibeihedian"
+		texturefile = "gfx/focus/xibeihedian.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_wuda"
+		texturefile = "gfx/focus/wuda.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_tudi"
+		texturefile = "gfx/focus/tudi.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_tianluodiwang"
+		texturefile = "gfx/focus/tianluodiwang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_tielu"
+		texturefile = "gfx/focus/tielu.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_tianjin"
+		texturefile = "gfx/focus/tianjin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_tezhongbing"
+		texturefile = "gfx/focus/tezhongbing.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_songjiang"
+		texturefile = "gfx/focus/songjiang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_shuishixuetang"
+		texturefile = "gfx/focus/shuishixuetang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_shuxuejia"
+		texturefile = "gfx/focus/shuxuejia.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_shengchan"
+		texturefile = "gfx/focus/shengchan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sanyang"
+		texturefile = "gfx/focus/sanyang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_sanminzhuyizhengwei"
+		texturefile = "gfx/focus/sanminzhuyizhengwei.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qinjin"
+		texturefile = "gfx/focus/qinjin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_qianting"
+		texturefile = "gfx/focus/qianting.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_peixun"
+		texturefile = "gfx/focus/peixun.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_nengyuan"
+		texturefile = "gfx/focus/nengyuan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_nanfang"
+		texturefile = "gfx/focus/nanfang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_mingrijiandui"
+		texturefile = "gfx/focus/mingrijiandui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_lianzufang"
+		texturefile = "gfx/focus/lianzufang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_zhengheliangguang"
+		texturefile = "gfx/focus/focus_zhengheliangguang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_kaifa"
+		texturefile = "gfx/focus/kaifa.dds"
+	}spriteType = {
+		name = "GFX_focus_kaiensi"
+		texturefile = "gfx/focus/kaiensi.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_juntong"
+		texturefile = "gfx/focus/juntong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_jingjifanrong"
+		texturefile = "gfx/focus/jingjifanrong.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_jiangzhe"
+		texturefile = "gfx/focus/jiangzhe.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_huoliyouhua"
+		texturefile = "gfx/focus/huoliyouhua.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_hujianbiandui"
+		texturefile = "gfx/focus/hujianbiandui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_hangzhou"
+		texturefile = "gfx/focus/hangzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_guominhaijun"
+		texturefile = "gfx/focus/guominhaijun.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_guomin"
+		texturefile = "gfx/focus/guomin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_gengxin"
+		texturefile = "gfx/focus/gengxin.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_fulishehui"
+		texturefile = "gfx/focus/fulishehui.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_ming"
+		texturefile = "gfx/focus/focus_ming.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_chanliang"
+		texturefile = "gfx/focus/chanliang.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_danyao"
+		texturefile = "gfx/focus/danyao.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dianzizhan"
+		texturefile = "gfx/focus/dianzizhan.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_dangjun"
+		texturefile = "gfx/focus/dangjun.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_xinxi"
+		texturefile = "gfx/focus/xinxi.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_longtengjiuzhou"
+		texturefile = "gfx/focus/longtengjiuzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_muhuang"
+		texturefile = "gfx/focus/muhuang.dds"
+	}
+	
+}

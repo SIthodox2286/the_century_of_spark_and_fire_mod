@@ -1,0 +1,1246 @@
+# 还款风波
+csb_increase_dept_idea_rus = {
+	if = {
+		limit = {
+			country_exists = RUS
+			NOT = { RUS = { has_government = communism } }
+			NOT = { has_global_flag = russian_revolution }
+		}
+		if = {
+			limit = { 
+				has_idea = DongBei_idea_russian_debt_5 
+				NOT = {
+					has_idea = DongBei_idea_russian_debt_crisis
+					has_decision = DongBei_mission_russian_debt_crisis
+				}
+			}
+			activate_mission = DongBei_mission_russian_debt_crisis
+		}
+		else_if = {
+			limit = { 
+				has_idea = DongBei_idea_russian_debt_5 
+				OR = {
+					has_idea = DongBei_idea_russian_debt_crisis
+					has_decision = DongBei_mission_russian_debt_crisis
+				}
+			}
+			add_political_power = -100
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_4 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_4
+				add_idea = DongBei_idea_russian_debt_5
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_3 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_3
+				add_idea = DongBei_idea_russian_debt_4
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_2 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_2
+				add_idea = DongBei_idea_russian_debt_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_1 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_1
+				add_idea = DongBei_idea_russian_debt_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt
+				add_idea = DongBei_idea_russian_debt_1
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_0 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_0
+				add_idea = DongBei_idea_russian_debt
+			}
+		}
+		else = {
+			custom_effect_tooltip = no_more_dept_tt_csb
+		}	
+	}
+	else = {
+		custom_effect_tooltip = nomore_rus_with_debt_tt
+	}
+}
+
+csb_decrease_dept_idea_rus = {
+	if = {
+		limit = {
+			country_exists = RUS
+			NOT = { RUS = { has_government = communism } }
+			NOT = { has_global_flag = russian_revolution }
+		}
+		if = {
+			limit = { has_idea = DongBei_idea_russian_debt_0 }
+			if = {
+				limit = {
+					has_completed_focus = CSB_DongBei_clear_international_debt
+				}
+				remove_ideas = DongBei_idea_russian_debt_0
+			}
+			else = {
+				custom_effect_tooltip = lowest_possible_level_debt_tt.rus
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt
+				add_idea = DongBei_idea_russian_debt_0
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_1 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_1
+				add_idea = DongBei_idea_russian_debt
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_2 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_2
+				add_idea = DongBei_idea_russian_debt_1
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_3 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_3
+				add_idea = DongBei_idea_russian_debt_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_4 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_4
+				add_idea = DongBei_idea_russian_debt_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_russian_debt_5 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_debt_5
+				add_idea = DongBei_idea_russian_debt_4
+			}
+		}
+		else = {
+			custom_effect_tooltip = no_more_dept_tt_csb
+		}	
+	}
+	else = {
+		custom_effect_tooltip = nomore_rus_with_debt_tt
+	}
+}
+
+csb_increase_dept_idea_usa = {
+	if = {
+		limit = {
+			country_exists = USA
+			NOT = { USA = { has_government = communism } }
+		}
+		if = {
+			limit = { 
+				has_idea = DongBei_idea_american_debt_5 
+				NOT = {
+					has_idea = DongBei_idea_american_debt_crisis
+					has_decision = DongBei_mission_american_debt_crisis
+				}
+			}
+			activate_mission = DongBei_mission_american_debt_crisis
+		}
+		else_if = {
+			limit = { 
+				has_idea = DongBei_idea_american_debt_5 
+				OR = {
+					has_idea = DongBei_idea_american_debt_crisis
+					has_decision = DongBei_mission_american_debt_crisis
+				}
+			}
+			add_political_power = -100
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_4 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_4
+				add_idea = DongBei_idea_american_debt_5
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_3 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_3
+				add_idea = DongBei_idea_american_debt_4
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_2 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_2
+				add_idea = DongBei_idea_american_debt_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_1 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_1
+				add_idea = DongBei_idea_american_debt_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt
+				add_idea = DongBei_idea_american_debt_1
+			}
+		}
+		else = {
+			custom_effect_tooltip = no_more_dept_tt_csb
+		}	
+	}
+	else = {
+		custom_effect_tooltip = nomore_usa_with_debt_tt
+	}
+}
+
+csb_decrease_dept_idea_usa = {
+	if = {
+		limit = {
+			country_exists = USA
+			NOT = { USA = { has_government = communism } }
+		}
+		if = {
+			limit = { has_idea = DongBei_idea_american_debt }
+			#remove_idea = DongBei_idea_american_debt
+			if = {
+				limit = {
+					has_completed_focus = CSB_DongBei_clear_international_debt
+				}
+				remove_ideas = DongBei_idea_american_debt
+			}
+			else = {
+				custom_effect_tooltip = lowest_possible_level_debt_tt.usa
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_1 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_1
+				add_idea = DongBei_idea_american_debt
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_2 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_2
+				add_idea = DongBei_idea_american_debt_1
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_3 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_3
+				add_idea = DongBei_idea_american_debt_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_4 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_4
+				add_idea = DongBei_idea_american_debt_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_american_debt_5 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_american_debt_5
+				add_idea = DongBei_idea_american_debt_4
+			}
+		}
+		else = {
+			custom_effect_tooltip = no_more_dept_tt_csb
+		}	
+	}
+	else = {
+		custom_effect_tooltip = nomore_usa_with_debt_tt
+	}
+}
+
+csb_increase_dept_idea_ger = {
+	if = {
+		limit = {
+			country_exists = GER
+			NOT = { GER = { has_government = communism } }
+		}
+		if = {
+			limit = { 
+				has_idea = DongBei_idea_german_debt_5 
+				NOT = {
+					has_idea = DongBei_idea_german_debt_crisis
+					has_decision = DongBei_mission_german_debt_crisis
+				}
+			}
+			activate_mission = DongBei_mission_german_debt_crisis
+		}
+		else_if = {
+			limit = { 
+				has_idea = DongBei_idea_german_debt_5 
+				OR = {
+					has_idea = DongBei_idea_german_debt_crisis
+					has_decision = DongBei_mission_german_debt_crisis
+				}
+			}
+			add_political_power = -100
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_4 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_4
+				add_idea = DongBei_idea_german_debt_5
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_3 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_3
+				add_idea = DongBei_idea_german_debt_4
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_2 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_2
+				add_idea = DongBei_idea_german_debt_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_1 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_1
+				add_idea = DongBei_idea_german_debt_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt
+				add_idea = DongBei_idea_german_debt_1
+			}
+		}
+		else = {
+			custom_effect_tooltip = no_more_dept_tt_csb
+		}	
+	}
+	else = {
+		custom_effect_tooltip = nomore_ger_with_debt_tt
+	}
+}
+
+csb_decrease_dept_idea_ger = {
+	if = {
+		limit = {
+			country_exists = GER
+			NOT = { GER = { has_government = communism } }
+		}
+		if = {
+			limit = { has_idea = DongBei_idea_german_debt }
+			#remove_idea = DongBei_idea_german_debt
+			if = {
+				limit = {
+					has_completed_focus = CSB_DongBei_clear_international_debt
+				}
+				remove_ideas = DongBei_idea_german_debt
+			}
+			else = {
+				custom_effect_tooltip = lowest_possible_level_debt_tt.ger
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_1 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_1
+				add_idea = DongBei_idea_german_debt
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_2 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_2
+				add_idea = DongBei_idea_german_debt_1
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_3 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_3
+				add_idea = DongBei_idea_german_debt_2
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_4 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_4
+				add_idea = DongBei_idea_german_debt_3
+			}
+		}
+		else_if = {
+			limit = { has_idea = DongBei_idea_german_debt_5 }
+			swap_ideas = {
+				remove_idea = DongBei_idea_german_debt_5
+				add_idea = DongBei_idea_german_debt_4
+			}
+		}
+		else = {
+			custom_effect_tooltip = no_more_dept_tt_csb
+		}	
+	}
+	else = {
+		custom_effect_tooltip = nomore_ger_with_debt_tt
+	}
+}
+
+csb_agricultural_industry_swap = {
+	if = {
+		limit = { has_idea = DongBei_idea_agricultural_industry_3 }
+		
+		swap_ideas = {
+			remove_idea = DongBei_idea_agricultural_industry_3
+			add_idea = DongBei_idea_agricultural_industry_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = DongBei_idea_agricultural_industry_2 }
+		
+		swap_ideas = {
+			remove_idea = DongBei_idea_agricultural_industry_2
+			add_idea = DongBei_idea_agricultural_industry_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = DongBei_idea_agricultural_industry_1 }
+		
+		swap_ideas = {
+			remove_idea = DongBei_idea_agricultural_industry_1
+			add_idea = DongBei_idea_agricultural_industry_2
+		}
+	}
+	else_if = {
+		limit = { 
+			NOT = {
+				has_idea = DongBei_idea_agricultural_industry_1
+				has_idea = DongBei_idea_agricultural_industry_2
+				has_idea = DongBei_idea_agricultural_industry_3
+				has_idea = DongBei_idea_agricultural_industry_4
+			}
+		}
+		
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = DongBei_idea_agricultural_industry_1
+				add_idea = DongBei_idea_agricultural_industry_2
+			}
+		}
+	}
+	else = {
+		add_manpower = 50000
+	}
+}
+
+# 共和党之支持度加减法
+gonghedang_support_add_1 = { # +1%
+	add_to_variable = {
+		gonghedang_infilatrate_variable = 0.01
+		tooltip = gonghedang_infilatrate_variable_add_1
+	}
+}
+
+gonghedang_support_reduce_1 = { # -1%
+	subtract_from_variable = {
+		gonghedang_infilatrate_variable = 0.01
+		tooltip = gonghedang_infilatrate_variable_sub_1
+	}
+}
+
+gonghedang_support_add_5 = { # +5%
+	add_to_variable = {
+		gonghedang_infilatrate_variable = 0.05
+		tooltip = gonghedang_infilatrate_variable_add_5
+	}
+}
+
+gonghedang_support_reduce_5 = { # -5%
+	subtract_from_variable = {
+		gonghedang_infilatrate_variable = 0.05
+		tooltip = gonghedang_infilatrate_variable_sub_5
+	}
+}
+
+gonghedang_support_add_10 = { # +10%
+	add_to_variable = {
+		gonghedang_infilatrate_variable = 0.10
+		tooltip = gonghedang_infilatrate_variable_add_10
+	}
+}
+
+gonghedang_support_reduce_10 = { # -10%
+	subtract_from_variable = {
+		gonghedang_infilatrate_variable = 0.10
+		tooltip = gonghedang_infilatrate_variable_sub_10
+	}
+}
+
+gonghedang_support_reduce_15 = { # -15%
+	subtract_from_variable = {
+		gonghedang_infilatrate_variable = 0.15
+		tooltip = gonghedang_infilatrate_variable_sub_15
+	}
+}
+
+gonghedang_support_reduce_20 = { # -20%
+	subtract_from_variable = {
+		gonghedang_infilatrate_variable = 0.20
+		tooltip = gonghedang_infilatrate_variable_sub_20
+	}
+}
+
+# effects that starts with name d_ will be available as console command
+# use "effect_name_DESC" to define a description
+found_SCC_effect = {
+	set_global_flag = sichuan_free_flag
+	605 = {
+		transfer_state_to = SCC
+		add_core_of = SCC
+	}
+	SCC = {
+		every_owned_state = {
+			set_demilitarized_zone = no
+			add_core_of = SCC
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Juntuán"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			605 = {
+				create_unit = {
+					division = "name = \"1. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					country_exists = QIN
+				}
+				inherit_technology = QIN
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = QIN
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = QIN
+				}
+				if = {
+					limit = {
+						NOT = {
+							MAN = {
+								has_completed_focus = CSB_DongBei_day_of_victory
+							}
+						}
+					}
+					QIN = {
+						add_to_faction = PREV
+					}
+				}
+				else = {
+					inherit_technology = CHI
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 5000
+						producer = CHI
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 500
+						producer = CHI
+					}
+					CHI = {
+						set_truce = {
+							target = PREV
+							days = 330
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+found_HNC_effect = {
+	set_global_flag = hunan_free_flag
+	602 = {
+		transfer_state_to = HNC
+		add_core_of = HNC
+	}
+	620 = {
+		transfer_state_to = HNC
+		add_core_of = HNC
+	}
+	HNC = {
+		every_owned_state = {
+			set_demilitarized_zone = no
+			add_core_of = HNC
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Juntuán"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			602 = {
+				create_unit = {
+					division = "name = \"1. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					country_exists = QIN
+				}
+				inherit_technology = QIN
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = QIN
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = QIN
+				}
+				if = {
+					limit = {
+						NOT = {
+							MAN = {
+								has_completed_focus = CSB_DongBei_day_of_victory
+							}
+						}
+					}
+					QIN = {
+						add_to_faction = PREV
+					}
+				}
+				else = {
+					inherit_technology = CHI
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 5000
+						producer = CHI
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 500
+						producer = CHI
+					}
+					CHI = {
+						set_truce = {
+							target = PREV
+							days = 330
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+found_GXC_effect = {
+	set_global_flag = guangxi_free_flag
+	599 = {
+		transfer_state_to = GXC
+		add_core_of = GXC
+	}
+	GXC = {
+		every_owned_state = {
+			set_demilitarized_zone = no
+			add_core_of = GXC
+		}
+		hidden_effect = {
+			set_capital = {
+				state = 599
+			}
+			every_possible_country = {
+				limit = {
+					has_character = QIN_lu_rongting
+				}
+				QIN_lu_rongting = {
+					promote_leader = yes
+					set_nationality = GXC
+				}
+			}
+			every_possible_country = {
+				limit = {
+					has_character = QIN_chen_bingkun
+				}
+				QIN_chen_bingkun = {
+					set_nationality = GXC
+				}
+			}
+			every_possible_country = {
+				limit = {
+					has_unit_leader = 15098
+				}
+				every_unit_leader = {
+					limit = {
+						has_id = 15098
+					}
+					set_nationality = GXC
+				}
+			}
+			division_template = {
+				name = "Juntuán"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			599 = {
+				create_unit = {
+					division = "name = \"1. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					country_exists = QIN
+				}
+				inherit_technology = QIN
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = QIN
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = QIN
+				}
+				if = {
+					limit ={
+						NOT ={ MAN = { has_completed_focus = CSB_DongBei_day_of_victory } }
+					}
+					QIN = {
+						add_to_faction = PREV
+					}
+				}
+				else = {
+					inherit_technology = CHI
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 5000
+						producer = CHI
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 500
+						producer = CHI
+					}
+					CHI = {
+						set_truce = {
+							target = PREV
+							days = 330
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+found_JXC_effect = {
+	set_global_flag = jiangxi_free_flag
+	600 = {
+		transfer_state_to = JXC
+		add_core_of = JXC
+	}
+	JXC = {
+		
+		every_owned_state = {
+			set_demilitarized_zone = no
+			add_core_of = JXC
+		}
+		hidden_effect = {
+			division_template = {
+				name = "Juntuán"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			600 = {
+				create_unit = {
+					division = "name = \"1. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					country_exists = QIN
+				}
+				inherit_technology = QIN
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = QIN
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = QIN
+				}
+				if = {
+					limit = {
+						NOT = {
+							MAN = {
+								has_completed_focus = CSB_DongBei_day_of_victory
+							}
+						}
+					}
+					QIN = {
+						add_to_faction = PREV
+					}
+				}
+				else = {
+					inherit_technology = CHI
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 5000
+						producer = CHI
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 500
+						producer = CHI
+					}
+					CHI = {
+						set_truce = {
+							target = PREV
+							days = 330
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+found_GDC_effect = {
+	set_global_flag = guangdong_free_flag
+	593 = {
+		transfer_state_to = GDC
+		add_core_of = GDC
+	}
+	592 = {
+		transfer_state_to = GDC
+		add_core_of = GDC
+	}
+	591 = {
+		transfer_state_to = GDC
+		add_core_of = GDC
+	}
+	594 = {
+		transfer_state_to = GDC
+		add_core_of = GDC
+	}
+	GDC = {
+		
+		every_owned_state = {
+			set_demilitarized_zone = no
+			add_core_of = GDC
+		}
+		hidden_effect = {
+			every_possible_country = {
+				limit = {
+					has_unit_leader = 73046
+				}
+				every_unit_leader = {
+					limit = {
+						has_id = 73046
+					}
+					set_nationality = GDC
+				}
+			}
+			division_template = {
+				name = "Juntuán"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			592 = {
+				create_unit = {
+					division = "name = \"1. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					country_exists = QIN
+				}
+				inherit_technology = QIN
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = QIN
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = QIN
+				}
+				if = {
+					limit ={
+						NOT ={ MAN = { has_completed_focus = CSB_DongBei_day_of_victory } }
+					}
+					QIN = {
+						add_to_faction = PREV
+					}
+				}
+				else = {
+					inherit_technology = CHI
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 5000
+						producer = CHI
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 500
+						producer = CHI
+					}
+					CHI = {
+						set_truce = {
+							target = PREV
+							days = 330
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+found_YUN_effect = {
+	set_global_flag = yunnan_free_flag
+	325 = {
+		transfer_state_to = YUN
+		add_core_of = YUN
+	}
+	603 = {
+		transfer_state_to = YUN
+		add_core_of = YUN
+	}
+	YUN = {
+		
+		every_owned_state = {
+			set_demilitarized_zone = no
+			add_core_of = 603
+		}
+		hidden_effect = {
+			PREV = {
+				every_unit_leader = {
+					limit = {
+						has_id = 50318
+					}
+					set_nationality = PREV
+				}
+			}
+			division_template = {
+				name = "Juntuán"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+				}
+			}
+			325 = {
+				create_unit = {
+					division = "name = \"1. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"2. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"3. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"4. Juntuán\" division_template = \"Juntuán\" start_experience_factor = 0.7"
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					country_exists = QIN
+				}
+				inherit_technology = QIN
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+					producer = QIN
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 500
+					producer = QIN
+				}
+				if = {
+					limit ={
+						NOT ={ MAN = { has_completed_focus = CSB_DongBei_day_of_victory } }
+					}
+					QIN = {
+						add_to_faction = PREV
+					}
+				}
+				else = {
+					inherit_technology = CHI
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_0
+						amount = 5000
+						producer = CHI
+					}
+					add_equipment_to_stockpile = {
+						type = support_equipment
+						amount = 500
+						producer = CHI
+					}
+					CHI = {
+						set_truce = {
+							target = PREV
+							days = 330
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+
+

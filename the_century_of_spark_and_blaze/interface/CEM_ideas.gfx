@@ -1,0 +1,27 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_idea_CPC_insufficient_support"
+		texturefile = "gfx/interface/ideas/CPC_insufficient_support.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_CPC_worker_suport"
+		texturefile = "gfx/interface/ideas/CPC_worker_suport.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_modifiers_striking_worker"
+		textureFile = "gfx/interface/state_modifiers/modifiers_CEM_strike.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_modifiers_cpc_icon"
+		textureFile = "gfx/interface/state_modifiers/modifiers_cpc_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_idea_zhanshiguozhai"
+		textureFile = "gfx/interface/ideas/idea_zhanshiguozhai.dds"
+	}
+
+}

@@ -1,0 +1,488 @@
+﻿##### ARGENTINA NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+CN_DD_ALTHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_DESTROYERS
+
+	for_countries = { MAN}
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	#prefix = ""
+	fallback_name = "驱逐舰%d 号"					
+
+	unique = {											
+		"001号"
+		"002号"
+		"003号"
+		"004号"
+		"005号"
+		"006号"
+		"007号"
+		"009号"
+		"010号"
+		"011号"
+		"012号"
+		"013号"
+		"014号"
+		"015号"
+		"016号"
+		"017号"
+		"018号"
+		"019号"
+		"020号"
+		"021号"
+		"021号"
+		"022号"
+		"023号"
+		"024号"
+		"025号"
+		"026号"
+		"027号"
+		"028号"
+		"029号"
+		"030号"
+		"031号"
+		"032号"
+		"033号"
+		"034号"
+		"035号"
+		"036号"
+		"037号"
+		"038号"
+		"039号"
+		"040号"
+		"041号"
+		"042号"
+		"043号"
+		"044号"
+		"045号"
+		"046号"
+		"047号"
+		"048号"
+		"049号"
+		"050号"
+		"051号"
+		"052号"
+		"053号"
+		"054号"
+		"055号"
+		"056号"
+	}
+	
+}
+
+### LIGHT CRUISER NAMES###
+CN_CL_ALTHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_CL
+
+	for_countries = { MAN}
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	#prefix = ""
+	fallback_name = "轻巡洋舰%d 号"
+
+	unique = {
+		"八达岭"
+		"衡山"
+		"长白"
+		"玉龙"
+		"神农"
+		"栖霞"
+		"紫金"
+		"嵩山"
+		"天门"
+		"天目"
+		"天台"
+		"天柱"
+		"王屋"
+		"白云"
+		"白石"
+		"将军山"
+		"九华"
+		"恒山"
+		"华山"
+		"阿尔泰"
+		"临沧"
+		"五女"
+		"梧桐"
+		"五台"
+		"四姑娘"
+		"雪宝顶"
+		"雪莲峰"
+		"岳麓"
+		"云龙"
+		"云台"
+		"昆仑"
+		"黄山"
+		"天山"
+		"景山"
+		"托木尔峰"
+		"江郎"
+		"青城"
+		"阿尼玛卿"
+		"黄檗"
+		"黄茅尖"
+		"冈仁波齐"
+		"猫儿"
+		"琅琊"
+		"崂山"
+		"梁山"
+		"骊山"
+		"龙虎"
+		"凌川"
+		"庐山"
+		"金佛"
+		"马鬃"
+		"龙门"
+		"绵山"
+		"莫干"
+		"月亮"
+		"普陀"
+		"北武当"
+		"笔架山"
+		"博格达"
+		"喀喇昆仑"
+		"新青"
+		"苍岩"
+		"大黑山"
+		"丹霞"
+		"大雪"
+		"鼎湖"
+		"定军山"
+		"独山"
+		"冬赫格尔"
+		"峨眉峰"
+		"二郎"
+		"珠穆朗玛"
+		"加舒尔布鲁木"
+		"高里三喀"
+		"各拉丹冬"
+		"格聂"
+		"贡嘎"
+		"哈巴"
+	}
+}
+
+CHI_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { MAN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	fallback_name = "轻巡洋舰%d 号"
+
+	unique = {
+		"宁海" 
+		"平海" 
+		"镇江" 
+		"连云港"
+		"马鞍山" 
+		"厦门"
+		"九江"
+		"南平"
+		"吉安" 
+		"长治"
+		"汴梁" 
+		"嘉兴"
+		"三明"
+		"温州"
+		"洛阳" 
+		"长安" 
+		"舟山" 
+		"徐州" 
+		"鹰潭"
+		"中东" 
+		"宁波" 
+		"金华" 
+		"黄石"
+		"芜湖" 
+		"沧州" 
+		"蚌埠" 
+		"淮南"
+		"铜陵" 
+		"淮北" 
+		"辽阳" 
+		"临汾" 
+		"茂名" 
+		"宜宾" 
+		"韶关"
+		"安顺" 
+		"昭通" 
+		"湘潭" 
+		"吉寿" 
+		"北海" 
+		"佛山"
+		"东莞" 
+		"汕头" 
+		"江门"
+		"肇庆" 
+		"宜昌"
+		"玉林" 
+		"怀化" 
+		"黄山"
+		"海容" 
+		"肇和" 
+		"海光" 
+		"应瑞" 
+		"下关" 
+		"南充" 
+		"开源" 
+		"东川" 
+		"昆明"
+		"成都"
+		"萍乡"
+		"西昌"
+		"常德" 
+		"绍兴" 
+		"南通" 
+		"无锡"
+		"淮阴"
+		"海肇" 
+		"海甄" 
+		"海辉"
+		"海澄"
+		"海安" 
+		"海晏" 
+		"海星" 
+		"海鹰" 
+		"海鹙"
+		"海周"
+		"海虎"
+		"海声"
+		"海鹄" 
+		"海鸿"
+		"海燕"
+		"天津"
+		"海鹤" 
+		"海鸥"
+		"海凫"
+		"海骏"
+		"海蓬"
+		"海清" 
+		"海平" 
+	}
+}
+
+### HEAVY CRUISER NAMES###
+CN_CA_ALTHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_CA
+
+	for_countries = { MAN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	#prefix = ""
+	fallback_name = "重巡洋舰%d 号"
+
+	unique = {
+		"广东"
+		"福建"
+		"河北"
+		"山西"
+		"辽宁"
+		"吉林"
+		"黑龙江"
+		"海北"
+		"西伯利亚"
+		"河中"
+		"南洋"
+		"合作"
+		"国际"
+		"联合"
+		"北洋"
+		"东洋"
+		"丁零"
+		"远南"
+		"远山"
+		"西洋"
+		"江苏"
+		"浙江"
+		"安徽"
+		"江西"
+		"吐蕃"
+		"宁夏"
+		"西域"
+		"北直隶"
+		"南直隶"
+		"交趾"
+		"吕宋"
+		"康国"
+		"伊犁"
+		"兴安岭"
+		"山东"
+		"河南"
+		"湖北"
+		"湖南"
+		"海南"
+		"四川"
+		"贵州"
+		"云南"
+		"关中"
+		"甘肃"
+		"青塘"
+		"台湾"
+		"蒙古"
+		"广西"
+	}
+}
+
+CN_CA_HISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_CA
+
+	for_countries = { MAN }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	#prefix = ""
+	fallback_name = "重巡洋舰%d 号"
+
+	unique = {
+		"洪泽湖" 
+		"鄱阳湖" 
+		"青海湖" 
+		"千岛湖"
+		"高邮湖"
+		"洞庭湖"
+		"镜泊湖" 
+		"抚仙湖" 
+		"太湖" 
+		"小海湖" 
+		"微山湖" 
+		"兴凯湖"
+		"巢湖"
+		"鄂陵湖"
+		"洪湖" 
+		"梁子湖" 
+		"太湖" 
+		"小海湖" 
+		"微山湖" 
+		"兴凯湖"
+		"巢湖"
+		"鄂陵湖"
+		"洪湖" 
+		"居延海湖" 
+		"鲸鱼湖" 
+		"抚仙湖" 
+		"石臼湖" 
+		"泊湖" 
+		"东平湖" 
+		"长湖" 
+		"阳澄湖" 
+		"射阳湖" 
+		"赤湖" 
+		"大盐湖" 
+		"淀山湖" 
+		"西湖" 
+		"东钱湖" 
+		"昆明湖" 
+		"东湖" 
+		"玄武湖" 
+		"大明湖" 
+		"星湖" 
+		"仙女湖" 
+		"泸沽湖" 
+		"蠡湖" 
+		"石湖" 
+		"金鸡湖" 
+		"拉昂错湖" 
+		"喀纳斯湖" 
+	}
+}
+
+### BATTLESHIP NAMES ###
+CN_BB_ATLHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_BB
+
+	for_countries = { MAN}
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	#prefix = ""
+	fallback_name = "战列舰%d号"		
+
+	unique = {
+		"夏禹" "黄帝" "周公" "文王" "武王" "后羿" "汤武" "伊尹" "盘庚" "神农" "共工" "仓颉" "祝融" "高阳" "盘古" "太公望" "伏羲" "女娲" "后稷" "帝尧" "孔子" "孙子" "墨子" "后稷" "商鞅" "造父" "韩非子" "吴起" "王翦" "廉颇"
+	}
+}
+
+### BATTLECRUISER NAMES ###
+CN_BC_ALTHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_BC
+
+	for_countries = { MAN}
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	#prefix = ""
+	fallback_name = "战列巡洋舰%d号"		
+
+	unique = {
+		"萧何" "韩信" "关羽" "公子祁" "祖逖" "苏武" "岳飞" "朱班博" "牧沐子" "司马迁" "陈东阳" "文天祥" "李定国" "韩世忠" "江弗" "戚继光" "季敌雷" "郑和" "蓟单" "陈平" "萧虎力" "智嫩" "沐英" "周勃" "宗泽" "徐达" "卫青" "杜牧" "霍去病" "陈庆之" "李靖" "郭子仪" "王玄策" "张骞" "李广" "沐英" "于谦" "甘英" "郑森" "费西翼" "房玄龄" "班超" "班固" "周处" "桓温" "檀道济" "王猛" "薛仁贵" "杜牧" "张巡" "赵普" "狄青" "范仲淹" "张叔夜" "常遇春" "张辅"  "陈德" "邓子龙" "吴三省" "章逸国"
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+CN_CV_ALTHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_CARRIERS
+
+	for_countries = { MAN }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	prefix = "NRB "
+	fallback_name = "Porta-Aviões %d"	
+
+	unique = {
+		"秦始皇" "汉高祖" "汉武帝" "汉文帝" "汉景帝" "汉光武帝" "汉明帝" "汉章帝" "汉昭烈帝" "唐高祖" "唐太宗" "唐高宗" "唐玄宗" "唐武宗" "唐宣宗" "宋太祖" "宋仁宗" "宋神宗" "宋真宗" "宋英宗" "宋孝宗" "宋理宗" "宋光宗" "元世祖" "元成宗" "明太祖" "明太宗" "明宣宗" "和世祖" "和光宗" "和明宗" "和孝宗" "魏武帝" "魏文帝" "魏明帝" "吴大帝" "晋武帝" "晋元帝" "晋明帝" "晋成帝" "汉赵光文帝" "前秦宣昭帝" "刘宋武帝" "刘宋文帝" "南齐高帝" "梁武帝" "陈武帝" "北魏道武帝" "北魏孝文帝" "隋文帝" "南唐烈祖" "辽太宗" "辽德宗" "华太祖" "华仁宗" "华宪宗" "南明世祖" "南明光宗" "南明昭宗"
+	}
+}
+
+CHI_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+
+	for_countries = { MAN }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	fallback_name = "0%d 号航空母舰"	
+
+	unique = {
+		"001号航空母舰"
+		"002号航空母舰"
+		"003号航空母舰"
+		"004号航空母舰"
+		"005号航空母舰"
+		"006号航空母舰"
+		"007号航空母舰"
+		"008号航空母舰"
+		"009号航空母舰"
+		"010号航空母舰"
+	}
+}
+
+### SUBMARINES ###
+CHI_SS_ALTHISTORICAL = {
+	name = NAME_THEME_ALTHISTORICAL_SUBMARINES
+
+	for_countries = { CHI PRC GXC XSM SIK MAN YUN SHX }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	fallback_name = "水面下 %d 号"
+	
+	unique = {
+		"水面下 %d 号"
+	}
+}

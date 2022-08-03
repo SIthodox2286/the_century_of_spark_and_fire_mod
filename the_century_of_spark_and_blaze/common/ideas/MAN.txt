@@ -1,0 +1,2138 @@
+ideas={
+	country = {
+		DongBei_idea_xinhai_revolution = {
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_war_of_resistance3
+			available = {
+				has_war_with = FNG
+			}	
+			targeted_modifier = {
+				tag = FNG
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			modifier = {	
+				conscription = 0.1
+				war_support_factor = 0.05
+				surrender_limit = 0.10
+			}
+		}
+		
+		DongBei_idea_support_for_revolution = {
+			allowed = { 
+				has_country_leader = {
+					character = Dongbei_Wu_Chuan
+					ruling_only = yes
+				}		
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_chinese_support
+			available = {
+			}
+			modifier = {
+				communism_drift = 0.05
+				global_building_slots_factor = 0.2
+				political_power_gain = 0.05
+			}
+		}
+		DongBei_idea_CSB_DongBei_new_democratic_era = { # 
+			# 
+			allowed = { 
+				has_country_leader = {
+					character = Dongbei_Wu_Chuan
+					ruling_only = yes
+				}		
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = eng_for_the_good_of_the_revolution
+			available = {
+			}
+			modifier = {
+				democratic_drift = 0.05
+				neutrality_drift = 0.05
+				fascism_drift = 0.05
+				global_building_slots_factor = 0.1
+				political_power_gain = 0.05
+			}
+		}
+		DongBei_idea_CSB_DongBei_new_democratic_era_1 = { # 新民主主义
+			# 
+			allowed = { 
+				has_country_leader = {
+					character = Dongbei_Wu_Chuan
+					ruling_only = yes
+				}		
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = eng_for_the_good_of_the_revolution
+			available = {
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+				political_power_gain = 0.15
+			}
+		}
+		DongBei_idea_CSB_DongBei_new_democratic_era_2 = { # 新民主主义
+			# 
+			allowed = { 
+				has_country_leader = {
+					character = Dongbei_Wu_Chuan
+					ruling_only = yes
+				}		
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = eng_for_the_good_of_the_revolution
+			available = {
+			}
+			modifier = {
+				global_building_slots_factor = 0.1
+				army_org_factor = 0.1
+			}
+			rule = {
+				can_send_volunteers = yes
+				can_create_factions = yes
+			}	
+		}
+		
+		DongBei_idea_wu_wuchuan_man = { # 吴川
+			# 
+			allowed = { 
+				has_country_leader = {
+					character = Dongbei_Wu_Chuan
+					ruling_only = yes
+				}		
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = DongBei_Wuchuan
+			available = {
+			}
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				party_popularity_stability_factor = 0.25
+			}
+			
+		}
+		
+		DongBei_idea_female_pilot = { # 女航空兵
+			# 
+			allowed = { 
+				original_tag = MAN
+			}
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = air_support_focus
+			available = {
+			}
+			modifier = {
+				air_untrained_pilots_penalty_factor = -0.33
+				conscription = 0.01
+				experience_gain_air = 0.25
+			}
+			
+		}
+		
+		
+		DongBei_idea_german_officer = {
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = GER_idea_OHL
+			available = {
+				has_war_with = FNG
+				NOT = { GER = { has_war_with = FRA } }
+			}
+			modifier = {	
+				army_org_factor = 0.05
+				planning_speed = 0.15
+			}
+		}
+		DongBei_idea_communists_officer = {	
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { has_government = communism }
+			removal_cost = -1
+			picture = CPC_worker_suport
+			available = {
+				has_government = communism
+				custom_trigger_tooltip = {
+					tooltip = csb_october_revolution_no_tt
+					NOT = { has_global_flag = october_revolution }
+				}
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			}
+			modifier = {	
+				training_time_factor = 0.25
+				stability_factor = -0.15
+				political_power_gain = 0.1
+				army_org_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				communism_drift = 0.05
+			}
+		}
+		
+		DongBei_idea_russian_debt_crisis = { # 俄债偿付：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = usa_great_depression_3
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = csb_world_war_I_no_tt
+					NOT = { has_global_flag = kis_war }
+				}
+			}
+			modifier = {	
+				consumer_goods_factor = 0.1
+				stability_factor = -0.1
+				research_speed_factor = -0.25
+				political_power_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.05
+				local_resources_factor = -0.1
+			}
+		}
+		DongBei_idea_american_debt_crisis = { # 美债偿付：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = usa_great_depression_3
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = csb_world_war_I_no_tt
+					NOT = { has_global_flag = kis_war }
+				}
+			}
+			modifier = {	
+				consumer_goods_factor = 0.1
+				stability_factor = -0.1
+				research_speed_factor = -0.25
+				political_power_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.05
+				local_resources_factor = -0.1
+			}
+		}
+		DongBei_idea_german_debt_crisis = { # 德债偿付：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = usa_great_depression_3
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = csb_world_war_I_no_tt
+					NOT = { has_global_flag = kis_war }
+				}
+			}
+			modifier = {	
+				consumer_goods_factor = 0.1
+				stability_factor = -0.1
+				research_speed_factor = -0.25
+				political_power_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.05
+				local_resources_factor = -0.1
+			}
+		}
+		
+		DongBei_idea_german_debt = { # 革命债务 —— 德国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = GER
+				NOT = { has_war_with = GER }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.15
+			}
+		}
+		
+		DongBei_idea_german_debt_1 = { # 革命债务 —— 德国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = GER
+				NOT = { has_war_with = GER }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.2
+			}
+		}
+		
+		DongBei_idea_german_debt_2 = { # 革命债务 —— 德国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = GER
+				NOT = { has_war_with = GER }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.25
+			}
+		}
+		
+		DongBei_idea_german_debt_3 = { # 革命债务 —— 德国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = GER
+				NOT = { has_war_with = GER }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.2
+				industrial_capacity_factory = -0.3
+			}
+		}
+		
+		DongBei_idea_german_debt_4 = { # 革命债务 —— 德国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = GER
+				NOT = { has_war_with = GER }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.35
+			}
+		}
+		
+		DongBei_idea_german_debt_5 = { # 革命债务 —— 德国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = GER
+				NOT = { has_war_with = GER }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.3
+				industrial_capacity_factory = -0.4
+			}
+		}
+		
+		DongBei_idea_american_debt = { # 革命债务 —— 美国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = USA
+				NOT = { has_war_with = USA }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.05
+				industrial_capacity_dockyard = -0.05
+			}
+		}
+		
+		DongBei_idea_american_debt_1 = { # 革命债务 —— 美国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = USA
+				NOT = { has_war_with = USA }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.1
+				industrial_capacity_dockyard = -0.1
+			}
+		}
+		
+		DongBei_idea_american_debt_2 = { # 革命债务 —— 美国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = USA
+				NOT = { has_war_with = USA }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.15
+				industrial_capacity_dockyard = -0.15
+			}
+		}
+		
+		DongBei_idea_american_debt_3 = { # 革命债务 —— 美国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = USA
+				NOT = { has_war_with = USA }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.2
+				industrial_capacity_dockyard = -0.2
+			}
+		}
+		
+		DongBei_idea_american_debt_4 = { # 革命债务 —— 美国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = USA
+				NOT = { has_war_with = USA }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.25
+				industrial_capacity_dockyard = -0.25
+			}
+		}
+		
+		DongBei_idea_american_debt_5 = { # 革命债务 —— 美国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = USA
+				NOT = { has_war_with = USA }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.3
+				industrial_capacity_dockyard = -0.3
+			}
+		}
+		
+		DongBei_idea_russian_debt_0 = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.1
+				local_resources_factor = -0.1
+			}
+		}
+		
+		DongBei_idea_russian_debt = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.25
+				local_resources_factor = -0.25
+			}
+		}
+		
+		DongBei_idea_russian_debt_1 = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.3
+				local_resources_factor = -0.3
+			}
+		}
+		
+		DongBei_idea_russian_debt_2 = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.35
+				local_resources_factor = -0.35
+			}
+		}
+		
+		DongBei_idea_russian_debt_3 = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.4
+				local_resources_factor = -0.4
+			}
+		}
+		
+		DongBei_idea_russian_debt_4 = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.45
+				local_resources_factor = -0.45
+			}
+		}
+		
+		DongBei_idea_russian_debt_5 = { # 革命债务 —— 俄国：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				country_exists = RUS
+				NOT = { has_war_with = RUS }
+			}
+			modifier = {	
+				global_building_slots_factor = -0.5
+				local_resources_factor = -0.5
+			}
+		}
+		
+		DongBei_idea_chinese_support = { # 中国援助：
+		# 共和党是世界上第一个建立社会主义政权的革命组织，又在落后的中国成功进行了革命的工业化。他们是全世界社会主义者的老大哥。我们有很多东西要向他们学习，请他们帮助。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_chinese_support
+			available = {
+				
+			}
+			modifier = {	
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+				political_power_gain = 0.5
+			}
+			
+		}
+		DongBei_idea_chinese_support_1 = { # 受中国掩护的产业：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				
+			}
+			modifier = {	
+				communism_drift = 0.005
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.1
+			}
+			
+		}
+		
+		DongBei_idea_chinese_experience = { # 中国经验：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_second_five_year_plan
+			available = {
+				
+			}
+			modifier = {	
+				political_power_factor = 0.15
+				land_doctrine_cost_factor = -0.1
+				air_doctrine_cost_factor = -0.1
+				naval_doctrine_cost_factor = -0.1
+				army_org_factor = 0.1
+				research_speed_factor = 0.15
+			}
+			
+		}
+		
+		DongBei_idea_wenmang_guodu_1 = { # 前工业时代的人口：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = wenmang
+			available = {
+				always = yes
+			}
+			modifier = {	
+				research_speed_factor = -0.3
+				conscription_factor = -0.2
+				political_power_factor = -0.15
+			}
+		}
+		DongBei_idea_wenmang_guodu_2 = { # 扫盲运动：
+		# 我们进行了初步的扫盲运动，但基础教育方面的缺失还很难弥补。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = wenmang2
+			available = {
+				always = yes
+			}
+			modifier = {	
+				research_speed_factor = -0.15
+				conscription_factor = -0.1
+				political_power_factor = -0.1
+			}
+		}
+		DongBei_idea_wenmang_guodu_3 = { # 人口红利：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = wenmang3
+			available = {
+				always = yes
+			}
+			modifier = {	
+				research_speed_factor = 0.05
+				conscription = 0.025
+				political_power_factor = 0.05
+			}
+		}
+		
+		DongBei_idea_cover_through_crazyness = { # 覆盖在黑暗上的狂热：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_purged_junior_army_officers
+			available = {
+				always = yes
+			}
+			modifier = {	
+				consumer_goods_factor = 0.15
+				political_power_factor = -0.25
+				stability_factor = -0.25
+				war_support_factor = 0.25
+				offence = 0.15
+				defence = -0.15
+			}
+		}
+		
+		DongBei_idea_mind_shift_0 = { # 思想混乱：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_low_popular_support3
+			available = {
+				always = yes
+			}
+			modifier = {	
+				political_power_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+		
+		DongBei_idea_mind_shift_1 = { # 思想混乱：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_low_popular_support3
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.1
+				consumer_goods_factor = 0.02
+				production_factory_max_efficiency_factor = -0.1
+				local_resources_factor = -0.1
+				war_support_factor = -0.05
+				offence = -0.05
+				defence = -0.05
+				research_speed_factor = -0.05
+				resistance_activity = 0.05
+			}
+		}
+		
+		DongBei_idea_rapid_unification_1 = { # 腐败：
+		# 我们的武力统一进展迅速，但新的解放区并不稳固。由于缺乏干部我们不得不容忍许多落后反动的士绅临阵倒戈后继续作威作福。同时也有很多并不成熟的政工干部在地方腐化变色。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_hyper_inflation
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.1
+				consumer_goods_factor = 0.02
+				production_factory_max_efficiency_factor = -0.1
+				local_resources_factor = -0.1
+				war_support_factor = -0.05
+				offence = -0.05
+				defence = -0.05
+				research_speed_factor = -0.05
+				resistance_activity = 0.05
+			}
+		}
+		
+		DongBei_idea_mind_shift_2 = { # 思想混乱：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_low_popular_support3
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.2
+				consumer_goods_factor = 0.04
+				production_factory_max_efficiency_factor = -0.15
+				local_resources_factor = -0.15
+				war_support_factor = -0.1
+				offence = -0.1
+				defence = -0.1
+				research_speed_factor = -0.1
+				resistance_activity = 0.1
+			}
+		}
+		
+		DongBei_idea_rapid_unification_2 = { # 腐败：
+		# 我们的武力统一进展迅速，但新的解放区并不稳固。由于缺乏干部我们不得不容忍许多落后反动的士绅临阵倒戈后继续作威作福。同时也有很多并不成熟的政工干部在地方腐化变色。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_hyper_inflation
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.2
+				consumer_goods_factor = 0.04
+				production_factory_max_efficiency_factor = -0.15
+				local_resources_factor = -0.15
+				war_support_factor = -0.1
+				offence = -0.1
+				defence = -0.1
+				research_speed_factor = -0.1
+				resistance_activity = 0.1
+			}
+		}
+		
+		DongBei_idea_mind_shift_3 = { # 思想混乱：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_low_popular_support3
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.3
+				consumer_goods_factor = 0.06
+				production_factory_max_efficiency_factor = -0.2
+				local_resources_factor = -0.2
+				war_support_factor = -0.15
+				offence = -0.15
+				defence = -0.15
+				research_speed_factor = -0.15
+				resistance_activity = 0.15
+			}
+		}
+		
+		DongBei_idea_rapid_unification_3 = { # 腐败：
+		# 我们的武力统一进展迅速，但新的解放区并不稳固。由于缺乏干部我们不得不容忍许多落后反动的士绅临阵倒戈后继续作威作福。同时也有很多并不成熟的政工干部在地方腐化变色。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_hyper_inflation
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.3
+				consumer_goods_factor = 0.06
+				production_factory_max_efficiency_factor = -0.2
+				local_resources_factor = -0.2
+				war_support_factor = -0.15
+				offence = -0.15
+				defence = -0.15
+				research_speed_factor = -0.15
+				resistance_activity = 0.15
+			}
+		}
+		
+		DongBei_idea_mind_shift_4 = { # 思想混乱：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_low_popular_support3
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.4
+				consumer_goods_factor = 0.08
+				production_factory_max_efficiency_factor = -0.25
+				local_resources_factor = -0.25
+				war_support_factor = -0.2
+				offence = -0.2
+				defence = -0.2
+				research_speed_factor = -0.2
+				resistance_activity = 0.2
+			}
+		}
+		
+		DongBei_idea_rapid_unification_4 = { # 腐败：
+		# 我们的武力统一进展迅速，但新的解放区并不稳固。由于缺乏干部我们不得不容忍许多落后反动的士绅临阵倒戈后继续作威作福。同时也有很多并不成熟的政工干部在地方腐化变色。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_hyper_inflation
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.4
+				consumer_goods_factor = 0.08
+				production_factory_max_efficiency_factor = -0.25
+				local_resources_factor = -0.25
+				war_support_factor = -0.2
+				offence = -0.2
+				defence = -0.2
+				research_speed_factor = -0.2
+				resistance_activity = 0.2
+			}
+		}
+		
+		DongBei_idea_rapid_unification_5 = { # 腐败：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_hyper_inflation
+			available = {
+				always = yes
+			}
+			modifier = {	
+				drift_defence_factor = -0.5
+				consumer_goods_factor = 0.1
+				production_factory_max_efficiency_factor = -0.3
+				local_resources_factor = -0.3
+				war_support_factor = -0.25
+				offence = -0.25
+				defence = -0.25
+				research_speed_factor = -0.25
+				resistance_activity = 0.25
+			}
+		}
+		
+		DongBei_idea_russian_refugee = { # 俄国难民：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = tur_coordinated_balkan_armed_forces
+			available = {
+				always = yes
+			}
+			modifier = {	
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				research_bonus = 0.1
+				weekly_manpower = 500
+			}
+		}
+		
+		CPC_eastern_internationale_formed = { # 东方国际领袖
+			# 
+			picture = SPR_torchbearers_of_tomorrow
+
+			allowed = { 
+				original_tag = MAN
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				communism_drift = 0.01
+				send_volunteer_factor = 0.3
+				opinion_gain_monthly_same_ideology_factor = 0.33
+			}
+			
+			rule = {
+				can_send_volunteers = yes
+				can_create_factions = yes
+			}	
+		}
+		
+		DongBei_idea_house_price_high = { # 土地经济学：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = tur_etatism
+			available = {
+				always = yes
+			}
+			modifier = {	
+				research_speed_factor = -0.1
+				production_speed_buildings_factor = -0.15
+				global_building_slots_factor = 0.15
+			}
+		}
+		
+		DongBei_idea_interior_critics_jap = { # 内部不满：
+		# 日清、日俄、朝鲜剿匪、北满事变，那么多牺牲是为了什么！？
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_army_problems
+			available = {
+				always = yes
+			}
+			modifier = {	
+				conscription = -0.05
+				#stability_factor = -0.15
+				war_support_factor = -0.1
+			}
+		}
+		
+		DongBei_idea_interior_critics = { # 内部不满：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_army_problems
+			available = {
+				always = yes
+			}
+			modifier = {	
+				conscription = -0.05
+				stability_factor = -0.15
+				war_support_factor = -0.15
+			}
+		}
+		DongBei_idea_interior_threats = { # 不稳固的政权：
+		# 新生的东北革命委员会并不被这片土地上的所有人信服。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_conspiracy_in_the_academy_airforce
+			available = {
+				always = yes
+			}
+			modifier = {	
+				stability_factor = -0.15
+				global_building_slots_factor = -0.5
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.3
+				production_speed_buildings_factor = -0.3
+			}
+		}
+		DongBei_idea_revolutionary_propoganda = { # 临时宣传队：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = spr_masters_of_our_own_fate
+			available = {
+				always = yes
+			}
+			modifier = {	
+				political_power_gain = 0.5
+				war_support_weekly = 0.002
+				stability_weekly_factor = 0.002
+			}
+		}
+		DongBei_idea_peoples_revolution_army_1 = { # 东北国民革命军：
+		# 我们的革命军是一支革命武装，是有思想有立场的人民军队。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = tur_kemalist_army_officers_minimal_power_disloyal
+			available = {
+				always = yes
+			}
+			modifier = {	
+				army_org_factor = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+		}
+		DongBei_idea_peoples_revolution_army_2 = { # 东北国民革命军：
+		# 我们的革命军是一支革命武装，是有思想有立场的人民军队。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = tur_kemalist_army_officers_minimal_power_disloyal
+			available = {
+				always = yes
+			}
+			modifier = {	
+				army_org_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		
+		DongBei_idea_russian_labour_recruitments = { # 俄国劳工：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_stakhanovite_movement
+			available = {
+				always = yes
+			}
+			modifier = {	
+				consumer_goods_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		DongBei_idea_russian_labour_recruitments_1 = { # 俄国劳工：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_stakhanovite_movement
+			available = {
+				always = yes
+			}
+			modifier = {	
+				consumer_goods_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+		DongBei_idea_american_labour_recruitments = { # 美国技工:
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_organize_wreckers
+			available = {
+				always = yes
+			}
+			modifier = {	
+				consumer_goods_factor = -0.1
+				industrial_capacity_factory = 0.1
+			}
+		}
+		DongBei_idea_german_labour_recruitments = { # 德国工程师:
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_atomic_bomb_project
+			available = {
+				always = yes
+			}
+			modifier = {	
+				consumer_goods_factor = -0.1
+				research_speed_factor = 0.1
+			}
+		}
+		
+		DongBei_idea_emergency_production = { # 加急生产：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			available = {
+				has_war = yes
+			}
+			modifier = {	
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = -0.15
+					build_cost_ic = -0.25
+				}
+				artillery_equipment = {
+					instant = yes
+					soft_attack = -0.15
+					build_cost_ic = -0.25
+				}
+				howitzer_equipment = {
+					instant = yes
+					soft_attack = -0.15
+					build_cost_ic = -0.25
+				}
+				
+			}
+		}
+		DongBei_idea_huidang = { # 乡间会党武装：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_army_corruption
+			available = {
+				#has_war = yes
+			}
+			modifier = {
+				war_support_factor = -0.1
+				army_org_factor = -0.05
+			}
+		}
+		DongBei_idea_huidang_recruits = { # 整编会党人员：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_army_corruption2
+			available = {
+				#has_war = yes
+			}
+			modifier = {
+				conscription_factor = 0.025
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+		
+		DongBei_idea_agricultural_industry_1 = { # 农业工业化：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SPR_subvert_soviet_control
+			available = {
+				#has_war = yes
+			}
+			modifier = {
+				stability_factor = -0.025
+				monthly_population = 0.15
+				global_building_slots_factor = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+		DongBei_idea_agricultural_industry_2 = { # 农业工业化：
+		# 将农民通过资本主义商业化和社会主义集体化转换成农业工人是现代化的必经之路，将为我们提供源源不断的工业人口并快速提升农村的教育、经济水平。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SPR_subvert_soviet_control
+			available = {
+				#has_war = yes
+			}
+			modifier = {		
+				stability_factor = -0.05
+				monthly_population = 0.2
+				global_building_slots_factor = 0.075
+				production_speed_buildings_factor = 0.075
+			}
+		}
+		DongBei_idea_agricultural_industry_3 = { # 农业工业化：
+		# 将农民通过资本主义商业化和社会主义集体化转换成农业工人是现代化的必经之路，将为我们提供源源不断的工业人口并快速提升农村的教育、经济水平。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SPR_subvert_soviet_control
+			available = {
+				#has_war = yes
+			}
+			modifier = {		
+				stability_factor = -0.075
+				monthly_population = 0.25
+				global_building_slots_factor = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		DongBei_idea_agricultural_industry_4 = { # 农业工业化：
+		# 将农民通过资本主义商业化和社会主义集体化转换成农业工人是现代化的必经之路，将为我们提供源源不断的工业人口并快速提升农村的教育、经济水平。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SPR_subvert_soviet_control
+			available = {
+				#has_war = yes
+			}
+			modifier = {		
+				stability_factor = -0.1
+				monthly_population = 0.3
+				global_building_slots_factor = 0.125
+				production_speed_buildings_factor = 0.125
+			}
+		}
+		
+		DongBei_idea_revolutionary_government = { # 革委会政权：
+		# 
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = tur_kemalist_officers_loyalty_effect
+			available = {
+				#has_war = yes
+			}
+			modifier = {
+				max_command_power = 20
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		#
+		DongBei_idea_construction_division_1 = { # 先进工兵战术：
+		# 穿越者吴川对于未来的战争模式的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_fortify_the_borders
+			available = {
+				always = yes
+			}
+			modifier = {	
+				max_dig_in_factor = 0.05
+				production_speed_bunker_factor = 0.05
+				production_speed_coastal_bunker_factor = 0.1
+			}
+		}
+		DongBei_idea_construction_division_2 = { # 先进工兵战术：
+		# 穿越者吴川对于未来的战争模式的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_fortify_the_borders
+			available = {
+				always = yes
+			}
+			modifier = {	
+				max_dig_in_factor = 0.1
+				production_speed_bunker_factor = 0.1
+				production_speed_coastal_bunker_factor = 0.2
+			}
+		}
+		DongBei_idea_construction_division_3 = { # 先进工兵战术：
+		# 穿越者吴川对于未来的战争模式的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_fortify_the_borders
+			available = {
+				always = yes
+			}
+			modifier = {	
+				max_dig_in_factor = 0.15
+				production_speed_bunker_factor = 0.15
+				production_speed_coastal_bunker_factor = 0.3
+			}
+		}
+		
+		DongBei_idea_supply_division_1 = { # 先进后勤战术：
+		# 穿越者吴川对于未来的战争模式的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_the_road_of_life
+			available = {
+				always = yes
+			}
+			modifier = {	
+				supply_node_range = 0.15
+				max_command_power = 10
+				supply_consumption_factor = -0.05
+			}
+		}
+		DongBei_idea_supply_division_2 = { # 先进后勤战术：
+		# 穿越者吴川对于未来的战争模式的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_the_road_of_life
+			available = {
+				always = yes
+			}
+			modifier = {	
+				supply_node_range = 0.20
+				max_command_power = 20
+				supply_consumption_factor = -0.1
+			}
+		}
+		DongBei_idea_supply_division_3 = { # 先进后勤战术：
+		# 穿越者吴川对于未来的战争模式的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = SOV_the_road_of_life
+			available = {
+				always = yes
+			}
+			modifier = {	
+				supply_node_range = 0.25
+				max_command_power = 30
+				supply_consumption_factor = -0.15
+			}
+		}
+		
+		DongBei_idea_social_policy_1 = { # 先进社会政策：
+		# 穿越者吴川对于未来的社会发展的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = spr_class_war
+			available = {
+				always = yes
+			}
+			modifier = {	
+				political_power_factor = 0.05
+				conscription_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+		DongBei_idea_social_policy_2 = { # 先进社会政策：
+		# 穿越者吴川对于未来的社会发展的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = spr_class_war
+			available = {
+				always = yes
+			}
+			modifier = {	
+				political_power_factor = 0.1
+				conscription_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+		DongBei_idea_social_policy_3 = { # 先进社会政策：
+		# 穿越者吴川对于未来的社会发展的了解所带来的优势。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = spr_class_war
+			available = {
+				always = yes
+			}
+			modifier = {	
+				political_power_factor = 0.15
+				conscription_factor = 0.15
+				war_support_factor = 0.15
+			}
+		}
+		#
+		DongBei_idea_FNG_jap_control = { # 满铁操纵：日本人对东北革命虽然是我们镇压共和党的一大助力，但实际上却使得我们的士气和民心更加低落。
+			allowed = { original_tag = FNG }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			modifier = {	
+				stability_factor = -0.1
+				war_support_factor = 0.1
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+		# JAP
+		DongBei_idea_lost_in_manchuria_1 = { # 被共和党击败：
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_purge
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = -0.1
+				defense_bonus_against = -0.1
+			}
+			modifier = {	
+				war_support_factor = -0.1
+				land_doctrine_cost_factor = -0.1
+			}
+			research_bonus = {
+				artillery = 0.05
+				air_equipment = 0.05
+			}
+		}
+		
+		DongBei_idea_lost_in_manchuria_qin_chi_1 = { # 外国支持的政权：
+			# 
+			allowed = { is_china_or_warlord = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = state_economy
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = -0.3
+				defense_bonus_against = 0.3
+			}
+			modifier = {	
+				war_support_factor = -0.15
+				stability_factor = -0.15
+				political_power_factor = -0.15
+				training_time_factor = -0.25
+				conscription = 0.1
+				land_doctrine_cost_factor = -0.1
+				global_building_slots_factor = 0.25
+				consumer_goods_factor = -0.1
+				production_speed_arms_factory_factor = 0.15
+				industrial_capacity_factory = 0.15
+			}
+		}
+		
+		DongBei_idea_lost_in_manchuria_qin_chi_2 = { # 中国人自己解决：
+			# 
+			allowed = { is_china_or_warlord = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_purge
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			modifier = {	
+				ai_get_ally_desire_factor = -100
+				war_support_factor = 0.15
+				stability_factor = 0.15
+				political_power_factor = 0.15
+				training_time_factor = -0.25
+				conscription = 0.1
+				production_factory_max_efficiency_factor = 0.25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = -0.1
+					build_cost_ic = -0.3
+				}
+				artillery_equipment = {
+					instant = yes
+					soft_attack = -0.1
+					build_cost_ic = -0.3
+				}
+				howitzer_equipment = {
+					instant = yes
+					soft_attack = -0.1
+					build_cost_ic = -0.3
+				}
+				
+			}
+		}
+		
+		
+		DongBei_idea_lost_in_manchuria_man = { # 对日作战的教训：
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_purge
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.1
+				defense_bonus_against = 0.1
+			}
+			modifier = {	
+				war_support_factor = -0.1
+				land_doctrine_cost_factor = -0.1
+			}
+			research_bonus = {
+				artillery = 0.05
+				air_equipment = 0.05
+			}
+		}
+		
+		DongBei_idea_longlast_war = { # 持续作战：
+			# 超出预定作战时间
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_the_long_march2
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = -0.1
+				defense_bonus_against = -0.1
+			}
+			modifier = {	
+				war_support_factor = -0.1
+				defence = -0.15
+			}
+		}
+		DongBei_idea_longlast_war_1 = { # 持续作战：
+			# 师老兵疲。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = prc_the_long_march2
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = -0.2
+				defense_bonus_against = -0.2
+			}
+			modifier = {	
+				war_support_factor = -0.2
+				defence = -0.3
+			}
+		}
+		
+		DongBei_idea_longlast_war_jap = { # 军国主义狂热：
+			# 陆军试图煽动军国主义狂热来拯救自己和帝国霸权。
+			allowed = { original_tag = MAN }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_forced_conscription
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			modifier = {	
+				communism_drift = 0.015
+				stability_factor = -0.1
+				war_support_factor = 0.1
+				army_core_attack_factor = 0.15
+				army_core_defence_factor = 0.15
+			}
+		}
+		DongBei_idea_longlast_war_jap_1 = { # 军国主义狂热：
+			# 陆军试图煽动军国主义狂热来拯救自己和帝国霸权。
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = chi_forced_conscription
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.3
+				defense_bonus_against = 0.3
+			}
+			modifier = {	
+				communism_drift = 0.03
+				stability_factor = -0.2
+				war_support_factor = 0.2
+				army_core_attack_factor = 0.3
+				army_core_defence_factor = 0.3
+			}
+		}
+		
+		DongBei_idea_jap_mobilization = { # 大规模动员：一定要掐灭抵抗侵略的中国火苗。
+		# 
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = death_men
+			available = {
+				always = yes
+			}
+			targeted_modifier = {
+				tag = MAN
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			modifier = {	
+				conscription = 0.05	
+				training_time_factor = -0.5
+				industrial_capacity_factory = 0.25
+			}
+			equipment_bonus = {
+				infantry_equipment = {
+					instant = yes
+					soft_attack = -0.1
+					build_cost_ic = -0.25
+				}
+				artillery_equipment = {
+					instant = yes
+					soft_attack = -0.1
+					build_cost_ic = -0.25
+				}
+				howitzer_equipment = {
+					instant = yes
+					soft_attack = -0.1
+					build_cost_ic = -0.25
+				}
+				
+			}
+		}
+		
+		DongBei_idea_jap_war_crisis_1 = { # 东北战债危机：
+		# 
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = idea_zhanshiguozhai
+			available = {
+				always = yes
+			}
+			modifier = {	
+				conscription = 0.05	
+				training_time_factor = 0.25
+				industrial_capacity_factory = -0.25
+				consumer_goods_factor = 0.15
+				war_support_factor = -0.25
+				stability_factor = -0.25
+			}
+		}
+		
+		DongBei_idea_jap_war_crisis_2 = { # 东北战债偿付：
+		# 
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = MEX_callistas
+			available = {
+				always = yes
+			}
+			modifier = {	
+				training_time_factor = 0.1
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		Dongbei_idea_korean_uprising = { # 镇压朝鲜革命：
+		# §R如果日中交战时还保有这个国家精神，朝鲜将爆发革命并加入中方§!\n§Y如果释放朝鲜为傀儡或独立国家，该国家精神将消失§!
+			allowed = { original_tag = JAP }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = por_volunteers_in_the_war2
+			available = {
+				NOT = { country_exists = KOR }
+			}
+			modifier = {	
+				consumer_goods_factor = 0.1
+				stability_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+		
+		Dongbei_idea_haiyuan_dadizhen_1 = { # 海原大地震：
+		# 
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = raj_risk_of_famine
+			available = {
+				
+			}
+			modifier = {	
+				stability_factor = -0.25
+				war_support_factor = -0.25
+				conscription_factor = -0.25
+				production_factory_max_efficiency_factor = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+		}
+		
+		Dongbei_idea_haiyuan_dadizhen_2 = { # 海原大地震：
+		# 
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = raj_risk_of_famine
+			available = {
+				
+			}
+			modifier = {	
+				stability_factor = -0.2
+				war_support_factor = -0.2
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		
+		Dongbei_idea_haiyuan_dadizhen_3 = { # 海原大地震：
+		# 
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = raj_risk_of_famine
+			available = {
+				
+			}
+			modifier = {	
+				stability_factor = -0.1
+				war_support_factor = -0.1
+			}
+		}
+	}
+	tank_manufacturer = {
+		Dongbei_armor_manufacturer_1 = {
+			research_bonus = {
+				armor = 0.2
+			}
+			
+			picture = kmt_yingtian
+			allowed = {
+				original_tag = MAN
+			}
+				
+			available = {
+				#328 = { is_owned_by = ROOT }
+				has_completed_focus = CSB_DongBei_armor_effort_1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { Dongbei_armor_manufacturer_1 }
+		}
+		Dongbei_armor_manufacturer_2 = {
+			research_bonus = {
+				armor = 0.2
+			}
+			#name = 华南坦克
+			picture = kmt_shenyang
+			allowed = {
+				original_tag = MAN
+			}
+				
+			available = {
+				716= { is_owned_by = ROOT }
+				has_completed_focus = CSB_DongBei_armor_effort_1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { Dongbei_armor_manufacturer_2 }
+		}
+		Dongbei_armor_manufacturer_3 = {
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			picture = kmt_jinan
+			allowed = {
+				original_tag = MAN
+			}
+				
+			available = {
+				#328 = { is_owned_by = ROOT }
+				has_completed_focus = CSB_DongBei_armor_effort_1
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { Dongbei_armor_manufacturer_3 }
+		}
+		Dongbei_armor_manufacturer_4 = {
+			research_bonus = {
+				armor = 0.15
+			}
+			#name = 华南坦克
+			picture = kmt_chongqing
+			allowed = {
+				original_tag = MAN
+			}
+				
+			available = {
+				328 = { is_controlled_by = ROOT }
+				has_completed_focus = CSB_DongBei_harbin_university
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { Dongbei_armor_manufacturer_4 }
+		}
+		Dongbei_armor_manufacturer_5 = {
+			research_bonus = {
+				armor = 0.15
+			}
+			#name = 华南坦克
+			picture = kmt_yili
+			allowed = {
+				original_tag = MAN
+			}
+				
+			available = {	
+				country_exists = SOV
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			}
+			ai_will_do = {
+				factor = 1
+			}
+			traits = { Dongbei_armor_manufacturer_5 }
+		}
+		CE_KMT_tongyongtanke = {
+			
+			#name = 中国战车制造公司
+			picture = kmt_tongyongtanke
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				armor = 0.15
+			}	
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 1
+			}		
+			traits = { armored_car_manufacturer }
+		}
+	}
+	aircraft_manufacturer = {
+		designer = yes
+		CE_KMT_haerbinair = {
+			
+			#name = 哈尔滨飞机
+			picture = kmt_haerbin
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}	
+			available = {
+				328= { is_owned_by = ROOT }
+			}
+			traits = { light_aircraft_manufacturer }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_changchunair = {
+			picture = kmt_changsha
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}	
+			available = {
+				328= { is_owned_by = ROOT }
+			}
+			traits = { medium_aircraft_manufacturer }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_tonghangair = {
+			picture = kmt_tongyonghangtian
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_ww1_aviation_effort_4
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}	
+			available = {
+				
+			}
+			traits = { CE_KMT_tonghangair }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_zhengzhouair = {
+			
+			#name = 杨州飞机
+			picture = kmt_zhengzhou
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}	
+			available = {
+				country_exists = SOV
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			}
+	
+			traits = { CE_KMT_zhengzhouair }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	industrial_concern = {
+		#designer = yes		
+		CE_KMT_tongyongmingong = {
+			allowed = {
+				original_tag = MAN
+			}
+			
+			picture = kmt_dianwang
+			
+			available = {
+				has_completed_focus = CSB_DongBei_invite_foreign_investor
+				NOT = { has_war_with = USA }
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { CE_KMT_dianwang }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		CE_KMT_tongyongjijian = {
+			allowed = {
+				original_tag = MAN
+			}
+			picture = kmt_zhongtie
+			
+			available = {
+				has_completed_focus = CSB_DongBei_invite_foreign_investor
+				NOT = { has_war_with = USA }
+			}
+			
+			research_bonus = {
+				industry = 0.1
+				train_tech = 0.1
+			}
+			
+			traits = { CE_KMT_tielu }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		Dongbei_industirial_research_1 = {
+			allowed = {
+				original_tag = MAN
+			}
+			picture = kmt_wuchang
+			
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { Dongbei_industirial_research_1 }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+		Dongbei_industirial_research_2 = {
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_new_harbin_investments
+			}
+			picture = kmt_wuchang
+			
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { Dongbei_industirial_research_2 }
+			ai_will_do = {
+				factor = 2
+			}
+		}
+	}
+	materiel_manufacturer = {
+		designer = yes		
+		CE_KMT_changchun = {
+			
+			#name = 
+			picture = kmt_changchun
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				artillery = 0.1
+				infantry_weapons = 0.05
+			}	
+			available = {
+				if = {
+					limit = { NOT = { has_war_with = GER } }
+					has_completed_focus = CSB_DongBei_invite_foreign_investor
+				}	
+				else = {
+					has_completed_focus = CSB_DongBei_german_armerment
+				}
+			}
+
+			traits = { CE_KMT_changchun }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_tongyongjungong = {
+			
+			#name = 
+			picture = kmt_tongyongjungong
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				artillery = 0.05
+				infantry_weapons = 0.1
+			}	
+			available = {
+			
+			}
+
+			traits = { CE_KMT_tongyongjungong }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_shuntian = {
+			
+			#
+			picture = kmt_shuntian
+			allowed = {
+				OR = {
+					original_tag = KMT
+					original_tag = CPC
+					original_tag = CF1
+					original_tag = CF2
+					original_tag = CF3
+					original_tag = CF4
+					original_tag = CF5
+					original_tag = KT1
+					original_tag = CNF
+					original_tag = DMF
+				}
+			}
+		
+			research_bonus = {
+				motorized_equipment = 0.15
+			}	
+			available = {
+				country_exists = SOV
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			}
+						
+			traits = { CE_KMT_shuntian }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	naval_manufacturer = {
+		designer = yes	
+		CE_KMT_guangzhouchuanchang = {
+			
+			#name = 
+			picture = kmt_guangzhou
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				naval_equipment = 0.2
+			}	
+			available = {
+				has_completed_focus = CSB_DongBei_newnavalcanons_1
+			}
+			traits = { battlefleet_designer }		
+			ai_will_do = {
+				factor = 1
+			}
+		}	
+		CE_KMT_hangzhouchuanchang = {
+			
+			#name = 
+			picture = kmt_hangzhou
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				naval_equipment = 0.2
+			}	
+			available = {
+				has_completed_focus = CSB_DongBei_dreadnought_effort
+			}
+
+			traits = { pacific_fleet_naval_manufacturer }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_dalianchuanchang = {
+			
+			#name = 大连船厂
+			picture = kmt_dalian
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				naval_equipment = 0.2
+			}	
+			available = {
+				745= { is_owned_by = ROOT }
+			}
+
+			traits = { repair_and_refurbishment_plant }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		CE_KMT_tongyongchuanchang = {
+			
+			#name = 
+			picture = kmt_tongyongchuanchang
+			allowed = {
+				original_tag = MAN
+			}
+			research_bonus = {
+				naval_equipment = 0.15
+			}	
+			available = {
+				has_completed_focus = CSB_DongBei_pacific_secrete_treaty
+			}
+			
+			traits = { naval_manufacturer }		
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

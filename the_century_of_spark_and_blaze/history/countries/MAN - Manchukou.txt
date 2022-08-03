@@ -1,0 +1,113 @@
+﻿capital = 328
+
+recruit_character = Dongbei_Wu_Chuan
+recruit_character = DongBei_zhou_shumo
+recruit_character = Dongbei_Zhu_Hezhong
+recruit_character = Dongbei_Zhang_Shaozeng
+recruit_character = Dongbei_ye_sheng
+recruit_character = DongBei_Lan_Tianwei
+recruit_character = DongBei_wu_luzhen
+recruit_character = DongBei_deng_zhenyong
+recruit_character = DongBei_wu_xiangzhen
+recruit_character = DongBei_meng_xianyi
+recruit_character = DongBei_yuan_jiasheng
+recruit_character = DongBei_xie_limin
+recruit_character = DongBei_mihail_martinov
+recruit_character = DongBei_zhang_xiaozhun
+recruit_character = DongBei_felix_dzerzhinsky
+recruit_character = DongBei_yakov_sverdlov
+recruit_character = DongBei_mihail_frunze
+recruit_character = DongBei_max_hoffmann
+recruit_character = DongBei_liang_tingdong
+recruit_character = DongBei_song_yuntong
+recruit_character = DongBei_bing_bucheng
+recruit_character = DongBei_zhang_yunrong
+recruit_character = DongBei_xia_yang
+recruit_character = DongBei_wang_baozhen
+recruit_character = DongBei_li_dazhao
+recruit_character = DongBei_chen_duxiu
+recruit_character = DongBei_mao_zedong
+
+recruit_character = Dongbei_paul_von_lettowvorbeck
+recruit_character = DongBei_song_xiaolian
+recruit_character = DongBei_zhang_tingge
+recruit_character = DongBei_luo_guorui
+recruit_character = DongBei_zhu_zhuquan
+recruit_character = DongBei_cheng_shizhao
+recruit_character = DongBei_situ_biru
+recruit_character = DongBei_feng_ru
+recruit_character = DongBei_jiang_baili
+recruit_character = DongBei_zhang_guotao
+recruit_character = DongBei_geng_jinwen
+
+give_military_access = RUS # Russian Influence
+give_military_access = CHI # Same Revolution
+
+set_politics = {
+    ruling_party = communism
+    last_election = "1910.1.1"
+    election_frequency = 48
+    elections_allowed = no
+}
+set_popularities = {
+    democratic = 22
+    fascism = 5
+    communism = 40
+    neutrality = 33
+}
+set_technology = {
+	#infantry
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	support_weapons = 1
+	motorised_infantry = 1
+	#bicycle_infantry = 1
+	
+	#support
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	
+	#armored
+	early_armored_car = 1
+	
+	#artillery
+	gw_artillery = 1
+	howitzer1 = 1
+	
+	#doctrine
+	bayonet_assault = 1
+	mass_cavalry_raid = 1
+	large_scale_offensive = 1
+	last_stand = 1
+	large_scale_breakthrough = 1
+	
+	#navy
+	transport = 1
+
+	#air
+	early_fighter = 1
+	airship_bomber = 1
+	
+	#engineering
+	electrical_engineering = 1
+	tech_field_hospital = 1
+	radio = 1
+	analytical_engine = 1
+	mechanical_engineering = 1
+	aircraft_engine = 1
+	generator_battery = 1
+	basic_train = 1
+}
+add_ideas = {
+	partial_economic_mobilisation
+	limited_exports
+	limited_conscription
+	DongBei_idea_xinhai_revolution
+	DongBei_idea_support_for_revolution
+	DongBei_idea_german_officer
+	DongBei_idea_communists_officer
+	DongBei_idea_german_debt
+	DongBei_idea_american_debt
+	DongBei_idea_russian_debt
+}

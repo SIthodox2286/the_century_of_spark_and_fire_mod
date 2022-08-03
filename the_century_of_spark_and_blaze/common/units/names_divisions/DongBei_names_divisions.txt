@@ -1,0 +1,591 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#              
+MAN_INF_00 = 
+{
+	name = "国民革命军步兵师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "革命 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "革命 %d 师" }			# 
+		2 = { "革命 %d 师" }			# 
+		3 = { "革命 %d 师" }			# 
+		4 = { "革命 %d 师" }			# 
+	}
+}
+                    #    the current game version.
+MAN_INF_01 = 
+{
+	name = "整编新军"
+
+	for_countries = { MAN FNG CHI QIN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "整编第 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "北洋六镇第 %d 协" }			# 
+		2 = { "北洋六镇第 %d 协" }			# 
+		3 = { "北洋六镇第 %d 协" }			# 
+		4 = { "北洋六镇第 %d 协" }			# 
+	}
+}
+
+MAN_INF_011 = 
+{
+	name = "北洋军"
+
+	for_countries = { FNG QIN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "北洋编号第 %d 协"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "北洋编号第 %d 协" }			# 
+		2 = { "北洋编号第 %d 协" }			# 
+		3 = { "北洋编号第 %d 协" }			# 
+		4 = { "北洋编号第 %d 协" }			# 
+	}
+}
+
+MAN_INF_012 = 
+{
+	name = "边镇巡防营"
+
+	for_countries = { FNG QIN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "巡防营第 %d 协"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "东北巡防营第 %d 协" }			# 
+		2 = { "东北巡防营第 %d 协" }			# 
+		3 = { "东北巡防营第 %d 协" }			# 
+		4 = { "东北巡防营第 %d 协" }			# 
+	}
+}
+
+MAN_INF_02 = 
+{
+	name = "国民革命军步兵"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "野战军第 %d 纵队"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "野战军 %d 师" }			# 
+	}
+}
+
+MAN_INF_03 = 
+{
+	name = "步兵单位"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "第 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "第 %d 师" }			# 
+	}
+}
+
+MAN_CAV_01 = 
+{
+	name = "革命军骑兵师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "革命军骑 %d 团"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d 英雄骑兵团" }			# 
+		2 = { "%d 英雄骑兵团" }			# 
+		3 = { "%d 英雄骑兵团" }			# 
+		4 = { "%d 英雄骑兵团" }			# 
+		5 = { "%d 英雄骑兵团" }			# 
+		6 = { "%d 英雄骑兵团" }			# 
+		7 = { "%d 英雄骑兵团" }			# 
+		8 = { "%d 英雄骑兵团" }			# 
+		9 = { "%d 英雄骑兵团" }			# 
+		10 = { "%d 英雄骑兵团" }			# 
+	}
+}
+
+MAN_CAV_02 = 
+{
+	name = "骑兵纵队"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "骑 %d 纵"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "骑 %d 纵" }			# All fictional "Route Cavalry Corps"
+	}
+}
+
+MAN_CAV_021 = 
+{
+	name = "骑兵协"
+
+	for_countries = { FNG QIN }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "马军 %d 营"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "马军 %d 营" }			# All fictional "Route Cavalry Corps"
+	}
+}
+
+MAN_CAV_03 = 
+{
+	name = "骑兵单位"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "骑 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "骑 %d 师" }			# All fictional "Route Cavalry Corps"
+	}
+}
+
+
+MAN_MOT_01 = 
+{
+	name = "机动化师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "机动 %d 纵"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%d 纵/115 师" }			# MAN continuously reinforced its three "divisions" with additional troops (columns)
+		21 = { "1 纵/120 师" }
+		31 = { "1 纵/129 师" }
+		2 = { "%d 纵/115 师" }			
+		22 = { "2 纵/120 师" }
+		32 = { "2 纵/129 师" }
+		3 = { "%d 纵/115 师" }			
+		23 = { "3 纵/120 师" }
+		33 = { "3 纵/129 师" }
+		4 = { "%d 纵/115 师" }			
+		24 = { "4 纵/120 师" }
+		34 = { "4 纵/129 师" }
+		5 = { "%d 纵/115 师" }			
+		25 = { "5 纵/120 师" }
+		35 = { "5 纵/129 师" }
+		41 = { "1 纵/新 4 军" }
+		42 = { "2 纵/新 4 军" }
+		43 = { "3 纵/新 4 军" }
+		6 = { "%d 纵/115 师" }			
+		26 = { "6 纵/120 师" }
+		36 = { "6 纵/129 师" }
+		44 = { "4 纵/新 4 军" }
+		45 = { "5 纵/新 4 军" }
+		7 = { "%d 纵/115 师" }			
+		27 = { "7 纵/120 师" }
+		37 = { "7 纵/129 师" }
+		46 = { "6 纵/新 4 军" }
+		47 = { "7 纵/新 4 军" }
+		8 = { "%d 纵/115 师" }			
+		28 = { "8 纵/120 师" }
+		38 = { "8 纵/129 师" }
+		48 = { "8 纵/新 4 军" }
+		9 = { "%d 纵/115 师" }			
+		29 = { "9 纵/120 师" }
+		39 = { "9 纵/129 师" }
+		49 = { "9 纵/新 4 军" }
+	}
+}
+
+MAN_MOT_02 = 
+{
+	name = "国民革命军机动化师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "机动化 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "机动化 %d 师" }			# MAN continuously reinforced its three "divisions" with additional troops (columns)
+
+	}
+}
+
+MAN_MEC_01 = 
+{
+	name = "国民革命军步战车师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "步战车 %d 纵"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "步战车 %d 纵" }			# MAN continuously reinforced its three "divisions" with additional troops (columns)
+
+	}
+}
+
+MAN_MEC_02 = 
+{
+	name = "机械化师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "机械 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "机械 %d 师" }			# MAN continuously reinforced its three "divisions" with additional troops (columns)
+
+	}
+}
+
+#CHI_ARM_01 -- armor linked to CHI naming group
+#CHI_PAR_01 -- airborne linked to CHI naming group 
+#CHI_MAR_01 -- marines linked to CHI naming group 
+
+MAN_MNT_00 = 
+{
+	name = "革命军山地师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "革命 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "革命第 %d 英雄师" }			# MAN continuously reinforced its three (then four) "divisions" with additional troops (columns)
+
+	}
+}
+
+MAN_MNT_01 = 
+{
+	name = "游击队师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "游击 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "游击 %d 师" }			# MAN continuously reinforced its three (then four) "divisions" with additional troops (columns)
+
+	}
+}
+
+MAN_MNT_02 = 
+{
+	name = "特种山地师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	# Number reservation system will tie to another group.
+	link_numbering_with = { MAN_INF_01 }
+
+	fallback_name = "特种山地 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "特种山地 %d 师" }			# MAN continuously reinforced its three (then four) "divisions" with additional troops (columns)
+
+	}
+}
+
+MAN_GAR_01 = 
+{
+	name = "共和民兵团"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "革命第 %d 民兵团"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "哈尔滨民兵团" }		# All fictional names for local militias
+		2 = { "共和革命卫队" }		# All fictional names for local militias
+		3 = { "黑龙江第 %d 民兵团" }		# All fictional names for local militias
+		4 = { "黑龙江第 %d 民兵团" }		# All fictional names for local militias
+		5 = { "黑龙江第 %d 民兵团" }		# All fictional names for local militias
+		32 = { "沈钢工农民兵团" }		# All fictional names for local militias
+		33 = { "机械厂工人民兵团" }		# All fictional names for local militias
+		34 = { "北厂工人民兵团" }		# All fictional names for local militias
+		35 = { "南厂工人民兵团" }		# All fictional names for local militias
+		10 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		11 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		12 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		13 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		14 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		15 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		16 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		17 = { "辽宁第 %d 民兵团" }		# All fictional names for local militias
+		18 = { "共青团军训师" }		# All fictional names for local militias
+		19 = { "长春武警大队" }		# All fictional names for local militias
+		20 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		21 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		22 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		23 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		24 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		25 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		26 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		27 = { "吉林第 %d 民兵团" }		# All fictional names for local militias
+		28 = { "国际志愿者警备队" }		# All fictional names for local militias
+		29 = { "哈尔滨医护警备队" }		# All fictional names for local militias
+		30 = { "哈尔滨工人民兵团" }		# All fictional names for local militias
+		31 = { "通辽工人民兵团" }		# All fictional names for local militias
+	}
+}
+
+MAN_GAR_02 = 
+{
+	name = "警备师"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "警备 %d 师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "警备 %d 师" }		# All fictional names for local militias
+
+	}
+}
+
+MAN_GAR_03 = 
+{
+	name = "地方游击队"
+
+	for_countries = { MAN }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { CHI_INF_01 }
+
+	fallback_name = "第 %d 游击队师"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "第 %d 游击队师" }		# All fictional names for local militias
+
+	}
+}
+

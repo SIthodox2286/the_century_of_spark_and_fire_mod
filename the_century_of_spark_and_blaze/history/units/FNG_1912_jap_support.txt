@@ -1,0 +1,98 @@
+﻿division_template = {
+	name = "Infantry Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		artillery_brigade = { x = 0 y = 3 } 
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		artillery_brigade = { x = 1 y = 3 } 
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+### OOB ###
+units = {
+	division= { 
+		name = "干涉军第 1 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	division= { 
+		name = "干涉军第 2 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	division= { 
+		name = "干涉军第 2 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	division= { 
+		name = "干涉军第 3 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	division= { 
+		name = "干涉军第 4 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	division= { 
+		name = "干涉军第 5 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	division= { 
+		name = "干涉军第 6 大队"
+		location=1150 # 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		start_equipment_factor = 0.8
+	}
+	
+	
+}
+
+
+### Air Forces ###
+# NONE
+
+
+### Equipments ###
+instant_effect = {
+	# GIVEN WHEN FENG YUXIANG JOINS COMMIES
+	add_equipment_to_stockpile = {
+		type = infantry_equipment_0
+		amount = 5000
+		producer = JAP
+	}
+	add_equipment_to_stockpile = {
+		type = artillery_equipment_1
+		amount = 5000
+		producer = JAP
+	}
+	
+}

@@ -1,0 +1,6244 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+# 东北
+# 717 - songjiang ( northern jilin )
+# 328 - jilin
+# 714 - hei long jiang
+# 715 - liaobei
+# 617 - liaoxi
+# 716 - liaodong
+# 744 - dalian
+# 610 - rehe
+# 华北 states
+# 611 - cha ha er ( zhang jia kou )
+# 609 - chengde
+# 608 - beijing
+# 614 - zhili
+# 597 - shandong
+# 615 - shanxi
+# 607 - henan
+# 620 - hubei
+# 745 - qing dao
+# 746 - wei hai wei
+# 华南 states
+# 598 - jiangsu
+# 606 - anhui
+# 613 - shanghai
+# 602 - hunan
+# 596 - zhejiang
+# 600 - jiangxi
+# 595 - fujian
+# 593 - guangdong
+# 524 - taiwan
+# 594 - leizhou bandao (qin zhou)
+# 591 - hainan
+# 599 - guangxi
+# 592 - guangzhou
+# 326 - xiang gang
+# 729 - ao men
+# 728 - guangzhou wan
+# 西北 states
+# 622 - shaanxi
+# 283 - gansu
+# 755 - hexizoulang
+# 616 - ningxia
+# 621 - suiyuan (east neimeng)
+# 604 - qinghai
+# 619 - hami
+# 618 - zhun ga er (wa la)
+# 287 - ta ke la ma gan sha mo
+# 749 - kashi ga er
+# 322 - xizang
+# 434 - zangnan
+# 441 - keshi mi er
+# 589 - qihe ( outer xibei )
+# 西南 states
+# 603 - guizhou
+# 325 - yunnan
+# 605 - sichuan
+# 外东北 ＆ 西伯利亚 states
+# 408 - hai shen wai
+# 409 - miao jie
+# 560 - east a mu er ( east wai xing an ling )
+# 561 - west a mu er ( central wai xing an ling )
+# 563 - chi ta ( west wai xing an ling ) ( also can be mongol )
+# 637 - kan cha jia ban dao
+# 574 - ya zi ku ke
+# 644 - dongbei xiboliya
+# 北朝鲜 states
+# 799 - ping an dao ( west liuzhen )
+# 527 - xian jing dao ( east liuzhen )
+# 797 - huanghai dao 
+# 800 - jingji dao ( han cheng )
+# 南朝鲜 states
+# 796 - jiangyuan dao ( jiang nan )
+# 801 - zhongqing dao 
+# 802 - qingshang dao ( east southern coast to jap )
+# 525 - quanluo dao ( west southern coast to jap )
+# 日本部分 states
+# 526 - chongsheng/liuqiu
+# 蒙古 states
+# 330 - waimeng 
+# 612 - xi lin guo le ( ke er qing )
+# 329 - tang nu wu liang hai (tang nu tu wa)
+# 564 - east bei jia er hu coast
+# 河中 states
+# 732 - fei er gan na ( east to sa ma er han )
+# 585 - xi er he ( north to sa ma er han )
+# 586 - sa ma er han
+# 742 - ha la te jin ( upper to afganstan )
+# 405 - bu ha la
+# 584 - wai bo si
+# 406 - hua la zi mo ( close to bu ha la )
+# 407 - wu la er si ke ( touch russia ) ( a si te la han )
+# 东南亚部分 states
+# 671 - henei
+# 286 - annan
+# 741 - jian pu zhai east
+# 820 - jian pu zhai south
+# 819 - jian pu zhai xibei
+# 670 - laos
+# 822 - laos and thailand jiao jie
+# 336 - malaya/singarpore
+# 623 - lvsong
+
+focus_tree = {
+	id = csb_dongbei_focus
+	country = {
+		base = 0
+		modifier = {
+			add = 10
+			original_tag = MAN 
+		}
+	}
+	default = no
+	#available_political_advisor
+	#available_chief_of_army
+	#available_chief_of_navy
+	#available_chief_of_airforce
+	#available_military_high_command
+	#available_theorist
+	#available_designer
+	#available_industrial_concern
+	continuous_focus_position = {
+		x = 20
+		y = 1000
+	}
+	focus = { # 哈尔滨政权
+		id = CSB_DongBei_harbin_government
+		# 
+		icon = GFX_focus_gongchanlu
+		cost = 1
+		x = 9
+		y = 0
+		
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_advisors_man_csb
+			# 解锁所有中国顾问、理论家、司令
+			add_war_support = 0.05
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	focus = {# 革命的第二步
+		id = CSB_DongBei_emergency_factories
+		# 
+		icon = GFX_focus_shichangtiaokong
+		cost = 2
+		prerequisite = {
+			focus = CSB_DongBei_harbin_government
+		}
+		x = 4
+		y = 1
+		
+		available = {
+		}
+		bypass = {
+			
+		}
+		completion_reward = {
+			capital_scope = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 成立工业委员会
+		# 
+		id = CSB_DongBei_war_economy_1
+		icon = GFX_focus_nengyuan
+		cost = 3
+		prerequisite = {
+			focus = CSB_DongBei_emergency_factories
+		}
+		x = 2
+		y = 2
+		
+		available = {
+		}
+		bypass = {
+			
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 前线土工作业
+		# 
+		id = CSB_DongBei_war_economy_frontline
+		icon = GFX_goal_generic_construction2
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_1
+		}
+		x = 0
+		y = 3
+		available = {
+			
+		}
+		bypass = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = DongBei_idea_construction_division_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_construction_division_2
+					add_idea = DongBei_idea_construction_division_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_construction_division_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_construction_division_1
+					add_idea = DongBei_idea_construction_division_2
+				}
+			}
+			else = {	
+				add_ideas = DongBei_idea_construction_division_1
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 修缮道路
+		# 
+		id = CSB_DongBei_war_economy_supply
+		icon = GFX_goal_generic_construct_civilian
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_1
+		}
+		x = 2
+		y = 3
+		available = {
+			328 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = DongBei_idea_supply_division_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_supply_division_2
+					add_idea = DongBei_idea_supply_division_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_supply_division_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_supply_division_1
+					add_idea = DongBei_idea_supply_division_2
+				}
+			}
+			else = {	
+				add_ideas = DongBei_idea_supply_division_1
+			}
+			328 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 修建临时跑道
+		# 
+		id = CSB_DongBei_air_port
+		icon = GFX_goal_generic_air_production
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_supply
+		}
+		x = 2
+		y = 4
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 处理会党问题
+		# 
+		id = CSB_DongBei_gemingdang_infantry
+		icon = GFX_focus_generic_manpower
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_frontline
+		}
+		x = 0
+		y = 4
+		available = {
+			328 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DongBei_idea_huidang
+				add_idea = DongBei_idea_huidang_recruits
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 5000
+				producer = QIN
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 新装备
+	# 
+		id = CSB_DongBei_war_economy_equipment
+		icon = GFX_focus_danyao
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_1
+		}
+		x = 4
+		y = 3
+		available = {
+			
+		}
+		bypass = {
+		}
+		completion_reward = {
+			custom_effect_tooltip = new_equipment_type_tt_csb
+			# 
+			if = {
+				limit = { NOT = { has_tech = artillery1 } }
+				set_technology = {
+					artillery1 = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_tech = rocket_artillery } }
+				set_technology = {
+					rocket_artillery = 1
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2500
+				producer = GER
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 2000
+				producer = RUS
+			}
+			add_equipment_to_stockpile = {
+				type = rocket_artillery_equipment_1
+				amount = 2000
+				producer = GER
+			} 
+			
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 加急生产
+		# 
+		id = CSB_DongBei_war_economy_more_arms
+		icon = GFX_focus_daxiaotiaozhanzheng
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_equipment
+		}
+		x = 4
+		y = 4
+		available = {
+			has_war = yes
+		}
+		bypass = {
+			has_war = no
+			NOT = { country_exists = FNG }
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = DongBei_idea_emergency_production
+				days = 365
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				has_war_with = FNG
+			}
+		}
+	}
+	focus = { # 肃清反动武装
+		# 
+		id = CSB_DongBei_cleansing_1
+		icon = GFX_focus_SOV_penal_battalions
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_war_economy_more_arms
+		}
+		prerequisite = {
+			focus = CSB_DongBei_air_port
+		}
+		prerequisite = {
+			focus = CSB_DongBei_gemingdang_infantry
+		}
+		x = 2
+		y = 5
+		
+		available = {		
+			NOT = { country_exists = FNG }
+			has_idea = DongBei_idea_interior_threats
+		}
+		bypass = {
+		}
+		completion_reward = {
+			remove_ideas = DongBei_idea_huidang_recruits
+			swap_ideas = {
+				remove_idea = DongBei_idea_interior_threats
+				add_idea = DongBei_idea_revolutionary_government
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	focus = { # 煤钢设备投产
+		# 
+		id = CSB_DongBei_introduce_steel_industries
+		icon = GFX_focus_tianjin
+		cost = 2
+		prerequisite = {
+			focus = CSB_DongBei_emergency_factories
+		}
+		x = 6
+		y = 2
+		available = {
+			
+		}
+		bypass = {
+		}
+		completion_reward = {
+			csb_increase_dept_idea_ger = yes
+			add_resource = {
+				type = steel
+				amount = 12
+				state = 328
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # 扩大哈尔滨工业区
+		# 
+		id = CSB_DongBei_expand_industrial_zone
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_introduce_steel_industries
+		}
+		x = 6
+		y = 4
+		available = {
+			has_war = no
+			328 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		bypass = {
+			NOT = {
+				328 = {
+					is_fully_controlled_by = ROOT
+				}
+			}
+		}
+		completion_reward = {
+			csb_increase_dept_idea_rus = yes
+			328 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_russian_debt_3
+			}
+		}
+	}
+	focus = { # 东北发展计划
+		# 
+		id = CSB_DongBei_development_project
+		icon = GFX_focus_generic_treaty
+		cost = 2
+		prerequisite = {
+			focus = CSB_DongBei_expand_industrial_zone
+		}
+		x = 6
+		y = 5
+		available = {
+			714 = {
+				is_fully_controlled_by = ROOT
+			}
+			717 = {
+				is_fully_controlled_by = ROOT
+			}
+			715 = {
+				is_fully_controlled_by = ROOT
+			}
+			617 = {
+				is_fully_controlled_by = ROOT
+			}
+			716 = {
+				is_fully_controlled_by = ROOT
+			}
+			610 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			csb_decrease_dept_idea_rus = yes
+			715 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			717 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			617 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			714 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = { # 良性债务重组
+		# 
+		id = CSB_DongBei_clear_international_debt
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_development_project
+		}
+		x = 6
+		y = 6
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = kis_news.1.t
+					has_global_flag = kis_war
+				}
+				num_of_civilian_factories > 50
+				AND = { 
+					custom_trigger_tooltip = {
+						tooltip = nomore_rus_with_debt_tt_trig
+						OR = { 
+							NOT = { country_exists = RUS }
+							RUS = { has_government = communism }
+							has_global_flag = russian_revolution
+							NOT = {
+								has_idea = DongBei_idea_russian_debt_0
+								has_idea = DongBei_idea_russian_debt
+								has_idea = DongBei_idea_russian_debt_1
+								has_idea = DongBei_idea_russian_debt_2
+								has_idea = DongBei_idea_russian_debt_3
+								has_idea = DongBei_idea_russian_debt_4
+								has_idea = DongBei_idea_russian_debt_5
+							}
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = nomore_ger_with_debt_tt_trig
+						OR = { 
+							NOT = { country_exists = GER }
+							GER = { has_government = communism }
+							#has_global_flag = russian_revolution
+							NOT = {
+								has_idea = DongBei_idea_american_debt
+								has_idea = DongBei_idea_american_debt_1
+								has_idea = DongBei_idea_american_debt_2
+								has_idea = DongBei_idea_american_debt_3
+								has_idea = DongBei_idea_american_debt_4
+								has_idea = DongBei_idea_american_debt_5
+							}
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = nomore_usa_with_debt_tt_trig
+						OR = { 
+							NOT = { country_exists = USA }
+							USA = { has_government = communism }
+							#has_global_flag = russian_revolution
+							NOT = {
+								has_idea = DongBei_idea_german_debt
+								has_idea = DongBei_idea_german_debt_1
+								has_idea = DongBei_idea_german_debt_2
+								has_idea = DongBei_idea_german_debt_3
+								has_idea = DongBei_idea_german_debt_4
+								has_idea = DongBei_idea_german_debt_5
+							}
+						}
+					}
+				}
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = not_has_russian_debt_idea
+				# 
+				NOT = {
+					has_idea = DongBei_idea_russian_debt_0
+					has_idea = DongBei_idea_russian_debt
+					has_idea = DongBei_idea_russian_debt_1
+					has_idea = DongBei_idea_russian_debt_2
+					has_idea = DongBei_idea_russian_debt_3
+					has_idea = DongBei_idea_russian_debt_4
+					has_idea = DongBei_idea_russian_debt_5
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_has_american_debt_idea
+				# 
+				NOT = {
+					has_idea = DongBei_idea_american_debt
+					has_idea = DongBei_idea_american_debt_1
+					has_idea = DongBei_idea_american_debt_2
+					has_idea = DongBei_idea_american_debt_3
+					has_idea = DongBei_idea_american_debt_4
+					has_idea = DongBei_idea_american_debt_5
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_has_german_debt_idea
+				# 
+				NOT = {
+					has_idea = DongBei_idea_german_debt
+					has_idea = DongBei_idea_german_debt_1
+					has_idea = DongBei_idea_german_debt_2
+					has_idea = DongBei_idea_german_debt_3
+					has_idea = DongBei_idea_german_debt_4
+					has_idea = DongBei_idea_german_debt_5
+				}
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = begin_cleansing_of_debts_dongbei_tt
+			custom_effect_tooltip = stop_payment_disater_dongbei_tt
+			if = {
+				limit = { has_idea = DongBei_idea_german_debt_crisis }
+				hidden_effect = {
+					add_political_power = -100
+					remove_ideas = DongBei_idea_german_debt_crisis
+				}
+				custom_effect_tooltip = remove_debt_crisis_cost
+				# 减少§Y100§!政治点数，移除负面国家精神：\n
+				show_ideas_tooltip = DongBei_idea_german_debt_crisis
+			}
+			if = {
+				limit = { has_idea = DongBei_mission_american_debt_crisis }
+				hidden_effect = {
+					add_political_power = -100
+					remove_ideas = DongBei_mission_american_debt_crisis
+				}
+				custom_effect_tooltip = remove_debt_crisis_cost
+				# 消耗§Y100§!政治点数，移除负面国家精神：\n
+				show_ideas_tooltip = DongBei_mission_american_debt_crisis
+			}
+			if = {
+				limit = { has_idea = DongBei_idea_russian_debt_crisis }
+				hidden_effect = {
+					add_political_power = -100
+					remove_ideas = DongBei_idea_russian_debt_crisis
+				}
+				custom_effect_tooltip = remove_debt_crisis_cost
+				# 减少§Y100§!政治点数，移除负面国家精神：\n
+				show_ideas_tooltip = DongBei_idea_russian_debt_crisis
+			}
+		}
+	}
+	
+	focus = { # 全体工作会议
+		id = CSB_DongBei_official_representitives_meeting
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_harbin_government
+		}
+		x = 13
+		y = 1
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_new_members_csb
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 重视政治工作
+		# 
+		id = CSB_DongBei_propoganda_effort
+		icon = GFX_goal_generic_propaganda
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_official_representitives_meeting
+		}
+		x = 9
+		y = 2
+		
+		available = {
+			
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = DongBei_idea_revolutionary_propoganda
+				days = 210
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+	focus = { # 发动保卫局
+		id = CSB_DongBei_revolution_baoweiju
+		icon = GFX_focus_zhongtong
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_propoganda_effort
+		}
+		x = 8
+		y = 3
+		available = {
+			
+		}
+		completion_reward = {
+			#custom_effect_tooltip = unlock_neiwubu_members_csb
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = DongBei_felix_dzerzhinsky
+			show_ideas_tooltip = DongBei_xia_yang
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 士兵苏维埃
+		# 
+		id = CSB_DongBei_shibing_weiyuan_hui
+		icon = GFX_focus_gongjun
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_propoganda_effort
+		}
+		x = 10
+		y = 3
+		available = {
+		}
+		completion_reward = {
+			add_ideas = DongBei_idea_peoples_revolution_army_1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+	}
+	focus = { # 培养政治委员
+		# 党支部建在连上，让士兵拥有思想。武装斗争就无往不利。
+		id = CSB_DongBei_zhengwei
+		icon = GFX_focus_generic_military_mission
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_revolution_baoweiju
+		}
+		prerequisite = {
+			focus = CSB_DongBei_shibing_weiyuan_hui
+		}
+		x = 9
+		y = 4
+		available = {
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = DongBei_idea_peoples_revolution_army_2
+				remove_idea = DongBei_idea_peoples_revolution_army_1
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+	}
+	focus = { # 重视经济工作
+		# 
+		id = CSB_DongBei_economics_effort
+		icon = GFX_goal_generic_trade
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_official_representitives_meeting
+		}
+		x = 13
+		y = 2
+		available = {
+			NOT = { has_war_with = FNG }
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 组建东北政协
+		# 
+		id = CSB_DongBei_zhaoshng_yinzi
+		icon = GFX_focus_hold_elections
+		cost = 3
+		prerequisite = {
+			focus = CSB_DongBei_economics_effort
+		}
+		x = 12
+		y = 3
+		available = {
+			
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+			
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = CE_KMT_tongyongchuanchang
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+	}
+	focus = { # 招募俄工
+		# 
+		id = CSB_DongBei_increase_russian_investments
+		icon = GFX_focus_jungong
+		cost = 3
+		prerequisite = {
+			focus = CSB_DongBei_economics_effort
+		}
+		x = 14
+		y = 3
+		available = {
+			NOT = { has_war_with = FNG }
+			NOT = { has_war_with = JAP }
+			
+			#has_country_flag = is_geweihui_flag
+			#has_global_flag = dongbei_xinhai_revolution_flag
+			#NOT = { has_war_with = FNG }
+			#NOT = { has_war_with = JAP }	
+			#NOT = { country_exists = FNG }
+		}
+		completion_reward = {
+			csb_increase_dept_idea_rus = yes
+			if = {
+				limit = {
+					NOT = { has_idea = DongBei_idea_russian_labour_recruitments }
+				}	
+				add_ideas = DongBei_idea_russian_labour_recruitments
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_russian_labour_recruitments
+				}	
+				swap_ideas = {
+					remove_idea = DongBei_idea_russian_labour_recruitments
+					add_idea = DongBei_idea_russian_labour_recruitments_1
+				}
+			}
+			else = {
+				add_political_power = 150
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_russian_debt_3
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = { # 城市设计
+		# 
+		id = CSB_DongBei_new_harbin_investments
+		icon = GFX_focus_qinjin
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_zhaoshng_yinzi
+		}
+		prerequisite = {
+			focus = CSB_DongBei_increase_russian_investments
+		}
+		x = 13
+		y = 4
+		available = {
+			328 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		completion_reward = {
+			csb_decrease_dept_idea_rus = yes
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = Dongbei_industirial_research_2
+			
+			add_tech_bonus = {
+				name = CSB_DongBei_new_harbin_investments
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	
+	focus = { # 重视社会工作
+		# 
+		id = CSB_DongBei_social_work_effort
+		icon = GFX_focus_agrarian_socialism
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_official_representitives_meeting
+		}
+		x = 17
+		y = 2
+		available = {
+			
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 新文化运动
+		# 
+		id = CSB_DongBei_xinwenhua_movement
+		icon = GFX_focus_por_workers_of_iberia
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_social_work_effort
+		}
+		x = 16
+		y = 3
+		completion_reward = {
+			add_ideas = DongBei_idea_social_policy_1
+		}
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+	}
+	focus = { # 劳工基础教育
+		# 
+		id = CSB_DongBei_chinese_workers
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_social_work_effort
+		}
+		x = 18
+		y = 3
+		completion_reward = {	
+			csb_increase_dept_idea_rus = yes
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_russian_debt_3
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = { # 扫盲运动
+		# 
+		id = CSB_DongBei_saomang_yundong
+		icon = GFX_focus_saomang
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_chinese_workers
+		}
+		prerequisite = {
+			focus = CSB_DongBei_xinwenhua_movement
+		}
+		available = {
+			has_idea = DongBei_idea_wenmang_guodu_1
+		}
+		bypass = {
+			NOT = { has_idea = DongBei_idea_wenmang_guodu_1 }
+		}
+		x = 17
+		y = 4
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DongBei_idea_wenmang_guodu_1
+				add_idea = DongBei_idea_wenmang_guodu_2
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 邀请美、德企业
+		# 
+		id = CSB_DongBei_invite_foreign_investor
+		icon = GFX_focus_tudi
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_new_harbin_investments
+		}
+		x = 11
+		y = 5
+		
+		completion_reward = {
+			csb_increase_dept_idea_ger = yes
+			csb_increase_dept_idea_usa = yes
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = CE_KMT_tongyongmingong
+			show_ideas_tooltip = CE_KMT_tongyongjijian
+			show_ideas_tooltip = CE_KMT_changchun
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 地产融资
+		# 
+		id = CSB_DongBei_rapid_land_reform
+		icon = GFX_focus_jingjifanrong
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_new_harbin_investments
+		}
+		x = 15
+		y = 5
+		
+		completion_reward = {
+			csb_decrease_dept_idea_rus = yes
+			csb_decrease_dept_idea_ger = yes
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_ideas = DongBei_idea_house_price_high
+			add_stability = -0.15
+			add_war_support = -0.15
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = { # 哈尔滨工业大学 
+		# 
+		id = CSB_DongBei_harbin_university
+		icon = GFX_focus_research
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_new_harbin_investments
+		}
+		x = 13
+		y = 6
+		available = {
+			NOT = { has_war_with = RUS }
+		}
+		completion_reward = {
+			csb_increase_dept_idea_rus = yes
+			add_research_slot = 1
+			custom_effect_tooltip = available_industrial_concern
+			show_ideas_tooltip = Dongbei_armor_manufacturer_4
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_russian_debt_3
+			}
+		}
+	}
+	# Foreign Investment Route
+	focus = { # 大铁路计划
+		# 
+		id = CSB_DongBei_foreign_drive_railway_development
+		icon = GFX_focus_train_railroads
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_invite_foreign_investor
+		}
+		x = 11
+		y = 6
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_tech_bonus = {
+				name = CSB_DongBei_foreign_drive_railway_development
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = construction_tech
+				#category = train_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 进口新设备
+		# 
+		id = CSB_DongBei_import_new_manchinery
+		icon = GFX_focus_generic_economic_profit
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_foreign_drive_railway_development
+		}
+		x = 11
+		y = 7
+		
+		completion_reward = {
+			country_event = { id = ww1_dongbei.14 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = { # 召回留美技工
+		# 
+		
+		id = CSB_DongBei_american_labour_training
+		icon = GFX_focus_socialist_worker
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_import_new_manchinery
+		}
+		x = 11
+		y = 8
+		
+		completion_reward = {
+			activate_mission = DongBei_mission_american_training
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = { # 研发特种车头
+		# 
+		id = CSB_DongBei_more_train_tech
+		icon = GFX_focus_FRA_improve_railways
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_american_labour_training
+		}
+		x = 11
+		y = 9
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = CSB_DongBei_more_train_tech
+				bonus = 1
+				uses = 1
+				category = train_tech
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 德国投资加码
+		# 
+		id = CSB_DongBei_german_armerment
+		icon = GFX_focus_deal_with_german_empire
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_more_train_tech
+		}
+		x = 11
+		y = 10
+		available = {
+			threat > 0.5
+		}
+		completion_reward = {
+			csb_increase_dept_idea_ger = yes
+			custom_effect_tooltip = german_armerment_transfer_tt_csb
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			
+			# 
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+	}
+	focus = { # 分享空军经验
+		# 
+		id = CSB_DongBei_air_doctrine_bonus_1
+		icon = GFX_focus_eagle
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_foreign_drive_railway_development
+		}
+		x = 9
+		y = 7
+		
+		completion_reward = {
+			csb_decrease_dept_idea_ger = yes
+			
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			
+			GER = {
+				effect_tooltip = {
+					add_doctrine_cost_reduction = {
+						name = air_doc_bonus
+						cost_reduction = 0.5
+						uses = 1
+						category = air_doctrine
+					}
+				}
+				hidden_effect = { 
+					country_event = { id = ww1_dongbei.22 }
+				}
+			}
+		}
+		
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 中美联合投资银行
+		# 
+		id = CSB_DongBei_us_sino_union_bank
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_import_new_manchinery
+		}
+		x = 9
+		y = 8
+		
+		completion_reward = {
+			csb_increase_dept_idea_usa = yes
+			add_political_power = 150
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 太平洋密约
+		# 
+		id = CSB_DongBei_pacific_secrete_treaty
+		icon = GFX_focus_jap_cast_the_die
+		cost = 5
+		
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		prerequisite = {
+			focus = CSB_DongBei_us_sino_union_bank
+		}
+		x = 9
+		y = 9
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+			
+			give_military_access = USA
+			USA = { give_military_access = ROOT }
+			csb_increase_dept_idea_usa = yes
+			add_offsite_building = {
+				type = dockyard
+				level = 2
+			}
+			
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	
+	# Land Reform Route
+	focus = { # 组织合作社
+		# 
+		id = CSB_DongBei_rural_focus
+		icon = GFX_focus_agrarian_profit
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_foreign_drive_railway_development
+			focus = CSB_DongBei_recruit_north_china_refugees
+		}
+		x = 13
+		y = 7
+		
+		completion_reward = {
+			#add_stability = -0.05
+			random_owned_state = {
+				limit = {	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			if = {	
+				limit = {
+					has_idea = DongBei_idea_social_policy_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_social_policy_2
+					add_idea = DongBei_idea_social_policy_3
+				}
+			}
+			else_if = {	
+				limit = {
+					has_idea = DongBei_idea_social_policy_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_social_policy_1
+					add_idea = DongBei_idea_social_policy_2
+				}
+			}
+			else = {
+				add_ideas = DongBei_idea_social_policy_1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 农业工业化
+		# 
+		id = CSB_DongBei_introduce_modern_fertilizer
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_rural_focus
+		}
+		x = 13
+		y = 8
+		
+		completion_reward = {
+			add_stability = -0.05
+			add_manpower = 1000000
+			add_ideas = DongBei_idea_agricultural_industry_1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 普及无线电
+		# 
+		id = CSB_DongBei_civilian_radio_station_network
+		icon = GFX_focus_tianluodiwang
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_introduce_modern_fertilizer
+		}
+		x = 13
+		y = 9
+		
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = CSB_DongBei_civilian_radio_station_network
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = electronics
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 筹备国营农场
+		# 
+		id = CSB_DongBei_state_owned_farm_properties
+		icon = GFX_focus_zhengliangling
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_civilian_radio_station_network
+		}
+		x = 13
+		y = 10
+		
+		completion_reward = {
+			add_stability = -0.05
+			csb_agricultural_industry_swap = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 土地国有化
+		# 
+		id = CSB_DongBei_nationalized_land
+		icon = GFX_focus_wendingguoti
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_state_owned_farm_properties
+		}
+		prerequisite = {
+			focus = CSB_DongBei_german_armerment
+			focus = CSB_DongBei_nonggong_industry_union
+		}
+		
+		x = 13
+		y = 11
+		
+		available = {
+			has_war = no
+			has_idea = DongBei_idea_wenmang_guodu_2
+		}
+		
+		select_effect = {
+			add_stability = -0.1
+			
+			if = {
+				limit = {
+					has_idea = uncontrolled_exports
+				}
+				swap_ideas = {
+					remove_idea = uncontrolled_exports
+					add_idea = closed_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = free_trade
+				}
+				swap_ideas = {
+					remove_idea = free_trade
+					add_idea = closed_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = export_focus
+				}
+				swap_ideas = {
+					remove_idea = export_focus
+					add_idea = closed_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = limited_exports
+				}
+				swap_ideas = {
+					remove_idea = limited_exports
+					add_idea = closed_economy
+				}
+			}
+			if = {
+				limit = {
+					has_idea = closed_economy
+				}
+				set_country_flag = closed_economy_csb_focus
+			}	
+		}
+		
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = closed_economy_csb_focus } }
+				if = {
+					limit = {
+						has_idea = closed_economy
+					}
+					swap_ideas = {
+						remove_idea = closed_economy
+						add_idea = limited_exports
+					}
+				}
+			}
+			if = {	
+				limit = {
+					has_idea = DongBei_idea_social_policy_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_social_policy_2
+					add_idea = DongBei_idea_social_policy_3
+				}
+			}
+			else_if = {	
+				limit = {
+					has_idea = DongBei_idea_social_policy_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_social_policy_1
+					add_idea = DongBei_idea_social_policy_2
+				}
+			}
+			else = {
+				add_ideas = DongBei_idea_social_policy_1
+			}
+			csb_agricultural_industry_swap = yes
+			swap_ideas = {
+				remove_idea = DongBei_idea_wenmang_guodu_2
+				add_idea = DongBei_idea_wenmang_guodu_3
+			}
+			random_owned_state = {
+				limit = {	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {	
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	
+	# Interior Financed Route
+	focus = { # 吸引华北难民
+		# 
+		id = CSB_DongBei_recruit_north_china_refugees
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_rapid_land_reform
+		}
+		available = {
+			has_stability > 0.25
+			328 = { is_fully_controlled_by = ROOT }
+			716 = { is_fully_controlled_by = ROOT }
+			715 = { is_fully_controlled_by = ROOT }
+			714 = { is_fully_controlled_by = ROOT }
+			717 = { is_fully_controlled_by = ROOT }
+		}
+		
+		x = 15
+		y = 6
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			328 = {
+				add_manpower = 500000
+			}
+			716 = {
+				add_manpower = 300000
+			}
+			714 = {
+				add_manpower = 300000
+			}
+			715 = {
+				add_manpower = 300000
+			}
+			717 = {
+				add_manpower = 200000
+			}
+			617 = {
+				add_manpower = 100000
+			}
+			610 = {
+				add_manpower = 100000
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 移民住房设计
+		# 
+		id = CSB_DongBei_new_house_design
+		icon = GFX_focus_lianzufang
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_recruit_north_china_refugees
+		}
+		x = 15
+		y = 7
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = CSB_DongBei_foreign_drive_railway_development
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = construction_tech
+			} 
+			
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 城区大改造
+		# 
+		id = CSB_DongBei_design_new_industrial_cities
+		icon = GFX_focus_zhengbian
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_new_house_design
+		}
+		x = 15
+		y = 8
+		
+		completion_reward = {
+			add_stability = -0.05
+			add_tech_bonus = {
+				name = CSB_DongBei_foreign_drive_railway_development
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = industry
+			} 
+			add_tech_bonus = {
+				name = CSB_DongBei_foreign_drive_railway_development
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = excavation_tech
+			} 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 拖拉机站
+		# 
+		id = CSB_DongBei_tractor_station
+		icon = GFX_focus_control_economy
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_design_new_industrial_cities
+		}
+		prerequisite = {
+			focus = CSB_DongBei_introduce_modern_fertilizer
+		}
+		x = 15
+		y = 9
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			csb_agricultural_industry_swap = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 工农复合体
+		# 
+		id = CSB_DongBei_nonggong_industry_union
+		icon = GFX_focus_prc_agrarian_socialism
+		cost = 10
+		
+		prerequisite = {
+			focus = CSB_DongBei_tractor_station
+		}
+		prerequisite = {
+			focus = CSB_DongBei_civilian_radio_station_network
+		}
+		x = 15
+		y = 10
+		
+		completion_reward = {
+			add_stability = 0.1
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 重用俄国同志
+		# 
+		id = CSB_DongBei_more_bolsheviks
+		icon = GFX_focus_spr_unify_the_london_bureau
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_recruit_north_china_refugees
+		}
+		x = 17
+		y = 7
+		
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_political_power = 150
+			if = {
+				limit = { country_exists = SOV }
+				add_opinion_modifier = {
+					target = SOV
+					modifier = medium_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = SOV
+					modifier = medium_increase
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 工人夜校立法
+		# 
+		id = CSB_DongBei_labour_night_shool_in_law
+		icon = GFX_focus_SOV_organization_centralization_discipline
+		cost = 5
+		
+		prerequisite = {
+			focus = CSB_DongBei_more_bolsheviks
+		}
+		
+		x = 17
+		y = 8
+		
+		completion_reward = {
+			add_stability = -0.05
+			if = {	
+				limit = {
+					has_idea = DongBei_idea_social_policy_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_social_policy_2
+					add_idea = DongBei_idea_social_policy_3
+				}
+			}
+			else_if = {	
+				limit = {
+					has_idea = DongBei_idea_social_policy_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_social_policy_1
+					add_idea = DongBei_idea_social_policy_2
+				}
+			}
+			else = {
+				add_ideas = DongBei_idea_social_policy_1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	
+	focus = { # 列宁主义宪法
+		# 
+		id = CSB_DongBei_leninism_constitution
+		icon = GFX_focus_SOV_the_path_of_marxism_leninism
+		cost = 5
+		
+		mutually_exclusive = {
+			focus = CSB_DongBei_new_democratic_era
+		}
+		available = {
+			has_government = communism
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_labour_night_shool_in_law
+		}
+		x = 17
+		y = 9
+		
+		completion_reward = {
+			add_stability = -0.1
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			#add_ideas = 
+			if = {
+				limit = { country_exists = SOV }
+				add_opinion_modifier = {
+					target = SOV
+					modifier = large_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = SOV
+					modifier = large_increase
+				}
+			}
+			if = {
+				limit = { country_exists = ENG ENG = { NOT = { has_government = communism } } }
+				add_opinion_modifier = {
+					target = ENG
+					modifier = large_decrease
+				}
+				reverse_add_opinion_modifier = {
+					target = ENG
+					modifier = large_decrease
+				}
+			}
+			if = {
+				limit = { country_exists = ENG ENG = { has_government = communism } }
+				add_opinion_modifier = {
+					target = ENG
+					modifier = large_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = ENG
+					modifier = large_increase
+				}
+			}
+			if = {
+				limit = { country_exists = GER GER = { NOT = { has_government = communism } } }
+				add_opinion_modifier = {
+					target = GER
+					modifier = large_decrease
+				}
+				reverse_add_opinion_modifier = {
+					target = GER
+					modifier = large_decrease
+				}
+			}
+			if = {
+				limit = { country_exists = GER GER = { has_government = communism } }
+				add_opinion_modifier = {
+					target = GER
+					modifier = large_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = GER
+					modifier = large_increase
+				}
+			}
+			if = {
+				limit = { country_exists = FRA FRA = { NOT = { has_government = communism } } }
+				add_opinion_modifier = {
+					target = FRA
+					modifier = large_decrease
+				}
+				reverse_add_opinion_modifier = {
+					target = FRA
+					modifier = large_decrease
+				}
+			}
+			if = {
+				limit = { country_exists = FRA FRA = { has_government = communism } }
+				add_opinion_modifier = {
+					target = FRA
+					modifier = large_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = FRA
+					modifier = large_increase
+				}
+			}
+			if = {
+				limit = { country_exists = ITA ITA = { NOT = { has_government = communism } } }
+				add_opinion_modifier = {
+					target = ITA
+					modifier = large_decrease
+				}
+				reverse_add_opinion_modifier = {
+					target = ITA
+					modifier = large_decrease
+				}
+			}
+			if = {
+				limit = { country_exists = ITA ITA = { has_government = communism } }
+				add_opinion_modifier = {
+					target = ITA
+					modifier = large_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = ITA
+					modifier = large_increase
+				}
+			}
+			if = {
+				limit = { country_exists = AUS AUS = { NOT = { has_government = communism } } }
+				add_opinion_modifier = {
+					target = AUS
+					modifier = large_decrease
+				}
+				reverse_add_opinion_modifier = {
+					target = AUS
+					modifier = large_decrease
+				}
+			}
+			if = {
+				limit = { country_exists = AUS AUS = { has_government = communism } }
+				add_opinion_modifier = {
+					target = AUS
+					modifier = large_increase
+				}
+				reverse_add_opinion_modifier = {
+					target = AUS
+					modifier = large_increase
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 民族解放运动
+		# 
+		id = CSB_DongBei_asian_revolution
+		icon = GFX_focus_ideology_internationalist
+		cost = 10
+		
+		available = {
+			has_government = communism
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_leninism_constitution
+		}
+		x = 17
+		y = 10
+		
+		completion_reward = {
+			if = {
+				limit = { is_in_faction = yes }
+				leave_faction = yes
+			}
+			add_ideas = CPC_eastern_internationale_formed
+			create_faction = DONGFANG_GUOJI
+			hidden_effect = {
+				every_country = {
+					limit = { is_subject_of = ROOT }
+					ROOT = { add_to_faction = PREV }
+				}
+			}	
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_in_faction_with = SOV
+				has_war = yes
+			}
+			modifier = {
+				factor = 0
+				is_in_faction = yes
+				is_faction_leader = yes
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	focus = { # 新一代革命者
+		# 
+		id = CSB_DongBei_new_generation
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		cost = 10
+		
+		available = {
+			has_government = communism
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_asian_revolution
+		}
+		x = 17
+		y = 11
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = DongBei_li_dazhao
+			show_ideas_tooltip = DongBei_chen_duxiu
+			show_ideas_tooltip = DongBei_mao_zedong
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+	}
+	
+	focus = { # 新民主主义时期
+		# 
+		id = CSB_DongBei_new_democratic_era
+		icon = GFX_focus_nanyangminzuu
+		cost = 5
+		
+		mutually_exclusive = {
+			focus = CSB_DongBei_leninism_constitution
+		}
+		available = {
+			
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_labour_night_shool_in_law
+		}
+		x = 19
+		y = 9
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = DongBei_idea_support_for_revolution
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_support_for_revolution
+					add_idea = DongBei_idea_CSB_DongBei_new_democratic_era
+				}	
+			}
+			else = {
+				add_ideas = DongBei_idea_CSB_DongBei_new_democratic_era
+			}
+			custom_effect_tooltip = reintroduce_three_advisors_csb
+			show_ideas_tooltip = DongBei_song_yuntong_1
+			show_ideas_tooltip = DongBei_liang_tingdong_1
+			custom_effect_tooltip = csb_new_political_advisor
+			show_ideas_tooltip = DongBei_zhang_guotao
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 撤换布尔什维克
+		# 
+		id = CSB_DongBei_remove_russian_from_government
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 5
+	
+		available = {
+			OR = { 
+				democratic > party_popularity@communism
+				fascism > party_popularity@communism
+				neutrality > party_popularity@communism
+				hidden_trigger = {
+					is_ai = yes
+				}
+			}
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_new_democratic_era
+		}
+		x = 19
+		y = 10
+		
+		completion_reward = {
+			hidden_effect = {
+				if = {
+					limit = { 
+						is_ai = yes
+						is_historical_focus_on = yes
+					}
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.3
+					}
+				}
+				if = {
+					limit = { 
+						is_ai = yes
+						is_historical_focus_on = no
+					}
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.1
+					}
+					add_popularity = {
+						ideology = fascism
+						popularity = 0.1
+					}
+					add_popularity = {
+						ideology = democratic
+						popularity = 0.1
+					}
+				}
+			}
+			custom_effect_tooltip = remove_russian_related_things_tt_csb
+			# 
+			
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = DongBei_zhang_guotao
+			show_ideas_tooltip = DongBei_song_yuntong_1
+			show_ideas_tooltip = DongBei_liang_tingdong_1
+			
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 搁置政治争议
+		# 
+		id = CSB_DongBei_no_political_disbutes
+		icon = GFX_focus_mijia
+		cost = 10
+		
+		mutually_exclusive = {
+			focus = CSB_DongBei_social_democratic_revolution
+			focus = CSB_DongBei_nationalism_government
+		}
+		available = {
+			OR = { 
+				neutrality > 0.6
+				AND = {
+					neutrality > 0.4
+					has_political_power > 300
+				}
+				hidden_trigger = {
+					AND = {
+						is_ai = yes
+						is_historical_focus_on = yes
+					}
+				}
+			}
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_remove_russian_from_government
+		}
+		x = 19
+		y = 11
+		
+		completion_reward = {
+			
+			swap_ideas = {
+				remove_idea = DongBei_idea_CSB_DongBei_new_democratic_era
+				add_idea = DongBei_idea_CSB_DongBei_new_democratic_era_1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.2
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			} 
+			DongBei_song_yuntong = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = authoritarian_democracy
+						traits = { second_leadership_group_1 }
+					}
+				}
+			}
+			add_ideas = DongBei_idea_wu_wuchuan_man
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 社会民主主义
+		# 
+		id = CSB_DongBei_social_democratic_revolution
+		icon = GFX_focus_social_welfare
+		cost = 10
+		
+		mutually_exclusive = {
+			focus = CSB_DongBei_no_political_disbutes
+			focus = CSB_DongBei_nationalism_government
+		}
+		available = {
+			OR = { 
+				democratic > 0.6
+				AND = {
+					democratic > 0.4
+					has_political_power > 300
+				}
+			}
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_remove_russian_from_government
+		}
+		x = 21
+		y = 11
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DongBei_idea_CSB_DongBei_new_democratic_era
+				add_idea = DongBei_idea_CSB_DongBei_new_democratic_era_1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.2
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			} 
+			Dongbei_Wu_Chuan = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = socialism
+						traits = { chuanyue_leader }
+					}
+				}
+			}
+			add_trait = {
+				character = Dongbei_Wu_Chuan
+				ideology = socialism
+				trait = socialism_revolution_wuchuan
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	focus = { # 民族工团思想
+		# 
+		id = CSB_DongBei_nationalism_government
+		icon = GFX_focus_quzhudalu
+		cost = 10
+		
+		mutually_exclusive = {
+			focus = CSB_DongBei_social_democratic_revolution
+			focus = CSB_DongBei_no_political_disbutes
+		}
+		available = {
+			OR = { 
+				fascism > 0.6
+				AND = {
+					fascism > 0.4
+					has_political_power > 300
+				}
+			}
+		}	
+		
+		prerequisite = {
+			focus = CSB_DongBei_remove_russian_from_government
+		}
+		x = 23
+		y = 11
+		
+		completion_reward = {
+			
+			swap_ideas = {
+				remove_idea = DongBei_idea_CSB_DongBei_new_democratic_era
+				add_idea = DongBei_idea_CSB_DongBei_new_democratic_era_2
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.2
+			}
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			} 
+			DongBei_wu_luzhen = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = national_syndicalism
+						traits = { second_leadership_group_2 }
+					}
+				}
+			}
+			add_ideas = DongBei_idea_wu_wuchuan_man
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				is_historical_focus_on = yes
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+	
+	# NAVY
+	focus = {
+		id = CSB_DongBei_naval_effort
+		icon = GFX_goal_generic_build_navy
+		available = {
+			any_state = {
+				is_coastal = yes
+				is_controlled_by = ROOT
+			}
+			has_completed_focus = CSB_DongBei_pacific_secrete_treaty
+		}
+		completion_reward = {
+			csb_increase_dept_idea_usa = yes
+		
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = naval_effort_built
+					}
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = naval_effort_built
+					}
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = {
+							original_tag = ROOT
+						}
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+		complete_tooltip = {
+			csb_increase_dept_idea_usa = yes
+			
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 39
+		y = 0
+	}
+	focus = {
+		id = CSB_DongBei_newnavalcanons_1
+		prerequisite = {
+			focus = CSB_DongBei_naval_effort
+		}
+		icon = GFX_focus_qiongzhou
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = CE_KMT_guangzhouchuanchang
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_1_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 39
+		y = 1
+	}
+	focus = {
+		id = CSB_DongBei_dreadnought_effort
+		prerequisite = {
+			focus = CSB_DongBei_newnavalcanons_1
+		}
+		icon = GFX_focus_longtengjiuzhou
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = CE_KMT_hangzhouchuanchang
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1
+				uses = 1
+				category = bb_tech
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 39
+		y = 2
+	}
+	focus = {
+		id = CSB_DongBei_newnavalcanons_2
+		prerequisite = {
+			focus = CSB_DongBei_dreadnought_effort
+		}
+		icon = GFX_focus_sanyang
+		completion_reward = {
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_2_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 39
+		y = 3
+	}
+	focus = {
+		id = CSB_DongBei_flexible_navy
+		prerequisite = {
+			focus = CSB_DongBei_newnavalcanons_2
+		}
+		icon = GFX_goal_generic_occupy_states_coastal
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 38
+		y = 4
+		mutually_exclusive = {
+			focus = CSB_DongBei_large_navy
+		}
+	}
+	focus = {
+		id = CSB_DongBei_large_navy
+		prerequisite = {
+			focus = CSB_DongBei_newnavalcanons_2
+		}
+		icon = GFX_focus_mingrijiandui
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = fleet_in_being_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 40
+		y = 4
+		mutually_exclusive = {
+			focus = CSB_DongBei_flexible_navy
+		}
+	}
+	focus = {
+		id = CSB_DongBei_submarine_effort
+		prerequisite = {
+			focus = CSB_DongBei_flexible_navy
+			focus = CSB_DongBei_large_navy
+		}
+		icon = GFX_goal_generic_wolf_pack
+		completion_reward = {
+			add_tech_bonus = {
+				name = CSB_DongBei_submarine_effort
+				bonus = 0.75
+				uses = 1
+				category = ss_tech
+			}
+			add_tech_bonus = {
+				name = CSB_DongBei_submarine_effort
+				bonus = 0.75
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				name = CSB_DongBei_submarine_effort
+				bonus = 0.75
+				uses = 1
+				category = naval_air
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 38
+		y = 5
+	}
+	focus = {
+		id = CSB_DongBei_cruiser_effort
+		prerequisite = {
+			focus = CSB_DongBei_flexible_navy
+			focus = CSB_DongBei_large_navy
+		}
+		icon = GFX_goal_generic_navy_cruiser
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.75
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 40
+		y = 5
+	}
+	focus = {
+		id = CSB_DongBei_destroyer_effort
+		prerequisite = {
+			focus = CSB_DongBei_submarine_effort
+		}
+		icon = GFX_focus_zaojian
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.75
+				uses = 1
+				category = dd_tech
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 38
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_capital_ships_effort
+		prerequisite = {
+			focus = CSB_DongBei_cruiser_effort
+		}
+		icon = GFX_focus_nanfang
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.75
+				uses = 1
+				category = bc_tech
+				category = cv_tech
+			}
+		}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+		cost = 10
+		x = 40
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_newnavalcanons_3
+		prerequisite = {
+			focus = CSB_DongBei_capital_ships_effort
+		}
+		prerequisite = {
+			focus = CSB_DongBei_destroyer_effort
+		}
+		icon = GFX_goal_generic_army_artillery
+		completion_reward = {
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = newnavalcanons_3_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 39
+		y = 7
+	}
+	focus = {
+		id = CSB_DongBei_navyreform
+		prerequisite = {
+			focus = CSB_DongBei_newnavalcanons_3
+		}
+		icon = GFX_focus_shuishixuetang
+		completion_reward = {
+			
+			add_tech_bonus = {
+				name = CSB_DongBei_navyreform
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = electronics
+			}
+			add_doctrine_cost_reduction = {
+				name = CSB_DongBei_navyreform
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 39
+		y = 8
+	}
+	focus = {
+		id = CSB_DongBei_carrier_focus
+		prerequisite = {
+			focus = CSB_DongBei_navyreform
+		}
+		icon = GFX_goal_generic_navy_carrier
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = uk_carrier_focus
+				bonus = 0.3
+				uses = 2
+				category = cv_tech
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 38
+		y = 9
+	}
+	focus = {
+		id = CSB_DongBei_antisubmarine
+		prerequisite = {
+			focus = CSB_DongBei_navyreform
+		}
+		icon = GFX_focus_songjiang
+		completion_reward = {
+			navy_experience = 15
+			add_doctrine_cost_reduction = {
+				name = CSB_DongBei_antisubmarine
+				cost_reduction = 0.15
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 40
+		y = 9
+	}
+	# ARMY
+	focus = {
+		id = CSB_DongBei_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		completion_reward = {
+			csb_increase_dept_idea_ger = yes
+			add_ideas = DongBei_idea_german_labour_recruitments
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 43
+		y = 0
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = {
+		id = CSB_DongBei_equipment_effort
+		prerequisite = {
+			focus = CSB_DongBei_army_effort
+		}
+		icon = GFX_focus_qianxian
+		completion_reward = {
+			army_experience = 25
+			if = {
+				limit = {
+					has_idea = DongBei_idea_supply_division_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_supply_division_2
+					add_idea = DongBei_idea_supply_division_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_supply_division_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_supply_division_1
+					add_idea = DongBei_idea_supply_division_2
+				}
+			}
+			else = {	
+				add_ideas = DongBei_idea_supply_division_1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 43
+		y = 1
+	}
+	focus = {
+		id = CSB_DongBei_artillery_effort_1
+		prerequisite = {
+			focus = CSB_DongBei_army_effort
+		}
+		icon = GFX_focus_deal_with_german_empire
+		available = {
+			NOT = { has_war_with = GER }
+		}	
+		bypass = {
+			has_war_with = GER
+		}
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 45
+		y = 1
+	}
+	focus = {
+		id = CSB_DongBei_artillery_effort_2
+		prerequisite = {
+			focus = CSB_DongBei_artillery_effort_1
+		}
+		icon = GFX_focus_youshihuoli
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				technology = howitzer1
+				technology = howitzer2
+				technology = howitzer3
+				technology = howitzer4
+			}
+			
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 45
+		y = 3
+	}
+	focus = {
+		id = CSB_DongBei_artillery_effort_3
+		prerequisite = {
+			focus = CSB_DongBei_artillery_effort_2
+		}
+		icon = GFX_goal_generic_army_artillery2
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = infantry_weapons_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = artillery
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 45
+		y = 5
+	}
+	focus = {
+		id = CSB_DongBei_doctrine_effort
+		available = {
+			NOT = { has_war_with = FNG }
+		}
+		prerequisite = {
+			focus = CSB_DongBei_army_effort
+		}
+		icon = GFX_focus_chongshen
+		completion_reward = {
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 44
+		y = 2
+	}
+	focus = {
+		id = CSB_DongBei_equipment_effort_2
+		prerequisite = {
+			focus = CSB_DongBei_equipment_effort
+		}
+		icon = GFX_focus_vickers
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 43
+		y = 3
+	}
+	focus = {
+		id = CSB_DongBei_trenchwarfare
+		prerequisite = {
+			focus = CSB_DongBei_equipment_effort
+		}
+		icon = GFX_goal_generic_military_sphere
+		completion_reward = {
+			army_experience = 10
+			if = {
+				limit = {
+					has_idea = DongBei_idea_construction_division_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_construction_division_2
+					add_idea = DongBei_idea_construction_division_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_construction_division_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_construction_division_1
+					add_idea = DongBei_idea_construction_division_2
+				}
+			}
+			else = {	
+				add_ideas = DongBei_idea_construction_division_1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 42
+		y = 2
+	}
+	focus = {
+		id = CSB_DongBei_gasmask_focus
+		prerequisite = {
+			focus = CSB_DongBei_trenchwarfare
+		}
+		icon = GFX_hoi4tgw_gasmask
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				name = gasmask_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 42
+		y = 4
+	}
+	focus = {
+		id = CSB_DongBei_special_forces
+		prerequisite = {
+			focus = CSB_DongBei_gasmask_focus
+		}
+		icon = GFX_goal_generic_special_forces
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1
+				uses = 1
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 42
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_army_motorization_focus
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = {
+			focus = CSB_DongBei_special_forces
+		}
+		x = 42
+		y = 8
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = mech_army_bonus
+				bonus = 1.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = CSB_DongBei_doctrine_effort_2
+		prerequisite = {
+			focus = CSB_DongBei_doctrine_effort
+		}
+		icon = GFX_focus_kangwowenxue
+		completion_reward = {
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 44
+		y = 4
+	}
+	focus = {
+		id = CSB_DongBei_equipment_effort_3
+		prerequisite = {
+			focus = CSB_DongBei_equipment_effort_2
+		}
+		icon = GFX_goal_generic_small_arms
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 43
+		y = 5
+	}
+	focus = {
+		id = CSB_DongBei_doctrine_effort_3
+		prerequisite = {
+			focus = CSB_DongBei_doctrine_effort_2
+		}
+		icon = GFX_goal_generic_army_doctrines
+		completion_reward = {
+			#
+			if = {
+				limit = {
+					has_idea = DongBei_idea_construction_division_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_construction_division_2
+					add_idea = DongBei_idea_construction_division_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_construction_division_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_construction_division_1
+					add_idea = DongBei_idea_construction_division_2
+				}
+			}
+			else = {	
+				add_ideas = DongBei_idea_construction_division_1
+			}
+			#
+			if = {
+				limit = {
+					has_idea = DongBei_idea_supply_division_2
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_supply_division_2
+					add_idea = DongBei_idea_supply_division_3
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = DongBei_idea_supply_division_1
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_supply_division_1
+					add_idea = DongBei_idea_supply_division_2
+				}
+			}
+			else = {	
+				add_ideas = DongBei_idea_supply_division_1
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 44
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_equipment_effort_4
+		prerequisite = {
+			focus = CSB_DongBei_equipment_effort_3
+		}
+		icon = GFX_focus_junweihui
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 43
+		y = 7
+	}
+	focus = {
+		id = CSB_DongBei_artillery_effort_4
+		prerequisite = {
+			focus = CSB_DongBei_artillery_effort_3
+		}
+		icon = GFX_hoi4tgw_navalcanons
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 45
+		y = 7
+	}
+	focus = {
+		id = CSB_DongBei_armor_effort_1
+		prerequisite = {
+			focus = CSB_DongBei_equipment_effort_4
+		}
+		prerequisite = {
+			focus = CSB_DongBei_doctrine_effort_3
+		}
+		prerequisite = {
+			focus = CSB_DongBei_artillery_effort_4
+		}
+		icon = GFX_hoi4tgw_renaultft
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = Dongbei_armor_manufacturer_1
+			show_ideas_tooltip = Dongbei_armor_manufacturer_2
+			show_ideas_tooltip = Dongbei_armor_manufacturer_3
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 44
+		y = 8
+	}
+	focus = {
+		id = CSB_DongBei_armor_effort_2
+		prerequisite = {
+			focus = CSB_DongBei_armor_effort_1
+		}
+		prerequisite = {
+			focus = CSB_DongBei_army_motorization_focus
+		}
+		icon = GFX_focus_zhachejihua
+		completion_reward = {
+			army_experience = 75
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 43
+		y = 9
+	}
+	# AVIATION
+	focus = {
+		id = CSB_DongBei_ww1_aviation_effort
+		icon = GFX_focus_yingshi
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = {
+						set_country_flag = aviation_effort_AB
+					}
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = {
+						set_country_flag = aviation_effort_AB
+					}
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+		complete_tooltip = {
+			air_experience = 25
+			if = {
+				limit = {
+					has_country_flag = aviation_effort_AB
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 49
+		y = 0
+	}
+	focus = {
+		id = CSB_DongBei_ww1_aviation_effort_2
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort
+		}
+		icon = GFX_focus_kongjunjuesheng
+		completion_reward = {
+			air_experience = 30
+			add_political_power = 150
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 49
+		y = 1
+	}
+	focus = {
+		id = CSB_DongBei_ww1_naval_bomber
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_2
+		}
+		icon = GFX_goal_generic_air_naval_bomber
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				technology = naval_air
+				#technology = airship_bomber2
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 51
+		y = 2
+	}
+	focus = {
+		id = CSB_DongBei_ww1_fighter_focus
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_2
+		}
+		icon = GFX_goal_generic_air_fighter
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 47
+		y = 2
+		
+	}
+	focus = {
+		id = CSB_DongBei_ww1_bomber_focus
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_2
+		}
+		icon = GFX_focus_ditan
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 49
+		y = 2
+		
+	}
+	focus = {
+		id = CSB_DongBei_ww1_aviation_effort_3
+		prerequisite = {
+			focus = CSB_DongBei_ww1_bomber_focus
+			focus = CSB_DongBei_ww1_fighter_focus
+			focus = CSB_DongBei_ww1_naval_bomber
+		}
+		icon = GFX_focus_kongjunxunlian
+		completion_reward = {
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 5
+		x = 49
+		y = 3
+	}
+	focus = {
+		id = CSB_DongBei_ww1_pilotformation_1
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_3
+		}
+		icon = GFX_focus_tur_socialist_parliament
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+			add_doctrine_cost_reduction = {
+				name = pilotformation1_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 47
+		y = 4
+	}
+	focus = {
+		id = CSB_DongBei_ww1_aircraftprod_1
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_3
+		}
+		icon = GFX_goal_generic_air_production
+		completion_reward = {
+			add_tech_bonus = {
+				name = CSB_DongBei_ww1_aircraftprod_1
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				technology = airship_bomber3
+				technology = airship_bomber2
+				technology = airship_bomber
+			}
+			add_tech_bonus = {
+				name = CSB_DongBei_ww1_aircraftprod_1
+				bonus = 1
+				uses = 1
+				category = air_equipment
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 49
+		y = 4
+	}
+	focus = {
+		id = CSB_DongBei_ww1_airbomb_1
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_3
+		}
+		icon = GFX_focus_usa_escort_fighters
+		completion_reward = {
+			add_tech_bonus = {
+				name = pilotformation2_bonus
+				bonus = 1
+				uses = 1
+				technology = cas_bomber
+				technology = naval_bomber
+				technology = tactical_bomber
+				technology = airship
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 51
+		y = 4
+	}
+	focus = {
+		id = CSB_DongBei_ww1_aviation_effort_4
+		prerequisite = {
+			focus = CSB_DongBei_ww1_pilotformation_1
+			focus = CSB_DongBei_ww1_aircraftprod_1
+			focus = CSB_DongBei_ww1_airbomb_1
+		}
+		icon = GFX_focus_generic_aircraft_production
+		completion_reward = {
+			#air_experience = 15
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = CE_KMT_tonghangair
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 49
+		y = 5
+	}
+	focus = {
+		id = CSB_DongBei_ww1_pilotformation_2
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_4
+		}
+		icon = GFX_focus_SOV_women_in_aviation
+		completion_reward = {
+			add_ideas = DongBei_idea_female_pilot
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 47
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_ww1_aircraftprod_2
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_4
+		}
+		icon = GFX_focus_research2
+		completion_reward = {
+			add_tech_bonus = {
+				name = aircraftprod_2_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = air_equipment
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 49
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_ww1_airbomb_2
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_4
+		}
+		icon = GFX_focus_ditan
+		completion_reward = {
+			add_tech_bonus = {
+				name = pilotformation2_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				technology = tactical_bomber
+				technology = cat_strategic_bomber
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 51
+		y = 6
+	}
+	focus = {
+		id = CSB_DongBei_ww1_aviation_effort_5
+		prerequisite = {
+			focus = CSB_DongBei_ww1_pilotformation_2
+			focus = CSB_DongBei_ww1_aircraftprod_2
+			focus = CSB_DongBei_ww1_airbomb_2
+		}
+		icon = GFX_goal_generic_air_doctrine
+		completion_reward = {
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				name = air_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 49
+		y = 7
+	}
+	focus = {
+		id = CSB_DongBei_ww1_air_innovation
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_5
+		}
+		icon = GFX_focus_zongjiekongzhan
+		completion_reward = {
+			air_experience = 20
+			add_tech_bonus = {
+				name = ww1_air_innovation_bonus
+				bonus = 1
+				uses = 2
+				category = air_equipment
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 48
+		y = 8
+	}
+	focus = {
+		id = CSB_DongBei_ww1_navalair
+		prerequisite = {
+			focus = CSB_DongBei_ww1_aviation_effort_5
+		}
+		icon = GFX_goal_generic_air_fighter2
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 1
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		cost = 10
+		x = 50
+		y = 8
+	}
+	
+	# War Affair
+	focus = { # 着眼全国
+		# 
+		id = CSB_DongBei_establish_diplomatic_links
+		icon = GFX_focus_army_is_ready
+		cost = 4
+		x = 26
+		y = 1
+		cancel_if_invalid = no
+		prerequisite = {
+			focus = CSB_DongBei_harbin_government
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ww1_dongbei.10.t
+				has_global_flag = gonghedang_revolution_victory
+			}
+		}
+		bypass = {
+		}
+		completion_reward = {
+			
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { # 武装待命
+		# 
+		id = CSB_DongBei_prepare_for_qing_advance
+		icon = GFX_focus_chi_qing_china
+		cost = 5
+		available = {
+			country_exists = QIN
+			QIN = { 
+				custom_trigger_tooltip = {
+					tooltip = kis_news.119.t
+					has_country_flag = xinhai_victory
+				}
+			}
+		}
+		prerequisite = {
+			focus = CSB_DongBei_establish_diplomatic_links
+		}
+		mutually_exclusive = {
+			focus = CSB_DongBei_contact_guannei
+		}
+		
+		x = 25
+		y = 2
+		bypass = {
+		}
+		
+		completion_reward = {
+			army_experience = 25
+		}	
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		ai_will_do = {
+			factor = 500
+		}
+	}
+	focus = { # 准备入关
+		# 
+		id = CSB_DongBei_prepare_for_war_with_qing
+		icon = GFX_focus_fate_of_royal_family
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_prepare_for_qing_advance
+		}
+		x = 22
+		y = 3
+		available = {
+			has_global_flag = xinhai_revolution_ends
+			has_war = no
+		}
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	focus = { # 进军张家口
+		# 
+		id = CSB_DongBei_west_advance_to_qing
+		icon = GFX_focus_juezhan
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_prepare_for_war_with_qing
+		}
+		x = 21
+		y = 4
+		bypass = {
+		}
+		will_lead_to_war_with = QIN
+		completion_reward = {
+			custom_effect_tooltip = unlock_westward_advance_decision
+			# 解锁进军张家口决议
+			hidden_effect = {
+				
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # 进军蒙古
+		# 
+		id = CSB_DongBei_mongolia_core
+		icon = GFX_focus_damascus
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_west_advance_to_qing
+		}
+		x = 21
+		y = 5
+
+		available = {	
+			OR = {
+				AND = {
+					country_exists = MON
+					MON = { is_subject = no }
+				}
+				AND = {
+					country_exists = TAN
+					TAN = { is_subject = no }
+				}
+			}
+		}
+		bypass = {
+			OR = { 
+				NOT = { country_exists = MON }
+				MON = { is_subject = yes }
+			}
+			OR = { 
+				NOT = { country_exists = TAN }
+				TAN = { is_subject = yes }
+			}
+		}
+		will_lead_to_war_with = MON
+		will_lead_to_war_with = TAN
+		completion_reward = {
+			hidden_effect = {
+				set_rule = {
+					can_not_declare_war = yes
+				}
+			}
+			custom_effect_tooltip = nowar_for_amoment_tt_csb
+			# 蒙古行动结束前暂时不能主动宣战
+			add_named_threat = { 
+				threat = 2 
+				name = ww1_dongbei.32.t
+			}
+			if = {
+				limit = { country_exists = MON }
+				MON = { country_event = { id = ww1_dongbei.30 days = 1 } }
+			}	
+			else = {
+				330 = { add_core_of = ROOT }
+				#612 = { add_core_of = ROOT }
+				616 = { add_core_of = ROOT }
+				618 = { add_core_of = ROOT }
+				715 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = { country_exists = TAN }
+				TAN = { country_event = { id = ww1_dongbei.31 days = 1 } }
+			}
+			else = {
+				329 = { add_core_of = ROOT }
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # 革命宣传
+		# 
+		id = CSB_DongBei_leadership_of_chinese_revolution
+		icon = GFX_focus_red_iron_fist
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_prepare_for_war_with_qing
+		}
+		x = 23
+		y = 4
+		available = {
+		}
+		bypass = {
+		}
+		completion_reward = {
+			set_cosmetic_tag = MAN_communism_2
+			add_political_power = 150
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # 革命军南征
+		# 
+		id = CSB_DongBei_declare_war_with_qing
+		icon = GFX_focus_kangwo
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_leadership_of_chinese_revolution
+		}
+		prerequisite = {
+			focus = CSB_DongBei_west_advance_to_qing
+		}
+		x = 23
+		y = 5
+		available = {
+			is_subject = no
+		}
+		bypass = {
+		}
+		will_lead_to_war_with = QIN
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = QIN
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # 胜利的一天		
+		# 
+		id = CSB_DongBei_day_of_victory
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_mongolia_core
+		}
+		prerequisite = {
+			focus = CSB_DongBei_declare_war_with_qing
+		}
+		x = 22
+		y = 6
+		available = {
+			# 华北 states
+			# 611 - cha ha er ( zhang jia kou )
+			# 609 - chengde
+			# 608 - beijing
+			# 614 - zhili
+			# 597 - shandong
+			# 615 - shanxi
+			# 607 - henan
+			# 620 - hubei
+			# 745
+			# 364
+			609 = { is_controlled_by = ROOT }
+			608 = { is_controlled_by = ROOT }
+			614 = { is_controlled_by = ROOT }
+			597 = { is_controlled_by = ROOT }
+			615 = { is_controlled_by = ROOT }
+		}
+		bypass = {
+		}
+		completion_reward = {
+			hidden_effect = {
+				drop_cosmetic_tag = yes
+			}
+			effect_tooltip = {
+				set_cosmetic_tag = DongBei_CHI_united_communism
+			}
+			611 = { add_core_of = ROOT }
+			609 = { add_core_of = ROOT }
+			608 = { add_core_of = ROOT }
+			614 = { add_core_of = ROOT }
+			597 = { add_core_of = ROOT }
+			615 = { add_core_of = ROOT }
+			607 = { add_core_of = ROOT }
+			620 = { add_core_of = ROOT }
+			hidden_effect = {
+				set_global_flag = warlord_era
+				country_event = { id = ww1_dongbei.40 }
+				QIN = {
+					country_event = { id = ww1_dongbei.40 }
+				#	country_event = { id = ww1_china.20 days = 15 }
+				#	country_event = { id = ww1_china.13 days = 30 }
+				}
+			}
+			custom_effect_tooltip = ww1_dongbei.40.t
+			custom_effect_tooltip = ww1_china.2.t
+			
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	focus = { # 统一通电
+		# 
+		id = CSB_DongBei_restore_southern_provinces
+		icon = GFX_focus_qiuyehaitang
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_day_of_victory
+		}
+		x = 22
+		y = 7
+		available = {
+			
+		}
+		completion_reward = {
+			hidden_effect = {
+				set_country_flag = ready_to_unite_china
+				set_rule = {
+					can_not_declare_war = no
+				}
+			}
+			custom_effect_tooltip = CHI_united_china_tt
+		}
+	}
+	focus = { # 联络关内
+		# 
+		id = CSB_DongBei_contact_guannei
+		icon = GFX_focus_chi_chinese_republic
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_establish_diplomatic_links
+		}
+		mutually_exclusive = {
+			focus = CSB_DongBei_prepare_for_qing_advance
+		}
+		
+		x = 27
+		y = 2
+		available = {
+			country_exists = CHI
+			has_global_flag = xinhai_revolution
+			CHI = { 
+				NOT = { has_war_with = QIN }
+			}
+		}
+		completion_reward = {
+			add_ideas = CHI_idea_support_for_revolution
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL
+		}
+		ai_will_do = {
+			factor = 500
+			modifier = {
+				factor = 0
+				NOT = {
+					has_global_flag = xinhai_revolution_ends
+				}
+			}
+		}
+	}
+	focus = {# 重视外交
+		# 
+		id = CSB_DongBei_diplomat_focus
+		icon = GFX_focus_hol_war_on_pacifism
+		cost = 2
+		prerequisite = {
+			focus = CSB_DongBei_contact_guannei
+			focus = CSB_DongBei_prepare_for_qing_advance
+		}
+		x = 26
+		y = 3
+		available = {
+			has_global_flag = xinhai_revolution_ends
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = CHI_idea_restore_the_nation
+				days = 365
+			}
+			swap_ideas = {
+				remove_idea = CHI_idea_inflation5
+				add_idea = CHI_idea_inflation4
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 支持朝鲜独立
+		# 
+		id = CSB_DongBei_support_korean_rebel
+		icon = GFX_KOR_start_eagle_project
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_diplomat_focus
+		}
+		x = 25
+		y = 4
+		available = {
+			
+		}
+		bypass = {
+			country_exists = KOR
+			KOR = {
+				is_subject = no
+			}
+		}
+		will_lead_to_war_with = JAP
+		completion_reward = {
+			# 
+			hidden_effect = {
+				set_global_flag = csb_kroean_crisis_flag
+			}
+			if = {
+				limit = {
+					NOT = { country_exists = KOR }
+				}
+				JAP = {
+					country_event = { id = ww1_dongbei.38 }
+				}
+			}
+			else_if = {
+				limit = {	
+					country_exists = KOR
+					KOR = { is_subject_of = JAP }
+				}
+				KOR = {
+					country_event = { id = ww1_dongbei.39 } 
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 渗透滨海省
+		# 
+		id = CSB_DongBei_russian_affair_1
+		icon = GFX_focus_secret_police
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_diplomat_focus
+		}
+		x = 27
+		y = 4
+		available = {
+			OR = { 
+				has_stability > 0.75
+				RUS = { has_war_with = GER }
+				RUS = { has_war_with = FRA }
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = rusrevolt.2
+				has_global_flag = russian_revolution
+			}
+		}
+		completion_reward = {
+			diplomatic_relation = {
+				country = RUS
+				relation = non_aggression_pact
+			}
+			RUS = {
+				diplomatic_relation = {
+					country = ROOT
+					relation = non_aggression_pact
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 激化朝鲜冲突
+		# 
+		id = CSB_DongBei_jap_kor_china_war
+		icon = GFX_focus_dahe
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_support_korean_rebel
+		}
+		x = 25
+		y = 5
+		available = {
+			
+		}
+		bypass = {
+			has_war_with = JAP
+		}
+		will_lead_to_war_with = JAP
+		completion_reward = {
+			custom_effect_tooltip = unlock_sino_jap_second_war_mssion
+			# 开始第二次中日冲突
+			hidden_effect = { 
+				set_country_flag = second_sino_jap_war_flag
+				activate_mission = DongBei_mission_war_with_jap
+			}
+		}
+	}
+	focus = { # 出访东京
+		# 
+		id = CSB_DongBei_tokyo_visit
+		icon = GFX_focus_tanpan
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_jap_kor_china_war
+		}
+		x = 25
+		y = 6
+		available = {
+			#NOT = { has_war_with = CHI }
+			has_war_with = JAP
+			OR = {
+				JAP = { surrender_progress > 0.1 }
+				if = {
+					limit = {
+						OR = {
+							525 = { is_owned_by = JAP }
+							AND = {
+								525 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							527 = { is_owned_by = JAP }
+							AND = {
+								527 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							796 = { is_owned_by = JAP }
+							AND = {
+								796 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							797 = { is_owned_by = JAP }
+							AND = {
+								797 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							799 = { is_owned_by = JAP }
+							AND = {
+								799 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							800 = { is_owned_by = JAP }
+							AND = {
+								800 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							801 = { is_owned_by = JAP }
+							AND = {
+								801 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+							802 = { is_owned_by = JAP }
+							AND = {
+								802 = { is_owned_by = KOR }
+								KOR = { is_subject_of = JAP }
+							}
+						}
+					}
+					# 北朝鲜 states
+					# 799 - ping an dao ( west liuzhen )
+					# 527 - xian jing dao ( east liuzhen )
+					# 797 - huanghai dao 
+					# 800 - jingji dao ( han cheng )
+					# 南朝鲜 states
+					# 796 - jiangyuan dao ( jiang nan )
+					# 801 - zhongqing dao 
+					# 802 - qingshang dao ( east southern coast to jap )
+					# 525 - quanluo dao ( west southern coast to jap )
+					count_triggers = {
+						amount = 5
+						799 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+						527 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+						797 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+						800 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+						796 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+						801 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+						802 = { 
+							is_controlled_by_ROOT_or_ally = yes
+						}
+					}
+					
+				}
+				JAP = { casualties > 250000 }
+				JAP = { surrender_progress > 0.15 }
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = unlock_sino_jap_second_war_mssion
+				has_completed_focus = CSB_DongBei_jap_kor_china_war
+				NOT = { has_country_flag = second_sino_jap_war_flag }
+			}
+			OR = { 
+				NOT = { has_war_with = JAP }
+				CHI = { 
+					has_war_with = ROOT
+					is_in_faction_with = JAP
+				}
+			}
+		}
+		#will_lead_to_war_with = JAP
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = csb_luori_tooltip
+			# 
+			hidden_effect = {
+				
+				if = {
+					limit = {
+						NOT = {
+							JAP = { casualties > 250000 }
+							JAP = { surrender_progress > 0.15 }
+						}
+					}
+					JAP = { country_event = { id = ww1_dongbei.56 } }
+					# 中日朝北纬三十八度线和平条约
+				}
+				if = {
+					limit = {
+						OR = {
+							JAP = { casualties > 250000 }
+							JAP = { surrender_progress > 0.15 }
+						}
+					}
+					
+					JAP = { country_event = { id = ww1_dongbei.561 } }
+					# 日本退出大陆
+				}
+				if = {
+					limit = {
+						JAP = { surrender_progress > 0.3 }
+					}
+					if = {
+						limit = {
+							KOR = { is_subject_of = MAN }
+						}
+						KOR = {
+							white_peace = JAP
+						}
+					}
+					if = {
+						limit = {
+							KOR = { is_subject_of = JAP }
+							KOR = {
+								has_war_with = MAN
+							}
+						}
+						KOR = {
+							white_peace = MAN
+						}
+					}
+					JAP = { country_event = { id = ww1_dongbei.57 } }
+					# 日本退出大陆
+					JAP = { country_event = { id = ww1_dongbei.58 } }
+					# 日本革命
+				}
+				every_country = {	
+					limit = {
+						is_ai = no
+						NOT = { original_tag = JAP }
+					}
+					country_event = { id = ww1_dongbei.551 }
+				}
+			}
+		}
+	}
+	focus = { # 中国泛亚主义
+		# 
+		id = CSB_DongBei_chinese_faction
+		icon = GFX_focus_databu
+		cost = 10
+		x = 25
+		y = 12
+		prerequisite = {
+			focus = CSB_DongBei_tokyo_visit
+		}
+		prerequisite = {
+			focus = CSB_DongBei_no_political_disbutes
+			focus = CSB_DongBei_social_democratic_revolution
+			focus = CSB_DongBei_nationalism_government
+		}
+		
+		available = {
+			
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = CSB_DongBei_nationalism_government
+				}
+				create_faction = CELESTIAL_EMPIRE
+				hidden_effect = {
+					every_country = {
+						limit = { is_subject_of = ROOT }
+						ROOT = { add_to_faction = PREV }
+					}
+				}	
+			}
+			else = {
+				create_faction = GONGRONGQUAN
+				hidden_effect = {
+					every_country = {
+						limit = { is_subject_of = ROOT }
+						ROOT = { add_to_faction = PREV }
+					}
+				}	
+			}
+		}
+	}
+	
+	focus = { # 接收俄国难民
+		# 
+		id = CSB_DongBei_land_reform
+		icon = GFX_focus_deal_with_russia
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_russian_affair_1
+		}
+		x = 27
+		y = 5
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = rusrevolt.2
+				has_global_flag = russian_revolution
+			}
+		}
+		bypass = {
+			# 外东北 ＆ 西伯利亚 states
+			# 408 - hai shen wai
+			# 409 - miao jie
+			# 560 - east a mu er ( east wai xing an ling )
+			# 561 - west a mu er ( central wai xing an ling )
+			# 563 - chi ta ( west wai xing an ling ) ( also can be mongol )
+			# 637 - kan cha jia ban dao
+			# 574 - ya zi ku ke
+			# 644 - dongbei xiboliya
+			
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_timed_idea = {
+				idea = DongBei_idea_russian_refugee
+				days = 365
+			}
+		}
+	}
+	focus = { # 远东独立
+		# 
+		id = CSB_DongBei_pay_off_debts
+		icon = GFX_focus_split_helmet
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_land_reform
+		}
+		x = 27
+		y = 6
+		available = {
+			OR = {
+				RUS = { has_war = yes }
+				NOT = { country_exists = RUS }
+			}
+				
+			NOT = { RUS = { has_war_with = ROOT } }
+		}
+		bypass = {
+			NOT = {
+				408 = { is_fully_controlled_by = RUS }
+				409 = { is_fully_controlled_by = RUS }
+				560 = { is_fully_controlled_by = RUS }
+				561 = { is_fully_controlled_by = RUS }
+				563 = { is_fully_controlled_by = RUS }
+				637 = { is_fully_controlled_by = RUS }
+				574 = { is_fully_controlled_by = RUS }
+				644 = { is_fully_controlled_by = RUS }
+			}
+		}
+		completion_reward = {
+			RUS = { country_event = { id = ww1_dongbei.48 } }
+		}
+	}
+	focus = { # 索取海参崴
+		# 
+		id = CSB_DongBei_united_china
+		icon = GFX_focus_the_big_push
+		cost = 10
+		x = 27
+		y = 7
+		prerequisite = {
+			focus = CSB_DongBei_pay_off_debts
+		}
+		will_lead_to_war_with = SB1
+		available = {
+			has_war = no
+			SB1 = { is_subject_of = ROOT }
+		}
+		completion_reward = {
+			SB1 = { country_event = { id = ww1_dongbei.47 } }
+		}
+	}
+	
+	focus = { # 渗透民国
+		# 
+		id = CSB_DongBei_play_with_minguo
+		icon = GFX_focus_red_rose
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_contact_guannei
+		}
+		mutually_exclusive = {
+			focus = CSB_DongBei_second_revolution
+		}
+		available = {
+			country_exists = CHI
+			NOT = { has_war_with = CHI } 
+		}
+		bypass = {
+			
+		}
+		x = 30
+		y = 3
+		available = {
+			NOT = { has_war_with = CHI }
+		}
+		completion_reward = {
+			custom_effect_tooltip = controll_china_decision_group
+			# 
+			hidden_effect = {
+				CHI = { country_event = { id = ww1_dongbei.49 } }
+				set_variable = {
+					var = gonghedang_infilatrate_variable
+					value = 0.00
+				}
+				
+				#add_to_variable = {
+				#	chi_infilatrate_variable = 0.05
+				#	tooltip = chi_infilatrate_variable_add
+				#}
+				#chi_infilatrate_variable_add:0 "共和党支持度：$RIGHT|+=%G2$"
+				
+				#subtract_from_variable = {
+				#	chi_infilatrate_variable = 0.05
+				#	tooltip = chi_infilatrate_variable_sub
+				#}
+				#chi_infilatrate_variable_sub:0 "共和党支持度：$RIGHT|-=%G2$"
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	
+	focus = { # 接触同盟会左翼
+	# 
+		id = CSB_DongBei_contact_left_tongmenghui
+		icon = GFX_focus_sanminlu
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_play_with_minguo
+		}
+		x = 29
+		y = 4
+		available = {
+			
+		}
+		bypass = {
+			OR = { 
+				has_war_with = CHI
+				NOT = { country_exists = CHI }
+			}
+		}
+		select_effect = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_more_decisions_shentou
+			# 解锁更多渗透手段
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 扶植民族资本
+	# 
+		id = CSB_DongBei_educate_chinese_business
+		icon = GFX_focus_yiligongye
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_contact_left_tongmenghui
+			focus = CSB_DongBei_join_the_cabinet
+		}
+		x = 29
+		y = 5
+		available = {
+			
+		}
+		bypass = {
+			OR = { 
+				has_war_with = CHI
+				NOT = { country_exists = CHI }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_more_decisions_shentou
+			# 解锁更多渗透手段
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 向内阁派员
+	# 
+		id = CSB_DongBei_join_the_cabinet
+		icon = GFX_focus_generic_voting
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_play_with_minguo
+		}
+		x = 31
+		y = 4
+		available = {	
+			
+		}
+		bypass = {
+			OR = { 
+				has_war_with = CHI
+				NOT = { country_exists = CHI }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_more_decisions_shentou
+			# 解锁更多渗透手段
+			custom_effect_tooltip = stop_serperation_of_china_republic
+			# 阻止民国因内部问题而爆发的护国战争
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_china_or_warlord = yes
+					}
+					country_event = {
+						id = ww1_dongbei.60
+					}
+				}
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 华北易帜计划
+	#
+		id = CSB_DongBei_shentou_huabei
+		icon = GFX_focus_prc_infiltration
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_join_the_cabinet
+			focus = CSB_DongBei_contact_left_tongmenghui
+		}
+		x = 31
+		y = 5
+		available = {
+			
+		}
+		bypass = {
+			OR = { 
+				has_war_with = CHI
+				NOT = { country_exists = CHI }
+			}
+		}
+		completion_reward = {
+			custom_effect_tooltip = unlock_more_decisions_shentou
+			# 解锁更多渗透手段
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 民国正统政府
+		# 
+		id = CSB_DongBei_control_over_beijing_government
+		icon = GFX_focus_prc_proclaim_the_peoples_republic
+		cost = 20
+		prerequisite = {
+			focus = CSB_DongBei_educate_chinese_business
+		}
+		prerequisite = {
+			focus = CSB_DongBei_shentou_huabei
+		}
+		x = 30
+		y = 6
+		available = {
+			if = {	
+				limit = {
+					NOT = { has_variable = gonghedang_infilatrate_variable }
+				}
+				custom_trigger_tooltip = { 
+					tooltip = infil_larger_than_0_tt
+					always = no
+				}
+			}
+			else = {
+				
+				infil_larger_than_75 = yes
+			}
+			#
+			597 = { is_controlled_by = ROOT }
+			606 = { is_controlled_by = ROOT }
+			607 = { is_controlled_by = ROOT }
+			609 = { is_controlled_by = ROOT }
+			622 = { is_controlled_by = ROOT }
+			OR = {
+				616 = { is_controlled_by = ROOT }
+				283 = { is_controlled_by = ROOT }
+				615 = { is_controlled_by = ROOT }
+			}
+		}
+		
+		completion_reward = {	
+			
+			hidden_effect = {
+				#set_country_flag = ready_to_unite_china
+				CHI = {
+					set_capital = { state = 614 }
+				}
+			}
+			608 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}
+			set_cosmetic_tag = MAN_communism_2
+			set_capital = { state = 608 }
+			
+			CHI = { country_event = { id = ww1_dongbei.411 } }
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				date > 1915.10.1
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
+	}
+	focus = { # 谋求南北统一
+		# 
+		id = CSB_DongBei_new_china_unification
+		icon = GFX_focus_dongtinghu
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_control_over_beijing_government
+		}
+		x = 30
+		y = 7
+		available = {
+			
+		}
+		completion_reward = {
+			hidden_effect = {
+				set_country_flag = ready_to_unite_china
+				set_rule = {
+					can_not_declare_war = no
+				}
+			}
+			custom_effect_tooltip = CHI_united_china_tt
+		}
+	}
+	
+	focus = { # 库伦行动
+		# 
+		id = CSB_DongBei_mongolia_expedition
+		icon = GFX_focus_lianghu
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_contact_guannei
+		}
+		x = 36
+		y = 3
+		available = {	
+			OR = {
+				AND = {
+					country_exists = MON
+					MON = { is_subject = no }
+				}
+				AND = {
+					country_exists = TAN
+					TAN = { is_subject = no }
+				}
+			}
+		}
+		bypass = {
+			OR = { 
+				NOT = { country_exists = MON }
+				MON = { is_subject = yes }
+			}
+			OR = { 
+				NOT = { country_exists = TAN }
+				TAN = { is_subject = yes }
+			}
+		}
+		will_lead_to_war_with = MON
+		will_lead_to_war_with = TAN
+		completion_reward = {
+			add_named_threat = { 
+				threat = 2 
+				name = ww1_dongbei.32.t
+			}
+			if = {
+				limit = { country_exists = MON }
+				MON = { country_event = { id = ww1_dongbei.30 days = 1 } }
+			}	
+			else = {
+				330 = { add_core_of = ROOT }
+				612 = { add_core_of = ROOT }
+				616 = { add_core_of = ROOT }
+				618 = { add_core_of = ROOT }
+				715 = { add_core_of = ROOT }
+			}
+			if = {
+				limit = { country_exists = TAN }
+				TAN = { country_event = { id = ww1_dongbei.31 days = 1 } }
+			}
+			else = {
+				329 = { add_core_of = ROOT }
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = { # 二次革命
+		# 
+		id = CSB_DongBei_second_revolution
+		icon = GFX_focus_dadaodui
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_contact_guannei
+		}
+		mutually_exclusive = {
+			focus = CSB_DongBei_play_with_minguo
+		}
+		x = 34
+		y = 3
+		will_lead_to_war_with = CHI
+		available = {
+			#always = no
+		}
+		completion_reward = {	
+			set_cosmetic_tag = MAN_communism_2
+			create_wargoal = {
+				type = annex_everything
+				target = CHI
+			}
+		}
+	}
+	focus = { # 建立华北治权
+		# 
+		id = CSB_DongBei_government_over_north_china
+		icon = GFX_focus_chi_zhili_clique
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_second_revolution
+		}
+		
+		x = 33
+		y = 4
+		#will_lead_to_war_with = TAN
+		#will_lead_to_war_with = MON
+		available = {
+			# 华北 states
+			# 611 - cha ha er ( zhang jia kou )
+			# 609 - chengde
+			# 608 - beijing
+			# 614 - zhili
+			# 597 - shandong
+			# 615 - shanxi
+			# 607 - henan
+			# 620 - hubei
+			count_triggers = {
+				amount = 6
+				611 = { is_controlled_by = ROOT }
+				609 = { is_controlled_by = ROOT }
+				608 = { is_controlled_by = ROOT }
+				
+				614 = { is_controlled_by = ROOT }
+				597 = { is_controlled_by = ROOT }
+				615 = { is_controlled_by = ROOT }
+				
+				607 = { is_controlled_by = ROOT }
+				620 = { is_controlled_by = ROOT }
+			}
+		}
+		completion_reward = {
+			611 = { add_core_of = ROOT }
+			609 = { add_core_of = ROOT }
+			608 = { add_core_of = ROOT }
+			
+			614 = { add_core_of = ROOT }
+			597 = { add_core_of = ROOT }
+			615 = { add_core_of = ROOT }
+			
+			607 = { add_core_of = ROOT }
+			620 = { add_core_of = ROOT }
+			
+		}
+	}
+	focus = { # 建立西北治权
+		# 
+		id = CSB_DongBei_government_over_xibei_china
+		icon = GFX_focus_chi_people_defence
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_second_revolution
+		}
+		
+		x = 35
+		y = 4
+		#will_lead_to_war_with = CHI
+		available = {
+			# 西北 states
+			# 622 - shaanxi
+			# 283 - gansu
+			# 755 - hexizoulang
+			# 616 - ningxia
+			# 621 - suiyuan (east neimeng)
+			# 604 - qinghai
+			# 619 - hami
+			# 618 - zhun ga er (wa la)
+			# 287 - ta ke la ma gan sha mo
+			# 749 - kashi ga er
+			# 322 - xizang
+			# 434 - zangnan
+			# 441 - keshi mi er
+			# 589 - qihe ( outer xibei )
+			count_triggers = {
+				amount = 5
+				622 = { is_controlled_by = ROOT }
+				283 = { is_controlled_by = ROOT }
+				755 = { is_controlled_by = ROOT }
+				616 = { is_controlled_by = ROOT }
+				604 = { is_controlled_by = ROOT }
+				619 = { is_controlled_by = ROOT }
+			}
+			
+		}
+		
+		completion_reward = {
+			622 = { add_core_of = ROOT }
+			283 = { add_core_of = ROOT }
+			755 = { add_core_of = ROOT }
+			616 = { add_core_of = ROOT }
+			604 = { add_core_of = ROOT }
+			619 = { add_core_of = ROOT }
+			
+		}
+	}
+	
+	focus = { # 解决疆藏问题
+		# 
+		id = CSB_DongBei_government_over_xinjiang
+		icon = GFX_focus_istirak_const
+		cost = 5
+		prerequisite = {
+			focus = CSB_DongBei_government_over_xibei_china
+		}
+		
+		x = 36
+		y = 6
+		#w#ill_lead_to_war_with = CHI
+		available = {
+			# 西北 states
+			# 622 - shaanxi
+			# 283 - gansu
+			# 755 - hexizoulang
+			# 616 - ningxia
+			# 621 - suiyuan (east neimeng)
+			# 604 - qinghai
+			# 619 - hami
+			# 618 - zhun ga er (wa la)
+			# 287 - ta ke la ma gan sha mo
+			# 749 - kashi ga er
+			# 322 - xizang
+			# 434 - zangnan
+			# 441 - keshi mi er
+			# 589 - qihe ( outer xibei )
+			
+		}
+		
+		will_lead_to_war_with = TIB
+		will_lead_to_war_with = SIK
+		will_lead_to_war_with = XSM
+		completion_reward = {
+			
+			#749 = { add_core_of = ROOT }
+			
+			# SIB
+			if = {
+				limit = {
+					country_exists = TIB
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = TIB
+				}
+			}
+			if = {
+				limit = { NOT = { country_exists = TIB } }
+				custom_effect_tooltip = tib_not_exists_core_cede_csb
+				322 = { add_core_of = ROOT }
+				# 
+			}
+			
+			# SIK
+			if = {
+				limit = {
+					country_exists = SIK
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SIK
+				}
+			}
+			if = {
+				limit = { NOT = { country_exists = SIK } }
+				custom_effect_tooltip = sik_not_exists_core_cede_csb
+				# 
+				287 = { add_core_of = ROOT }
+				618 = { add_core_of = ROOT }
+				749 = { add_core_of = ROOT }
+			}
+			
+			
+			# XSM
+			if = {
+				limit = {
+					country_exists = XSM
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = XSM
+				}
+			}
+			if = {
+				limit = { NOT = { country_exists = XSM } }
+				custom_effect_tooltip = xsm_not_exists_core_cede_csb
+				# 西北割据政权不存在，改为获得地方核心
+				604 = { add_core_of = ROOT }
+				755 = { add_core_of = ROOT }
+			}
+			
+			434 = { add_core_of = ROOT }
+			441 = { add_core_of = ROOT }
+			589 = { add_core_of = ROOT }
+		}
+	}
+	focus = { # 宣称外部领土
+		# 
+		id = CSB_DongBei_outer_xibei_regions
+		icon = GFX_focus_destroy_parliament
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_founding_of_a_new_china
+			#focus = CSB_DongBei_new_china_unification
+			focus = CSB_DongBei_government_over_xinjiang
+		}
+		
+		
+		x = 36
+		y = 8
+		#will_lead_to_war_with = CHI
+		available = {
+			
+		}
+	
+		completion_reward = {
+			434 = { add_core_of = ROOT }
+			441 = { add_core_of = ROOT }
+			589 = { add_core_of = ROOT }
+		}
+	}
+	
+	focus = { # 建立华南治权
+		# 
+		id = CSB_DongBei_government_over_south_china
+		icon = GFX_focus_dongnan
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_government_over_north_china
+		}
+		
+		x = 33
+		y = 5
+		#will_lead_to_war_with = CHI
+		available = {
+			# 华南 states
+			# 598 - jiangsu
+			# 606 - anhui
+			# 613 - shanghai
+			# 602 - hunan
+			# 596 - zhejiang
+			# 600 - jiangxi
+			# 595 - fujian
+			# 593 - guangdong
+			# 524 - taiwan
+			# 594 - leizhou bandao (qin zhou)
+			# 591 - hainan
+			# 599 - guangxi
+			# 592 - guangzhou
+			# 326 - xiang gang
+			# 729 - ao men
+			# 728 - guangzhou wan
+			count_triggers = {
+				amount = 8
+				598 = { is_controlled_by = ROOT }
+				606 = { is_controlled_by = ROOT }
+				613 = { is_controlled_by = ROOT }
+				
+				602 = { is_controlled_by = ROOT }
+				596 = { is_controlled_by = ROOT }
+				600 = { is_controlled_by = ROOT }
+				
+				595 = { is_controlled_by = ROOT }
+				593 = { is_controlled_by = ROOT }
+				524 = { is_controlled_by = ROOT }
+				
+				594 = { is_controlled_by = ROOT }
+				591 = { is_controlled_by = ROOT }
+				599 = { is_controlled_by = ROOT }
+				592 = { is_controlled_by = ROOT }
+			}
+		}
+		completion_reward = {
+			598 = { add_core_of = ROOT }
+			606 = { add_core_of = ROOT }
+			613 = { add_core_of = ROOT }
+			602 = { add_core_of = ROOT }
+			596 = { add_core_of = ROOT }
+			600 = { add_core_of = ROOT }
+			595 = { add_core_of = ROOT }
+			593 = { add_core_of = ROOT }
+			524 = { add_core_of = ROOT }
+			594 = { add_core_of = ROOT }
+			591 = { add_core_of = ROOT }
+			599 = { add_core_of = ROOT }
+			592 = { add_core_of = ROOT }
+		}
+	}
+	focus = { # 建立华西治权
+		# 
+		id = CSB_DongBei_government_over_west_china
+		icon = GFX_focus_istirak_mukavemeti
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_government_over_xibei_china
+		}
+		
+		x = 35
+		y = 5
+		#will_lead_to_war_with = CHI
+		available = {
+			# 西南 states
+			# 603 - guizhou
+			# 325 - yunnan
+			# 605 - sichuan
+			OR = {
+				603 = { is_controlled_by = ROOT }
+				325 = { is_controlled_by = ROOT }
+				605 = { is_controlled_by = ROOT }
+			}
+		}
+		completion_reward = {
+			603 = { add_core_of = ROOT }
+			325 = { add_core_of = ROOT }
+			605 = { add_core_of = ROOT }
+		}
+	}
+	
+	focus = { # 开国大典
+		# 
+		id = CSB_DongBei_quanguo_zhengxie_meeting
+		icon = GFX_focus_xinzhongguolu
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_government_over_south_china
+		}
+		prerequisite = {
+			focus = CSB_DongBei_government_over_west_china
+		}
+		
+		x = 34
+		y = 6
+	#	will_lead_to_war_with = CHI
+		available = {
+			#always = no
+		}
+		completion_reward = {
+			
+			set_capital = { state = 608 }
+			hidden_effect = {
+				set_country_flag = ready_to_unite_china
+				set_rule = {
+					can_not_declare_war = no
+				}
+			}
+			custom_effect_tooltip = CHI_united_china_tt
+		}
+	}
+
+	focus = { # 建立新中国		
+		# 
+		id = CSB_DongBei_founding_of_a_new_china
+		icon = GFX_focus_ming
+		cost = 10
+		prerequisite = {
+			focus = CSB_DongBei_quanguo_zhengxie_meeting
+			focus = CSB_DongBei_control_over_beijing_government
+		}
+		
+		x = 32
+		y = 7
+		available = {
+			
+		}
+		bypass = {
+		}
+		completion_reward = {
+			#
+			add_political_power = 150
+			hidden_effect = {
+				drop_cosmetic_tag = yes
+			}
+			effect_tooltip = {
+				set_cosmetic_tag = DongBei_CHI_united_communism
+			}
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

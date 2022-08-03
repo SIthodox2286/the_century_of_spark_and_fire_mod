@@ -1,0 +1,189 @@
+@tier1 = 30
+@tier2 = 20
+@tier3 = 10
+
+leader_traits = {
+	
+	chuanyue_leader = { # 穿越者的远见
+		random = no
+		sprite = 13
+		
+		land_doctrine_cost_factor = -0.15
+		naval_doctrine_cost_factor = -0.15
+		air_doctrine_cost_factor = -0.15
+		trade_laws_cost_factor = -0.15
+		economy_cost_factor = -0.15
+		trade_opinion_factor = 0.15
+		research_speed_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	advisor_wuchuan_sov_trait = { # 穿越者顾问
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.1
+		research_speed_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	revolution_overseer = { # 革命的内务部长
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+		war_support_factor = 0.1
+		foreign_subversive_activites = -0.3
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_short_knive = { # 中国革命的短刀
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+		intelligence_agency_defense = 0.5
+		operative_slot = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	long_last_secretary = { # 秘书元老
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.05
+		political_advisor_cost_factor = -0.15
+		trade_laws_cost_factor = -0.1
+		economy_cost_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	revolution_opportunitist = { # 机会主义小将
+		random = no
+		sprite = 13
+		
+		fascism_drift = 0.1
+		stability_factor = -0.05
+		political_power_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	decmoratic_supporter_csb = { # 政治老好人
+		random = no
+		sprite = 13
+		
+		democratic_drift = 0.1
+		war_support_factor = -0.1
+		stability_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	market_economy_supporter = { # 经济万能论
+		random = no
+		sprite = 13
+		
+		neutrality_drift = 0.1
+		stability_factor = -0.05
+		local_resources_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	socialism_revolution_wuchuan = { # 维护福利制度
+		random = no
+		sprite = 13
+		
+		stability_factor = 0.1
+		political_power_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	second_leadership_group_1 = { # 第二代领导集体
+		random = no
+		sprite = 13
+		
+		consumer_goods_factor = -0.05
+		stability_factor = 0.1
+		war_support_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	second_leadership_group_2 = { # 第二代领导集体
+		random = no
+		sprite = 13
+		
+		drift_defence_factor = 0.3
+		stability_factor = -0.1
+		war_support_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	second_leadership_group_3 = { # 第二代领导集体
+		random = no
+		sprite = 13
+		
+		research_speed_factor = 0.1
+		stability_factor = -0.1
+		consumer_goods_factor = -0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	CE_maoism_ideals_scb = { # 新中国的舵手
+		random = no
+		
+		political_power_factor = 0.1
+		surrender_limit = 0.25
+		land_doctrine_cost_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	CE_chenduxiu_trait = { # 《新青年》
+		random = no
+		sprite = 13
+		surrender_limit = 0.25
+		propaganda_mission_factor = 0.25
+		boost_ideology_mission_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

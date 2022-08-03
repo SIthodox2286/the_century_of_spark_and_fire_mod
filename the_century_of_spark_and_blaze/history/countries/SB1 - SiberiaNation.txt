@@ -1,0 +1,84 @@
+﻿capital = 403 # 
+
+oob = "SB1_1936_land"
+
+
+recruit_character = SB1_sergey_novafu
+recruit_character = SB1_provincial_council
+recruit_character = SB1_ivan_morsolinsky
+
+recruit_character = SB1_representitive_norvasky
+recruit_character = SB1_representitive_rodesky
+recruit_character = SB1_representitive_bolotnikov
+recruit_character = SB1_representitive_alexa
+
+recruit_character = SB1_representitive_general_1
+recruit_character = SB1_representitive_general_2
+recruit_character = SB1_representitive_general_3
+recruit_character = SB1_representitive_general_4
+recruit_character = SB1_representitive_general_5
+
+starting_train_buffer = 1.0
+
+set_research_slots = 3
+
+set_stability = 0.5
+set_war_support = 0.5
+# Starting tech
+set_technology = {
+	#infantry
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	support_weapons = 1
+	motorised_infantry = 1
+	#bicycle_infantry = 1
+	
+	#support
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	
+	#armored
+	early_armored_car = 1
+	
+	#artillery
+	gw_artillery = 1
+	howitzer1 = 1
+	
+	#doctrine
+	bayonet_assault = 1
+	mass_cavalry_raid = 1
+	large_scale_offensive = 1
+	last_stand = 1
+	large_scale_breakthrough = 1
+	
+	#navy
+	transport = 1
+
+	#air
+	early_fighter = 1
+	airship_bomber = 1
+	
+	#engineering
+	electrical_engineering = 1
+	radio = 1
+	analytical_engine = 1
+	mechanical_engineering = 1
+	aircraft_engine = 1
+	generator_battery = 1
+	basic_train = 1
+}
+
+set_politics = {
+	ruling_party = communism
+	election_frequency = 48 
+	elections_allowed = no 
+}
+set_popularities = {
+    communism = 39
+	democratic = 21
+	fascism = 5
+	neutrality = 35
+}
+
+

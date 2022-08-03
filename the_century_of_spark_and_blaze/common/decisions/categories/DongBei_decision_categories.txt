@@ -1,0 +1,75 @@
+DongBei_xinhai_decisions = {
+	icon = spr_the_seeds_of_revolution
+	priority = 100
+	allowed = {
+		tag = MAN
+	}
+	visible = {
+		always = yes
+	}
+	#priority = 10
+	#visible_when_empty = yes
+}
+
+DongBei_external_affairs = { # 战略决策
+	icon = spr_the_seeds_of_revolution
+	priority = 100
+	allowed = {
+		tag = MAN
+	}
+	visible = {
+		always = yes
+	}
+	#priority = 10
+	#visible_when_empty = yes
+}
+
+MAN_minguo_affair_decisions = { # 渗透民国
+	# 
+	icon = generic_crisis
+	allowed = {
+		tag = MAN
+	}
+	visible = {
+		always = yes
+	}
+	priority = 2
+	#visible_when_empty = yes
+}
+
+MAN_minguo_loyalty_decisions = { # 确保忠诚
+	# 
+	icon = generic_crisis
+	allowed = {
+		tag = CHI
+	}
+	visible = {
+		always = yes
+	}
+	priority = 2
+	#visible_when_empty = yes
+}
+
+MAN_dongbei_country_decisions = {
+	icon = generic_crisis
+	allowed = {
+		tag = MAN
+	}
+	visible = {
+		always = yes
+	}
+	priority = 2
+	#visible_when_empty = yes
+}
+
+MAN_dongbei_clean_international_debt = {
+	icon = gre_paying_ifc_debt
+	priority = 100
+	allowed = {
+		tag = MAN
+	}
+	visible = {
+		always = yes
+	}
+	#visible_when_empty = yes
+}

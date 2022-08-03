@@ -1,0 +1,51 @@
+﻿capital = 716
+
+give_military_access = RUS #Chinese Eastern Railway 
+give_military_access = JAP #South Manchuria Railway
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1910.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 0
+	communism = 0
+	democratic = 0
+	neutrality = 100
+}
+
+add_ideas = {
+	isolation
+	limited_exports
+}
+
+set_technology = {
+	#infantry
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	#artillery
+	gw_artillery = 1
+	#doctrine
+	bayonet_assault = 1
+	#engineering
+	electrical_engineering = 1
+	mechanical_engineering = 1
+}
+
+recruit_character = FNG_zhao_erxun
+recruit_character = FNG_feng_delin
+
+recruit_character = FNG_zhang_zuolin
+recruit_character = FNG_zhang_xueliang
+
+recruit_character = FNG_guo_songling
+recruit_character = FNG_yang_yuting
+recruit_character = FNG_jiang_dengxuan
+recruit_character = FNG_zhang_zongchang
+recruit_character = FNG_zhang_zuoxiang
+recruit_character = FNG_tang_yulin
+recruit_character = FNG_wu_junsheng
+recruit_character = FNG_zhang_jinghui

@@ -1,0 +1,7684 @@
+add_namespace = ww1_dongbei
+
+# 
+country_event = {
+	id = ww1_dongbei.1
+	title = ww1_dongbei.1.t
+	desc = ww1_dongbei.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			MAN = {
+				612 = { add_core_of = MAN }
+				#set_global_flag = dongbei_xinhai_revolution_global_flag
+				every_other_country = {
+					limit = {
+						OR = {
+							is_china_or_warlord = yes
+						}
+					}
+					every_owned_state = {
+						limit = {
+							OR = {
+								state = 328
+								state = 714
+								state = 717
+								
+							}
+						}
+						add_core_of = MAN
+						transfer_state_to = MAN
+					}
+					if = {
+						limit = {
+							country_exists = QIN
+						}
+						every_owned_state = {
+							limit = {
+								OR = {
+									state = 328
+									state = 714
+								
+									state = 717
+								}
+							}
+							add_core_of = MAN
+							transfer_state_to = MAN
+						}
+					}
+					every_owned_state = {
+						set_demilitarized_zone = no
+					}
+				}
+				every_state = {
+					limit = {
+						is_core_of = QIN
+					}
+					add_claim_by = MAN
+				}
+				load_focus_tree = {
+					tree = csb_dongbei_focus
+					keep_completed = yes
+				}
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+					name = MAN_communism_party
+					long_name = MAN_communism_party_long
+				}
+				set_popularities = {
+					democratic = 22
+					fascism = 5
+					communism = 40
+					neutrality = 33
+				}
+				#promote_character = Dongbei_Wu_Chuan
+				promote_character = {
+					character = Dongbei_Wu_Chuan
+					ideology = vanguardism
+				}
+				add_named_threat = {
+					threat = 4
+					name = ww1_xinhai.2.t
+				}
+				unlock_national_focus = CHI_prince_qing_cabinet
+				unlock_national_focus = CHI_advisory_council
+				add_ideas = partial_economic_mobilisation
+				add_ideas = limited_exports
+				add_ideas = limited_conscription
+				
+				add_ideas = DongBei_idea_support_for_revolution
+				add_ideas = DongBei_idea_german_officer
+				add_ideas = DongBei_idea_communists_officer
+				add_ideas = DongBei_idea_huidang
+				add_ideas = DongBei_idea_german_debt
+				add_ideas = DongBei_idea_american_debt
+				add_ideas = DongBei_idea_russian_debt
+				add_ideas = DongBei_idea_wenmang_guodu_1
+				
+				set_cosmetic_tag = MAN_communism_1
+				
+				set_country_flag = is_geweihui_flag
+				if = {
+					limit = {
+						gives_military_access_to = JAP
+					}
+					diplomatic_relation = {
+						country = JAP
+						relation = military_access
+						active = no
+					}
+				}
+				GER = {
+					diplomatic_relation = {
+						country = MAN
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+				RUS = {
+					diplomatic_relation = {
+						country = MAN
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+				USA = {
+					diplomatic_relation = {
+						country = MAN
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+			FNG = {
+				inherit_technology = QIN
+				every_other_country = {
+					limit = {
+						OR = {
+							is_china_or_warlord = yes
+						}
+					}
+					every_owned_state = {
+						limit = {
+							OR = {
+								state = 715
+								state = 617
+								state = 716
+								state = 610
+								
+							}
+						}
+						add_core_of = FNG
+						add_core_of = MAN
+						transfer_state_to = FNG
+					}
+					if = {
+						limit = {
+							country_exists = QIN
+						}
+						every_owned_state = {
+							limit = {
+								OR = {
+									state = 715
+									state = 617
+									state = 716
+									state = 610
+								}
+							}
+							add_core_of = FNG
+							add_core_of = MAN
+							transfer_state_to = FNG
+						}
+					}
+					every_owned_state = {
+						set_demilitarized_zone = no
+					}
+				}
+				#load_focus_tree = {
+				#	tree = china_focus
+				#	keep_completed = yes
+				#}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+					name = FNG_government_qing
+					long_name = FNG_government_qing_long
+				}
+				set_popularities = {
+					democratic = 30
+					fascism = 5
+					communism = 5
+					neutrality = 60
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_purchase_restriction
+						}
+					}
+					add_ideas = QIN_idea_purchase_restriction
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_boxer_protocol_1
+						}
+					}
+					swap_ideas = {
+						remove_idea = QIN_idea_boxer_protocol_1
+						add_idea = QIN_idea_boxer_protocol
+					}
+					add_timed_idea = {
+						idea = QIN_idea_profit_transfer
+						days = 365
+					}
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_boxer_protocol
+						}
+					}
+					add_ideas = QIN_idea_boxer_protocol
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_payments_of_indemnities_6
+						}
+					}
+					add_ideas = QIN_idea_payments_of_indemnities_6
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_payments_of_indemnities_5
+						}
+					}
+					add_ideas = QIN_idea_payments_of_indemnities_5
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_payments_of_indemnities_4
+						}
+					}
+					add_ideas = QIN_idea_payments_of_indemnities_4
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_payments_of_indemnities_3
+						}
+					}
+					add_ideas = QIN_idea_payments_of_indemnities_3
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_payments_of_indemnities_2
+						}
+					}
+					add_ideas = QIN_idea_payments_of_indemnities_2
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_idea = QIN_idea_payments_of_indemnities
+						}
+					}
+					add_ideas = QIN_idea_payments_of_indemnities
+				}
+				unlock_national_focus = CHI_prince_qing_cabinet
+				unlock_national_focus = CHI_advisory_council
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_nation_recovery
+						}
+					}
+					unlock_national_focus = CHI_nation_recovery
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_restore_military_production
+						}
+					}
+					unlock_national_focus = CHI_restore_military_production
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_pave_way_for_industrialization
+						}
+					}
+					unlock_national_focus = CHI_pave_way_for_industrialization
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_nanjing_arsenal
+						}
+					}
+					unlock_national_focus = CHI_nanjing_arsenal
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_beijing_arsenal
+						}
+					}
+					unlock_national_focus = CHI_beijing_arsenal
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_south_provinces
+						}
+					}
+					unlock_national_focus = CHI_south_provinces
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_north_provinces
+						}
+					}
+					unlock_national_focus = CHI_north_provinces
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_central_provinces
+						}
+					}
+					unlock_national_focus = CHI_central_provinces
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_manchu_factories
+						}
+					}
+					unlock_national_focus = CHI_manchu_factories
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_south_factories
+						}
+					}
+					unlock_national_focus = CHI_south_factories
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_central_factories
+						}
+					}
+					unlock_national_focus = CHI_central_factories
+				}
+				if = {
+					limit = {
+						QIN = {
+							has_completed_focus = CHI_fight_against_famine
+						}
+					}
+					unlock_national_focus = CHI_fight_against_famine
+				}
+				add_ideas = CHI_idea_army_corruption3
+				#promote_character = FNG_zhao_erxun
+				promote_character = {
+					character = FNG_zhao_erxun
+					ideology = despotism
+				}
+				set_cosmetic_tag = FNG_neutrality_1
+				add_ideas = partial_economic_mobilisation
+				add_ideas = limited_exports
+				add_ideas = limited_conscription
+			}
+		}
+	}
+	option = {
+		name = ww1_dongbei.1.1
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			MAN = {
+				load_oob = "MAN_1911_land"
+				change_tag_from = QIN
+				
+			}
+			FNG = {
+				load_oob = "FNG_1912_land"
+				
+			}
+			QIN = {
+				country_event = {
+					id = ww1_xinhai.2
+					hours = 12
+				}
+			}	
+		}
+		custom_effect_tooltip = MAN_chosen
+		MAN = {
+			add_ideas = DongBei_idea_xinhai_revolution
+			declare_war_on = {
+				target = FNG
+				type = annex_everything
+			}
+			set_global_flag = dongbei_xinhai_revolution_flag
+			activate_mission = DongBei_mission_japan_interference
+		}
+	}
+	option = {
+		name = ww1_dongbei.1.2
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			MAN = {
+				load_oob = "MAN_1911_land"
+				#change_tag_from = QIN
+				
+				
+			}
+			FNG = {
+				load_oob = "FNG_1912_land"
+				change_tag_from = QIN
+			}
+			QIN = {
+				country_event = {
+					id = ww1_xinhai.2
+					hours = 12
+				}
+			}	
+		}
+		custom_effect_tooltip = fng_chosen
+		MAN = {
+			add_ideas = DongBei_idea_xinhai_revolution
+			declare_war_on = {
+				target = FNG
+				type = annex_everything
+			}
+			set_global_flag = dongbei_xinhai_revolution_flag
+			activate_mission = DongBei_mission_japan_interference
+		}
+	}
+	option = {
+		name = ww1_dongbei.1.3
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			MAN = {
+				load_oob = "MAN_1911_land"
+				#change_tag_from = QIN
+				
+			}
+			FNG = {
+				load_oob = "FNG_1912_land"
+				
+			}
+			QIN = {
+				country_event = {
+					id = ww1_xinhai.2
+					hours = 12
+				}
+			}	
+		}
+		custom_effect_tooltip = qing_chosen
+		MAN = {
+			add_ideas = DongBei_idea_xinhai_revolution
+			declare_war_on = {
+				target = FNG
+				type = annex_everything
+			}
+			set_global_flag = dongbei_xinhai_revolution_flag
+			activate_mission = DongBei_mission_japan_interference
+		}
+	}
+}
+
+#
+news_event = { # 日本干涉东北革命
+	# 
+	id = ww1_dongbei.2
+	title = ww1_dongbei.2.t
+	desc = ww1_dongbei.2.d
+	picture = GFX_news_event_chinese_soldiers
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { original_tag = MAN }
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.2 }
+				}
+				activate_mission = DongBei_mission_defend_revolution
+			}
+		}
+	}
+	option = { # 抗日救亡！
+		name = ww1_dongbei.2.1
+		ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			original_tag = MAN
+		}
+		set_global_flag = jap_interfer_dongbei_revolution 
+		effect_tooltip = { 
+			activate_mission = DongBei_mission_defend_revolution
+		}
+		
+	}
+	
+	option = { # 中国的未来晦暗不明。
+		name = ww1_dongbei.2.2
+		ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+		}
+		
+	}
+
+}
+
+country_event = { # 东北革命蔓延
+	# 
+	id = ww1_dongbei.3
+	title = ww1_dongbei.3.t
+	desc = ww1_dongbei.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 必须镇压共和党革命！
+		name = ww1_dongbei.3.1
+		ai_chance = {
+			factor = 75
+		}
+		add_war_support = -0.1
+		add_named_threat = {
+			threat = 2
+			name = ww1_dongbei.2.t
+		}
+		JAP = {
+			declare_war_on = {
+				target = MAN
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = { KOR = { is_subject_of = JAP } }
+			KOR = {
+				declare_war_on = {
+					target = MAN
+					type = annex_everything
+				}
+			}
+		}
+		hidden_effect = {
+			MAN = {
+				country_event = { id = ww1_dongbei.2 }
+			}
+			activate_mission = DongBei_mission_defend_revolution_jap
+		}
+		
+	}
+	option = { # 我国还没有做好和俄国重启全面对抗的准备。
+		name = ww1_dongbei.3.2
+		ai_chance = {
+			factor = 25
+		}
+		add_stability = 0.1
+		add_political_power = 50
+		if = {
+			limit = {
+				country_exists = FNG
+				FNG = { has_war_with = MAN }
+			}
+			FNG = {
+				country_event = { id = ww1_dongbei.301 }
+			}
+			MAN = {
+				country_event = { id = ww1_dongbei.302 }
+			}
+		}
+	}
+
+}
+
+country_event = { # 日本架空东北清廷
+	# 
+	id = ww1_dongbei.301
+	title = ww1_dongbei.301.t
+	desc = ww1_dongbei.301.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 日本人，也只能这样了...
+		name = ww1_dongbei.301.1
+		ai_chance = {
+			factor = 75
+		}
+		JAP = { give_military_access = FNG }
+		give_military_access = JAP
+		add_ideas = DongBei_idea_FNG_jap_control
+		custom_effect_tooltip = jap_ganshe_army_appear_csb
+		hidden_effect = {
+			load_oob = "FNG_1912_jap_support"
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = tech_support }
+			}
+			set_technology = {
+				tech_support = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = { has_tech = tech_engineers }
+			}
+			set_technology = {
+				tech_engineers = 1
+			}
+		}
+		
+	}
+	
+}
+
+news_event = { # 日本架空东北清廷
+	# 
+	id = ww1_dongbei.302
+	title = ww1_dongbei.302.t
+	desc = ww1_dongbei.302.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_global_flag = first_conflict_jap_man_end
+		}
+	}
+	option = { # 狼子野心。
+		name = ww1_dongbei.302.1
+		ai_chance = {
+			factor = 75
+		}
+		
+	}
+	
+}
+
+country_event = { # 
+	# 
+	id = ww1_dongbei.4
+	title = ww1_dongbei.4.t
+	desc = ww1_dongbei.4.d
+	picture = GFX_report_event_british_artillery
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.4.1
+		ai_chance = {
+			factor = 75
+		}
+		add_political_power = 150
+		add_stability = 0.05
+		add_war_support = 0.05
+		add_state_core = 744
+	}
+	
+}
+
+news_event = { # 南满僵局
+	# 
+	id = ww1_dongbei.5
+	title = ww1_dongbei.5.t
+	desc = ww1_dongbei.5.d
+	picture = GFX_news_event_063
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_global_flag = first_conflict_jap_man_end
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.5.1
+		ai_chance = {
+			factor = 75
+		}
+		add_ideas = DongBei_idea_lost_in_manchuria_1
+	}
+	
+}
+
+country_event = { # 革命的胜利
+	# 
+	id = ww1_dongbei.6
+	title = ww1_dongbei.6.t
+	desc = ww1_dongbei.6.d
+	picture = GFX_report_event_british_artillery
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_global_flag = first_conflict_jap_man_end
+		}
+	}
+	option = { # 革命到底！
+		name = ww1_dongbei.6.1
+		ai_chance = {
+			factor = 1
+		}
+		custom_effect_tooltip = csb_jap_will_mobilize_tt
+		# 
+		JAP = {
+			country_event = { id = ww1_dongbei.602 }	
+		}
+		add_timed_idea = {
+			idea = DongBei_idea_interior_critics
+			days = 300
+		}
+		declare_war_on = {
+			target = JAP
+			type = annex_everything
+		}
+		if = {
+			limit = { KOR = { is_subject_of = JAP } }
+			declare_war_on = {
+				target = KOR
+				type = annex_everything
+			}
+		}
+	}
+	option = { # 是时候见好就收，我们需要时间消化关外。
+		name = ww1_dongbei.6.2
+		ai_chance = {
+			factor = 99
+		}
+		744 = {
+			transfer_state_to = ROOT
+			add_core_of = ROOT
+		}
+		800 = {
+			add_dynamic_modifier = {
+				modifier = CE_local_oppositions_red
+			}
+		}
+		JAP = {
+			country_event = {
+				id = ww1_dongbei.7
+			}
+		}
+	}
+	
+}
+
+news_event = { # 日本战债危机
+	# 
+	id = ww1_dongbei.601
+	title = ww1_dongbei.601.t
+	desc = ww1_dongbei.601.d
+	picture = GFX_news_event_spr_spanish_civil_war3
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { original_tag = JAP }
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = JAP }
+					}
+					country_event = { id = ww1_dongbei.601 }
+				
+				}
+			}
+		}
+	}
+	
+	option = { # 敌人的情况一定更糟！
+		name = ww1_dongbei.601.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			has_war = yes
+			original_tag = JAP
+		}
+		
+	}
+	
+	option = { # 起码战争结束了。
+		name = ww1_dongbei.601.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			has_war = no
+			original_tag = JAP
+		}
+		
+	}
+	
+	option = { # 关键的进展。
+		name = ww1_dongbei.601.3
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = MAN
+			NOT = { original_tag = JAP }
+		}
+		
+	}
+	
+	option = { # 有趣的进展。
+		name = ww1_dongbei.601.4
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = JAP }
+			NOT = { original_tag = MAN }
+		}
+		
+	}
+	
+}
+
+news_event = { # 北满事变发酵
+	# 
+	id = ww1_dongbei.602
+	title = ww1_dongbei.602.t
+	desc = ww1_dongbei.602.d
+	picture = GFX_news_event_041
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { original_tag = JAP }
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = JAP }
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.602 }
+				
+				}
+			}
+		}
+	}
+	
+	option = { # 这事关皇国的霸权地位。
+		name = ww1_dongbei.602.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = JAP
+		}
+		add_ideas = DongBei_idea_jap_mobilization
+		activate_mission = DongBei_mission_dongbei_war_cost_crisis
+	}
+	option = { # 局势一发不可收拾。
+		name = ww1_dongbei.602.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = JAP }
+		}
+		effect_tooltip = {
+			JAP = { 
+				add_ideas = DongBei_idea_jap_mobilization
+				activate_mission = DongBei_mission_dongbei_war_cost_crisis
+			}
+		}
+	}
+	
+}
+
+news_event = { # 日军退出南满
+	# 最近爆发的中国革命彻底改变了东北亚的战略格局。日本，尤其是日本陆军在本次战争中成为了最彻底的失败者。号称要“一个月解决北满事变”的日陆军高层不仅在战场上丢掉了日清、日俄两次战争中打出来的威名，更丢掉了他们让上万普通士兵流血牺牲得来的胜利果实。在哀鸿遍野之中，日本军队被迫撤除旅顺、大连的一切驻军。靠近满洲的北朝鲜局势也愈发动荡......
+	id = ww1_dongbei.7
+	title = ww1_dongbei.7.t
+	desc = ww1_dongbei.7.d
+	picture = GFX_news_event_bose
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { original_tag = MAN }
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = JAP }
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.7 }
+				
+				}
+			}
+		}
+	}
+	
+	option = { # 耻辱性的大败！
+		name = ww1_dongbei.7.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = JAP
+		}
+		add_ideas = DongBei_idea_lost_in_manchuria_1
+		effect_tooltip = {
+			MAN = { 
+				744 = {
+					transfer_state_to = MAN
+					add_core_of = MAN
+				}
+				800 = {
+					add_dynamic_modifier = {
+						modifier = CE_local_oppositions_red
+					}
+				}
+			}
+		}
+	}
+	option = { # 这是日本衰退了，还是中国人觉醒了？
+		name = ww1_dongbei.7.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = JAP }
+		}
+		
+	}
+	
+}
+
+news_event = { # 共和党占领东三省
+	# 世界上对远东局势有所了解的人都知道中国的清王朝已经走到了革命的边缘。但没人料想到革命居然是在满洲爆发，而且在很短的时间内就取得了完全的胜利。现在，一个自称“共和党”的政权高举“土地革命”和“废除不平等条约”两面旗帜，在中国东北组建了现代化的政权。背后似乎有德国和俄国的资助。
+	id = ww1_dongbei.701
+	title = ww1_dongbei.701.t
+	desc = ww1_dongbei.701.d
+	picture = GFX_news_event_chinese_soldiers_march
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { original_tag = JAP }
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = JAP }
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.701 }
+				
+				}
+			}
+		}
+	}
+	
+	option = { # 我们甚至没有干涉的机会......
+		name = ww1_dongbei.701.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = JAP
+		}
+		
+	}
+	option = { # 有趣的进展。
+		name = ww1_dongbei.701.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = JAP }
+		}
+		
+	}
+}
+
+news_event = { # 日本的挺进
+	# 
+	id = ww1_dongbei.8
+	title = ww1_dongbei.8.t
+	desc = ww1_dongbei.8.d
+	picture = GFX_news_event_040
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_global_flag = first_conflict_jap_man_end
+		}
+	}
+	option = { # 君子报仇，十年不晚。
+		name = ww1_dongbei.8.1
+		ai_chance = {
+			factor = 99
+		}
+		add_ideas = DongBei_idea_lost_in_manchuria_man
+		effect_tooltip = {
+			328 = {
+				transfer_state_to = JAP
+				add_dynamic_modifier = {
+					modifier = CE_local_oppositions_red
+				}
+			}
+		}
+	}
+}
+
+news_event = { # 南满挺进
+	# 
+	id = ww1_dongbei.9
+	title = ww1_dongbei.9.t
+	desc = ww1_dongbei.9.d
+	picture = GFX_news_event_040
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = first_conflict_jap_man_end }
+				}
+				set_global_flag = first_conflict_jap_man_end
+			}
+			if = {
+				limit = { original_tag = JAP }
+				328 = {
+					transfer_state_to = JAP
+					add_dynamic_modifier = {
+						modifier = CE_local_oppositions_red
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = JAP }
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.9 }
+				
+				}
+			}
+		}
+	}
+	option = { # 这是为了挫败俄国的阴谋。
+		name = ww1_dongbei.9.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = JAP
+		}
+		effect_tooltip = {
+			328 = {
+				transfer_state_to = JAP
+				add_dynamic_modifier = {
+					modifier = CE_local_oppositions_red
+				}
+			}
+		}
+	}
+	option = { # 中国再一次被殖民者击败了。
+		name = ww1_dongbei.9.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = JAP }
+			NOT = { original_tag = GER }
+			NOT = { original_tag = RUS }
+		}
+		
+	}
+	option = { # 本来我们也没指望这个吴川能击败日本人...
+		name = ww1_dongbei.9.3
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = JAP }
+			OR = { 
+				original_tag = GER
+				original_tag = RUS
+			}
+		}
+		
+	}
+}
+
+news_event = { # 东北革命胜利
+	# 
+	id = ww1_dongbei.10
+	title = ww1_dongbei.10.t
+	desc = ww1_dongbei.10.d
+	picture = GFX_news_event_033
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { original_tag = MAN }
+				
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.10 }
+				
+				}
+				swap_ideas = {
+					remove_idea = DongBei_idea_communists_officer
+					add_idea = DongBei_idea_interior_threats
+				}
+				swap_ideas = {
+					remove_idea = limited_conscription
+					add_idea = volunteer_only 
+				}
+				swap_ideas = {
+					remove_idea = partial_economic_mobilisation
+					add_idea = civilian_economy 
+				}
+			}
+		}
+	}
+	option = { # 这只是一系列革命工作的开始。
+		name = ww1_dongbei.10.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = MAN
+			NOT = { has_idea = DongBei_idea_lost_in_manchuria_man }
+		}
+		effect_tooltip = {
+			#remove_idea = DongBei_idea_communists_officer
+			#add_ideas = DongBei_idea_interior_threats
+			swap_ideas = {
+				remove_idea = DongBei_idea_communists_officer
+				add_idea = DongBei_idea_interior_threats
+			}
+			swap_ideas = {
+				remove_idea = limited_conscription
+				add_idea = volunteer_only 
+			}
+			swap_ideas = {
+				remove_idea = partial_economic_mobilisation
+				add_idea = civilian_economy 
+			}
+			
+		}
+		#activate_mission = DongBei_declare_victory
+	}
+	option = { # 惊人的进展。
+		name = ww1_dongbei.10.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+		}
+		
+	}
+}
+
+news_event = { # 东北革命失败
+	#  
+	id = ww1_dongbei.101
+	title = ww1_dongbei.101.t
+	desc = ww1_dongbei.101.d
+	picture = GFX_news_event_048
+	fire_only_once = no
+	is_triggered_only = no
+	
+	trigger = {
+		NOT = { has_global_flag = gonghedang_revolution_victory }
+		NOT = { has_country_flag = gonghedang_revolution_failed }
+		OR = {
+			original_tag = FNG
+			is_ai = no
+		}
+		has_global_flag = dongbei_xinhai_revolution_flag
+		NOT = { country_exists = MAN }
+		NOT = {
+			any_country = {
+				original_tag = MAN
+			}
+			original_tag = MAN
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = dongbei_revolution_failed_global }
+				}
+				set_global_flag = dongbei_revolution_failed_global
+			}
+			if = {
+				limit = { original_tag = FNG }
+				set_country_flag = gonghedang_revolution_failed
+			}
+		}
+	}
+	option = { # 一场闹剧。
+		name = ww1_dongbei.101.1
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = JAP
+		}
+		
+	}
+	option = { # 一次失败的尝试。
+		name = ww1_dongbei.101.2
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+			NOT = { original_tag = RUS }
+			NOT = { original_tag = GER }
+		}
+		
+	}
+	option = { # 西伯利亚！？
+		name = ww1_dongbei.101.3
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = RUS
+		}
+		
+	}
+	option = { # 我的钱呢！？
+		name = ww1_dongbei.101.4
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = GER
+		}
+		
+	}
+	option = { # 并不是西伯利亚。
+		name = ww1_dongbei.101.5
+		ai_chance = {
+			factor = 99
+		}
+		trigger = {
+			original_tag = SOV
+		}
+	}
+}
+
+news_event = { # 俄债危机
+	#  
+	id = ww1_dongbei.11
+	title = ww1_dongbei.11.t
+	desc = ww1_dongbei.11.d
+	picture = GFX_news_event_generic_sign_treaty1
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	trigger = {
+		country_exists = RUS
+		NOT = { RUS = { has_government = communism } }
+		NOT = { has_global_flag = russian_revolution }
+		NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+		NOT = { has_decision = DongBei_mission_russian_debt_crisis }
+		NOT = { has_idea = DongBei_idea_russian_debt_crisis }
+		OR = {
+			has_idea = DongBei_idea_russian_debt_4
+			has_idea = DongBei_idea_russian_debt_5
+		}
+	}
+	mean_time_to_happen = {
+		days = 70
+	}
+	immediate = {
+		hidden_effect = {
+			activate_mission = DongBei_mission_russian_debt_crisis
+		}
+	}
+	
+	option = { # 该死！
+		name = ww1_dongbei.11.1
+		ai_chance = {
+			factor = 99
+		}
+		effect_tooltip = {
+			activate_mission = DongBei_mission_russian_debt_crisis
+		}
+	}
+	
+}
+
+news_event = { # 美债危机
+	#  
+	id = ww1_dongbei.12
+	title = ww1_dongbei.12.t
+	desc = ww1_dongbei.12.d
+	picture = GFX_news_event_generic_sign_treaty1
+	fire_only_once = no
+	trigger = {
+		country_exists = USA
+		NOT = { USA = { has_government = communism } }
+		NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+		NOT = { has_decision = DongBei_mission_american_debt_crisis }
+		NOT = { has_idea = DongBei_idea_american_debt_crisis }
+		OR = {
+			has_idea = DongBei_idea_american_debt_4
+			has_idea = DongBei_idea_american_debt_5
+		}
+	}
+	mean_time_to_happen = {
+		days = 70
+	}
+	immediate = {
+		hidden_effect = {
+			activate_mission = DongBei_mission_american_debt_crisis
+		}
+	}
+	
+	option = { # 该死！
+		name = ww1_dongbei.12.1
+		ai_chance = {
+			factor = 99
+		}
+		
+		effect_tooltip = {
+			activate_mission = DongBei_mission_american_debt_crisis
+		}
+	}
+	
+}
+
+news_event = { # 德债危机
+	#  
+	id = ww1_dongbei.13
+	title = ww1_dongbei.13.t
+	desc = ww1_dongbei.13.d
+	picture = GFX_news_event_generic_sign_treaty1
+	fire_only_once = no
+	trigger = {
+		country_exists = GER
+		NOT = { GER = { has_government = communism } }
+		NOT = { has_completed_focus = CSB_DongBei_clear_international_debt }
+		NOT = { has_decision = DongBei_mission_german_debt_crisis }
+		NOT = { has_idea = DongBei_idea_german_debt_crisis }
+		OR = {
+			has_idea = DongBei_idea_german_debt_4
+			has_idea = DongBei_idea_german_debt_5
+		}
+	}
+	mean_time_to_happen = {
+		days = 70
+	}
+	immediate = {
+		hidden_effect = {
+			activate_mission = DongBei_mission_german_debt_crisis
+		}
+	}
+	
+	option = { # 该死！
+		name = ww1_dongbei.13.1
+		ai_chance = {
+			factor = 99
+		}
+		
+		effect_tooltip = {
+			activate_mission = DongBei_mission_german_debt_crisis
+		}
+	}
+	
+}
+
+country_event = { # 中国革命的经验
+	# 
+	id = ww1_dongbei.23
+	title = ww1_dongbei.23.t
+	desc = ww1_dongbei.23.d
+	picture = GFX_news_event_italian_socialism
+	fire_only_once = yes
+	trigger = {
+		original_tag = SOV
+		country_exists = MAN
+		NOT = { has_global_flag = dongbei_revolution_failed_global }
+	}
+	mean_time_to_happen = {
+		days = 70
+	}
+	immediate = {
+		
+	}
+	
+	option = { # 
+		name = ww1_dongbei.23.1
+		ai_chance = {
+			factor = 99
+		}
+		add_timed_idea = {
+			idea = DongBei_idea_chinese_experience
+			days = 1825
+		}
+	}
+	
+}
+
+country_event = { # 购买新设备
+	# 
+	id = ww1_dongbei.14
+	title = ww1_dongbei.14.t
+	desc = ww1_dongbei.14.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	
+	option = { # 我们需要德国的机器。
+		name = ww1_dongbei.14.1
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_german_debt_3
+			}
+		}
+		csb_increase_dept_idea_ger = yes
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = { # 我们需要美国的技术。
+		name = ww1_dongbei.14.2
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_american_debt_3
+			}
+		}
+		csb_increase_dept_idea_usa = yes
+		add_tech_bonus = {	
+			name = CSB_DongBei_import_new_manchinery
+			bonus = 1
+			uses = 2
+			category = cat_production
+		}
+	}
+	option = { # 熟练工人才是一切的基础。
+		name = ww1_dongbei.14.3
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_idea = DongBei_idea_russian_debt_3
+			}
+		}
+		csb_increase_dept_idea_rus = yes
+		if = {
+			limit = {
+				NOT = { has_idea = DongBei_idea_russian_labour_recruitments }
+			}	
+			add_ideas = DongBei_idea_russian_labour_recruitments
+		}
+		else_if = {
+			limit = {
+				has_idea = DongBei_idea_russian_labour_recruitments
+			}	
+			swap_ideas = {
+				remove_idea = DongBei_idea_russian_labour_recruitments
+				add_idea = DongBei_idea_russian_labour_recruitments_1
+			}
+		}
+		else = {
+			add_political_power = 150
+		}
+	}
+}
+
+country_event = { # 留美技工的任务
+	# 
+	id = ww1_dongbei.15
+	title = ww1_dongbei.15.t
+	desc = ww1_dongbei.15.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 很多新设备需要特种技工。
+		name = ww1_dongbei.15.1
+		ai_chance = {
+			factor = 2
+		}
+		add_ideas = DongBei_idea_american_labour_recruitments
+		random_owned_state = {
+			limit = {
+				free_building_slots = {
+					building = arms_factory
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = { # 要用留学的一小批人教出本土的一大群人。
+		name = ww1_dongbei.15.2
+		ai_chance = {
+			factor = 2
+		}
+		add_ideas = DongBei_idea_american_labour_recruitments
+		add_tech_bonus = {
+			name = CSB_DongBei_american_labour_training
+			bonus = 1
+			uses = 1
+			category = industry
+		}
+	}
+}
+
+news_event = { # 中国同志援助
+	# 
+	id = ww1_dongbei.16
+	title = ww1_dongbei.16.t
+	desc = ww1_dongbei.16.d
+	picture = GFX_report_event_panay_incident
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 国际主义将胜利！
+		name = ww1_dongbei.16.1
+		ai_chance = {
+			factor = 2
+		}
+		add_timed_idea = {
+			idea = DongBei_idea_chinese_support
+			days = 730
+		}
+		add_war_support = 0.1
+		add_stability = 0.1
+	}
+	
+}
+
+country_event = { # 中国共和党偿还债务
+	
+	id = ww1_dongbei.17
+	title = ww1_dongbei.17.t
+	desc = {
+		trigger = {
+			NOT = { original_tag = USA }
+		}
+		text = ww1_dongbei.17.d 
+		# 
+	}
+	desc = {
+		trigger = {
+			original_tag = USA
+		}
+		text = ww1_dongbei.17.d1
+		# 
+	}
+	picture = GFX_report_event_panay_incident
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好啊。
+		name = ww1_dongbei.17.1
+		ai_chance = {
+			factor = 2
+		}
+		add_war_support = 0.02
+	}
+	
+}
+
+country_event = { # 中国同志的援助
+	# 
+	id = ww1_dongbei.18
+	title = ww1_dongbei.18.t
+	desc = ww1_dongbei.18.d
+	picture = GFX_report_event_panay_incident
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 。
+		name = ww1_dongbei.18.1
+		ai_chance = {
+			factor = 2
+		}
+		add_political_power = 300
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 10000
+			producer = MAN
+		}
+		add_equipment_to_stockpile = {
+			type = support_equipment
+			amount = 2000
+			producer = MAN
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 3000
+			producer = MAN
+		}
+		add_equipment_to_stockpile = {
+			type = rocket_artillery_equipment
+			amount = 3000
+			producer = MAN
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 5000
+			producer = MAN
+		}
+		MAN = {
+			effect_tooltip = {
+				408 = {
+					remove_core_of = RUS
+					remove_core_of = SOV
+					add_core_of = MAN
+				#	custom_effect_tooltip = cede_binhai_province_future
+				#	hidden_effect = {
+				#		set_country_flag = cede_binhai_province_flag
+				#	}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # 
+	# 
+	id = ww1_dongbei.19
+	title = ww1_dongbei.19.t
+	desc = ww1_dongbei.19.d
+	picture = GFX_report_event_panay_incident
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好事。
+		name = ww1_dongbei.19.1
+		ai_chance = {
+			factor = 2
+		}
+		add_timed_idea = {
+			idea = DongBei_idea_chinese_support_1
+			days = 35
+		}	
+	}
+	
+}
+
+country_event = { # 中国接纳我国难民
+	# 
+	id = ww1_dongbei.20
+	title = ww1_dongbei.20.t
+	desc = ww1_dongbei.20.d
+	picture = GFX_report_event_panay_incident
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好事。
+		name = ww1_dongbei.20.1
+		ai_chance = {
+			factor = 2
+		}
+		add_war_support = 0.02
+	}
+	
+}
+
+country_event = { # 中国武器
+	# 
+	id = ww1_dongbei.21
+	title = ww1_dongbei.21.t
+	desc = ww1_dongbei.21.d
+	picture = GFX_report_event_panay_incident
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.21.1
+		ai_chance = {
+			factor = 2
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1500
+			producer = MAN
+		}
+	}
+	
+}
+
+country_event = { # 中国空军经验
+	# 
+	id = ww1_dongbei.22
+	title = ww1_dongbei.22.t
+	desc = ww1_dongbei.22.d
+	picture = GFX_report_event_generic_bombers
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 有远见的亚洲国家，真少见。
+		name = ww1_dongbei.22.1
+		ai_chance = {
+			factor = 2
+		}
+		add_doctrine_cost_reduction = {
+			name = ww1_dongbei.22
+			cost_reduction = 0.5
+			uses = 1
+			category = air_doctrine
+		}
+	}
+	
+}
+
+country_event = { # 边境冲突的胜利者 —— 共和党
+	# 
+	id = ww1_dongbei.24
+	title = ww1_dongbei.24.t
+	desc = ww1_dongbei.24.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 敌人的情况真是一团糟。
+		name = ww1_dongbei.24.1
+		ai_chance = {
+			factor = 2
+		}
+		if = {
+			limit = { has_country_flag = westwards_expedition_flag }
+			611 = { add_core_of = ROOT }
+			clr_country_flag = westwards_expedition_flag
+		}
+		
+	}	
+	
+}
+
+country_event = { # 边境冲突的胜利者 —— 敌人
+	# 
+	id = ww1_dongbei.25
+	title = ww1_dongbei.25.t
+	desc = ww1_dongbei.25.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 真是国家之幸！
+		name = ww1_dongbei.25.1
+		ai_chance = {
+			factor = 2
+		}
+		army_experience = 25
+		add_war_support = 0.05
+	}
+	
+}
+
+country_event = { # 边境冲突的失败 —— 共和党
+	# 
+	id = ww1_dongbei.26
+	title = ww1_dongbei.26.t
+	desc = ww1_dongbei.26.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 一次战术失误？
+		name = ww1_dongbei.26.1
+		ai_chance = {
+			factor = 2
+		}
+		army_experience = 10
+		add_war_support = -0.05
+	}
+	
+}
+
+country_event = { # 边境冲突的失败 —— 
+	# 
+	id = ww1_dongbei.27
+	title = ww1_dongbei.27.t
+	desc = ww1_dongbei.27.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 他们接下来想要干什么？
+		name = ww1_dongbei.27.1
+		ai_chance = {
+			factor = 2
+		}
+		army_experience = 10
+		add_war_support = -0.05
+	}
+	
+}
+
+country_event = { # 无疾而终 —— 
+	# 
+	id = ww1_dongbei.28
+	title = ww1_dongbei.28.t
+	desc = ww1_dongbei.28.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 多少将士堪堪费命。
+		name = ww1_dongbei.28.1
+		ai_chance = {
+			factor = 2
+		}
+		
+	}
+	
+}
+
+country_event = { # 张家口冲突 —— 
+	# 
+	id = ww1_dongbei.281
+	title = ww1_dongbei.281.t
+	desc = ww1_dongbei.281.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 做好准备。
+		name = ww1_dongbei.281.1
+		ai_chance = {
+			factor = 2
+		}
+		effect_tooltip = {
+			activate_targeted_decision = { target = MAN decision = MAN_border_conflict_warning_QIN_zhangjiakou } #
+		}
+	}
+	
+}
+
+news_event = { # 共和党突袭
+	# 
+	id = ww1_dongbei.29
+	title = ww1_dongbei.29.t
+	desc = ww1_dongbei.29.d
+	picture = GFX_news_event_001
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 回防！
+		name = ww1_dongbei.29.1
+		ai_chance = {
+			factor = 2
+		}
+		
+	}
+	
+}
+
+country_event = { # 共和党施压
+	# 
+	id = ww1_dongbei.30
+	title = ww1_dongbei.30.t
+	desc = ww1_dongbei.30.d
+	picture = GFX_report_event_yugoslavian_cavalry
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 独立派发起了决死冲锋。
+		name = ww1_dongbei.30.1
+		ai_chance = {
+			factor = 1
+		}
+		add_war_support = -0.1
+		random_list = {
+			40 = {
+				country_event = { id = ww1_dongbei.33 days = 1 }
+			}
+			60 = {
+				MAN = { country_event = { id = ww1_dongbei.32 days = 1 } }
+			}
+		}
+	}
+	option = { # 改革派联合华军镇压了独立派。
+		name = ww1_dongbei.30.2
+		ai_chance = {
+			factor = 3
+		}
+		MAN = { country_event = { id = ww1_dongbei.34 days = 1 } }
+	}
+}
+
+country_event = { # 共和党施压
+	# 
+	id = ww1_dongbei.31
+	title = ww1_dongbei.31.t
+	desc = ww1_dongbei.31.d
+	picture = GFX_report_event_yugoslavian_cavalry
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 主战派不相信革委会能打到唐努图瓦来。
+		name = ww1_dongbei.31.1
+		ai_chance = {
+			factor = 1
+		}
+		MAN = { country_event = { id = ww1_dongbei.35 } }
+	}
+	option = { # 改革派联合华军镇压了主战派。
+		name = ww1_dongbei.31.2
+		ai_chance = {
+			factor = 2
+		}
+		MAN = { country_event = { id = ww1_dongbei.34 } }
+	}
+}
+
+news_event = { # 外蒙事变
+	# 
+	id = ww1_dongbei.32
+	title = ww1_dongbei.32.t
+	desc = ww1_dongbei.32.d
+	picture = GFX_news_event_destroyers
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 这些吸牧民血的封建主真是烦人。
+		name = ww1_dongbei.32.1
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			set_rule = {
+				can_not_declare_war = no
+			}
+		}
+		custom_effect_tooltip = yunxu_xuanzhan_tt_csb
+		# 
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = MON
+		}
+		hidden_effect = {
+			
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { original_tag = MAN }
+				}
+				country_event = { id = ww1_dongbei.32 }
+			}
+		}	
+	}
+	option = { # 成吉思汗的后裔好自信啊？
+		name = ww1_dongbei.32.2
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+		}
+		
+	}
+	
+}
+
+country_event = { # 马刀之夜
+	# 
+	id = ww1_dongbei.33
+	title = ww1_dongbei.33.t
+	desc = ww1_dongbei.33.d
+	picture = GFX_report_event_chinese_soldiers_mountain
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 我们完了！
+		name = ww1_dongbei.33.1
+		ai_chance = {
+			factor = 1
+		}
+		MAN = { country_event = { id = ww1_dongbei.34 days = 1 } }
+	}
+}
+
+country_event = { # 蒙古归顺
+	# 
+	id = ww1_dongbei.34
+	title = ww1_dongbei.34.t
+	desc = ww1_dongbei.34.d
+	picture = GFX_report_event_chinese_soldiers_running
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_rule = {
+				can_not_declare_war = no
+			}
+		}
+	}
+	option = { # 夏阳干得不错。
+		name = ww1_dongbei.34.1
+		ai_chance = {
+			factor = 1
+		}
+		
+		custom_effect_tooltip = yunxu_xuanzhan_tt_csb
+		# 蒙古动乱结束，解锁主动宣战功能
+		FROM = { 
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+				long_name =  mongol_geweihui
+				name =  mongol_geweihui
+			}
+		}
+		puppet = FROM
+		if = {
+			limit = {
+				FROM = { original_tag = MON }
+			}
+			MON = { set_cosmetic_tag = MON_communism_cn }
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.36 }
+				}
+			}	
+		}
+		if = {
+			limit = {
+				FROM = { original_tag = TAN }
+			}
+			TAN = { set_cosmetic_tag = TAN_communism_cn }
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_ai = no
+						NOT = { original_tag = MAN }
+					}
+					country_event = { id = ww1_dongbei.37 }
+				}
+			}	
+		}
+		
+	}
+}
+
+news_event = { # 唐努图瓦事变
+	# 
+	id = ww1_dongbei.35
+	title = ww1_dongbei.35.t
+	desc = ww1_dongbei.35.d
+	picture = GFX_news_event_destroyers
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 这些吸牧民血的封建主真是烦人。
+		name = ww1_dongbei.35.1
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			original_tag = MAN
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = TAN
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { original_tag = MAN }
+				}
+				country_event = { id = ww1_dongbei.35 }
+			}
+		}	
+	}
+	option = { # 唐...什么？
+		name = ww1_dongbei.35.2
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+		}
+		
+	}
+
+	
+}
+
+news_event = { # 蒙古事变
+	# 
+	id = ww1_dongbei.36
+	title = ww1_dongbei.36.t
+	desc = ww1_dongbei.36.d
+	picture = GFX_news_event_056
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 成吉思汗，再见！
+		name = ww1_dongbei.36.1
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+
+news_event = { # 唐努图瓦事变
+	# 
+	id = ww1_dongbei.37
+	title = ww1_dongbei.37.t
+	desc = ww1_dongbei.37.d
+	picture = GFX_news_event_056
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 唐...图...算了我不会念。
+		name = ww1_dongbei.37.1
+		ai_chance = {
+			factor = 1
+		}
+		
+	}
+}
+
+country_event = { # 朝鲜局势恶化
+	# 
+	id = ww1_dongbei.38
+	title = ww1_dongbei.38.t
+	desc = ww1_dongbei.38.d
+	picture = GFX_report_event_japan_army_mountainside
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 必须要增兵镇压！
+		name = ww1_dongbei.38.1
+		ai_chance = {
+			factor = 5
+		}
+		add_timed_idea = {
+			idea = Dongbei_idea_korean_uprising
+			days = 210
+		}
+		
+		hidden_effect = {
+			MAN = { country_event = { id = ww1_dongbei.384 } }
+			clr_global_flag = csb_kroean_crisis_flag
+		}
+	}
+	option = { # 或许朝鲜不应该由帝国直接统治？
+		name = ww1_dongbei.38.2
+		ai_chance = {
+			factor = 2
+		}
+		add_named_threat = { 
+			threat = -2
+			name = ww1_dongbei.381
+		}
+		#custom_effect_tooltip = ww1_dongbei.381
+		add_timed_idea = {
+			idea = DongBei_idea_interior_critics_jap
+			days = 730
+		}
+		hidden_effect = {
+			799 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			527 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			797 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			800 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			796 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			801 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			802 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			525 = {
+				#transfer_state_to = KOR
+				if = {
+					limit = { NOT = { is_core_of = KOR } }
+					add_core_of = KOR
+				}
+			}
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { original_tag = JAP }
+				}
+				country_event = { id = ww1_dongbei.381 }
+			}
+		}
+		release_puppet_on_controlled = KOR
+		KOR = { 
+			
+			set_cosmetic_tag = KOR_zizhi_zhengfu 
+		}
+	}
+	option = { # 帝国不会容忍此事！
+		name = ww1_dongbei.38.3
+		ai_chance = {
+			factor = 3
+			modifier = {
+				factor = 2.5
+				has_global_flag = kis_war
+				has_war = no
+			}
+		}
+		custom_effect_tooltip = war_trigger_38_dongbei
+		# 
+		hidden_effect = {
+			MAN = { country_event = { id = ww1_dongbei.383 } } 
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { original_tag = JAP }
+					NOT = { original_tag = MAN }
+				}
+				country_event = { id = ww1_dongbei.382 days = 2 }
+			}
+		}
+	}
+}
+
+news_event = { # 韩地自治政府成立
+	# 
+	id = ww1_dongbei.381
+	title = ww1_dongbei.381.t
+	desc = ww1_dongbei.381.d
+	picture = GFX_news_event_048
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 一叶障目，混淆视听。
+		name = ww1_dongbei.381.1
+		ai_chance = {
+			factor = 5
+		}
+		
+	}
+}
+
+news_event = { # 日中战争爆发
+	# 
+	id = ww1_dongbei.382
+	title = ww1_dongbei.382.t
+	desc = ww1_dongbei.382.d
+	picture = GFX_news_event_041
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_global_flag = ww1_dongbei_382_flag
+		}
+	}
+	option = { # 风波险恶。
+		name = ww1_dongbei.382.1
+		ai_chance = {
+			factor = 5
+		}
+		
+	}
+}
+news_event = { # 日中战争爆发
+	# 
+	id = ww1_dongbei.3821
+	title = ww1_dongbei.382.t
+	desc = ww1_dongbei.382.d
+	picture = GFX_news_event_040
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		has_global_flag = first_conflict_jap_man_end
+		is_ai = no
+		date > 1912.12.1
+		MAN = { has_war_with = JAP }
+		NOT = {
+			has_global_flag = ww1_dongbei_382_flag
+		}
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = ww1_dongbei_382_flag }
+				}
+				set_global_flag = ww1_dongbei_382_flag
+			}
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.382.1
+		ai_chance = {
+			factor = 5
+		}
+		
+	}
+}
+
+news_event = { # 日本进军东北
+	# 
+	id = ww1_dongbei.383
+	title = ww1_dongbei.383.t
+	desc = ww1_dongbei.383.d
+	picture = GFX_news_event_004
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			799 = { transfer_state_to = KOR }
+			#527 = { transfer_state_to = KOR }
+			#797 = { transfer_state_to = KOR }
+			KOR = {	
+				inherit_technology = MAN
+				set_politics = {
+					ruling_party = communism
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 15
+					neutrality = 34
+					fascism = 25
+					communism = 46
+				}
+				set_cosmetic_tag = KOR_joseon
+				country_event = { id = ww1_korea.61 }
+				set_party_name = {
+					ideology = democratic
+					long_name = KOR_provisional_government_long
+					name = KOR_provisional_government
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = KOR_fascism_party_long
+					name = KOR_fascism_party
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = KOR_fascism_party_long
+					name = KOR_fascism_party
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = KOR_communism_gonghedang
+					name = KOR_communism_gonghedang
+				}
+				#keep_unit_leaders_trigger = {
+				#	NOT = {
+				#		has_trait = JAP_samurai_lineage
+				#	}
+				#}
+				set_war_support = 0.8
+				set_stability = 0.9
+				division_template = {
+					name = "Dongnipgun"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 2
+							y = 0
+						}
+						infantry = {
+							x = 3
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 2
+							y = 1
+						}
+						infantry = {
+							x = 3
+							y = 1
+						}
+					}
+				}
+				division_template = {
+					name = "Militia"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+					}
+				}
+			}
+			
+			799 = {
+				create_unit = {
+					division = "name = \"1. Dongnipgun\" division_template = \"Dongnipgun\" start_experience_factor = 1.0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"2. Dongnipgun\" division_template = \"Dongnipgun\" start_experience_factor = 1.0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"3. Dongnipgun\" division_template = \"Dongnipgun\" start_experience_factor = 1.0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"7. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"8. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"9. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"4. Dongnipgun\" division_template = \"Dongnipgun\" start_experience_factor = 1.0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"5. Dongnipgun\" division_template = \"Dongnipgun\" start_experience_factor = 1.0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"6. Dongnipgun\" division_template = \"Dongnipgun\" start_experience_factor = 1.0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"10. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"1. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"2. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"3. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"4. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"5. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+				create_unit = {
+					division = "name = \"6. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+					owner = KOR
+				}
+			}
+			
+			set_autonomy = {
+				target = KOR
+				autonomy_state = autonomy_satellite
+			}
+		}
+		
+	}
+	option = { # 同志们，拿起武器！消灭日本帝国主义！
+		name = ww1_dongbei.383.1
+		ai_chance = {
+			factor = 5
+		}
+		add_named_threat = { 
+			threat = 2
+			name = ww1_dongbei.383
+		}
+		JAP = {
+			declare_war_on = {
+				target = MAN
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = KOR
+				type = annex_everything
+			}
+		}
+		effect_tooltip = {
+			set_autonomy = {
+				target = KOR
+				autonomy_state = autonomy_satellite
+			}
+			KOR = {
+				set_cosmetic_tag = KOR_joseon
+				KOR_jipgangso = {
+					add_country_leader_role = {
+						country_leader = {
+							ideology = agrarian_socialism
+							traits = { our_right_to_survive }
+						}
+					}
+					promote_character = agrarian_socialism
+				}
+			}
+		}
+		hidden_effect = {
+			clr_global_flag = csb_kroean_crisis_flag
+			country_event = { id = ww1_dongbei.382 }
+		}
+	}
+}
+
+news_event = { # 日本镇压朝鲜起义
+	# 
+	id = ww1_dongbei.384
+	title = ww1_dongbei.384.t
+	desc = ww1_dongbei.384.d
+	picture = GFX_news_event_japanese_army_parade
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 要赶在朝鲜同志失败前完成宣战准备。
+		name = ww1_dongbei.384.1
+		ai_chance = {
+			factor = 5
+		}
+		
+	}
+}
+
+country_event = { # 中国使节
+	# 
+	id = ww1_dongbei.39
+	title = ww1_dongbei.39.t
+	desc = ww1_dongbei.39.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 干吧！阁下！
+		name = ww1_dongbei.39.1
+		ai_chance = {
+			factor = 2
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = ww1_dongbei.391 } }
+			
+		}
+		JAP = {
+			set_autonomy = {
+				target = KOR
+				autonomy_state = autonomy_free
+			}
+		}
+		declare_war_on = {
+			target = JAP
+			type = independence_wargoal
+		}
+		MAN = {
+			country_event = { id = ww1_dongbei.392 }
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { original_tag = JAP }
+					NOT = { original_tag = MAN }
+				}
+				country_event = { id = ww1_dongbei.382 days = 2 }
+			}
+		}
+	}
+	option = { # 一派胡言。
+		name = ww1_dongbei.39.2
+		ai_chance = {
+			factor = 3
+		}
+		hidden_effect = {
+			set_country_flag = csb_korean_government_refuce_independence
+		}
+	}
+	
+}
+
+news_event = { # 朝鲜宣布独立
+	# 
+	id = ww1_dongbei.391
+	title = ww1_dongbei.391.t
+	desc = ww1_dongbei.391.d
+	picture = GFX_news_event_067
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 紧急调兵！
+		name = ww1_dongbei.391.1
+		ai_chance = {
+			factor = 3
+		}
+		
+	}
+}
+
+country_event = { # 东北-朝鲜联盟对日开战
+	# 
+	id = ww1_dongbei.392
+	title = ww1_dongbei.392.t
+	desc = ww1_dongbei.392.d
+	picture = GFX_report_event_japan_army_mountainside
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			add_named_threat = { 
+				threat = 1 
+				name = ww1_dongbei.392
+			}
+			add_to_war = { 
+				targeted_alliance = KOR 
+				enemy = JAP 
+				hostility_reason = ww1_dongbei.392.t
+			}
+		}
+	}
+	option = { # 打倒日本帝国主义！
+		name = ww1_dongbei.392.1
+		ai_chance = {
+			factor = 3
+		}
+		effect_tooltip = {
+			add_to_war = { 
+				targeted_alliance = KOR 
+				enemy = JAP 
+				hostility_reason = ww1_dongbei.392.t
+			}
+		}
+	}
+}
+
+country_event = { # 北朝鲜起义
+	# 由于我们的严酷镇压政策还未完成就爆发了战争。现在朝鲜北部山区已经全部跟着共和党的特务反了！
+	id = ww1_dongbei.393
+	title = ww1_dongbei.393.t
+	desc = {
+		trigger = {
+			has_idea = Dongbei_idea_korean_uprising
+		}
+		text = ww1_dongbei.393.d
+	}
+	desc = {
+		trigger = {
+			has_country_flag = csb_korean_government_refuce_independence
+		}
+		text = ww1_dongbei.393.d1
+		# 
+	}
+	picture = GFX_report_event_japan_army_mountainside
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+		OR = {
+			has_idea = Dongbei_idea_korean_uprising
+			has_country_flag = csb_korean_government_refuce_independence
+		}
+		has_war_with = MAN
+	}
+	mean_time_to_happen = { days = 1 }
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_idea = csb_korean_government_refuce_independence
+				}
+				clr_country_flag = csb_korean_government_refuce_independence
+				799 = { transfer_state_to = MAN }
+				#527 = { transfer_state_to = MAN }
+				#797 = { transfer_state_to = MAN }
+				#
+				799 = {
+					create_unit = {
+						division = "name = \"7. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"8. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"9. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"4. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"5. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"6. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"1. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"2. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = MAN
+					}
+					create_unit = {
+						division = "name = \"3. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = MAN
+					}
+				}
+				
+			}
+			if = {
+				limit = {
+					has_idea = Dongbei_idea_korean_uprising
+				}
+				799 = { transfer_state_to = KOR }
+				#527 = { transfer_state_to = KOR }
+				#797 = { transfer_state_to = KOR }
+				KOR = {
+					set_politics = {
+						ruling_party = communism
+						elections_allowed = no
+					}
+					set_popularities = {
+						democratic = 30
+						neutrality = 25
+						fascism = 25
+						communism = 30
+					}
+					set_cosmetic_tag = KOR_joseon
+					country_event = { id = ww1_korea.61 }
+					set_party_name = {
+						ideology = democratic
+						long_name = KOR_provisional_government_long
+						name = KOR_provisional_government
+					}
+					set_party_name = {
+						ideology = neutrality
+						long_name = KOR_fascism_party_long
+						name = KOR_fascism_party
+					}
+					set_party_name = {
+						ideology = fascism
+						long_name = KOR_fascism_party_long
+						name = KOR_fascism_party
+					}
+					set_party_name = {
+						ideology = communism
+						long_name = KOR_communism_gonghedang
+						name = KOR_communism_gonghedang
+					}
+					#keep_unit_leaders_trigger = {
+					#	NOT = {
+					#		has_trait = JAP_samurai_lineage
+					#	}
+					#}
+					set_war_support = 0.8
+					set_stability = 0.9
+					division_template = {
+						name = "Dongnipgun"
+						regiments = {
+							infantry = {
+								x = 0
+								y = 0
+							}
+							infantry = {
+								x = 1
+								y = 0
+							}
+							infantry = {
+								x = 0
+								y = 1
+							}
+							infantry = {
+								x = 1
+								y = 1
+							}
+						}
+					}
+					division_template = {
+						name = "Militia"
+						regiments = {
+							infantry = {
+								x = 0
+								y = 0
+							}
+							infantry = {
+								x = 0
+								y = 1
+							}
+						}
+					}
+				}
+				
+				799 = {
+					create_unit = {
+						division = "name = \"7. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"8. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"9. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"10. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"1. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"2. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"3. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"4. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"5. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+					create_unit = {
+						division = "name = \"6. Militia\" division_template = \"Militia\" start_experience_factor = 0"
+						owner = KOR
+					}
+				}
+			
+				MAN = { 
+					set_autonomy = {
+						target = KOR
+						autonomy_state = autonomy_satellite
+					}
+				}
+				KOR = {
+					add_to_war = { 
+						targeted_alliance = MAN
+						enemy = JAP 
+						hostility_reason = ww1_dongbei.392.t
+					}
+				}
+				remove_ideas = Dongbei_idea_korean_uprising
+			}
+		}
+		
+	}
+	
+	option = { # 电令前线师团从速进兵！
+		name = ww1_dongbei.393.1
+		ai_chance = {
+			factor = 3
+		}
+		if = {
+			limit = {
+				has_idea = Dongbei_idea_korean_uprising
+			}
+			effect_tooltip = {
+				remove_ideas = Dongbei_idea_korean_uprising
+				MAN = { 
+					set_autonomy = {
+						target = KOR
+						autonomy_state = autonomy_satellite
+					}
+				}
+				KOR = {
+					add_to_war = { 
+						targeted_alliance = MAN
+						enemy = JAP 
+						hostility_reason = ww1_dongbei.392.t
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = csb_korean_government_refuce_independence
+			}
+			effect_tooltip = {
+				#remove_ideas = Dongbei_idea_korean_uprising
+				799 = { transfer_state_to = MAN }
+				#527 = { transfer_state_to = MAN }
+				#797 = { transfer_state_to = MAN }
+			}
+		}
+	}
+}
+
+news_event = { # 华北解放，大清解体
+	# 
+	id = ww1_dongbei.40
+	title = ww1_dongbei.40.t
+	desc = ww1_dongbei.40.d
+	picture = GFX_news_event_048
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			MAN = {
+				set_country_flag = no_more_autorelease_flag
+			}
+			if = {
+				limit = {
+					tag= MAN
+				}
+				white_peace = QIN
+				every_country = {
+					limit = {
+						is_ally_with = QIN
+						has_war_with = MAN
+						is_china_or_warlord = yes
+					}
+					white_peace = MAN
+				}
+				if = {
+					limit ={
+						any_state = {
+							OR = { 
+								state = 595
+								state = 596
+								state = 598
+								state = 600
+								state = 606
+								state = 613 
+							}
+							is_owned_by = QIN
+						}
+					}
+					QIN = {
+						set_capital = { state = 613 }
+						set_cosmetic_tag = JNC
+						set_country_flag = is_jiangsu
+						country_event = { id = ww1_dongbei.412 }
+					}
+					set_global_flag = jiangsu_free_flag
+					every_state = {
+						limit = {
+							OR = { 
+								state = 595
+								state = 596
+								state = 598
+								state = 600
+								state = 606
+								state = 613 
+							}
+							owner = {
+								is_china_or_warlord = yes
+							}
+							NOT = {
+								is_owned_by = CHI
+								is_owned_by = MAN
+							}
+						}
+						transfer_state_to = QIN
+						if = {
+							limit = {
+								NOT = { is_core_of = QIN }
+							}
+							add_core_of = QIN
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = SCC }
+						
+					}
+					found_SCC_effect = yes
+					SCC = { country_event = { id = ww1_dongbei.412 } }
+					
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = YUN }
+						
+					}
+					found_YUN_effect = yes
+					YUN = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = HNC }
+						
+					}
+					found_HNC_effect = yes
+					HNC = { country_event = { id = ww1_dongbei.412 } }
+					
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = GXC }
+						
+					}
+					found_GXC_effect = yes
+					GXC = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = JXC }
+						
+					}
+					found_JXC_effect = yes
+					JXC = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = GDC }
+						
+					}
+					found_GDC_effect = yes
+					GDC = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit ={
+						NOT = {
+							any_state = {
+								OR = { 
+									state = 595
+									state = 596
+									state = 598
+									state = 600
+									state = 606
+									state = 613 
+								}
+								is_owned_by = QIN
+							}
+						}
+					}
+					MAN = {
+						annex_country = {
+							target = QIN
+							transfer_troops = yes
+						}
+					}
+				}
+				if = {
+					limit = { 
+						country_exists = QIN 
+					}
+					QIN = {
+						if = {
+							limit = {
+								is_in_faction = no
+							}
+							create_faction = minguo_government_faction
+						}
+						if = {
+							limit = {
+								is_in_faction = yes
+								is_faction_leader = no
+							}
+							leave_faction = yes
+							create_faction = minguo_government_faction
+						}
+						add_to_faction = SCC
+						add_to_faction = YUN
+						add_to_faction = HNC
+						add_to_faction = GXC
+						add_to_faction = JXC
+						add_to_faction = GDC
+					}
+					SCC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					YUN = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					HNC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					GXC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					JXC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					GDC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+				}
+				if = {
+					limit = { 
+						NOT = { country_exists = CHI }
+					}
+					GDC = {
+						if = {
+							limit = {
+								is_in_faction = no
+							}
+							create_faction = minguo_government_faction
+						}
+						if = {
+							limit = {
+								is_in_faction = yes
+								is_faction_leader = no
+							}
+							leave_faction = yes
+							create_faction = minguo_government_faction
+						}
+						add_to_faction = SCC
+						add_to_faction = YUN
+						add_to_faction = HNC
+						add_to_faction = GXC
+						add_to_faction = JXC
+						#add_to_faction = GDC
+					}
+					SCC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					YUN = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					HNC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					GXC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					JXC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					
+				}
+			}
+		}
+	}
+	option = { # 这一次真的要完了...
+		name = ww1_dongbei.40.1
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+		}	
+	}
+	option = { # 阶段性胜利。
+		name = ww1_dongbei.41.2
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			original_tag = MAN
+		}
+		
+		614 = {
+			transfer_state_to = MAN
+			add_core_of = MAN
+		}
+		custom_effect_tooltip = annex_qin_tooltip_1
+		# 继承大清拥有的华北地区
+		custom_effect_tooltip = annex_china_tooltip_2
+		# 获得全中国的核心
+		
+		hidden_effect = { # 
+			#set_country_flag = ready_to_unite_china
+			
+			if = {
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = CHI
+							is_core_of = QIN
+							is_core_of = TIB
+							is_core_of = MON
+							is_core_of = TAN
+							is_core_of = SIK
+						}
+						NOT = {
+							is_core_of = MAN
+						}
+					}
+					add_core_of = MAN
+				}
+			}	
+			every_state = {
+				limit = {
+					NOT = { is_owned_by = ROOT }
+					is_owned_by = CHI
+					OR = {
+						state = 611
+						state = 609
+						#state = 608
+						#state = 614
+						state = 597
+						state = 615
+						state = 607
+						state = 620
+						state = 745
+						state = 746
+						state = 606
+						#state = 598
+						state = 622
+						state = 283
+						state = 755
+						state = 616
+						state = 621
+						state = 604
+						state = 619
+						#
+						state = 618
+						state = 287
+						state = 749
+						state = 322
+						state = 434
+						state = 441
+						state = 589
+					}
+				}
+				transfer_state_to = MAN
+				if = {
+					limit = {
+						NOT = { is_core_of = MAN }
+					}
+					add_core_of = MAN
+				}
+			}
+			
+		}
+		
+	}
+}
+
+news_event = { # 共和党宣称中国
+	# 
+	id = ww1_dongbei.401
+	title = ww1_dongbei.401.t
+	desc = ww1_dongbei.401.d
+	picture = GFX_news_event_warlord_era
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		OR = {
+			MAN = { has_completed_focus = CSB_DongBei_day_of_victory }
+			MAN = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			MAN = { has_completed_focus = CSB_DongBei_quanguo_zhengxie_meeting }
+		}
+		NOT = { has_country_flag = ww1_dongbei_401_flag }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ww1_dongbei_401_flag
+		}
+	}
+	option = { # 我们绝不会就这样退场！
+		name = ww1_dongbei.401.1
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = yes
+			NOT = { original_tag = MAN }
+		}
+	}
+	option = { # 这只是开始的结束。
+		name = ww1_dongbei.401.2
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			original_tag = MAN
+		}
+	}
+	option = { # 什么是“人民共和国”？
+		name = ww1_dongbei.401.3
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = no
+			NOT = { original_tag = MAN }
+		}
+	}
+}
+
+news_event = { # 天安门演说
+	# 
+	id = ww1_dongbei.402
+	title = ww1_dongbei.402.t
+	desc = ww1_dongbei.402.d
+	picture = GFX_news_event_048
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		is_ai = no
+		OR = {
+			MAN = { has_completed_focus = CSB_DongBei_day_of_victory }
+			MAN = { has_completed_focus = CSB_DongBei_control_over_beijing_government }
+			MAN = { has_completed_focus = CSB_DongBei_quanguo_zhengxie_meeting }
+		}
+		NOT = { has_country_flag = has_seen_news_402_flag }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = has_seen_news_402_flag
+		}
+	}
+	option = { # 令人敬畏的实力。
+		name = ww1_dongbei.402.1
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = yes
+			NOT = { original_tag = MAN }
+		}
+	}
+	option = { # 人民万岁！
+		name = ww1_dongbei.402.2
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			original_tag = MAN
+		}
+	}
+	option = { # 沉睡的巨龙苏醒了？
+		name = ww1_dongbei.402.3
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = no
+			NOT = { original_tag = MAN }
+		}
+	}
+}
+
+news_event = { # 华北解放，民国改组
+	# 
+	id = ww1_dongbei.41
+	title = ww1_dongbei.41.t
+	desc = ww1_dongbei.41.d
+	picture = GFX_news_event_warlord_era
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			MAN = {
+				set_global_flag = no_more_autorelease_flag
+			}
+			if = {
+				limit = {
+					tag= MAN
+				}
+				if = {
+					limit ={
+						any_state = {
+							OR = { 
+								state = 595
+								state = 596
+								state = 598
+								state = 600
+								state = 606
+								state = 613 
+							}
+							is_owned_by = CHI
+						}
+					}
+					CHI = {
+						set_capital = { state = 613 }
+						set_cosmetic_tag = JNC
+						set_country_flag = is_jiangsu
+						country_event = { id = ww1_dongbei.412 }
+					}
+					set_global_flag = jiangsu_free_flag
+					every_state = {
+						limit = {
+							OR = { 
+								state = 595
+								state = 596
+								state = 598
+								state = 600
+								state = 606
+								state = 613 
+							}
+							owner = {
+								is_china_or_warlord = yes
+							}
+							NOT = {
+								is_owned_by = CHI
+								is_owned_by = MAN
+							}
+						}
+						transfer_state_to = CHI
+						if = {
+							limit = {
+								NOT = { is_core_of = CHI }
+							}
+							add_core_of = CHI
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = SCC }
+						
+					}
+					found_SCC_effect = yes
+					SCC = { country_event = { id = ww1_dongbei.412 } }
+					
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = YUN }
+						
+					}
+					found_YUN_effect = yes
+					YUN = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = HNC }
+						
+					}
+					found_HNC_effect = yes
+					HNC = { country_event = { id = ww1_dongbei.412 } }
+					
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = GXC }
+						
+					}
+					found_GXC_effect = yes
+					GXC = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = JXC }
+						
+					}
+					found_JXC_effect = yes
+					JXC = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit = {
+						NOT = { country_exists = GDC }
+						
+					}
+					found_GDC_effect = yes
+					GDC = { country_event = { id = ww1_dongbei.412 } }
+				}
+				if = {
+					limit ={
+						NOT = {
+							any_state = {
+								OR = { 
+									state = 595
+									state = 596
+									state = 598
+									state = 600
+									state = 606
+									state = 613 
+								}
+								is_owned_by = CHI
+							}
+						}
+					}
+					MAN = {
+						annex_country = {
+							target = CHI
+							transfer_troops = yes
+						}
+					}
+				}
+				if = {
+					limit = { 
+						country_exists = CHI 
+					}
+					CHI = {
+						if = {
+							limit = {
+								is_in_faction = no
+							}
+							create_faction = minguo_government_faction
+						}
+						if = {
+							limit = {
+								is_in_faction = yes
+								is_faction_leader = no
+							}
+							leave_faction = yes
+							create_faction = minguo_government_faction
+						}
+						add_to_faction = SCC
+						add_to_faction = YUN
+						add_to_faction = HNC
+						add_to_faction = GXC
+						add_to_faction = JXC
+						add_to_faction = GDC
+					}
+					SCC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					YUN = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					HNC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					GXC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					JXC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+					GDC = {
+						add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = CHI
+							modifier = medium_increase
+						}
+					}	
+				}
+				if = {
+					limit = { 
+						NOT = { country_exists = CHI }
+					}
+					GDC = {
+						if = {
+							limit = {
+								is_in_faction = no
+							}
+							create_faction = minguo_government_faction
+						}
+						if = {
+							limit = {
+								is_in_faction = yes
+								is_faction_leader = no
+							}
+							leave_faction = yes
+							create_faction = minguo_government_faction
+						}
+						add_to_faction = SCC
+						add_to_faction = YUN
+						add_to_faction = HNC
+						add_to_faction = GXC
+						add_to_faction = JXC
+						#add_to_faction = GDC
+					}
+					SCC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					YUN = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					HNC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					GXC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					JXC = {
+						add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+						reverse_add_opinion_modifier = {
+							target = GDC
+							modifier = medium_increase
+						}
+					}	
+					
+				}
+			}
+		}
+	}
+	option = { # 阶段性胜利。
+		name = ww1_dongbei.41.1
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			original_tag = MAN
+		}
+		
+		614 = {
+			transfer_state_to = MAN
+			add_core_of = MAN
+		}
+		custom_effect_tooltip = annex_china_tooltip_1
+		# 继承民国拥有的华北地区
+		custom_effect_tooltip = annex_china_tooltip_2
+		# 获得全中国的核心
+		hidden_effect = { # 
+			#set_country_flag = ready_to_unite_china
+			
+			if = {
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = CHI
+							is_core_of = QIN
+							is_core_of = TIB
+							is_core_of = MON
+							is_core_of = TAN
+							is_core_of = SIK
+						}
+						NOT = {
+							is_core_of = MAN
+						}
+					}
+					add_core_of = MAN
+				}
+			}	
+			every_state = {
+				limit = {
+					NOT = { is_owned_by = ROOT }
+					is_owned_by = CHI
+					OR = {
+						state = 611
+						state = 609
+						#state = 608
+						#state = 614
+						state = 597
+						state = 615
+						state = 607
+						state = 620
+						state = 745
+						state = 746
+						state = 606
+						#state = 598
+						state = 622
+						state = 283
+						state = 755
+						state = 616
+						state = 621
+						state = 604
+						state = 619
+						#
+						state = 618
+						state = 287
+						state = 749
+						state = 322
+						state = 434
+						state = 441
+						state = 589
+					}
+				}
+				transfer_state_to = MAN
+				if = {
+					limit = {
+						NOT = { is_core_of = MAN }
+					}
+					add_core_of = MAN
+				}
+			}
+			
+		}
+		
+	}
+	option = { # 共和党匪徒绝不会...最终战胜我们！
+		name = ww1_dongbei.41.2
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			NOT = { original_tag = MAN }
+		}
+		effect_tooltip = {
+			608 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}
+			set_global_flag = warlord_era
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_global_flag = warlord_era }
+				}
+				set_global_flag = warlord_era
+			}
+		}
+	}
+}
+
+news_event = { # 共和党接管北京
+	# 
+	id = ww1_dongbei.411
+	title = ww1_dongbei.411.t
+	desc = ww1_dongbei.411.d
+	picture = GFX_news_event_warlord_era
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 接受命运。
+		name = ww1_dongbei.411.1
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			
+			every_country = {
+				limit = {
+					OR = { 
+						is_china_or_warlord = yes
+						tag = MAN
+					}
+				}
+				country_event = { id = ww1_dongbei.41 }
+			}
+		}
+		custom_effect_tooltip = ww1_dongbei.41.t
+	}
+}
+
+country_event = { # 新时代的抉择
+	# 
+	id = ww1_dongbei.412
+	title = ww1_dongbei.412.t
+	desc = ww1_dongbei.412.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 我绝不出卖中国主权！
+		name = ww1_dongbei.412.1
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 4
+				tag = YUN
+			}
+			modifier = {
+				factor = 2
+				tag = SCC
+			}
+			modifier = {
+				factor = 0.5
+				tag = CHI
+			}
+			modifier = {
+				factor = 0.1
+				tag = QIN
+			}
+		}
+		add_ideas = DongBei_idea_lost_in_manchuria_qin_chi_2
+		hidden_effect = {
+			MAN = {
+				country_event = { id = ww1_dongbei.413 }
+			}
+		}
+	}
+	option = { # 洋人这么强我怕什么？快递给我笔！
+		name = ww1_dongbei.412.2
+		ai_chance = {
+			factor = 80
+		}
+		add_ideas = DongBei_idea_lost_in_manchuria_qin_chi_1
+		hidden_effect = {
+			MAN = {
+				country_event = { id = ww1_dongbei.414 }
+			}
+		}
+	}
+}
+
+news_event = { # [From.GetName]拒绝卖国
+	# 即使面对革委会的威胁和洋人的诱惑，[From.GetName]还是拒绝进一步出卖主权以换取外国援助。看来庚子以来的外国恶行还是教会了南方人一些事情的。
+	id = ww1_dongbei.413
+	title = ww1_dongbei.413.t
+	desc = ww1_dongbei.413.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.413.1
+		ai_chance = {
+			factor = 5
+		}
+		FROM = {
+			effect_tooltip = {
+				add_ideas = DongBei_idea_lost_in_manchuria_qin_chi_2
+			}
+		}
+	}
+}
+
+news_event = { # [From.GetName]出卖主权
+	# 
+	id = ww1_dongbei.414
+	title = ww1_dongbei.414.t
+	desc = ww1_dongbei.414.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 只有共和党，才能救中国。
+		name = ww1_dongbei.414.1
+		ai_chance = {
+			factor = 5
+		}
+		FROM = {
+			effect_tooltip = {
+				add_ideas = DongBei_idea_lost_in_manchuria_qin_chi_1
+			}
+		}
+	}
+}
+
+country_event = { # 中国声索威海卫
+	# 
+	id = ww1_dongbei.42
+	title = ww1_dongbei.42.t
+	desc = ww1_dongbei.42.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.42.1
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				has_global_flag = kis_war
+			}
+			modifier = {
+				factor = 1.4
+				NOT = { has_global_flag = kis_war }
+				threat > 0.5
+			}
+		}
+		
+		746 = {
+			transfer_state_to = MAN
+		}
+	}
+	option = { # 把他们驱逐出去！
+		name = ww1_dongbei.42.2
+		ai_chance = {
+			factor = 40
+		}
+		
+		
+		add_threat = 1
+		
+		MAN = {
+			create_wargoal = {
+				type = take_core_state
+				target = ROOT
+				generator = { 746 }
+			}
+			country_event = { id = ww1_dongbei.421 }
+		}
+	}
+}
+
+country_event = { # 列强拒绝归还条约港
+	# 
+	id = ww1_dongbei.421
+	title = ww1_dongbei.421.t
+	desc = ww1_dongbei.421.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 我们的忍耐快到极限了！
+		name = ww1_dongbei.421.1
+		ai_chance = {
+			factor = 7
+		}
+		effect_tooltip = {
+			create_wargoal = {
+				type = take_core_state
+				target = FROM
+			
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { original_tag = MAN }
+					is_ai = no
+				}
+				country_event = { id = ww1_dongbei.423 }
+			}
+		}
+	}
+}
+
+news_event = { # 革委会对抗列强
+	# 
+	id = ww1_dongbei.422
+	title = ww1_dongbei.422.t
+	desc = ww1_dongbei.422.d
+	picture = GFX_news_event_chinese_soldiers
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		is_ai = no
+		#NOT = { original_tag = GER }
+		any_country = {
+			OR = {
+				original_tag = ENG
+				original_tag = GER
+				original_tag = FRA
+			}
+			has_war_with = MAN
+		}
+		
+		NOT = { has_country_flag = has_seen_news_422_flag }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = has_seen_news_422_flag
+		}
+	}
+	option = { # 他们怎么敢的？
+		name = ww1_dongbei.422.1
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = yes
+			NOT = { original_tag = MAN }
+		}
+	}
+	option = { # 直到我们胜利。
+		name = ww1_dongbei.422.2
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			original_tag = MAN
+		}
+	}
+	option = { # 微小的障碍。
+		name = ww1_dongbei.422.3
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = no
+			NOT = { original_tag = MAN }
+			OR = {
+				original_tag = ENG
+				original_tag = GER
+				original_tag = FRA
+			}
+		}
+	}
+	option = { # 中国人能跨越义和团时代吗？
+		name = ww1_dongbei.422.4
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			is_china_or_warlord = no
+			NOT = { original_tag = MAN }
+			NOT = {
+				original_tag = ENG
+				original_tag = GER
+				original_tag = FRA
+			}
+		}
+	}
+}
+
+news_event = { # 中国谴责列强
+	# 
+	id = ww1_dongbei.423
+	title = ww1_dongbei.423.t
+	desc = ww1_dongbei.423.d
+	picture = GFX_news_event_chinese_soldiers
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 中国人敢对欧洲人开战？疯了吧？
+		name = ww1_dongbei.423.1
+		ai_chance = {
+			factor = 7
+		}
+		trigger = {
+			OR = {
+				745 = { is_owned_by = ROOT }
+				746 = { is_owned_by = ROOT }
+				326 = { is_owned_by = ROOT }
+				729 = { is_owned_by = ROOT }
+				728 = { is_owned_by = ROOT }
+			}
+		}
+	}
+	option = { # 有趣。
+		name = ww1_dongbei.423.2
+		ai_chance = {
+			factor = 7
+		}
+		trigger = {
+			NOT = {
+				745 = { is_owned_by = ROOT }
+				746 = { is_owned_by = ROOT }
+				326 = { is_owned_by = ROOT }
+				729 = { is_owned_by = ROOT }
+				728 = { is_owned_by = ROOT }
+			}
+		}
+	}
+}
+
+country_event = { # 中国声索青岛
+	# 
+	id = ww1_dongbei.43
+	title = ww1_dongbei.43.t
+	desc = ww1_dongbei.43.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.43.1
+		ai_chance = {
+			factor = 60
+		}
+		
+		trigger = {
+			
+		}
+		
+		745 = {
+			transfer_state_to = MAN
+		}
+	}
+	option = { # 把他们驱逐出去！
+		name = ww1_dongbei.43.2
+		ai_chance = {
+			factor = 30
+		}
+		
+		add_threat = 1
+		MAN = {
+			create_wargoal = {
+				type = take_core_state
+				target = ROOT
+				generator = { 745 }
+			}
+			country_event = { id = ww1_dongbei.421 }
+		}
+	}
+	option = { # 和平解决，但这算是一笔债务。
+		name = ww1_dongbei.43.3
+		ai_chance = {
+			factor = 10
+			modifier = {	
+				factor = 10
+				original_tag = GER
+			}
+		}
+		
+		trigger = {	
+			original_tag = GER
+			MAN = {
+				OR = {
+					has_idea = DongBei_idea_german_debt
+					has_idea = DongBei_idea_german_debt_1
+					has_idea = DongBei_idea_german_debt_2
+					has_idea = DongBei_idea_german_debt_3
+					has_idea = DongBei_idea_german_debt_4
+					has_idea = DongBei_idea_german_debt_5
+				}
+			}
+		}
+		add_political_power = 150
+		army_experience = 25
+		
+		#add_threat = 1
+		MAN = {
+			csb_increase_dept_idea_ger = yes
+			hidden_effect = {
+				country_event = { id = ww1_dongbei.431 }  
+			}
+		}
+		745 = {
+			transfer_state_to = MAN
+		}
+	}
+}
+
+country_event = { # 中德青岛发展债
+	# 
+	id = ww1_dongbei.431
+	title = ww1_dongbei.431.t
+	desc = ww1_dongbei.431.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.431.1
+		ai_chance = {
+			factor = 60
+		}
+		
+		trigger = {
+			
+		}
+		effect_tooltip = {
+			csb_increase_dept_idea_ger = yes
+		}
+	}
+}
+
+country_event = { # 中国声索香港
+	# 
+	id = ww1_dongbei.44
+	title = ww1_dongbei.44.t
+	desc = ww1_dongbei.44.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.44.1
+		ai_chance = {
+			factor = 60
+			
+		}
+		
+		trigger = {
+			
+		}
+		
+		326 = {
+			transfer_state_to = MAN
+		}
+		
+	}
+	option = { # 把他们驱逐出去！
+		name = ww1_dongbei.44.2
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 1.5
+				original_tag = ENG
+				NOT = { has_global_flag = kis_war }
+			}
+		}
+		
+		trigger = {
+			
+		}
+		
+		add_threat = 1
+		MAN = {
+			create_wargoal = {
+				type = take_core_state
+				target = ROOT
+				generator = { 326 }
+			}
+			country_event = { id = ww1_dongbei.421 }
+		}
+	}
+	
+}
+
+country_event = { # 中国声索广州湾
+	# 
+	id = ww1_dongbei.45
+	title = ww1_dongbei.45.t
+	desc = ww1_dongbei.45.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.45.1
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				has_global_flag = kis_war
+			}
+			modifier = {
+				factor = 1.3
+				NOT = { has_global_flag = kis_war }
+				threat > 0.5
+			}
+		}
+		
+		trigger = {
+			
+		}
+		
+		728 = {
+			transfer_state_to = MAN
+		}
+		
+	}
+	option = { # 把他们打出去！
+		name = ww1_dongbei.45.2
+		ai_chance = {
+			factor = 40
+		}
+		
+		add_threat = 1
+		MAN = {
+			create_wargoal = {
+				type = take_core_state
+				target = ROOT
+				generator = { 728 }
+			}
+			country_event = { id = ww1_dongbei.421 }
+		}
+	}
+	
+}
+
+country_event = { # 中国声索澳门
+	# 
+	id = ww1_dongbei.46
+	title = ww1_dongbei.46.t
+	desc = ww1_dongbei.46.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.46.1
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 2
+				has_global_flag = kis_war
+			}
+		}
+		
+		trigger = {
+			
+		}
+		
+		729 = {
+			transfer_state_to = MAN
+		}
+		
+	}
+	option = { # 把他们打出去！
+		name = ww1_dongbei.46.2
+		ai_chance = {
+			factor = 20
+		}
+	
+		
+		add_threat = 1
+		MAN = {
+			create_wargoal = {
+				type = take_core_state
+				target = ROOT
+				generator = { 729 }
+			}
+			country_event = { id = ww1_dongbei.421 }
+		}
+	}
+	
+}
+
+country_event = { # 中国索取海参崴
+	# 
+	id = ww1_dongbei.47
+	title = ww1_dongbei.47.t
+	desc = ww1_dongbei.47.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					NOT = { original_tag = SB1 } 
+					NOT = { original_tag = MAN } 
+				}
+				country_event = { id = ww1_dongbei.472 days = 10 }
+			}
+		}
+	}
+	option = { # 好吧。
+		name = ww1_dongbei.47.1
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 2
+				has_global_flag = kis_war
+			}
+		}
+		
+		trigger = {
+			
+		}
+		
+		408 = {
+			transfer_state_to = MAN
+		}
+		409 = {
+			transfer_state_to = MAN
+		}
+	}
+	option = { # 我们绝不屈服！
+		name = ww1_dongbei.47.2
+		ai_chance = {
+			factor = 20
+		}
+	
+		add_stability = -0.1
+		add_war_support = -0.1
+		add_threat = 1
+		if = {
+			limit = {
+				is_subject_of = MAN
+			}
+			MAN = { 
+				set_autonomy = {
+					target = SB1
+					autonomy_state = autonomy_free
+				}
+			}
+		}
+		MAN = {
+			
+			create_wargoal = {
+				type = take_core_state
+				target = SB1
+				generator = { 408 }
+			}
+			country_event = { id = ww1_dongbei.471 }
+		}
+	}
+	
+}
+
+country_event = { # 俄国人抵抗
+	# 
+	id = ww1_dongbei.471
+	title = ww1_dongbei.471.t
+	desc = ww1_dongbei.471.d
+	picture = GFX_report_event_canadian_soldiers
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 不自量力。
+		name = ww1_dongbei.471.1
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 2
+				has_global_flag = kis_war
+			}
+		}
+		
+		trigger = {
+			
+		}
+		effect_tooltip = {
+			create_wargoal = {
+				type = take_core_state
+				target = SB1
+				generator = { 408 }
+			}
+		}
+	}
+}
+
+news_event = { # 中国人索取海参崴
+	# 
+	id = ww1_dongbei.472
+	title = ww1_dongbei.472.t
+	desc = ww1_dongbei.472.d
+	picture = GFX_news_event_chinese_soldiers_march
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 有趣的进展。
+		name = ww1_dongbei.472.1
+		ai_chance = {
+			factor = 80
+			
+		}
+		trigger = {
+			NOT = {
+				original_tag = SOV
+				original_tag = RUS
+			}
+		}
+	}
+	option = { # 希望那些西伯利亚叛徒硬气一点！
+		name = ww1_dongbei.472.2
+		ai_chance = {
+			factor = 80
+			
+		}
+		trigger = {
+			original_tag = RUS
+		}
+	}
+	option = { # 列宁说...中国同志...有理由这么做。
+		name = ww1_dongbei.472.3
+		ai_chance = {
+			factor = 80
+			
+		}
+		trigger = {
+			original_tag = SOV
+		}
+	}
+}
+
+country_event = { # 西伯利亚保皇党独立
+	# 
+	id = ww1_dongbei.48
+	title = ww1_dongbei.48.t
+	desc = ww1_dongbei.48.d
+	picture = GFX_report_event_generic_usa_treaty
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { 408 = { is_fully_controlled_by = RUS } }
+				408 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 409 = { is_fully_controlled_by = RUS } }
+				409 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 560 = { is_fully_controlled_by = RUS } }
+				560 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 561 = { is_fully_controlled_by = RUS } }
+				561 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 563 = { is_fully_controlled_by = RUS } }
+				563 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 637 = { is_fully_controlled_by = RUS } }
+				637 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 574 = { is_fully_controlled_by = RUS } }
+				574 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 644 = { is_fully_controlled_by = RUS } }
+				644 = { add_core_of = SB1 }
+			}
+			RUS = {
+				release = SB1
+			}
+			MAN = {
+				set_autonomy = {
+					target = SB1
+					autonomy_state = autonomy_satellite
+				}
+			}
+			SB1 = {
+				inherit_technology = RUS
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+					name = SB1_baohuanghui
+					long_name = SB1_baohuanghui
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = SB1_yuandong_gonghedang
+					name = SB1_yuandong_gonghedang
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = SB1_shehui_gemingdang_1
+					name = SB1_shehui_gemingdang_1
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = SB1_shehui_gemingdang_2
+					name = SB1_shehui_gemingdang_2
+				}
+				set_popularities = {
+					democratic = 38
+					fascism = 1
+					communism = 22
+					neutrality = 39
+				}
+				#promote_character = Dongbei_Wu_Chuan
+				promote_character = {
+					character = SB1_sergey_novafu
+					ideology = despotism
+				}
+				division_template = {
+					name = "SiberianMilitia"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 2
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 2
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+						infantry = {
+							x = 2
+							y = 2
+						}
+					}
+				}
+			}
+			408 = {
+				create_unit = {
+					division = "name = \"1. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"2. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"3. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"4. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"5. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				
+			}
+			560 = {
+				create_unit = {
+					division = "name = \"6. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"7. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"8. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"9. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"10. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				
+			}
+			561 = {
+				create_unit = {
+					division = "name = \"11. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"12. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"13. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"14. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"15. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				
+			}
+			563 = {
+				create_unit = {
+					division = "name = \"16. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"17. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"18. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"19. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				create_unit = {
+					division = "name = \"20. Militia\" division_template = \"SiberianMilitia\" start_experience_factor = 0.1"
+					owner = SB1
+				}
+				
+			}
+		}
+	}
+	option = { # 投机分子的阴谋。
+		name = ww1_dongbei.48.1
+		ai_chance = {
+			factor = 80
+			
+		}
+		effect_tooltip = {
+			MAN = {
+				set_autonomy = {
+					target = SB1
+					autonomy_state = autonomy_satellite
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+					
+				}
+				country_event = { id = ww1_dongbei.481 days = 10 }
+			}
+		}
+	}
+}
+
+news_event = { # 西伯利亚保皇党独立
+	# 
+	id = ww1_dongbei.481
+	title = ww1_dongbei.481.t
+	desc = ww1_dongbei.481.d
+	picture = GFX_news_event_easter_rising
+	fire_only_once = no
+	is_triggered_only = yes
+	#trigger = {
+	#	
+	#}
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	option = { # 他们居然怀念沙皇？
+		name = ww1_dongbei.481.1
+		trigger = {
+			NOT = { original_tag = RUS }
+		}	
+	}
+	option = { # 神气什么！
+		name = ww1_dongbei.481.2
+		trigger = {
+			original_tag = RUS
+		}	
+	}
+}
+
+news_event = { # 共和党渗透
+	# 
+	id = ww1_dongbei.49
+	title = ww1_dongbei.49.t
+	desc = ww1_dongbei.49.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		original_tag = CHI
+		MAN = {
+			has_variable = gonghedang_infilatrate_variable
+		}
+		NOT = { has_country_flag = have_seen_dongbei_49_event }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = have_seen_dongbei_49_event
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.49.1
+		
+		custom_effect_tooltip = controll_china_decision_group_warning
+		# 解锁保证忠诚决议组
+		
+	}
+	
+}
+
+country_event = { # 
+	# 
+	id = ww1_dongbei.491
+	title = ww1_dongbei.49.t
+	desc = ww1_dongbei.49.d
+	picture = GFX_report_event_british_artillery
+	fire_only_once = no
+	hidden = yes
+	is_triggered_only = no
+	trigger = {
+		has_completed_focus = CSB_DongBei_play_with_minguo
+		MAN = {
+			NOT = {
+				has_variable = gonghedang_infilatrate_variable
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			MAN = {
+				set_variable = {
+					var = gonghedang_infilatrate_variable
+					value = 0.1
+				}
+			}
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.49.1	
+		
+	}
+	
+}
+
+news_event = { # 北洋官场动荡
+	# 
+	id = ww1_dongbei.50
+	title = ww1_dongbei.50.t
+	desc = ww1_dongbei.50.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			#set_country_flag = have_seen_dongbei_49_event
+		}
+	}
+	option = { # 官员没有忠心吗！？
+		name = ww1_dongbei.50.1
+		add_political_power = -50
+	}
+	
+}
+
+news_event = { # 民党高层动摇
+	# 
+	id = ww1_dongbei.51
+	title = ww1_dongbei.51.t
+	desc = ww1_dongbei.51.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			#set_country_flag = have_seen_dongbei_49_event
+		}
+	}
+	option = { # 政治家没有立场吗！？
+		name = ww1_dongbei.51.1
+		add_war_support = -0.025
+	}
+	
+}
+
+news_event = { # 革委会与民国政府开战
+	# 
+	id = ww1_dongbei.52
+	title = ww1_dongbei.52.t
+	desc = ww1_dongbei.52.d
+	picture = GFX_news_event_chinese_nra
+	fire_only_once = no
+	#hidden = yes
+	is_triggered_only = no
+	fire_only_once = no
+	trigger = {
+		OR = {
+			is_ai = no
+			is_china_or_warlord = yes
+			original_tag = JAP
+		}
+		CHI = { has_war_with = MAN }
+		NOT = { has_country_flag = ww1_dongbei_52_flag }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = ww1_dongbei_52_flag
+		}
+	}
+	option = { # 关外乱党早该亡了！
+		name = ww1_dongbei.52.1	
+		trigger = {
+			original_tag = CHI
+		}
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+				create_faction = minguo_government_faction
+			}
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+				is_faction_leader = no
+			}
+			effect_tooltip = {
+				create_faction = minguo_government_faction
+			}
+		}
+	}
+	option = { # 解放全中国！
+		name = ww1_dongbei.52.2
+		trigger = {
+			OR = {
+				original_tag = MAN
+				is_ally_with = MAN
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = { # 东北模式不能领导民国！
+		name = ww1_dongbei.52.3
+		trigger = {
+			NOT = {
+				original_tag = CHI
+				original_tag = MAN
+				original_tag = QIN
+			}
+			NOT = {
+				has_war_with = MAN
+				is_ally_with = CHI
+			}
+			is_china_or_warlord = yes
+			NOT = { has_war_with = MAN }
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 2
+				is_china_or_warlord = yes
+				NOT = {
+					tag = CHI
+					tag = MAN
+					has_government = communism
+					is_ally_with = MAN
+				}
+			}
+		}
+		add_to_war = { 
+			targeted_alliance = CHI 
+			enemy = MAN
+			hostility_reason = ww1_dongbei.52.t
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = { is_in_faction_with = CHI }
+				}
+				leave_faction = yes
+				if = {
+					limit = {
+						CHI = { is_in_faction = yes } 
+					}
+					CHI = { add_to_faction = PREV }
+				}
+			}
+			MAN = { country_event = { id = ww1_dongbei.53 } }
+		}
+	
+		if = {
+			limit = {
+				is_in_faction = yes
+				NOT = { is_in_faction_with = CHI }
+			}
+			effect_tooltip = {
+				leave_faction = yes
+				CHI = { add_to_faction = PREV }
+			}
+		}
+		
+	}
+	option = { # 东北模式不能领导民国！
+		name = ww1_dongbei.52.3
+		trigger = {
+			tag = JAP
+			NOT = {
+				has_war_with = MAN
+				is_ally_with = CHI
+			}
+		}
+		ai_chance = {
+			factor = 60
+		}
+		add_to_war = { 
+			targeted_alliance = CHI 
+			enemy = MAN
+			hostility_reason = ww1_dongbei.52.t
+		}
+		if = {
+			limit = {
+				CHI = { is_faction_leader = yes }
+				JAP = {
+					NOT = { is_in_faction_with = CHI }
+				}
+			}
+			CHI = {
+				add_to_faction = JAP
+			}
+		}
+		
+		hidden_effect = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					NOT = { is_in_faction_with = CHI }
+				}
+				leave_faction = yes
+				if = {
+					limit = {
+						CHI = { is_in_faction = yes } 
+					}
+					CHI = { add_to_faction = PREV }
+				}
+			}
+			MAN = { country_event = { id = ww1_dongbei.54 } }
+		}
+	
+		if = {
+			limit = {
+				is_in_faction = yes
+				NOT = { is_in_faction_with = CHI }
+			}
+			effect_tooltip = {
+				leave_faction = yes
+				CHI = { add_to_faction = PREV }
+			}
+		}
+		
+	}
+	option = { # 这可很难谈胜负啊....
+		name = ww1_dongbei.52.4
+		trigger = {
+			NOT = {
+				original_tag = CHI
+				original_tag = MAN
+			}
+			NOT = {
+				is_ally_with = MAN
+				has_government = communism
+			}
+			is_china_or_warlord = yes
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = { # 什么时候他们才能革命完啊？
+		name = ww1_dongbei.52.5
+		trigger = {
+			NOT = {
+				original_tag = CHI
+				original_tag = MAN
+				is_ally_with = MAN
+			}
+			is_china_or_warlord = no
+			NOT = {
+				has_government = communism
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = { # 我是谁，我在哪？
+		name = ww1_dongbei.52.6
+		trigger = {
+			original_tag = QIN
+			#is_china_or_warlord = no
+			NOT = {
+				is_ally_with = MAN
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = { # 中国是否解放，这次就要见分晓了！
+		name = ww1_dongbei.52.7
+		trigger = {
+			NOT = {
+				original_tag = CHI
+				original_tag = MAN
+			}
+			is_china_or_warlord = no
+			has_government = communism
+			NOT = {
+				#is_subject_of = MAN
+				is_ally_with = MAN
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		
+	}
+	option = { # 中国是否解放，这次就要见分晓了！
+		name = ww1_dongbei.52.7
+		trigger = {
+			
+			is_china_or_warlord = yes
+			has_government = communism
+			NOT = {
+				#is_subject_of = MAN
+				is_ally_with = MAN
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		MAN = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_satellite
+			}
+		}
+		add_to_war = { 
+			targeted_alliance = MAN
+			enemy = CHI 
+			hostility_reason = ww1_dongbei.52.2
+		}
+		CHI = {
+			country_event = {
+				id = ww1_dongbei.531
+			}
+		}
+	}
+	option = { # 我们谁都不信任。
+		name = ww1_dongbei.52.8
+		trigger = {
+			
+			is_china_or_warlord = yes
+			has_government = communism
+			NOT = {
+				#is_subject_of = MAN
+				is_ally_with = MAN
+			}
+		}
+		ai_chance = {
+			factor = 30
+		}
+		
+	}
+}
+
+news_event = { # [From.GetName]割据势力加入南方阵营
+	# 
+	id = ww1_dongbei.53
+	title = ww1_dongbei.53.t
+	desc = ww1_dongbei.53.d
+	picture = GFX_news_event_chinese_nra
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			#set_country_flag = have_seen_dongbei_49_event
+		}
+	}
+	option = { # 入关就是要打大仗的！
+		name = ww1_dongbei.53.1
+		#add_war_support = -0.025
+	}
+	
+}
+
+news_event = { # [From.GetName]割据势力加入东北阵营
+	# 
+	id = ww1_dongbei.531
+	title = ww1_dongbei.531.t
+	desc = ww1_dongbei.531.d
+	picture = GFX_news_event_chinese_nra
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			#set_country_flag = have_seen_dongbei_49_event
+		}
+	}
+	option = { # 可恶的社会主义分子！
+		name = ww1_dongbei.531.1
+		#add_war_support = -0.025
+	}
+	
+}
+
+news_event = { # 日本干涉二次革命
+	# 
+	id = ww1_dongbei.54
+	title = ww1_dongbei.54.t
+	desc = ww1_dongbei.54.d
+	picture = GFX_news_event_004
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 日本帝国主义还想和我们打！
+		name = ww1_dongbei.54.1
+		#add_war_support = -0.025
+	}
+	
+}
+
+news_event = { # 东京和议
+	# 
+	id = ww1_dongbei.55
+	title = ww1_dongbei.55.t
+	desc = ww1_dongbei.55.d
+	picture = GFX_news_event_chinese_soldiers_march
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			524 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}
+			JAP = {
+				white_peace = MAN
+			}
+			if= {
+				limit = {
+					KOR = {
+						has_war_with = MAN
+					}
+				}
+				KOR = {
+					white_peace = MAN
+				}
+			}
+			if= {
+				limit = {
+					KOR = {
+						has_war_with = JAP
+					}
+				}
+				KOR = {
+					white_peace = JAP
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						tag = KOR
+						#tag = JAP
+					}
+					is_ally_with = JAP
+					is_china_or_warlord = no
+					has_war_with = MAN
+				}
+				white_peace = MAN
+			}
+			every_country = {
+				limit = {
+					is_ally_with = ROOT
+					has_war_with = JAP
+				}
+				white_peace = JAP
+			}
+			if = {
+				limit = {
+					original_tag = MAN
+				}
+				if = {
+					limit = {
+						KOR = { is_subject_of = MAN }
+					}
+					
+					if = {
+						limit = { NOT = { 799 = { is_owned_by = KOR } } }
+						799 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 527 = { is_owned_by = KOR } } }
+						527 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 797 = { is_owned_by = KOR } } }
+						797 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 800 = { is_owned_by = KOR } } }
+						800 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+				}
+				######
+				if = {
+					limit = { 
+						NOT = { country_exists = KOR }
+					}
+					799 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					527 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					797 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					800 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					KOR = {
+						inherit_technology = MAN
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no
+						}
+						set_popularities = {
+							democratic = 15
+							neutrality = 34
+							fascism = 25
+							communism = 46
+						}
+						set_cosmetic_tag = KOR_joseon
+						country_event = { id = ww1_korea.61 }
+						set_party_name = {
+							ideology = democratic
+							long_name = KOR_provisional_government_long
+							name = KOR_provisional_government
+						}
+						set_party_name = {
+							ideology = neutrality
+							long_name = KOR_fascism_party_long
+							name = KOR_fascism_party
+						}
+						set_party_name = {
+							ideology = fascism
+							long_name = KOR_fascism_party_long
+							name = KOR_fascism_party
+						}
+						set_party_name = {
+							ideology = communism
+							long_name = KOR_communism_gonghedang
+							name = KOR_communism_gonghedang
+						}
+						
+						set_war_support = 0.8
+						set_stability = 0.9
+					}
+				}
+				
+				######
+				if = {
+					limit = {
+						KOR = { is_subject_of = JAP }
+					}
+					#KOR = { white_peace = MAN }
+					if = {
+						limit = {
+							NOT = { 799 = { is_owned_by = MAN } }
+						}
+						
+						799 = {
+							transfer_state_to = MAN
+							#add_core_of = MAN
+							
+						}
+					}
+					if = {
+						limit = {
+							NOT = { 527 = { is_owned_by = MAN } }
+						}
+						
+						527 = {
+							transfer_state_to = MAN
+							#add_core_of = MAN
+							
+						}
+					}
+					if = {
+						limit = {
+							NOT = { 797 = { is_owned_by = MAN } }
+						}
+						
+						797 = {
+							transfer_state_to = MAN
+							#add_core_of = MAN
+							
+						}
+					}
+					if = {
+						limit = {
+							NOT = { 800 = { is_owned_by = MAN } }
+						}
+						
+						800 = {
+							transfer_state_to = MAN
+							#add_core_of = MAN
+							
+						}
+					}
+				}
+				if = {
+					limit = { 799 = { is_owned_by = MAN } }
+					799 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+				if = {
+					limit = { 527 = { is_owned_by = MAN } }
+					527 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+				if = {
+					limit = { 797 = { is_owned_by = MAN } }
+					797 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+				if = {
+					limit = { 800 = { is_owned_by = MAN } }
+					800 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { # 雪落，而明治渐远。
+		name = ww1_dongbei.55.1
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = MAN
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+	option = { # 雪落，而明治渐远！
+		name = ww1_dongbei.55.2
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = KOR
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+	option = { # 雪落，而明治渐远......
+		name = ww1_dongbei.55.3
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = JAP
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+	option = { # 雪落，而明治渐远？
+		name = ww1_dongbei.55.4
+		#add_war_support = -0.025
+		trigger = {
+			NOT = { original_tag = MAN }
+			NOT = { original_tag = KOR }
+			NOT = { original_tag = JAP }
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+}
+
+news_event = { # 日本被中朝击败！
+	# 
+	id = ww1_dongbei.551
+	title = ww1_dongbei.551.t
+	desc = ww1_dongbei.551.d
+	picture = GFX_news_event_018
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 东方的大变化。
+		name = ww1_dongbei.551.1
+		#add_war_support = -0.025
+	}
+	
+}
+
+country_event = { # 
+	# 
+	id = ww1_dongbei.552
+	title = ww1_dongbei.552.t
+	desc = ww1_dongbei.552.d
+	picture = GFX_report_event_british_artillery
+	fire_only_once = no
+	is_triggered_only = no
+	hidden = yes
+	trigger = {
+		original_tag = MAN
+		has_war_with = JAP
+		NOT = { has_country_flag = second_sino_jap_war_flag }
+	}
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = second_sino_jap_war_flag
+		}
+	}
+	option = { # 
+		name = ww1_dongbei.552.1
+		#add_war_support = -0.025
+	}
+	
+}
+
+country_event = { # 议和内容
+	# 
+	id = ww1_dongbei.56
+	title = ww1_dongbei.56.t
+	desc = ww1_dongbei.56.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 我们还想再打一打。
+		name = ww1_dongbei.56.1
+		hidden_effect = {
+			set_country_flag = more_fighting_event_56
+		}
+		activate_mission = DongBei_mission_war_with_jap_1
+		hidden_effect = {
+			JAP = {
+				activate_mission = DongBei_mission_war_with_jap_1_copy
+			}
+		}
+		add_timed_idea = {
+			idea = DongBei_idea_longlast_war
+			days = 180
+		}
+		JAP = {
+			add_timed_idea = {
+				idea = DongBei_idea_longlast_war_jap
+				days = 180
+			}
+		}
+	}
+	option = { # 朝鲜维持南北状态有利于我们。
+		name = ww1_dongbei.56.2
+		country_event = { id = ww1_dongbei.55 }
+		hidden_effect = {
+			
+			JAP = { country_event = { id = ww1_dongbei.55 } }
+			KOR = { country_event = { id = ww1_dongbei.55 } }
+		}
+	}
+	
+}
+
+country_event = { # 第二次东京会议
+	# 
+	id = ww1_dongbei.561
+	title = ww1_dongbei.561.t
+	desc = ww1_dongbei.561.d
+	picture = GFX_report_event_bunker_01
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 再努力一下，日本就会崩溃！
+		name = ww1_dongbei.561.1
+		ai_chance = {
+			factor = 20
+		}
+		hidden_effect = {
+			set_country_flag = more_fighting_event_561
+		}
+		add_timed_idea = {
+			idea = DongBei_idea_longlast_war_1
+			days = 365
+		}
+		JAP = {
+			add_timed_idea = {
+				idea = DongBei_idea_longlast_war_jap_1
+				days = 365
+			}
+		}
+		activate_mission = DongBei_mission_war_with_jap_2
+	}
+	option = { # 我觉得可以了。
+		name = ww1_dongbei.561.2
+		ai_chance = {
+			factor = 80
+		}
+		country_event = { id = ww1_dongbei.57 }
+		hidden_effect = {
+			JAP = { country_event = { id = ww1_dongbei.57 } }
+			KOR = { country_event = { id = ww1_dongbei.57 } }
+		}
+	}
+	
+}
+
+news_event = { # 日本退出大陆
+	# 
+	id = ww1_dongbei.57
+	title = ww1_dongbei.57.t
+	desc = ww1_dongbei.57.d
+	picture = GFX_news_event_chinese_soldiers_march
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	immediate = {
+		hidden_effect = {
+			524 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}
+			JAP = {
+				white_peace = ROOT
+			}
+			if= {
+				limit = {
+					KOR = {
+						has_war_with = ROOT
+					}
+				}
+				KOR = {
+					white_peace = ROOT
+				}
+			}
+			if= {
+				limit = {
+					KOR = {
+						has_war_with = JAP
+					}
+				}
+				KOR = {
+					white_peace = JAP
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						tag = KOR
+						#tag = JAP
+					}
+					is_ally_with = JAP
+					is_china_or_warlord = no
+					has_war_with = MAN
+				}
+				white_peace = MAN
+			}
+			every_country = {
+				limit = {
+					is_ally_with = ROOT
+					has_war_with = JAP
+				}
+				white_peace = JAP
+			}
+			if = {
+				limit = {
+					original_tag = MAN
+				}
+				if = {
+					limit = {
+						KOR = { is_subject_of = MAN }
+					}
+					
+					if = {
+						limit = { NOT = { 799 = { is_owned_by = KOR } } }
+						799 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 527 = { is_owned_by = KOR } } }
+						527 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 797 = { is_owned_by = KOR } } }
+						797 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 800 = { is_owned_by = KOR } } }
+						800 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 796 = { is_owned_by = KOR } } }
+						796 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 801 = { is_owned_by = KOR } } }
+						801 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 802 = { is_owned_by = KOR } } }
+						802 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 525 = { is_owned_by = KOR } } }
+						525 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+				}
+				######
+				if = {
+					limit = { 
+						NOT = { country_exists = KOR }
+					}
+					799 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					527 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					797 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					800 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					796 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					801 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					802 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					525 = {
+						add_core_of = KOR
+						transfer_state_to = KOR
+					}
+					KOR = {
+						inherit_technology = MAN
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no
+						}
+						set_popularities = {
+							democratic = 15
+							neutrality = 34
+							fascism = 25
+							communism = 46
+						}
+						set_cosmetic_tag = KOR_joseon
+						country_event = { id = ww1_korea.61 }
+						set_party_name = {
+							ideology = democratic
+							long_name = KOR_provisional_government_long
+							name = KOR_provisional_government
+						}
+						set_party_name = {
+							ideology = neutrality
+							long_name = KOR_fascism_party_long
+							name = KOR_fascism_party
+						}
+						set_party_name = {
+							ideology = fascism
+							long_name = KOR_fascism_party_long
+							name = KOR_fascism_party
+						}
+						set_party_name = {
+							ideology = communism
+							long_name = KOR_communism_gonghedang
+							name = KOR_communism_gonghedang
+						}
+						
+						set_war_support = 0.8
+						set_stability = 0.9
+					}
+				}
+				
+				######
+				if = {
+					limit = {
+						KOR = { is_subject_of = JAP }
+					}
+					JAP = {
+						set_autonomy = {
+							target = KOR
+							autonomy_state = autonomy_free
+						}
+					}
+					if = {
+						limit = { NOT = { 799 = { is_owned_by = KOR } } }
+						799 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 527 = { is_owned_by = KOR } } }
+						527 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 797 = { is_owned_by = KOR } } }
+						797 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 800 = { is_owned_by = KOR } } }
+						800 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 796 = { is_owned_by = KOR } } }
+						796 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 801 = { is_owned_by = KOR } } }
+						801 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 802 = { is_owned_by = KOR } } }
+						802 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					if = {
+						limit = { NOT = { 525 = { is_owned_by = KOR } } }
+						525 = {
+							add_core_of = KOR
+							transfer_state_to = KOR
+						}
+					}
+					MAN = {
+						set_autonomy = {
+							target = KOR
+							autonomy_state = autonomy_satellite
+						}
+						
+					}
+					KOR = {	
+						inherit_technology = MAN
+						set_politics = {
+							ruling_party = communism
+							elections_allowed = no
+						}
+						set_popularities = {
+							democratic = 15
+							neutrality = 34
+							fascism = 25
+							communism = 46
+						}
+						set_cosmetic_tag = KOR_joseon
+						country_event = { id = ww1_korea.61 }
+						set_party_name = {
+							ideology = democratic
+							long_name = KOR_provisional_government_long
+							name = KOR_provisional_government
+						}
+						set_party_name = {
+							ideology = neutrality
+							long_name = KOR_fascism_party_long
+							name = KOR_fascism_party
+						}
+						set_party_name = {
+							ideology = fascism
+							long_name = KOR_fascism_party_long
+							name = KOR_fascism_party
+						}
+						set_party_name = {
+							ideology = communism
+							long_name = KOR_communism_gonghedang
+							name = KOR_communism_gonghedang
+						}
+						
+						set_war_support = 0.8
+						set_stability = 0.9
+					}
+				}
+				if = {
+					limit = { 799 = { is_owned_by = MAN } }
+					799 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+				if = {
+					limit = { 527 = { is_owned_by = MAN } }
+					527 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+				if = {
+					limit = { 797 = { is_owned_by = MAN } }
+					797 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+				if = {
+					limit = { 800 = { is_owned_by = MAN } }
+					800 = {
+						add_core_of = MAN
+						add_dynamic_modifier = {
+							modifier = CSB_korean_minzu_zizhi_qu
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { # 雪落，而明治渐远。
+		name = ww1_dongbei.55.1
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = MAN
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+	option = { # 雪落，而明治渐远！
+		name = ww1_dongbei.55.2
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = KOR
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+	option = { # 雪落，而明治渐远......
+		name = ww1_dongbei.55.3
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = JAP
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+	option = { # 雪落，而明治渐远？
+		name = ww1_dongbei.55.4
+		#add_war_support = -0.025
+		trigger = {
+			NOT = { original_tag = MAN }
+			NOT = { original_tag = KOR }
+			NOT = { original_tag = JAP }
+		}
+		custom_effect_tooltip = all_nation_peace_man
+	}
+}
+
+news_event = { # 关西总暴动
+	# 
+	id = ww1_dongbei.58
+	title = ww1_dongbei.58.t
+	desc = ww1_dongbei.58.d
+	picture = GFX_news_event_halifax_explosion
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			#JAP = {
+			#	every_owned_state = {
+			#		limit = {
+			#			NOT = {
+			#				state = 282
+			#				state = 526
+			#				state = 528
+			#				state = 529
+			#				state = 530
+			##				state = 531
+			#				state = 532
+			##				state = 533
+			#				state = 534
+			#				state = 535
+			#				state = 536
+			#				#state = 537
+			#				#state = 555
+			#				state = 645
+			#				#state = 797
+			#			}
+			#		}
+			#		
+			#	}
+			#}
+			
+			if = {
+				limit = {
+					NOT = { country_exists = RUS }
+					NOT = { country_exists = SOV }
+					country_exists = MAN
+				}
+				537 = {
+					transfer_state_to = MAN
+				}	
+			}
+			if = {
+				limit = {
+					NOT = { country_exists = RUS }
+					country_exists = SOV
+				}
+				537 = {
+					transfer_state_to = SOV
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = RUS
+				}
+				537 = {
+					transfer_state_to = RUS
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				645 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				639 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				648 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				646 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				647 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				638 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				633 = {
+					transfer_state_to = USA
+				}	
+			}
+			if = {
+				limit = {
+					country_exists = USA
+				}
+				684 = {
+					transfer_state_to = USA
+				}	
+			}
+			set_capital = { state = 531 }
+			start_civil_war = {
+				ruling_party = communism
+				ideology = socialism
+				size = 0.5
+			#	only_own_territory = no
+				capital = 531
+				states = { 
+					531 529 530 528 535
+				}
+				keep_unit_leaders = {
+					750 751 752
+				}
+				keep_political_leader = yes
+				keep_political_party_members = yes
+			}
+			hidden_effect = {
+				division_template = { name = "Japanese People's Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+				531 = {
+					create_unit = { 
+						division = "name = \"1. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"2. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"3. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"4. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"5. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				529 = {
+					create_unit = { 
+						division = "name = \"6. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"7. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"8. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"9. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"10. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				530 = {
+					create_unit = { 
+						division = "name = \"11. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"12. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				535 = {
+					create_unit = { 
+						division = "name = \"13. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+					create_unit = { 
+						division = "name = \"14. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+				528 = {
+					create_unit = { 
+						division = "name = \"15. Japanese People's Regiment\" division_template = \"Japanese People's Regiment\" start_experience_factor = 0" 
+						owner = ROOT
+					}
+				}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = JAP
+					NOT = { has_government = communism }
+				}
+				hidden_effect = {
+					division_template = { name = "Japanese Loyalist Regiment" division_names_group = JAP_INF_01 is_locked = yes regiments = { infantry = { x = 0 y = 0 } infantry = { x = 1 y = 0 } infantry = { x = 2 y = 0 } } }
+					532 = {
+						create_unit = { 
+							division = "name = \"1. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"2. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"3. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"4. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"5. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+					}
+					282 = {
+						create_unit = { 
+							division = "name = \"6. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"7. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+					}
+					533 = {
+						create_unit = { 
+							division = "name = \"8. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+						create_unit = { 
+							division = "name = \"9. Japanese Loyalist Regiment\" division_template = \"Japanese Loyalist Regiment\" start_experience_factor = 0" 
+							owner = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+	option = { # ！
+		name = ww1_dongbei.58.1
+
+	}
+}
+
+news_event = { # 关西总暴动
+	# 
+	id = ww1_dongbei.59
+	title = ww1_dongbei.59.t
+	desc = ww1_dongbei.59.d
+	picture = GFX_news_event_spr_spanish_civil_war3
+	fire_only_once = no
+	is_triggered_only = no
+	#hidden = yes
+	trigger = {
+		is_ai = no
+		JAP = {
+			has_civil_war = yes
+		}
+
+		NOT = { has_country_flag = jap_civil_war_seen }
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = jap_civil_war_seen
+		}
+	}
+	option = { # 日本这回可真是伊于胡底了。
+		name = ww1_dongbei.59.1
+		#add_war_support = -0.025
+		trigger = {
+			NOT = { original_tag = JAP }
+		}
+	}
+	option = { # 动荡啊动荡，维新啊维新。
+		name = ww1_dongbei.59.2
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = JAP
+		}
+	}
+	
+}
+
+news_event = { # 耿瑾文带队入京
+	# 
+	id = ww1_dongbei.60
+	title = ww1_dongbei.60.t
+	desc = ww1_dongbei.60.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 唉，麻烦了。
+		name = ww1_dongbei.60.1
+		#add_war_support = -0.025
+		trigger = {
+			NOT = { original_tag = MAN }
+			original_tag = CHI
+		}
+	}
+	option = { # 土地革命？那么乡村又要闹事了。
+		name = ww1_dongbei.60.2
+		#add_war_support = -0.025
+		trigger = {
+			NOT = { original_tag = MAN }
+			NOT = { original_tag = CHI }
+		}
+	}
+	option = { # 很多事情可以做了。
+		name = ww1_dongbei.60.3
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = MAN
+		}
+	}
+	
+}
+
+country_event = { # 干涉民国总统人选
+	# 
+	id = ww1_dongbei.61
+	title = ww1_dongbei.61.t
+	desc = ww1_dongbei.61.d
+	picture = GFX_report_event_chi_yuan_cabinet
+	fire_only_once = no
+	is_triggered_only = yes
+	
+	#mean_time_to_happen = {
+	#	days = 5
+	#}
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 选举中放纵民党。
+		name = ww1_dongbei.61.1
+		#add_war_support = -0.025
+		ai_chance = {
+			factor = 50
+		}	
+		CHI = {
+			country_event = {
+				id = ww1_dongbei.62
+			}
+		}
+	}
+	option = { # 选举中支持北洋。
+		name = ww1_dongbei.61.2
+		#add_war_support = -0.025
+		ai_chance = {
+			factor = 30
+		}	
+		custom_effect_tooltip = liyuanhong_liuren
+		# 在我们的通力煽动下，黎元洪得以留任
+	}
+}
+
+news_event = { # 孙中山接替袁世凯
+	# 
+	id = ww1_dongbei.62
+	title = ww1_dongbei.61.t
+	desc = ww1_dongbei.61.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					original_tag = CHI
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_character = CHI_sun_yatsen
+						}
+					}
+					CHI_sun_yatsen = {
+						set_nationality = CHI
+					}
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = CHI_kuomintang_party
+					name = CHI_kuomintang_party
+				}
+				CHI_sun_yatsen = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = classical_liberalism
+							traits = {
+								father_of_the_republic
+							}
+						}
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				
+				set_popularities = {
+					democratic = 40
+					fascism = 10
+					communism = 33
+					neutrality = 17
+				}
+				promote_character = CHI_sun_yatsen
+				
+			}
+		}
+	}
+	option = { # 啊这？
+		name = ww1_dongbei.62.1
+		#add_war_support = -0.025
+		ai_chance = {
+			factor = 50
+		}	
+		trigger = {
+			original_tag = CHI
+		}
+		effect_tooltip = {
+			promote_character = CHI_sun_yatsen
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { original_tag = CHI }
+					OR = { 
+						is_china_or_warlord = yes
+						is_ai = no
+					}
+				}
+				country_event = { id = ww1_dongbei.62 }
+			}
+		}
+	}
+	option = { # 有趣的进展。
+		name = ww1_dongbei.62.2
+		#add_war_support = -0.025
+		ai_chance = {
+			factor = 50
+		}	
+		trigger = {
+			NOT = { original_tag = CHI }
+		}
+		
+	}
+}
+
+news_event = { # 省份易帜共和党
+	# 
+	id = ww1_dongbei.63
+	title = ww1_dongbei.63.t
+	desc = ww1_dongbei.63.d
+	picture = GFX_news_event_chinese_soldiers
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 可恶！
+		name = ww1_dongbei.63.1
+		custom_effect_tooltip = zhichidu_province_tt_csb
+		#
+		#add_war_support = -0.025
+		
+	}
+}
+
+news_event = { # 民国试图保证忠诚
+	#
+	id = ww1_dongbei.631
+	title = ww1_dongbei.631.t
+	desc = ww1_dongbei.631.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 他们尽管挣扎吧。
+		name = ww1_dongbei.631.1
+		#add_war_support = -0.025
+		effect_tooltip = {
+			gonghedang_support_reduce_5 = yes
+		}
+	}
+}
+
+news_event = { # 民国试图保证忠诚
+	#
+	id = ww1_dongbei.632
+	title = ww1_dongbei.631.t
+	desc = ww1_dongbei.631.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 他们尽管挣扎吧。
+		name = ww1_dongbei.631.1
+		#add_war_support = -0.025
+		effect_tooltip = {
+			gonghedang_support_reduce_5 = yes
+		}
+	}
+}
+
+news_event = { # 民国试图保证忠诚
+	#
+	id = ww1_dongbei.633
+	title = ww1_dongbei.631.t
+	desc = ww1_dongbei.631.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 他们尽管挣扎吧。
+		name = ww1_dongbei.631.1
+		#add_war_support = -0.025
+		effect_tooltip = {
+			gonghedang_support_reduce_5 = yes
+		}
+	}
+}
+
+news_event = { # 民国试图保证忠诚
+	#
+	id = ww1_dongbei.634
+	title = ww1_dongbei.631.t
+	desc = ww1_dongbei.631.d
+	picture = GFX_news_event_chinese_street
+	fire_only_once = no
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	option = { # 他们尽管挣扎吧。
+		name = ww1_dongbei.631.1
+		#add_war_support = -0.025
+		effect_tooltip = {
+			gonghedang_support_reduce_5 = yes
+		}
+	}
+}
+
+news_event = { # 
+
+	id = ww1_dongbei.635
+	title = ww1_dongbei.63.t
+	desc = ww1_dongbei.63.d
+	picture = GFX_news_event_spr_spanish_civil_war3
+	fire_only_once = yes
+	is_triggered_only = no
+	hidden = yes
+	trigger = {
+		original_tag = MAN
+		FNG = {
+			is_subject_of = ROOT
+		}
+		NOT = {
+			has_global_flag = dongbei_revolution_failed_global
+			has_global_flag = gonghedang_revolution_victory
+		}
+		is_subject = no
+		NOT = {
+			has_country_flag = ww1_dongbei_635_flag
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			MAN = {
+				annex_country = {
+					target = FNG
+					transfer_troops = no
+				}
+			}
+			set_country_flag = ww1_dongbei_635_flag
+		}
+	}
+	option = {
+		name = ww1_dongbei.631.1
+		
+	}
+}
+
+news_event = { # 海原大地震
+
+	id = ww1_dongbei.64
+	title = ww1_dongbei.64.t
+	desc = ww1_dongbei.64.d
+	picture = GFX_news_event_spr_spanish_civil_war3
+	fire_only_once = no
+	is_triggered_only = no
+	trigger = {
+		date > 1920.12.6
+		OR = { 
+			is_china_or_warlord = yes
+			is_ai = no
+		}
+		NOT = {
+			has_country_flag = dizhen_haiyuan_flag
+		}
+	}
+	immediate = {
+		hidden_effect = {	
+			set_cosmetic_flag = dizhen_haiyuan_flag
+			if = {
+				limit = {
+					NOT = { has_global_flag = ww1_dongbei_64_global_flag }
+				}
+				set_global_flag = ww1_dongbei_64_global_flag
+				if = {
+					limit = {
+						OR = {
+							283 = { is_owned_by = MAN }
+							283 = { is_controlled_by = MAN }
+							AND = {
+								283 = { is_controlled_by = CHI }
+								MAN = {
+									infil_larger_than_75 = yes
+								}
+							}
+						}
+					}
+					MAN = {
+						set_country_flag = dizhen_disaster_1
+					}
+					283 = {
+						add_manpower = -73604
+						owner = {
+							add_timed_idea = {
+								idea = Dongbei_idea_haiyuan_dadizhen_3
+								days = 365
+							}
+						}	
+					}
+					MAN = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_3
+							days = 365
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { 
+							283 = { is_owned_by = MAN }
+							283 = { is_controlled_by = MAN }
+							MAN = {
+								infil_larger_than_75 = yes
+							}
+						}
+						OR = {
+							283 = { is_owned_by = CHI }
+							283 = { is_controlled_by = CHI }
+						}
+					}
+					MAN = {
+						set_country_flag = dizhen_disaster_2
+					}
+					283 = {
+						add_manpower = -234117
+						owner = {
+							add_timed_idea = {
+								idea = Dongbei_idea_haiyuan_dadizhen_1
+								days = 365
+							}
+						}	
+						CHI = {
+							add_timed_idea = {
+								idea = Dongbei_idea_haiyuan_dadizhen_2
+								days = 365
+							}
+						}
+					}
+				}
+				else = {
+					283 = {
+						add_manpower = -234117
+						owner = {
+							add_timed_idea = {
+								idea = Dongbei_idea_haiyuan_dadizhen_1
+								days = 365
+							}
+						}	
+						
+					}
+					MAN = {
+						set_country_flag = dizhen_disaster_3
+					}
+					every_country = {
+						limit = {
+							is_china_or_warlord = yes
+						}	
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_3								
+							days = 365
+						}
+					}
+				}
+			}
+			
+		}
+	}
+	option = { # 赶紧抗震救灾！
+		name = ww1_dongbei.64.1
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = MAN
+		}
+		ai_chance = {
+			factor = 99
+		}
+		effect_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						283 = { is_owned_by = MAN }
+						283 = { is_controlled_by = MAN }
+						AND = {
+							283 = { is_controlled_by = CHI }
+							MAN = {
+								infil_larger_than_75 = yes
+							}
+						}
+					}
+				}
+				283 = {
+					add_manpower = -73604
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_3
+							days = 365
+						}
+					}	
+				}
+				MAN = {
+					add_timed_idea = {
+						idea = Dongbei_idea_haiyuan_dadizhen_3
+						days = 365
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { 
+						283 = { is_owned_by = MAN }
+						283 = { is_controlled_by = MAN }
+						MAN = {
+							infil_larger_than_75 = yes
+						}
+					}
+					OR = {
+						283 = { is_owned_by = CHI }
+						283 = { is_controlled_by = CHI }
+					}
+				}
+				283 = {
+					add_manpower = -234117
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_1
+							days = 365
+						}
+					}	
+					CHI = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_2
+							days = 365
+						}
+					}
+				}
+			}
+			else = {
+				283 = {
+					add_manpower = -234117
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_1
+							days = 365
+						}
+					}	
+					
+				}
+				every_country = {
+					limit = {
+						is_china_or_warlord = yes
+					}	
+					add_timed_idea = {
+						idea = Dongbei_idea_haiyuan_dadizhen_3								
+						days = 365
+					}
+				}
+			}
+			
+		}
+		if = {
+			limit = {
+				has_completed_focus = CSB_DongBei_shentou_huabei
+				283 = {
+					is_owned_by = CHI
+				}
+			}
+			custom_effect_tooltip = MAN_rescue_gansu_1
+			# 解锁新共和党影响相关决议
+		}
+		else = {
+			activate_mission = MAN_rescue_gansu_2
+			# 解锁新决议
+		}
+	}
+	option = { # 让甘肃军阀自生自灭吧。
+		name = ww1_dongbei.64.2
+		#add_war_support = -0.025
+		trigger = {
+			original_tag = MAN
+			NOT = {
+				283 = { is_controlled_by = MAN }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		effect_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						283 = { is_owned_by = MAN }
+						283 = { is_controlled_by = MAN }
+						AND = {
+							283 = { is_controlled_by = CHI }
+							MAN = {
+								infil_larger_than_75 = yes
+							}
+						}
+					}
+				}
+				283 = {
+					add_manpower = -73604
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_3
+							days = 365
+						}
+					}	
+				}
+				MAN = {
+					add_timed_idea = {
+						idea = Dongbei_idea_haiyuan_dadizhen_3
+						days = 365
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { 
+						283 = { is_owned_by = MAN }
+						283 = { is_controlled_by = MAN }
+						MAN = {
+							infil_larger_than_75 = yes
+						}
+					}
+					OR = {
+						283 = { is_owned_by = CHI }
+						283 = { is_controlled_by = CHI }
+					}
+				}
+				283 = {
+					add_manpower = -234117
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_1
+							days = 365
+						}
+					}	
+					CHI = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_2
+							days = 365
+						}
+					}
+				}
+			}
+			else = {
+				283 = {
+					add_manpower = -234117
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_1
+							days = 365
+						}
+					}	
+					
+				}
+				every_country = {
+					limit = {
+						is_china_or_warlord = yes
+					}	
+					add_timed_idea = {
+						idea = Dongbei_idea_haiyuan_dadizhen_3								
+						days = 365
+					}
+				}
+			}
+			
+		}
+	}
+	option = { # 真是飞来横祸！
+		name = ww1_dongbei.64.3.3
+		#add_war_support = -0.025
+		trigger = {
+			
+			NOT = {
+				original_tag = MAN
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		effect_tooltip = {
+			if = {
+				limit = {
+					OR = {
+						283 = { is_owned_by = MAN }
+						283 = { is_controlled_by = MAN }
+						AND = {
+							283 = { is_controlled_by = CHI }
+							MAN = {
+								infil_larger_than_75 = yes
+							}
+						}
+					}
+				}
+				283 = {
+					add_manpower = -73604
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_3
+							days = 365
+						}
+					}	
+				}
+				MAN = {
+					add_timed_idea = {
+						idea = Dongbei_idea_haiyuan_dadizhen_3
+						days = 365
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { 
+						283 = { is_owned_by = MAN }
+						283 = { is_controlled_by = MAN }
+						MAN = {
+							infil_larger_than_75 = yes
+						}
+					}
+					OR = {
+						283 = { is_owned_by = CHI }
+						283 = { is_controlled_by = CHI }
+					}
+				}
+				283 = {
+					add_manpower = -234117
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_1
+							days = 365
+						}
+					}	
+					CHI = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_2
+							days = 365
+						}
+					}
+				}
+			}
+			else = {
+				283 = {
+					add_manpower = -234117
+					owner = {
+						add_timed_idea = {
+							idea = Dongbei_idea_haiyuan_dadizhen_1
+							days = 365
+						}
+					}	
+					
+				}
+				every_country = {
+					limit = {
+						is_china_or_warlord = yes
+					}	
+					add_timed_idea = {
+						idea = Dongbei_idea_haiyuan_dadizhen_3								
+						days = 365
+					}
+				}
+			}
+			
+		}
+	}
+}
+

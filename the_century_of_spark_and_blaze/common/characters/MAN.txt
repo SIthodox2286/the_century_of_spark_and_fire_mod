@@ -1,0 +1,1409 @@
+characters={
+	
+	Dongbei_Wu_Chuan={ # 吴川：
+		name="Dongbei_Wu_Chuan"
+		portraits={
+			civilian={
+				large=GFX_portrait_Dongbei_Wuchuan
+				small=GFX_idea_DongBei_Wuchuan
+			}
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ chuanyue_leader }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		
+		advisor={
+			slot = theorist
+			idea_token = Dongbei_Wu_Chuan_theorist
+			ledger  = army 
+			cost  = 150
+			name  = Dongbei_Wu_Chuan 
+			traits  = {
+				military_theorist
+			}
+		}
+		field_marshal={
+			traits={ brilliant_strategist media_personality organisational_leader inspirational_leader }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=5
+			logistics_skill=5
+			
+			visible = {
+				has_government = communism
+			}	
+		}
+		#
+		
+	}
+	
+	SOV_Wu_Chuan={ # 吴川-苏联：
+		name="Dongbei_Wu_Chuan"
+		portraits={
+			civilian={
+				large=GFX_portrait_Dongbei_Wuchuan
+				small=GFX_idea_DongBei_Wuchuan
+			}
+			army = {
+				large=GFX_portrait_Dongbei_Wuchuan
+				small=GFX_idea_DongBei_Wuchuan
+			}
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ chuanyue_leader }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=socialism
+			traits={ chuanyue_leader }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOV_Wu_Chuan
+			allowed = {
+				original_tag = SOV
+			}
+			traits = {
+				advisor_wuchuan_sov_trait
+			}
+			available = {
+				NOT = { country_exists = MAN } 
+				OR = { 
+					has_country_leader  = {
+						character = SOV_iosif_stalin
+						ruling_only = yes 
+					}
+					has_country_leader  = {
+						character = SOV_vladimir_lenin
+						ruling_only = yes 
+					}
+					has_country_leader  = {
+						character = SOV_yakov_sverdlov
+						ruling_only = yes 
+					}
+					has_country_leader  = {
+						character = SOV_felix_dzerzhinsky
+						ruling_only = yes 
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = ww1_dongbei.101.t
+					has_global_flag = dongbei_xinhai_revolution_flag
+					has_global_flag = dongbei_revolution_failed_global
+				}
+				NOT = { country_exists = MAN }
+			}
+			ai_will_do = {
+				factor = 50
+			}
+		}	
+		
+	}
+	
+	DongBei_zhou_shumo={ # 周树模
+		name="DongBei_zhou_shumo"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_zhou_shumo.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_zhou_shumo.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_zhou_shumo
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+			
+			traits = {
+				compassionate_gentleman
+			}
+			#cost  = 75.000
+		}
+		country_leader={
+			ideology=conservatism
+			traits={ compassionate_gentleman }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+			traits={ compassionate_gentleman }
+			expire="1960.1.1.1"
+			id=-1
+		}
+	}
+	
+	Dongbei_Zhu_Hezhong={ # 朱和中：
+		name="Dongbei_Zhu_Hezhong"
+		portraits={
+			army = {
+				large = "GFX_portrait_Zhu_Hezhong"
+				small = GFX_idea_DongBei_Zhu_Hezhong
+			}
+			civilian={
+				large= "GFX_portrait_Zhu_Hezhong"
+				#small=GFX_idea_DongBei_Zhu_Hezhong
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits={ generallissimo }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=oligarchism
+			traits={ generallissimo }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = Dongbei_Zhu_Hezhong
+			allowed = {
+				original_tag  = MAN
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			traits = {
+				army_chief_drill_2 
+			}
+			ai_will_do = {
+				factor = 10.000
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	
+	Dongbei_Zhang_Shaozeng={ # 张绍曾：
+		name="Dongbei_Zhang_Shaozeng"
+		portraits={
+			army = {
+				large = GFX_portrait_Zhang_Shaozeng
+				small = GFX_idea_Dongbei_Zhang_Shaozeng
+			}
+			civilian={
+				large= GFX_portrait_Zhang_Shaozeng
+				small=GFX_idea_Dongbei_Zhang_Shaozeng
+			}
+		}
+		country_leader={
+			ideology=stratocracy
+			traits={ generallissimo }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=liberal_conservatism
+			traits={ generallissimo }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = Dongbei_Zhang_Shaozeng
+			allowed = {
+				original_tag  = MAN
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+			traits = {
+				army_chief_old_guard
+			}
+			ai_will_do = {
+				factor = 10.000
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			visible = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+		}
+	}
+	
+	SOV_ye_sheng ={ # 叶声-苏联：
+		name="Dongbei_ye_sheng"
+		portraits={
+			army = {
+				large = GFX_portrait_Dongbei_ye_sheng
+				small = GFX_idea_Dongbei_ye_sheng
+			}
+			civilian={
+				large= GFX_portrait_Dongbei_ye_sheng
+			}
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = SOV_ye_sheng
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = ww1_dongbei.101.t
+					has_global_flag = dongbei_xinhai_revolution_flag
+					has_global_flag = dongbei_revolution_failed_global
+				#	NOT = { country_exists = MAN }
+				}
+				NOT = { country_exists = MAN }
+			}
+			traits = {
+				army_logistics_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { combined_arms_expert }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+			
+			visible = {
+				custom_trigger_tooltip = {
+					tooltip = ww1_dongbei.101.t
+					has_global_flag = dongbei_xinhai_revolution_flag
+					has_global_flag = dongbei_revolution_failed_global
+				}
+				NOT = { country_exists = MAN }
+			}
+		}
+	}
+	
+	Dongbei_ye_sheng ={ # 叶声：
+		name="Dongbei_ye_sheng"
+		portraits={
+			army = {
+				large = GFX_portrait_Dongbei_ye_sheng
+				small = GFX_idea_Dongbei_ye_sheng
+			}
+			civilian={
+				large= GFX_portrait_Dongbei_ye_sheng
+			}
+		}
+		country_leader={
+			ideology=national_syndicalism
+			traits={ generallissimo }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ generallissimo }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = Dongbei_ye_sheng
+			allowed = {
+				original_tag  = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			traits = {
+				army_logistics_3
+			}
+			ai_will_do = {
+				factor = 10.000
+			}
+		}
+		corps_commander = {
+			traits = { combined_arms_expert }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 3
+		}
+	}
+	
+	DongBei_Lan_Tianwei={ # 蓝天蔚
+		name="DongBei_Lan_Tianwei"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_Lan_Tianwei.png"
+			}
+			army={
+				small="gfx/interface/ideas/DongBei/idea_DongBei_Lan_Tianwei.png"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			
+		}
+	}
+	
+	DongBei_wu_luzhen={ # 吴禄贞
+		name="DongBei_wu_luzhen"
+		portraits={
+			army={
+				large="GFX_portrait_DongBei_wu_luzhen"
+			}
+			army={
+				small="GFX_idea_DongBei_wu_luzhen"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			
+		}
+		advisor={
+			slot = high_command
+			idea_token = DongBei_wu_luzhen
+			allowed  = {
+				original_tag  = MAN
+			}
+			ledger  = army 
+			available = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+			traits  = {
+				army_infantry_2 
+			}
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+	}
+	
+	DongBei_deng_zhenyong={ # 邓振镛
+		name="DongBei_deng_zhenyong"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_deng_zhenyong.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_deng_zhenyong.png"
+			}	
+		}
+		corps_commander={
+			skill=2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			visible = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+		}
+	}
+	
+	DongBei_wu_xiangzhen={ # 伍祥祯
+		name="DongBei_deng_zhenyong"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_wu_xiangzhen.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_wu_xiangzhen.png"
+			}	
+		}
+		corps_commander={
+			skill=1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+			visible = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+		}
+	}
+	
+	DongBei_meng_xianyi={ # 孟宪彝
+		name="DongBei_meng_xianyi"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_meng_xianyi.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_meng_xianyi.png"
+			}	
+		}
+		corps_commander={
+			skill=1
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			visible = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+		}
+	}
+	
+	DongBei_xie_limin={ # 解利民
+		name="DongBei_xie_limin"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_xie_limin.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_xie_limin.png"
+			}	
+		}
+		corps_commander={
+			skill=1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			
+		}
+	}
+	
+	DongBei_yuan_jiasheng={ # 袁家声
+		name="DongBei_yuan_jiasheng"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_yuan_jiasheng.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_yuan_jiasheng.png"
+			}	
+		}
+		corps_commander={
+			skill=1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			
+		}
+	}
+	
+	DongBei_mihail_martinov={ # 米哈伊尔·马丁诺夫
+		name="DongBei_mihail_martinov"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_mihail_martinov.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_mihail_martinov.png"
+			}	
+		}
+		corps_commander={
+			traits={ cavalry_officer }
+			skill=2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	
+	DongBei_zhang_xiaozhun={ # 张孝准
+		name="DongBei_zhang_xiaozhun"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_zhang_xiaozhun.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_zhang_xiaozhun.png"
+			}	
+		}
+		corps_commander={
+			skill=2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+
+	DongBei_jiang_baili={ # 蒋百里
+		name="DongBei_zhang_xiaozhun"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_jiang_baili.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_jiang_baili.png"
+			}	
+		}
+		corps_commander={
+			skill=2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+			visible = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+		}
+	}
+	
+	DongBei_cheng_shizhao={ # 程世召
+		name="DongBei_cheng_shizhao"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_cheng_shizhao.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_cheng_shizhao.png"
+			}	
+		}
+		navy_leader={
+			
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=1
+			
+			
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = DongBei_cheng_shizhao
+			allowed  = {
+				original_tag  = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			traits  = {
+				navy_chief_reform_2 
+			}
+			
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+	}
+	
+	DongBei_situ_biru={ # 
+		name="DongBei_situ_biru"
+		portraits={
+			army={
+				large="gfx/leaders/DongBei/Portrait_DongBei_fu_chunshan.png"
+			}
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_fu_chunshan.png"
+			}	
+		}
+
+		advisor={
+			slot = air_chief
+			idea_token = DongBei_situ_biru
+			allowed  = {
+				original_tag  = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			traits  = {
+				air_chief_ground_support_2 
+			}
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+	}
+	
+	DongBei_feng_ru={ # 冯如
+		name="DongBei_feng_ru"
+		portraits={
+			
+			army = {
+				small="gfx/interface/ideas/DongBei/idea_DongBei_feng_ru.dds"
+			}	
+		}
+
+		advisor={
+			slot = high_command
+			idea_token = DongBei_feng_ru
+			allowed  = {
+				original_tag  = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			ledger  = air 
+			traits  = {
+				air_air_combat_training_2 
+			}
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+	}
+	
+	DongBei_felix_dzerzhinsky={
+		name="SOV_felix_dzerzhinsky"
+		advisor={
+			slot = political_advisor
+			idea_token = DongBei_felix_dzerzhinsky
+			available = {
+				has_government = communism
+				is_country_leader = no
+				custom_trigger_tooltip = {
+					tooltip = csb_october_revolution_no_tt
+					NOT = { has_global_flag = october_revolution }
+				}
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+				has_completed_focus = CSB_DongBei_revolution_baoweiju
+			}
+			traits  = {
+				revolution_overseer 
+			}
+			cost  = 75.000
+		}
+		portraits={
+			army={
+				small="GFX_idea_SOV_felix_dzerzhinsky"
+			}
+			civilian={
+				large="gfx/leaders/POL/POL_felix_dzerzhinsky.png"
+			}
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ revolution_overseer  }
+		}
+	}
+	
+	DongBei_yakov_sverdlov={
+		name="SOV_yakov_sverdlov"
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/SOV_yakov_sverdlov.png"
+				small="gfx/interface/ideas/SOV/idea_SOV_yakov_sverdlov.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_yakov_sverdlov
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_government = communism
+				is_country_leader = no
+				custom_trigger_tooltip = {
+					tooltip = csb_october_revolution_no_tt
+					NOT = { has_global_flag = october_revolution }
+				}
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			}
+			traits = {
+				silent_workhorse 
+			}
+			cost  = 75.000
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ prince_of_terror  }
+		}
+	}
+	
+	DongBei_mihail_frunze={
+		name=SOV_mihail_frunze
+		portraits={
+			army={
+				large="gfx/leaders/SOV/SOV_mihail_frunze.png"
+				small="GFX_idea_mikhail_frunze"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = DongBei_mihail_frunze
+			ledger  = army 
+			cost  = 150
+			traits  = {
+				grand_battle_plan_expert 
+			}
+			available = {
+				has_government = communism
+				is_country_leader = no
+				custom_trigger_tooltip = {
+					tooltip = csb_october_revolution_no_tt
+					NOT = { has_global_flag = october_revolution }
+				}
+				NOT = { has_completed_focus = CSB_DongBei_remove_russian_from_government }
+			}
+			ai_will_do  = {
+				factor  = 0.500
+			}
+		}
+		field_marshal={
+			traits={ brilliant_strategist career_officer trait_cautious inspirational_leader }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=5
+			logistics_skill=4
+			legacy_id=85014
+			visible = {
+				has_government = communism
+			}	
+		}
+	}
+	
+	DongBei_max_hoffmann={
+		name="GER_max_hoffmann"
+		portraits={
+			army={
+				small="GFX_idea_GER_generic_land_4"
+			}
+			army={
+				large="gfx/leaders/GER/GER_max_hoffman.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				NOT = { GER = { has_war_with = FRA } }
+			}
+			idea_token = DongBei_max_hoffmann_theorist
+			ledger  = army 
+			cost = 150
+			name = GER_max_hoffmann 
+			traits = {
+				superior_firepower_expert
+			}
+		}
+		corps_commander={
+			traits={ career_officer winter_specialist }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			visible = {
+				NOT = { GER = { has_war_with = FRA } }
+			}
+		}
+	}
+	
+	DongBei_liang_tingdong={ # 梁廷栋
+		name="DongBei_liang_tingdong"
+		portraits={
+			army = {
+				large="gfx/leaders/DongBei/Portrait_DongBei_liang_tingdong.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_liang_tingdong.png"
+			}
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_liang_tingdong.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_liang_tingdong.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_liang_tingdong
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_harbin_government
+				hidden_trigger = {
+					NOT = { has_completed_focus = CSB_DongBei_new_democratic_era }
+				}
+			}
+			visible = {
+				NOT = { has_completed_focus = CSB_DongBei_new_democratic_era }
+			}
+			
+			traits = {
+				popular_figurehead  
+			}
+			#cost  = 75.000
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_liang_tingdong_1
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_remove_russian_from_government
+				
+			}
+			visible = {
+				has_completed_focus = CSB_DongBei_new_democratic_era
+			}
+			
+			traits = {
+				decmoratic_supporter_csb
+			}
+			#cost  = 75.000
+		}
+		corps_commander={
+			skill=3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			visible = {
+				is_country_leader = no
+			}
+		}
+		country_leader={
+			ideology=socialism
+			traits={ popular_figurehead  }
+		}
+		country_leader={
+			ideology=reformist_socialism
+			traits={ popular_figurehead  }
+		}
+	}
+	
+	DongBei_song_yuntong={ # 宋云桐
+		name="DongBei_song_yuntong"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_song_yuntong.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_song_yuntong.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_song_yuntong
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_harbin_government
+				hidden_trigger = {
+					NOT = { has_completed_focus = CSB_DongBei_new_democratic_era }
+				}
+			}
+			visible = {
+				NOT = { has_completed_focus = CSB_DongBei_new_democratic_era }
+			}
+			
+			traits = {
+				financial_expert 
+			}
+			#cost  = 75.000
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_song_yuntong_1
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_remove_russian_from_government
+			}
+			visible = {
+				has_completed_focus = CSB_DongBei_new_democratic_era
+			}
+			
+			traits = {
+				market_economy_supporter 
+			}
+			#cost  = 75.000
+		}
+		country_leader={
+			ideology=market_socialism
+			traits={ market_economy_supporter }
+		}
+		
+	}
+	
+	DongBei_bing_bucheng={ # 宾步程
+		name="DongBei_bing_bucheng"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_bing_bucheng.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_bing_bucheng.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_bing_bucheng
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			
+			traits = {
+				captain_of_industry 
+			}
+			#cost  = 75.000
+		}
+		country_leader={
+			ideology=social_liberalism
+			traits={ captain_of_industry  }
+		}
+		country_leader={
+			ideology=market_socialism
+			traits={ captain_of_industry  }
+		}
+	}
+	
+	DongBei_zhang_yunrong={ # 张云荣
+		name="DongBei_zhang_yunrong"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_zhang_yunrong.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_zhang_yunrong.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_zhang_yunrong
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			
+			traits = {
+				long_last_secretary 
+			}
+			#cost  = 75.000
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ long_last_secretary  }
+		}
+		country_leader={
+			ideology=socialism
+			traits={ long_last_secretary  }
+		}
+	}
+	
+	DongBei_xia_yang={ # 夏阳
+		name="DongBei_xia_yang"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_xia_yang.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_xia_yang.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_xia_yang
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				is_country_leader = no
+				has_completed_focus = CSB_DongBei_revolution_baoweiju
+			}
+			
+			traits = {
+				the_short_knive 
+			}
+			#cost  = 75.000
+		}
+		country_leader={
+			ideology=syndicalism
+			traits={ the_short_knive }
+		}
+		country_leader={
+			ideology=national_syndicalism
+			traits={ the_short_knive }
+		}
+	}
+	
+	SOV_xia_yang={ # 夏阳-苏联
+		name="DongBei_xia_yang"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_xia_yang.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_xia_yang.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = SOV_xia_yang
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = ww1_dongbei.101.t
+					has_global_flag = dongbei_xinhai_revolution_flag
+					has_global_flag = dongbei_revolution_failed_global
+				}
+				NOT = { country_exists = MAN }
+			}
+			traits = {
+				prince_of_terror 
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_wang_baozhen={ # 王葆真
+		name="DongBei_wang_baozhen"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_wang_baozhen.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_wang_baozhen.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_wang_baozhen
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+			#cost  = 75.000
+		}
+	}
+
+	Dongbei_paul_von_lettowvorbeck={
+		name="GER_paul_von_lettowvorbeck"
+		advisor={
+			slot = high_command
+			idea_token = Dongbei_paul_von_lettowvorbeck
+			allowed  = {
+				original_tag  = MAN
+			}
+			ledger  = army 
+			available  = {
+				NOT = { GER = { has_war_with = FRA } }
+			}
+			traits  = {
+				army_commando_3 
+			}
+			ai_will_do  = {
+				factor  = 1.000
+			}
+		}
+		portraits={
+			army={
+				small="GFX_idea_GER_paul_von_lettow_vorbeck"
+				large="gfx/leaders/GER/GER_paul_lettow_vorbeck.png"
+			}
+		}
+		corps_commander={
+			traits={ trait_reckless trickster brilliant_strategist commando }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=3
+			#legacy_id=34052
+			visible = {
+				NOT = { GER = { has_war_with = FRA } }
+			}
+		}
+	}
+	
+	DongBei_song_xiaolian={ # 宋小濂
+		name="DongBei_song_xiaolian"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_song_xiaolian.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_song_xiaolian.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_song_xiaolian
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+			traits = {
+				economist 
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_zhang_tingge={ # 张廷阁
+		name="DongBei_zhang_tingge"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_zhang_tingge.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_zhang_tingge.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_zhang_tingge
+			allowed = {
+				original_tag = MAN
+				
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_official_representitives_meeting
+			}
+			traits = {
+				armaments_organizer 
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_luo_guorui={ # 罗国瑞
+		name="DongBei_luo_guorui"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_luo_guorui.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_luo_guorui.png"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_luo_guorui
+			allowed = {
+				original_tag = MAN
+				#has_completed_focus = CSB_DongBei_harbin_government
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			traits = {
+				technocrat 
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_zhu_zhuquan={ # 朱竹泉
+		name="DongBei_zhu_zhuquan"
+		portraits={
+			army={
+				small="gfx/interface/ideas/DongBei/idea_DongBei_cao_anfu.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = DongBei_zhu_zhuquan
+			allowed  = {
+				original_tag  = MAN
+				
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+			}
+			ledger  = air 
+			cost  = 150
+			traits  = {
+				close_air_support_proponent 
+			}
+		}
+		
+	}
+	
+	DongBei_geng_jinwen={ # 耿瑾文
+		name="DongBei_geng_jinwen"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_geng_jinwen.dds"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_zhang_guotao.png"
+			}
+		}
+		country_leader={
+			ideology=syndicalism
+			traits={ second_leadership_group_3 }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_geng_jinwen
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_harbin_government
+				
+			}
+			
+			traits = {
+				ambitious_union_boss
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_li_dazhao={ # 李大钊
+		name="DongBei_li_dazhao"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Potrait_DongBei_li_dazhao.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_li_dazhao.png"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits={ second_leadership_group_3 }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_li_dazhao
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_new_generation
+				
+			}
+			
+			traits = {
+				CE_KMT_gemingweiyuan
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_chen_duxiu={ # 陈独秀
+		name="DongBei_chen_duxiu"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_DongBei_chen_duxiu.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_chen_duxiu.png"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits={ second_leadership_group_3 }
+			expire="1960.1.1.1"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_chen_duxiu
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_new_generation
+				
+			}
+			
+			traits = {
+				CE_chenduxiu_trait
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_mao_zedong={ # 李润石
+		name="DongBei_mao_zedong"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/portrait_PRC_mao_zedong3.png"
+				small="gfx/interface/ideas/DongBei/idea_DongBei_mao_zedong.png"
+			}
+		}
+		country_leader={
+			ideology=vanguardism
+			traits={ CE_maoism_ideals_scb }
+			expire="1976.1.1.1"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_mao_zedong
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_new_generation
+				
+			}
+			
+			traits = {
+				CE_maoism_ideals_2
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	DongBei_zhang_guotao={
+		name="CHI_zhang_guotao"
+		portraits={
+			civilian={
+				large="gfx/leaders/DongBei/Portrait_PRC_zhang_guotao.dds"
+				small="gfx/interface/ideas/idea_jiangxianyun.png"
+			}
+		}
+		
+		advisor = {
+			slot = political_advisor
+			idea_token = DongBei_zhang_guotao
+			allowed = {
+				original_tag = MAN
+			}
+			available = {
+				has_completed_focus = CSB_DongBei_remove_russian_from_government
+				
+			}
+			visible = {
+				has_completed_focus = CSB_DongBei_new_democratic_era
+			}
+			
+			traits = {
+				revolution_opportunitist
+			}
+			#cost  = 75.000
+		}
+	}
+	
+	
+}
