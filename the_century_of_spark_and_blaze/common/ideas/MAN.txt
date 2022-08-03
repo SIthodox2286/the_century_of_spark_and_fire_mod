@@ -1302,7 +1302,7 @@ ideas={
 			allowed = { original_tag = MAN }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
-			picture = spr_class_war
+			picture = SPR_class_war
 			available = {
 				always = yes
 			}
@@ -1317,7 +1317,7 @@ ideas={
 			allowed = { original_tag = MAN }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
-			picture = spr_class_war
+			picture = SPR_class_war
 			available = {
 				always = yes
 			}
@@ -1332,7 +1332,7 @@ ideas={
 			allowed = { original_tag = MAN }
 			allowed_civil_war = { always = yes }
 			removal_cost = -1
-			picture = spr_class_war
+			picture = SPR_class_war
 			available = {
 				always = yes
 			}
