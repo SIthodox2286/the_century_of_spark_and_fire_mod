@@ -6,7 +6,8 @@
 小说《火热的年代》同人作品，感谢作者富春山居的创作以及书友的热情。
 
 【一战REDUX】
-The Great War Redux 简体中文版是使用本MOD的必需品！！！！！！！\n
+The Great War Redux 简体中文版是使用本MOD的必需品！！！！！！！
+
 52PCGAMES论坛：https://bbs.52pcgame.net/forum.php?mod=viewthread&tid=450542&highlight=REDUX （需要注册并完成新手任务，才能进入钢四MOD区）
 创意工坊：https://steamcommunity.com/sharedfiles/filedetails/?id=2802294244
 
