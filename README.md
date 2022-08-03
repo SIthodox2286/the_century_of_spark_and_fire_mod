@@ -41,6 +41,10 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2843353919
 
 4、打开钢铁雄心4，在启动器选择加入新MOD，然后同时打开一战REDUX和本MOD（如果有，关闭52汉化或其他汉化，一战REDUX MOD已经整合了汉化MOD）开始游戏；
 
+安装后的效果，打勾的两个就是MOD文件：
+![image](https://user-images.githubusercontent.com/44506927/182628516-d14eed51-c736-4bf8-a59f-190c8a509f89.png)
+
+
 
 
 - 本MOD需要一战REDUX中文版才能使用；
