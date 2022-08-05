@@ -894,6 +894,42 @@ focus_tree = {
 				# 减少§Y100§!政治点数，移除负面国家精神：\n
 				show_ideas_tooltip = DongBei_idea_russian_debt_crisis
 			}
+			if = {
+				limit = {
+					has_ideas = CHI_idea_inflation5
+				}
+				remove_ideas = CHI_idea_inflation5
+			}
+			if = {
+				limit = {
+					has_ideas = CHI_idea_inflation4
+				}
+				remove_ideas = CHI_idea_inflation4
+			}
+			if = {
+				limit = {
+					has_ideas = CHI_idea_inflation3
+				}
+				remove_ideas = CHI_idea_inflation3
+			}
+			if = {
+				limit = {
+					has_ideas = CHI_idea_inflation2
+				}
+				remove_ideas = CHI_idea_inflation2
+			}
+			if = {
+				limit = {
+					has_ideas = CHI_idea_inflation1
+				}
+				remove_ideas = CHI_idea_inflation1
+			}
+			if = {
+				limit = {
+					has_ideas = CHI_idea_inflation
+				}
+				remove_ideas = CHI_idea_inflation
+			}
 		}
 	}
 	
@@ -5203,10 +5239,6 @@ focus_tree = {
 			add_timed_idea = {
 				idea = CHI_idea_restore_the_nation
 				days = 365
-			}
-			swap_ideas = {
-				remove_idea = CHI_idea_inflation5
-				add_idea = CHI_idea_inflation4
 			}
 		}
 		ai_will_do = {
