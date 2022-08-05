@@ -664,15 +664,12 @@ MAN_dongbei_country_decisions = {
 			has_stability > 0.25
 		}
 		fire_only_once = no
-		cost = 25
-		days_remove = 35
+		cost = 50
+		days_remove = 133
 		days_re_enable = 7
 		
 		complete_effect = {
-			add_stability = 0.25
-			add_political_power = 50
-		}
-		remove_effect = {
+			#add_stability = 0.25
 			if = {
 				limit = { has_idea = DongBei_idea_rapid_unification_1 }
 				remove_ideas = DongBei_idea_rapid_unification_1
@@ -708,11 +705,15 @@ MAN_dongbei_country_decisions = {
 			else = {
 			}
 		}
+		remove_effect = {
+			add_political_power = 50
+		}
 		modifier = {
-			consumer_goods_factor = 0.4
+			consumer_goods_factor = 0.25
 			local_resources_factor = -0.2
-			stability_weekly = -0.05
 			resistance_activity = 0.3
+			stability_factor = -0.25
+			war_support_factor = -0.25
 		}
 		
 		ai_will_do = {
@@ -755,10 +756,6 @@ MAN_dongbei_country_decisions = {
 		#days_re_enable = 7
 		
 		complete_effect = {
-			add_political_power = 150
-		}
-		remove_effect = {
-			custom_effect_tooltip = sixianghunluan_tt
 			if = {
 				limit = { has_idea = DongBei_idea_rapid_unification_1 }
 				remove_ideas = DongBei_idea_rapid_unification_1
@@ -801,6 +798,11 @@ MAN_dongbei_country_decisions = {
 			}
 			else = {
 			}
+		}
+		remove_effect = {
+			add_political_power = 150
+			custom_effect_tooltip = sixianghunluan_tt
+			
 			hidden_effect = {
 				set_country_flag = MAN_remove_bad_ganbu_2_flag
 			}
@@ -850,10 +852,6 @@ MAN_dongbei_country_decisions = {
 		#days_re_enable = 7
 		
 		complete_effect = {
-			
-			add_political_power = 50
-		}
-		remove_effect = {
 			if = {
 				limit = { has_idea = DongBei_idea_rapid_unification_1 }
 				remove_ideas = DongBei_idea_rapid_unification_1
@@ -885,6 +883,10 @@ MAN_dongbei_country_decisions = {
 				idea = DongBei_idea_cover_through_crazyness
 				days = 1825
 			}
+			
+		}
+		remove_effect = {
+			add_political_power = 150
 			hidden_effect = {
 				set_country_flag = MAN_remove_bad_ganbu_2_flag
 			}
@@ -2802,6 +2804,7 @@ MAN_minguo_affair_decisions = {
 		
 		modifier = {
 			political_power_factor = -0.1
+			consumer_goods_factor = 0.05
 		}
 		
 		#INFILTRATE_STATE_AI_WILL_DO 283
@@ -2905,6 +2908,7 @@ MAN_minguo_affair_decisions = {
 		
 		modifier = {
 			political_power_factor = -0.1
+			consumer_goods_factor = 0.05
 		}
 		
 		#INFILTRATE_STATE_AI_WILL_DO 283
