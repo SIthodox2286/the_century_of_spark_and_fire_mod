@@ -144,7 +144,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = unlock_advisors_man_csb
 			# 解锁所有中国顾问、理论家、司令
-			add_war_support = 0.05
+			add_war_support = 0.1
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1164,8 +1164,8 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_stability = 0.1
-			add_war_support = 0.1
+			add_stability = 0.05
+			add_war_support = 0.05
 			
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = CE_KMT_tongyongchuanchang
@@ -1504,7 +1504,7 @@ focus_tree = {
 				popularity = 0.05
 			}
 			add_ideas = DongBei_idea_house_price_high
-			add_stability = -0.15
+			add_stability = -0.1
 			add_war_support = -0.15
 		}
 		ai_will_do = {
