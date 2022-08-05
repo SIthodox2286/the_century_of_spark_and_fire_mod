@@ -178,7 +178,8 @@ leader_traits = {
 	CE_chenduxiu_trait = { # 《新青年》
 		random = no
 		sprite = 13
-		surrender_limit = 0.25
+		surrender_limit = 0.15
+		political_advisor_cost_factor = -0.15
 		propaganda_mission_factor = 0.25
 		boost_ideology_mission_factor = 0.25
 		

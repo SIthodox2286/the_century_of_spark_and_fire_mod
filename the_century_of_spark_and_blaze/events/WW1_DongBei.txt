@@ -4881,6 +4881,21 @@ country_event = { # 中国索取海参崴
 		409 = {
 			transfer_state_to = MAN
 		}
+		655 = {
+			transfer_state_to = MAN
+			add_core_of = MAN
+		}
+		if = {
+			limit = {
+				537 = {
+					is_owned_by = SB1
+				}
+			}
+			537 = {
+				transfer_state_to = MAN
+				add_core_of = MAN
+			}
+		}
 	}
 	option = { # 我们绝不屈服！
 		name = ww1_dongbei.47.2
@@ -5032,6 +5047,10 @@ country_event = { # 西伯利亚保皇党独立
 				408 = { add_core_of = SB1 }
 			}
 			if = {
+				limit = { 537 = { is_fully_controlled_by = RUS } }
+				537 = { add_core_of = SB1 }
+			}
+			if = {
 				limit = { 409 = { is_fully_controlled_by = RUS } }
 				409 = { add_core_of = SB1 }
 			}
@@ -5058,6 +5077,10 @@ country_event = { # 西伯利亚保皇党独立
 			if = {
 				limit = { 644 = { is_fully_controlled_by = RUS } }
 				644 = { add_core_of = SB1 }
+			}
+			if = {
+				limit = { 655 = { is_fully_controlled_by = RUS } }
+				655 = { add_core_of = SB1 }
 			}
 			RUS = {
 				release = SB1
@@ -6289,6 +6312,44 @@ news_event = { # 日本退出大陆
 					original_tag = MAN
 				}
 				if = {
+					limit = { 
+						537 = { is_owned_by = JAP } 
+						MAN = {
+							has_completed_focus = CSB_DongBei_united_china
+						}	
+					}
+					537 = {
+						transfer_state_to = MAN
+						add_core_of = MAN
+					}
+				}
+				if = {
+					limit = { 
+						537 = { is_owned_by = JAP } 
+						NOT = {
+							MAN = { has_completed_focus = CSB_DongBei_united_china }
+						}	
+					}
+					if = {
+						limit = {
+							country_exists = SB1
+						}
+						537 = {
+							transfer_state_to = SB1
+							add_core_of = SB1
+						}
+					}
+					if = {
+						limit = {
+							NOT = { country_exists = SB1 }
+						}
+						537 = {
+							transfer_state_to = RUS
+							add_core_of = RUS
+						}
+					}
+				}
+				if = {
 					limit = {
 						KOR = { is_subject_of = MAN }
 					}
@@ -6655,19 +6716,31 @@ news_event = { # 关西总暴动
 				limit = {
 					NOT = { country_exists = RUS }
 					NOT = { country_exists = SOV }
+					NOT = { country_exists = SB1 }
 					country_exists = MAN
 				}
 				537 = {
 					transfer_state_to = MAN
+					add_core_of = MAN
 				}	
 			}
 			if = {
 				limit = {
 					NOT = { country_exists = RUS }
+					NOT = { country_exists = SB1 }
 					country_exists = SOV
 				}
 				537 = {
 					transfer_state_to = SOV
+				}	
+			}
+			if = {
+				limit = {
+					NOT = { country_exists = RUS }
+					country_exists = SB1
+				}
+				537 = {
+					transfer_state_to = SB1
 				}	
 			}
 			if = {

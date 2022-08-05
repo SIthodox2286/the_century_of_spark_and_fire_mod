@@ -262,6 +262,15 @@ focus_tree = {
 			else = {	
 				add_ideas = DongBei_idea_construction_division_1
 			}
+			
+			328 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 4572
+					instant_build = yes
+				}
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
@@ -421,7 +430,7 @@ focus_tree = {
 		bypass = {
 		}
 		completion_reward = {
-			custom_effect_tooltip = new_equipment_type_tt_csb
+			#custom_effect_tooltip = new_equipment_type_tt_csb
 			# 
 			if = {
 				limit = { NOT = { has_tech = artillery1 } }
@@ -450,7 +459,76 @@ focus_tree = {
 				amount = 2000
 				producer = GER
 			} 
-			
+			hidden_effect = {
+				division_template = {
+					name = "New National Revolution Army"		# 新编国民革命军
+					division_names_group = MAN_INF_02
+					# 
+					regiments = {		
+						# 竖列 1
+						infantry = { x = 0 y = 0 }	# 
+						infantry = { x = 0 y = 1 }
+						artillery_brigade = { x = 0 y = 2 } 
+						rocket_artillery_brigade = { x = 0 y = 3 } 
+						# 竖列 2
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						artillery_brigade = { x = 1 y = 2 }
+						rocket_artillery_brigade = { x = 1 y = 3 } 
+						# 竖列 3
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						#
+					}
+					
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						field_hospital = { x = 0 y = 2 }
+					}
+				}
+				division_template = {
+					name = "Supplied National Revolution Army"		# 整顿国民革命军
+					division_names_group = MAN_INF_02
+					# 
+					regiments = {		
+						# 竖列 1
+						infantry = { x = 0 y = 0 }	# 
+						infantry = { x = 0 y = 1 }
+						artillery_brigade = { x = 0 y = 2 } 
+						#rocket_artillery_brigade = { x = 0 y = 3 } 
+						# 竖列 2
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						#artillery_brigade = { x = 1 y = 2 }
+						#rocket_artillery_brigade = { x = 1 y = 3 } 
+						# 竖列 3
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						#
+					}
+					
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+						field_hospital = { x = 0 y = 2 }
+						rocket_artillery = { x = 0 y = 3 }
+					}
+				}
+			}
+			capital_scope = {
+				create_unit = { 
+					division = "name = \"1. Resupplied National Revolution Army \" division_template = \"Supplied National Revolution Army\" start_experience_factor = 0" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"2. Resupplied National Revolution Army \" division_template = \"New National Revolution Army\" start_experience_factor = 0" 
+					owner = ROOT
+				}
+			}
 		}
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
@@ -896,37 +974,37 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_ideas = CHI_idea_inflation5
+					has_idea = CHI_idea_inflation5
 				}
 				remove_ideas = CHI_idea_inflation5
 			}
 			if = {
 				limit = {
-					has_ideas = CHI_idea_inflation4
+					has_idea = CHI_idea_inflation4
 				}
 				remove_ideas = CHI_idea_inflation4
 			}
 			if = {
 				limit = {
-					has_ideas = CHI_idea_inflation3
+					has_idea = CHI_idea_inflation3
 				}
 				remove_ideas = CHI_idea_inflation3
 			}
 			if = {
 				limit = {
-					has_ideas = CHI_idea_inflation2
+					has_idea = CHI_idea_inflation2
 				}
 				remove_ideas = CHI_idea_inflation2
 			}
 			if = {
 				limit = {
-					has_ideas = CHI_idea_inflation1
+					has_idea = CHI_idea_inflation1
 				}
 				remove_ideas = CHI_idea_inflation1
 			}
 			if = {
 				limit = {
-					has_ideas = CHI_idea_inflation
+					has_idea = CHI_idea_inflation
 				}
 				remove_ideas = CHI_idea_inflation
 			}
@@ -4925,9 +5003,46 @@ focus_tree = {
 		available = {
 			has_global_flag = xinhai_revolution_ends
 			has_war = no
+			610 = {
+				is_fully_controlled_by = ROOT
+			}
 		}
 		completion_reward = {
-			add_war_support = 0.1
+			add_stability = 0.1
+			hidden_effect = {
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 11771 6951 9788 3934 934 6837 11886 }
+					start_province = 11771
+					target_province = 11886
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 11886
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 934 6898 3881 9873 11801 }
+					start_province = 934
+					target_province = 11886
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 11801
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = { # 进军张家口
@@ -6041,6 +6156,40 @@ focus_tree = {
 					ideology = democratic
 					long_name = minmeng_csb_long
 					name = minmeng_csb
+				}
+			}
+			hidden_effect = {
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 11771 6951 9788 3934 934 6837 11886 }
+					start_province = 11771
+					target_province = 11886
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 11886
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				build_railway = {
+					level = 1
+					fallback = yes
+					path = { 934 6898 3881 9873 11801 }
+					start_province = 934
+					target_province = 11886
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					province = 11801
+					instant_build = yes
 				}
 			}
 		}

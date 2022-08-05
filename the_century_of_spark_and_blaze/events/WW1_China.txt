@@ -4331,17 +4331,32 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_china.32.a
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = FROM
+					}
+				}
+				add_core_of = FROM
+			}
+		}
 		FROM = {
+			
 			annex_country = {
 				target = ROOT
 				transfer_troops = yes
 			}
+			
 		}
 		ai_chance = {
-			base = 45
+			base = 40
 			modifier = {
-				factor = 0
+				factor = 10
 				OR = {
+					tag = QIN
+					tag = CHI
+					tag = MAN
 					tag = XSM
 					tag = SHX
 					tag = GXC
@@ -4351,6 +4366,7 @@ country_event = {
 					tag = FNG
 					tag = JNC
 					tag = PRC
+					tag = GDC
 				}
 			}
 		}
@@ -4361,7 +4377,7 @@ country_event = {
 			country_event = ww1_china.34
 		}
 		ai_chance = {
-			factor = 55
+			factor = 60
 		}
 	}
 }

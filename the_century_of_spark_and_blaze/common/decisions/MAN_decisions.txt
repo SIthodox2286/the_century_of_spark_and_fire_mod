@@ -1621,9 +1621,14 @@ MAN_dongbei_clean_international_debt = {
 				has_idea = DongBei_idea_russian_debt_4
 				has_idea = DongBei_idea_russian_debt_5
 			}
+			country_exists = RUS
+			NOT = { has_global_flag = october_revolution }
+			NOT = { RUS = { has_government = communism } }
 		}
 		
 		available = {
+			NOT = { has_global_flag = october_revolution }
+			NOT = { RUS = { has_government = communism } }
 			NOT = { surrender_progress > 0.1 }
 			RUS = {  has_war = yes }
 			OR = {
@@ -1673,9 +1678,14 @@ MAN_dongbei_clean_international_debt = {
 				has_idea = DongBei_idea_russian_debt_4
 				has_idea = DongBei_idea_russian_debt_5
 			}
+			country_exists = RUS
+			NOT = { has_global_flag = october_revolution }
+			NOT = { RUS = { has_government = communism } }
 		}
 		
 		available = {
+			NOT = { has_global_flag = october_revolution }
+			NOT = { RUS = { has_government = communism } }
 			has_political_power > 14
 		}
 		
@@ -1717,10 +1727,14 @@ MAN_dongbei_clean_international_debt = {
 				has_idea = DongBei_idea_russian_debt_4
 				has_idea = DongBei_idea_russian_debt_5
 			}
-			NOT = { country_exists = SOV }
+			country_exists = RUS
+			NOT = { has_global_flag = october_revolution }
+			NOT = { RUS = { has_government = communism } }
 		}
 		
 		available = {
+			NOT = { has_global_flag = october_revolution }
+			NOT = { RUS = { has_government = communism } }
 			has_equipment = {
 				infantry_equipment > 1999
 			}
@@ -1757,8 +1771,17 @@ MAN_dongbei_clean_international_debt = {
 		icon = GFX_decision_category_generic_communism
 		
 		visible = {
-			NOT = { has_war_with = SOV }
-			country_exists = SOV
+		
+			OR = {
+				AND = {
+					has_global_flag = october_revolution
+					NOT = { has_war_with = SOV }
+				}
+				AND = {
+					RUS = { has_government = communism }
+					NOT = { has_war_with = RUS }
+				}
+			}
 			OR = {
 				has_idea = DongBei_idea_russian_debt_0
 				has_idea = DongBei_idea_russian_debt
@@ -1771,7 +1794,10 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
-			country_exists = SOV
+			OR = {
+				country_exists = SOV
+				RUS = { has_government = communism }
+			}
 		}
 		
 		fire_only_once = yes
@@ -1808,8 +1834,21 @@ MAN_dongbei_clean_international_debt = {
 				limit = { has_idea = DongBei_idea_russian_debt_5 }
 				remove_ideas = DongBei_idea_russian_debt_5
 			}
-			SOV = {
-				country_event = { id = ww1_dongbei.18 }
+			if = {
+				limit = {
+					NOT = { RUS = { has_government = communism } }
+				}
+				SOV = {
+					country_event = { id = ww1_dongbei.18 }
+				}
+			}
+			if = {
+				limit = {
+					RUS = { has_government = communism }
+				}
+				RUS = {
+					country_event = { id = ww1_dongbei.18 }
+				}
 			}
 			
 		}
@@ -1837,6 +1876,7 @@ MAN_dongbei_clean_international_debt = {
 		icon = GFX_decision_generic_political_discourse
 		
 		visible = {
+			NOT = { USA = { has_government = communism } }
 			NOT = { has_war_with = USA }
 			has_completed_focus = CSB_DongBei_clear_international_debt
 			OR = {
@@ -1851,6 +1891,7 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
+			NOT = { USA = { has_government = communism } }
 			NOT = { surrender_progress > 0.1 }
 			USA = {  has_war = yes }
 			OR = {
@@ -1883,6 +1924,7 @@ MAN_dongbei_clean_international_debt = {
 		icon = GFX_decision_gre_investment_decisions
 		
 		visible = {
+			NOT = { USA = { has_government = communism } }
 			NOT = { has_war_with = USA }
 			has_completed_focus = CSB_DongBei_clear_international_debt
 			OR = {
@@ -1896,6 +1938,7 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
+			NOT = { USA = { has_government = communism } }
 			has_political_power > 99
 		}
 		
@@ -1925,6 +1968,7 @@ MAN_dongbei_clean_international_debt = {
 		icon = gre_paying_ifc_debt
 		
 		visible = {
+			NOT = { USA = { has_government = communism } }
 			NOT = { has_war_with = USA }
 			has_completed_focus = CSB_DongBei_clear_international_debt
 			OR = {
@@ -1938,6 +1982,7 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
+			NOT = { USA = { has_government = communism } }
 			has_political_power > 49
 		}
 		
@@ -2038,6 +2083,7 @@ MAN_dongbei_clean_international_debt = {
 		icon = GFX_decision_generic_political_discourse
 		
 		visible = {
+			NOT = { GER = { has_government = communism } }
 			NOT = { has_war_with = GER }
 			has_completed_focus = CSB_DongBei_clear_international_debt
 			OR = {
@@ -2051,6 +2097,7 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
+			NOT = { GER = { has_government = communism } }
 			NOT = { surrender_progress > 0.1 }
 			GER = {  has_war = yes }
 			OR = {
@@ -2083,6 +2130,7 @@ MAN_dongbei_clean_international_debt = {
 		icon = hol_exchange_intelligence_data
 		
 		visible = {
+			NOT = { GER = { has_government = communism } }
 			NOT = { has_war_with = GER }
 			has_completed_focus = CSB_DongBei_clear_international_debt
 			OR = {
@@ -2096,6 +2144,7 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
+			NOT = { GER = { has_government = communism } }
 			NOT = {
 				has_war_with = FRA
 				has_war_with = ENG
@@ -2170,6 +2219,7 @@ MAN_dongbei_clean_international_debt = {
 		icon = GFX_decision_gre_paying_ifc_debt
 		
 		visible = {
+			NOT = { GER = { has_government = communism } }
 			NOT = { has_war_with = GER }
 			has_completed_focus = CSB_DongBei_clear_international_debt
 			OR = {
@@ -2183,6 +2233,7 @@ MAN_dongbei_clean_international_debt = {
 		}
 		
 		available = {
+			NOT = { GER = { has_government = communism } }
 			has_political_power > 14
 		}
 		
@@ -2277,7 +2328,6 @@ MAN_dongbei_clean_international_debt = {
 			factor = 100
 		}
 	}
-	
 	
 }
 

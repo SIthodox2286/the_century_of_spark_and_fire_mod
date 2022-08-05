@@ -2407,6 +2407,64 @@ CHI_chinese_warlords = {
 			}
 		}
 	}
+	CHI_unite_china_TIB = {
+		icon = generic_ignite_civil_war
+		allowed = {
+			is_china_or_warlord = yes
+		}
+		visible = {
+			OR = {
+				has_country_flag = ready_to_unite_china
+				has_country_flag = reunited_china
+			}
+			TIB = {
+				exists = yes
+			}
+		}
+		target_trigger = {
+			FROM = {
+				tag = TIB
+			}
+		}
+		war_with_on_remove = TIB
+		available = {
+			TIB = {
+				exists = yes
+				has_war = no
+			}
+			is_subject = no
+			has_war = no
+			is_neighbor_of = TIB
+		}
+		cost = 75
+		days_remove = 10
+		fire_only_once = yes
+		remove_effect = {
+			TIB = {
+				if = {
+					limit = {
+						is_in_faction_with = PREV
+					}
+					leave_faction = yes
+				}
+				country_event = ww1_china.33
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				original_tag = QIN
+				strength_ratio = {
+					tag = TIB
+					ratio > 1
+				}
+				TIB = {
+					exists = no
+				}
+			}
+		}
+	}
 	CHI_unite_china_YUN = {
 		icon = generic_ignite_civil_war
 		allowed = {
