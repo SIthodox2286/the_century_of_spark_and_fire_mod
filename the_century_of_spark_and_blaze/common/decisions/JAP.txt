@@ -549,6 +549,9 @@ economy_decisions = {
 					}				
 					owns_state = 744
 					controls_state = 744
+					NOT = {
+						has_completed_focus = CSB_DongBei_jap_kor_china_war
+					}
 				}
 			}					
 		}

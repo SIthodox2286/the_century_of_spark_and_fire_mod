@@ -3038,6 +3038,9 @@ economy_decisions = {
 					}				
 					owns_state = 583
 					controls_state = 583
+					NOT = {
+						has_completed_focus = CSB_DongBei_support_korean_rebel
+					}	
 				}
 				any_country = {
 					OR = {
@@ -3046,6 +3049,9 @@ economy_decisions = {
 					}
 					owns_state = 408
 					controls_state = 408
+					NOT = {
+						has_completed_focus = CSB_DongBei_support_korean_rebel
+					}	
 				}
 			}					
 		}
