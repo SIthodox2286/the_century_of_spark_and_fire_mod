@@ -5473,6 +5473,26 @@ focus_tree = {
 			hidden_effect = { 
 				set_country_flag = second_sino_jap_war_flag
 				activate_mission = DongBei_mission_war_with_jap
+				
+			}
+			if = {
+				limit = {
+					gives_military_access_to = JAP
+				}
+				diplomatic_relation = {
+					country = JAP
+					relation = military_access
+					active = no
+				}
+				hidden_effect = {
+					JAP = {
+						diplomatic_relation = {
+							country = MAN
+							relation = military_access
+							active = no
+						}
+					}
+				}
 			}
 		}
 	}
@@ -5768,6 +5788,25 @@ focus_tree = {
 		}
 		completion_reward = {
 			RUS = { country_event = { id = ww1_dongbei.48 } }
+			hidden_effect = {
+				diplomatic_relation = {
+					country = RUS
+					relation = military_access
+					active = no
+				}
+				if = {
+					limit = {
+						gives_military_access_to = RUS
+					}
+					RUS = {
+						diplomatic_relation = {
+							country = MAN
+							relation = military_access
+							active = no
+						}
+					}
+				}
+			}
 		}
 	}
 	focus = { # 索取海参崴
