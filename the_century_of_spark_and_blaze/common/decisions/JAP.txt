@@ -1,0 +1,569 @@
+propaganda_efforts = {
+	JAP_rename_markus_island = {
+		allowed = {
+			original_tag = JAP
+		}
+		available = {
+			owns_state = 648
+			has_full_control_of_state = 648
+			NOT = {
+				has_global_flag = minamitorishima_flag
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		cost = 10
+		visible = {
+			has_full_control_of_state = 648
+		}
+		fire_only_once = no
+		complete_effect = {
+			648 = {
+				add_core_of = ROOT
+				set_state_name = MINAMITORISHIMA_STATE
+				hidden_effect = {
+					set_global_flag = minamitorishima_flag
+				}
+			}
+		}
+	}
+}
+
+peace_deals = {
+	JAP_sue_for_peace_KOR = {
+		icon = generic_nationalism
+		days_mission_timeout = 120
+		activation = {
+			JAP = {
+				has_war_with = KOR
+				hidden_trigger = {
+					NOT = {
+						has_global_flag = JAP_sue_for_peace_KOR_trigger
+					}
+				}
+			}
+			KOR = {
+				has_full_control_of_state = 525
+				has_full_control_of_state = 527
+				has_full_control_of_state = 796
+				has_full_control_of_state = 797
+				has_full_control_of_state = 799
+				has_full_control_of_state = 800
+				has_full_control_of_state = 801
+				has_full_control_of_state = 802
+			}
+		}
+		allowed = {
+			OR = {
+				tag = JAP
+				tag = KOR
+			}
+		}
+		available = {
+			JAP = {
+				OR = {
+					NOT = { has_war_with = KOR }
+					NOT = { country_exists = KOR }
+					has_subject = KOR
+				}
+				hidden_trigger = {
+					has_global_flag = JAP_sue_for_peace_KOR_trigger
+				}
+			}
+		}
+		visible = {
+			JAP = {
+				has_war_with = KOR
+				has_completed_focus = JAP_ww1_Japan_Korea_Treaty
+				hidden_trigger = {
+					NOT = {
+						has_global_flag = JAP_sue_for_peace_KOR_trigger
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		is_good = no
+		timeout_effect = {
+			if = {
+				limit = {
+					tag = JAP
+				}
+				hidden_effect = {
+					set_global_flag = JAP_sue_for_peace_KOR_trigger
+				}
+				if = {
+					limit = {
+						has_completed_focus = JAP_ww1_Japan_Korea_Treaty
+						NOT = {
+							has_completed_focus = JAP_ww1_free_Korea
+						}
+					}
+					country_event = {
+						id = ww1_korea.38
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = JAP_ww1_Japan_Korea_Treaty
+						has_completed_focus = JAP_ww1_free_Korea
+					}
+					country_event = {
+						id = ww1_korea.34
+					}
+				}
+			}
+		}
+	}
+	JAP_sue_for_peace_FNG = {
+		allowed = {
+			tag = JAP
+		}
+		available = {
+			surrender_progress > 0.3
+		}
+		visible = {
+			has_war_with = FNG
+			any_other_country = {
+				has_country_flag = manchurian_incident
+				has_war_with = PREV
+				NOT = { has_war_with = FNG }
+			}
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1000
+				OR = {
+					AND = {
+						NOT = {
+							controls_state = 525
+							controls_state = 527
+							controls_state = 796
+							controls_state = 797
+							controls_state = 799
+							controls_state = 800
+							controls_state = 801
+						}
+						if = {
+							limit = {
+								has_subject = KOR
+							}
+							KOR = {
+								has_capitulated = yes
+							}
+						}
+					}
+					AND = {
+						casualties > 66000
+						surrender_progress > 0.8
+					}
+				}
+			}
+		}
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					has_war_with = PREV
+					OR = {
+						is_china_or_warlord = yes
+						has_country_flag = manchurian_incident
+					}
+				}
+				white_peace = PREV
+			}
+			if = {
+				limit = {
+					has_subject = KOR
+				}
+				end_puppet = KOR
+				KOR = { complete_national_focus = KOR_the_light_returned }
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = KOR
+				}
+				transfer_state_to = KOR
+			}
+			every_other_country = {
+				limit = {
+					has_country_flag = manchurian_incident
+				}
+				every_state = {
+					limit = {
+						is_owned_by = PREV.PREV
+						OR = {
+							is_core_of = PREV
+							is_claimed_by = PREV
+						}
+					}
+					transfer_state_to = PREV
+				}
+				set_truce = {
+					target = PREV
+					days = 1825
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							OR = {
+								has_country_flag = CHI_kuomintang_flag
+								original_tag = SHX
+							}
+						}
+						every_possible_country = {
+							limit = {
+								is_china_or_warlord = yes
+								OR = {
+									AND = {
+										NOT = {
+											is_subject = yes
+											has_country_flag = CHI_soviet_republic_flag
+											has_country_flag = reunited_china
+										}
+										OR = {
+											original_tag = HNC
+											original_tag = SCC
+											original_tag = SDC
+											original_tag = JNC
+											original_tag = JXC
+											original_tag = ZHE
+											original_tag = GDC
+											original_tag = GZC
+										}
+									}
+									is_subject_of = PREV
+								}
+							}
+							every_state = {
+								limit = {
+									OR = {
+										is_core_of = PREV
+										is_claimed_by = PREV
+									}
+								}
+								remove_core_of = PREV
+								remove_claim_by = PREV
+							}
+							every_unit_leader = {
+								set_nationality = CHI
+							}
+							if = {
+								limit = {
+									exists = yes
+								}
+								transfer_navy = {
+									target = CHI
+								}
+								CHI = {
+									annex_country = {
+										target = PREV
+										transfer_troops = yes
+									}
+								}
+							}
+						}
+						every_state = {
+							limit = {
+								OR = {
+									is_core_of = PREV
+									is_claimed_by = PREV
+								}
+							}
+							remove_core_of = PREV
+							remove_claim_by = PREV
+						}
+						every_unit_leader = {
+							set_nationality = CHI
+						}
+						transfer_navy = {
+							target = CHI
+						}
+						CHI = {
+							kuomintang_united_china = yes
+							set_country_flag = manchurian_incident
+							set_truce = {
+								target = ROOT
+								days = 1825
+							}
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+							if = {
+								limit = {
+									PREV = {
+										original_tag = SHX
+									}
+								}
+								CHI_yan_xishan = {
+									add_country_leader_role = {
+										promote_leader = yes
+										country_leader = {
+											ideology = authoritarian_democracy
+											traits = { propaganda_expert }
+										}
+									}
+								}
+								set_capital = { state = 608 }
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							has_country_flag = reunited_china
+						}
+						every_possible_country = {
+							limit = {
+								is_china_or_warlord = yes
+								OR = {
+									exists = no
+									is_subject_of = PREV
+								}
+								NOT = {
+									tag = PREV
+								}
+							}
+							every_unit_leader = {
+								set_nationality = PREV
+							}
+							every_state = {
+								remove_core_of = PREV
+								remove_claim_by = PREV
+							}
+							if = {
+								limit = {
+									exists = yes
+								}
+								transfer_navy = {
+									target = PREV
+								}
+								PREV = {
+									annex_country = {
+										target = PREV
+										transfer_troops = yes
+									}
+								}
+							}
+						}
+					}
+					else = {
+						every_possible_country = {
+							limit = {
+								is_china_or_warlord = yes
+								OR = {
+									is_subject = no
+									is_subject_of = PREV
+								}
+								NOT = {
+									has_war_with = PREV
+									tag = PREV
+								}
+							}
+							every_state = {
+								limit = {
+									is_core_of = PREV
+								}
+								add_core_of = PREV.PREV
+							}
+							every_state = {
+								limit = {
+									is_claimed_by = PREV
+								}
+								add_claim_by = PREV.PREV
+							}
+						}
+					}
+					every_possible_country = {
+						limit = {
+							has_idea = CHI_idea_warlord_neutrality
+						}
+						remove_ideas = CHI_idea_warlord_neutrality
+					}
+					if = {
+						limit = {
+							OR = {
+								has_country_flag = CHI_kuomintang_flag
+								original_tag = SHX
+							}
+						}
+						CHI = { change_tag_from = PREV }
+					}
+				}
+			}
+		}
+	}
+	JAP_sue_for_peace_CHI = {
+		allowed = {
+			tag = JAP
+		}
+		available = {
+			MAN = {
+				has_capitulated = yes
+			}
+		}
+		visible = {
+			any_other_country = {
+				has_country_flag = manchurian_incident
+				has_war_with = PREV
+			}
+			has_subject = MAN
+			NOT = { country_exists = FNG }
+		}
+		fire_only_once = yes
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1000
+				OR = {
+					AND = {
+						NOT = {
+							controls_state = 525
+							controls_state = 527
+							controls_state = 796
+							controls_state = 797
+							controls_state = 799
+							controls_state = 800
+							controls_state = 801
+						}
+						if = {
+							limit = {
+								has_subject = KOR
+							}
+							KOR = {
+								has_capitulated = yes
+							}
+						}
+					}
+					AND = {
+						casualties > 100000
+						surrender_progress > 0.8
+					}
+				}
+			}
+		}
+		complete_effect = {
+			every_other_country = {
+				limit = {
+					has_war_with = PREV
+					is_china_or_warlord = yes
+				}
+				white_peace = PREV
+				set_truce = {
+					target = PREV
+					days = 1825
+				}
+			}
+			end_puppet = MAN
+			if = {
+				limit = {
+					has_subject = KOR
+				}
+				end_puppet = KOR
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = KOR
+				}
+				transfer_state_to = KOR
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = MAN
+						state = 609
+						state = 610
+						state = 744
+					}
+				}
+				transfer_state_to = MAN
+			}
+			every_other_country = {
+				limit = {
+					has_country_flag = manchurian_incident
+				}
+				every_state = {
+					limit = {
+						OR = {
+							is_owned_by = PREV.PREV
+							is_owned_by = MAN
+						}
+						OR = {
+							is_core_of = PREV
+							is_claimed_by = PREV
+						}
+					}
+					remove_core_of = MAN
+					transfer_state_to = PREV
+				}
+				# if = {
+				# 	limit = {
+				# 		NOT = {
+				# 			has_government = communism
+				# 		}
+				# 	}
+				# 	country_event = {
+				# 		id = ww1_china.90
+				# 		days = 100
+				# 	}
+				# }
+			}
+		}
+	}
+}
+economy_decisions = {
+	JAP_restore_Mantetsu_control = {
+		icon = infiltrate_state
+
+		allowed = {
+			original_tag = JAP
+		}
+
+		target_trigger = {
+			FROM = {
+				is_china_or_warlord = yes
+				NOT = {
+					gives_military_access_to = ROOT
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+				OR = {
+					controls_state = 716
+					controls_state = 328
+				}
+				NOT = {
+					has_completed_focus = CSB_DongBei_jap_kor_china_war
+				}
+			}
+		}
+		visible = {
+			hidden_trigger = {
+				is_subject = no
+				has_capitulated = no
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}				
+					owns_state = 744
+					controls_state = 744
+				}
+			}					
+		}
+
+		days_remove = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		cancel_if_not_visible = yes
+		remove_effect = {
+			FROM = {
+				give_military_access = 	ROOT
+			}
+		}
+	}
+}
