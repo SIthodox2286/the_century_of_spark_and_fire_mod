@@ -14,14 +14,17 @@
  SB1_shehui_gemingdang_1:0 "社会革命党（右翼）"
  SB1_shehui_gemingdang_2:0 "社会革命党（左翼）"
  
- MAN_communism_1:2 "东北革命委员会"
+ MAN_communism_1:1 "东北革命委员会"
+ MAN_communism_1_ADJ:1 "东北革命委员会"
  MAN_communism_1_DEF:1 "东北革命委员会"
  
- MAN_communism_2:2 "中国革命委员会"
+ MAN_communism_2:1 "中国革命委员会"
  MAN_communism_2_DEF:1 "中国革命委员会"
+ MAN_communism_2_ADJ:1 "中国革命委员会"
  
- FNG_neutrality_1:2 "东三省总督府"
+ FNG_neutrality_1:1 "东三省总督府"
  FNG_neutrality_1_DEF:1 "东三省总督府"
+ FNG_neutrality_1_ADJ:1 "东三省总督府"
  
  SB1_fascism:0 "滨海军政府"
  SB1_fascism_DEF:0 "滨海军政府"
