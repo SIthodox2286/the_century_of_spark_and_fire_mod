@@ -5057,6 +5057,41 @@ focus_tree = {
 		x = 21
 		y = 4
 		bypass = {
+			OR = {
+				NOT = { country_exists = QIN }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府已经解体
+					OR = {
+						has_global_flag = warlord_era
+						QIN = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
+			}
 		}
 		will_lead_to_war_with = QIN
 		completion_reward = {
@@ -5159,6 +5194,7 @@ focus_tree = {
 		available = {
 		}
 		bypass = {
+		
 		}
 		completion_reward = {
 			set_cosmetic_tag = MAN_communism_2
@@ -5188,6 +5224,41 @@ focus_tree = {
 			is_subject = no
 		}
 		bypass = {
+			OR = {
+				NOT = { country_exists = QIN }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府已经解体
+					OR = {
+						has_global_flag = warlord_era
+						QIN = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
+			}
 		}
 		will_lead_to_war_with = QIN
 		completion_reward = {
@@ -5217,22 +5288,48 @@ focus_tree = {
 		x = 22
 		y = 6
 		available = {
-			# 华北 states
-			# 611 - cha ha er ( zhang jia kou )
-			# 609 - chengde
-			# 608 - beijing
-			# 614 - zhili
-			# 597 - shandong
-			# 615 - shanxi
-			# 607 - henan
-			# 620 - hubei
-			# 745
-			# 364
-			609 = { is_controlled_by = ROOT }
-			608 = { is_controlled_by = ROOT }
-			614 = { is_controlled_by = ROOT }
-			597 = { is_controlled_by = ROOT }
-			615 = { is_controlled_by = ROOT }
+			OR = {
+				AND = {
+					609 = { is_controlled_by = ROOT }
+					608 = { is_controlled_by = ROOT }
+					614 = { is_controlled_by = ROOT }
+					597 = { is_controlled_by = ROOT }
+					615 = { is_controlled_by = ROOT }
+				}
+				NOT = { country_exists = QIN }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府已经解体
+					OR = {
+						has_global_flag = warlord_era
+						QIN = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
+			}
 		}
 		bypass = {
 		}
@@ -5318,6 +5415,71 @@ focus_tree = {
 			has_global_flag = xinhai_revolution
 			CHI = { 
 				NOT = { has_war_with = QIN }
+			}
+		}
+		bypass = {
+			OR = {
+				AND = {
+					NOT = { country_exists = QIN }
+					NOT = { country_exists = CHI }
+				}
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府在长江以北中国控制的地区少于六个
+					OR = {
+						has_global_flag = warlord_era
+						CHI = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+						QIN = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
 			}
 		}
 		completion_reward = {
@@ -5897,6 +6059,38 @@ focus_tree = {
 			OR = { 
 				has_war_with = CHI
 				NOT = { country_exists = CHI }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府在长江以北中国控制的地区少于六个
+					OR = {
+						has_global_flag = warlord_era
+						CHI = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
 			}
 		}
 		select_effect = {
@@ -5928,6 +6122,38 @@ focus_tree = {
 			OR = { 
 				has_war_with = CHI
 				NOT = { country_exists = CHI }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府在长江以北中国控制的地区少于六个
+					OR = {
+						has_global_flag = warlord_era
+						CHI = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
 			}
 		}
 		completion_reward = {
@@ -5955,6 +6181,38 @@ focus_tree = {
 			OR = { 
 				has_war_with = CHI
 				NOT = { country_exists = CHI }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府在长江以北中国控制的地区少于六个
+					OR = {
+						has_global_flag = warlord_era
+						CHI = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
 			}
 		}
 		completion_reward = {
@@ -5995,6 +6253,38 @@ focus_tree = {
 			OR = { 
 				has_war_with = CHI
 				NOT = { country_exists = CHI }
+				custom_trigger_tooltip = {
+					tooltip = china_collapsed_tt
+					# 中央政府在长江以北中国控制的地区少于六个
+					OR = {
+						has_global_flag = warlord_era
+						CHI = {
+							NOT = {
+								count_triggers = {
+									amount = 6
+									# xibei
+									622 = { is_controlled_by = ROOT }
+									283 = { is_controlled_by = ROOT }
+									755 = { is_controlled_by = ROOT }
+									616 = { is_controlled_by = ROOT }
+									604 = { is_controlled_by = ROOT }
+									619 = { is_controlled_by = ROOT }
+									# north china
+									611 = { is_controlled_by = ROOT }
+									609 = { is_controlled_by = ROOT }
+									608 = { is_controlled_by = ROOT }
+									
+									614 = { is_controlled_by = ROOT }
+									597 = { is_controlled_by = ROOT }
+									615 = { is_controlled_by = ROOT }
+									
+									607 = { is_controlled_by = ROOT }
+									620 = { is_controlled_by = ROOT }
+								}
+							}
+						}
+					}	
+				}
 			}
 		}
 		completion_reward = {
@@ -6183,7 +6473,7 @@ focus_tree = {
 		y = 3
 		will_lead_to_war_with = CHI
 		available = {
-			#always = no
+			
 		}
 		completion_reward = {	
 			set_cosmetic_tag = MAN_communism_2

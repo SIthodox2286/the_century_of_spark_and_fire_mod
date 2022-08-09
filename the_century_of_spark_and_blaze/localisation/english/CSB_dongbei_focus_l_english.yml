@@ -1,6 +1,7 @@
 ﻿l_english:
  is_jiangsu:0 "[CHI.GetFlag]江苏"
  annex_qin_tooltip_1:0 "继承大清拥有的华北地区"
+ china_collapsed_tt:0 "@QIN中央政府@CHI在长江以北中国控制的地区少于§Y6§!个，或者已经进入§Y军阀时代§!"
  csb_kroean_crisis_release_no:0 "朝鲜危机爆发时不允许手动释放朝鲜"
  test_version_disabled_this_route:0 "当前版本还未完成这部分内容"
  gonghedang_infilatrate_variable_add_1:0 "共和党支持度：§Y+1%§!"
